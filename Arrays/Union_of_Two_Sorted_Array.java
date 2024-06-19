@@ -3,7 +3,7 @@ package Arrays;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Union_of_Two_Sorted_Arrays {
+public class Union_of_Two_Sorted_Array {
 
     // Method 1 - Brute Force (Using Set)
     /*

@@ -1,6 +1,6 @@
 package Arrays;
 
-public class Sorted_Array {
+public class Array_is_Sorted_or_Not {
 
     // Method 1 - Brute Force (Using Two For Loops)
     // Time - O(N^2), Space - O(1)
