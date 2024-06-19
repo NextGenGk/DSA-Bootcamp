@@ -60,6 +60,7 @@ public class Second_Largest_Element {
                 largest = arr[i];
             }
 
+            // condition : for checking duplicates
             else if (arr[i] > sLargest && arr[i] != largest) {
                 sLargest = arr[i];
             }
