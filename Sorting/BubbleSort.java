@@ -45,7 +45,7 @@ public class BubbleSort {
 // Output:
 // 1 2 4 8 9
 
-// Algorithms (Approach) ->
+// Algorithms (Approach)
 /*
 1. Outer loop for index - 1 element
 2. Inner loop for adjacent element
@@ -53,12 +53,13 @@ public class BubbleSort {
 4. Swap (if 2nd element is smaller than 1st element) & So on...
 */
 
+// Time & Space Complexity
 /*
-Time & Space Complexity
 Worst complexity: O(n^2)
 Average complexity: O(n^2)
 Best complexity: O(n)
 Space complexity: O(1)
- */
+*/
+
 
 // Anuj Bhaiya - https://www.youtube.com/watch?v=bBQkErahU9c
