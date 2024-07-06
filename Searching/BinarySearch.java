@@ -3,7 +3,7 @@ package Searching;
 public class BinarySearch {
 
     // Binary Search Iterative
-    // Time - O(log2N), Space - O(1)
+    // Time - O(logN), Space - O(1)
     static int binarySearchIterative(int[] arr, int target) {
         int n = arr.length;
         int low = 0;
@@ -26,6 +26,7 @@ public class BinarySearch {
         return binarySearchFunction(arr, low, high, target);
     }
 
+    // Binary Search Recursive Function
     static int binarySearchFunction(int[] arr, int low, int high, int target) {
         int n = arr.length;
 
@@ -80,4 +81,14 @@ In this step, we can observe 3 different cases:
     2. If target > arr[mid]: This case signifies our target is located on the right half of the array. So, the next recursion call will be binarySearch(nums, mid+1, high).
     3. If target < arr[mid]: This case signifies our target is located on the left half of the array. So, the next recursion call will be binarySearch(nums, low, mid-1).
 3. Base case: The base case of the recursion will be low > high. If (low > high), the search space becomes invalid which means the target is not present in the array.
+ */
+
+// Time & Space Complexity
+/*
+Time Complexity:
+Best Case: O(1)
+Average Case: O(log N)
+Worst Case: O(log N)
+
+Auxiliary Space: O(1), If the recursive call stack is considered then the auxiliary space will be O(logN).
  */
