@@ -135,3 +135,5 @@ public class Count_Occurrences_in_Sorted_Array {
 3. Else, find the last occurrence of the target element using the findLastOccurrence() function.
 4. Return last - first + 1
  */
+
+// Striver Video Explanation : https://www.youtube.com/watch?v=hjR1IYVx9lY

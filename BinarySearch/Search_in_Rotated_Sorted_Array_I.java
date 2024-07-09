@@ -93,3 +93,5 @@ first index, and high will point to the last index.
  Idea - Identify the sorted part (either left or right) & then check the given element between
  low to mid & mid to high
  */
+
+// Striver Video Explanation : https://www.youtube.com/watch?v=5qGrJbHhqFs

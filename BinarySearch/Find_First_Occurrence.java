@@ -68,3 +68,5 @@ element is present or not.
 5. Else if the key value is less than the mid element then low = mid+1(move leftward)
 6. Else do high = mid-1 (move leftwards)
  */
+
+// Striver Video Explanation : https://www.youtube.com/watch?v=hjR1IYVx9lY
