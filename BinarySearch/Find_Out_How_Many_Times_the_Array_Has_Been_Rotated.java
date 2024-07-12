@@ -3,7 +3,7 @@ package BinarySearch;
 public class Find_Out_How_Many_Times_the_Array_Has_Been_Rotated {
 
     // Method 1 : Brute Force
-    // Time - O(log2N), Space - O(1)
+    // Time - O(N), Space - O(1)
 //    static int findRotationCount(int[] arr) {
 //        int n = arr.length;
 //        int ans = Integer.MAX_VALUE;
