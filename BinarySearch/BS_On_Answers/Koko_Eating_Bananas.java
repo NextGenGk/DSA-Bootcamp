@@ -1,4 +1,4 @@
-package BinarySearch.BS_on_Answers;
+package BinarySearch.BS_On_Answers;
 
 public class Koko_Eating_Bananas {
 
