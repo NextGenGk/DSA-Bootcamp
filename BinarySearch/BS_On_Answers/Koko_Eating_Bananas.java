@@ -21,7 +21,7 @@ public class Koko_Eating_Bananas {
         int totalHours = 0;
 
         for (int i=0; i<n; i++) {
-            totalHours +=  Math.ceil((double) arr[i] / (double) hourly);
+            totalHours += (int) Math.ceil((double) arr[i] / (double) hourly);
         }
         return totalHours;
     }
