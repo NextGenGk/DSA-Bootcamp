@@ -117,8 +117,8 @@ The extremely naive approach is to merge the two sorted arrays and then find the
 
 How to merge two sorted arrays:
 The word “merge” suggests applying the merge step of the merge sort algorithm . In that step, we essentially perform
-the same actions as required by this solution. By using two pointers on two given arrays, we fill up the elements
-into a third array.
+the same actions as required by this solution. By using two pointers on two given arrays,
+we fill up the elements into a third array.
  */
 
 // Approach : Better Solution
