@@ -108,7 +108,7 @@ and then find the middle element. You can use built-in sorting methods like Arra
 before finding the median.
  */
 
-// Algorithm : Optimal Solution
+// Algorithm : (Optimal Solution) 
 /*
 1. The findMedian function takes a 2D integer array arr, along with its dimensions n (number of rows)
 and m (number of columns) as input.
