@@ -84,6 +84,7 @@ public class Matrix_Median {
                 findMedian(arr, row, col));
     }
 }
+
 // Output :
 // The median of the row-wise sorted matrix is: 3
 
