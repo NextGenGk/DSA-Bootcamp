@@ -53,7 +53,7 @@ public class SingleLinkedList {
         System.out.println("null");
     }
 
-    // Deletion (Delete a value at a specified position)
+    // Deletion (Delete a value at a specified location)
     void deletion(int location) {
         if (location == 0) {
             head = head.next;
