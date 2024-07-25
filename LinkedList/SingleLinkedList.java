@@ -131,3 +131,5 @@ public class SingleLinkedList {
 }
 
 // Anuj Bhaiya (Video Explanation) : https://www.youtube.com/watch?v=4tU7d0TTiZQ&t
+// Apna College (Video Explanation) : https://www.youtube.com/watch?v=oAja8-Ulz6o&t
+// Apna College Docs : https://docs.google.com/document/d/1ysYfkEEdeCRf1j8nGRvLCuPpEtN58Z51iMzgXB7pYIE/edit
