@@ -48,7 +48,7 @@ public class SingleLinkedList {
     }
 
     // Traversal
-    public void printList() {
+    void printList() {
         if (head == null) {
             System.out.println("List is Empty");
             return;
@@ -112,6 +112,12 @@ public class SingleLinkedList {
             index++;
         }
         return -1; // Value not found
+    }
+
+    // Delete Entire Liked List
+    public void deleteEntireList(){
+        head = null;
+        System.out.println("deleted successfully");
     }
 
     // Main Function
