@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.ImplementationV2;
 
 public class SingleLinkedList {
 
