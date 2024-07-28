@@ -93,7 +93,7 @@ public class Find_Middle_Element_In_a_LinkedList {
         return slow;
     }
 
-    // Method 1 : Optimal Solution
+    // Method 2 : Optimal Solution
     // Time Complexity: O(N/2) The algorithm requires the 'fast' pointer to reach the end of the list which it does
     // after approximately N/2 iterations (where N is the total number of nodes). Therefore, the maximum number of
     // iterations needed to find the middle node is proportional to the number of nodes in the list, making the
