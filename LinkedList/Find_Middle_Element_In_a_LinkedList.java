@@ -2,6 +2,28 @@ package LinkedList;
 
 public class Find_Middle_Element_In_a_LinkedList {
 
+    // Node class represents a node in a linked list
+    static class Node {
+        // Data stored in the node
+        int data;
+        // Pointer to the next node in the list
+        Node next;
+
+        // Constructor with both data
+        // and next node as parameters
+        Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        // Constructor with only data as
+        // a parameter, sets next to null
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
     // Function to find the middle node of a linked list
     static Node findMiddle(Node head) {
         // If the list is empty or has
@@ -95,28 +117,6 @@ public class Find_Middle_Element_In_a_LinkedList {
 
         // Display the value of the middle node
         System.out.println("The middle node value is: " + middleNode.data);
-    }
-
-    // Node class represents a node in a linked list
-    class Node {
-        // Data stored in the node
-        int data;
-        // Pointer to the next node in the list
-        Node next;
-
-        // Constructor with both data
-        // and next node as parameters
-        Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
-
-        // Constructor with only data as
-        // a parameter, sets next to null
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
     }
 }
 
