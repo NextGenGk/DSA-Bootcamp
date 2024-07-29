@@ -120,7 +120,7 @@ public class Detect_a_Loop_in_LinkedList {
 
         // Check if there is a loop
         // in the linked list
-        if (detectLoop1(head)) {
+        if (detectLoop(head)) {
             System.out.println("Loop detected in the linked list.");
         } else {
             System.out.println("No loop detected in the linked list.");
