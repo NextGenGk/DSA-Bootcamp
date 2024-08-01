@@ -31,6 +31,17 @@ public class Merge_Two_Sorted_LinkedList {
     // Time Complexity : O(N1) + O(N2) + O(NLogN) +O(N);
     // Space Complexity : O(N) for ArrayList
     static Node mergeTwoLists(Node l1, Node l2) {
+        // If, list1 is null, return list2
+        if(l1 == null) {
+            return l2;
+        }
+
+        // If, list2 is null, return list1
+        if(l2 == null) {
+            return l1;
+        }
+
+        // Create a new list
         ArrayList<Integer> list = new ArrayList<>();
 
         // Traverse the first linked list and add its elements to the ArrayList
@@ -65,6 +76,16 @@ public class Merge_Two_Sorted_LinkedList {
     // Space Complexity : O(1)
 
     static Node mergeTwoLists1(Node l1, Node l2) {
+        // If, list1 is null, return list2
+        if(l1 == null) {
+            return l2;
+        }
+
+        // If, list2 is null, return list1
+        if(l2 == null) {
+            return l1;
+        }
+
         // Create a dummy node to act as the start of the merged list
         Node dummy = new Node(0);
         Node current = dummy;
