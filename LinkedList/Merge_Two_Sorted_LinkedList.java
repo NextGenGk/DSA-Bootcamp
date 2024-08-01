@@ -118,6 +118,8 @@ public class Merge_Two_Sorted_LinkedList {
     }
 }
 
+// Output : 1 2 3 4 5 6
+
 // Approach : Brute Force
 /*
 1. We traverse both linked lists and add their values to an ArrayList.
