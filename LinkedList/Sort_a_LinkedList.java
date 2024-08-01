@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Sort_LinkedList {
+public class Sort_a_LinkedList {
 
     // Node class represents a node in a linked list
     static class Node {
@@ -28,7 +28,7 @@ public class Sort_LinkedList {
         }
     }
 
-    static Node sortLL(Node head) {
+    static Node sortLL1(Node head) {
         Node temp = head;
         ArrayList<Integer> list = new ArrayList<Integer>();
 
@@ -47,6 +47,60 @@ public class Sort_LinkedList {
             temp = temp.next;
         }
         return head;
+    }
+
+    static Node findMiddle(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    static Node mergeTwoLists(Node l1, Node l2) {
+        Node dummy = new Node(0);
+        Node current = dummy;
+
+        while (l1 != null && l2 != null) {
+            if (l1.data < l2.data) {
+                current.next = l1;
+                l1 = l1.next;
+            }
+            else {
+                current.next = l2;
+                l2 = l2.next;
+            }
+            current = current.next;;
+        }
+
+        if (l1 != null) {
+            current.next = l1;
+        }
+        else {
+            current.next = l1;
+        }
+        return dummy.next;
+    }
+
+    static Node sortLL(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        Node middle = findMiddle(head);
+        // Divide the list into two halves
+        Node right = middle.next;
+        middle.next = null;
+        Node left = head;
+
+        left = sortLL(left);
+        right = sortLL(right);
+
+        return mergeTwoLists(left, right);
     }
 
     // Function to print the linked list
@@ -73,7 +127,7 @@ public class Sort_LinkedList {
         printLinkedList(head);
 
         // Sort the linked list
-        head = sortLL(head);
+        head = sortLL1(head);
 
         System.out.print("Sorted Linked List: ");
         printLinkedList(head);
