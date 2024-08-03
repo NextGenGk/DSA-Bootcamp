@@ -109,6 +109,16 @@ public class Add_2_Number_in_LinkedList {
     }
 }
 
+// Output :
+/*
+First list:
+2 4 3
+Second list:
+5 6 4
+Result list:
+7 0 8
+ */
+
 // Approach : Optimal Solution (using Elementary Math)
 /*
 
