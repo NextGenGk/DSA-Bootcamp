@@ -1,6 +1,6 @@
 package LinkedList.Doubly_LinkedList;
 
-public class Remove_Duplicates_from_Sorted_LinkedList {
+public class Remove_Duplicates_from_Sorted_DoublyLinkedList {
 
     // Node class represents a node in a linked list
     static class Node {
