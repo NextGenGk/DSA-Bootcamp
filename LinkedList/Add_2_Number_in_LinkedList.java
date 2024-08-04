@@ -121,7 +121,6 @@ Result list:
 
 // Approach : Optimal Solution (using Elementary Math)
 /*
-
 Intuition:
 
 Keep track of the carry using a variable and simulate digits-by-digits sum starting from the head of the list,
