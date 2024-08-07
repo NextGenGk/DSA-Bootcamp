@@ -224,6 +224,21 @@ public class Clone_LinkedList_with_Random_and_Next_Pointer {
     }
 }
 
+// Output :
+/*
+Original Linked List with Random Pointers:
+Data: 7, Random: 21
+Data: 14, Random: 7
+Data: 21, Random: 28
+Data: 28, Random: 14
+
+Cloned Linked List with Random Pointers:
+Data: 7, Random: 21
+Data: 14, Random: 7
+Data: 21, Random: 28
+Data: 28, Random: 14
+ */
+
 // Approach : Brute Force
 /*
 Algorithm / Intuition
