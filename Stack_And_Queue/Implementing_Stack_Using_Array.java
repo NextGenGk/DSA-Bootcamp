@@ -94,3 +94,16 @@ public class Implementing_Stack_Using_Array {
         System.out.println("Is stack empty? " + stack.isEmpty());
     }
 }
+
+// Output :
+/*
+Is stack empty? true
+Value inserted successfully
+Value inserted successfully
+Value inserted successfully
+Is stack full? false
+Popped value: 10
+Top value: 20
+Stack is successfully deleted
+Is stack empty? true
+ */
