@@ -1,23 +1,25 @@
 package Stack_And_Queue;
 
- class Implementing_Queue_Using_Array {
+class Implementing_Queue_Using_Array {
     int[] arr;
     int front;
     int rear;
-    int size;
+    int capacity;
+    int currentSize; // Variable to keep track of the current size of the queue
 
     // Constructor
-    public Implementing_Queue_Using_Array(int size) {
-        this.arr = new int[size];
+    public Implementing_Queue_Using_Array(int capacity) {
+        this.arr = new int[capacity];
         this.front = -1;
         this.rear = -1;
-        this.size = size;
-        System.out.println("The Queue is created with the size of " + size);
+        this.capacity = capacity;
+        this.currentSize = 0; // Initialize size to 0
+        System.out.println("The Queue is created with the size of " + capacity);
     }
 
     // isEmpty()
     public boolean isEmpty() {
-        if (front == -1 || front > rear) {
+        if (currentSize == 0) {
             System.out.println("Queue is Empty");
             return true;
         } else {
@@ -27,7 +29,7 @@ package Stack_And_Queue;
 
     // isFull()
     public boolean isFull() {
-        if (rear == size - 1) {
+        if (currentSize == capacity) {
             System.out.println("Queue is Full");
             return true;
         } else {
@@ -39,14 +41,13 @@ package Stack_And_Queue;
     public void enQueue(int value) {
         if (isFull()) {
             System.out.println("Queue is full");
-        } else if (isEmpty()) {
-            front = 0;
-            rear = 0;
-            arr[rear] = value;
-            System.out.println("Successfully inserted " + value + " into the queue");
         } else {
+            if (isEmpty()) {
+                front = 0;
+            }
             rear++;
             arr[rear] = value;
+            currentSize++; // Increment size when a new element is enqueued
             System.out.println("Successfully inserted " + value + " into the queue");
         }
     }
@@ -59,8 +60,9 @@ package Stack_And_Queue;
         } else {
             int result = arr[front];
             front++;
+            currentSize--; // Decrement size when an element is dequeued
             // Reset front and rear if the queue is now empty
-            if (front > rear) {
+            if (currentSize == 0) {
                 front = -1;
                 rear = -1;
             }
@@ -78,11 +80,17 @@ package Stack_And_Queue;
         }
     }
 
+    // size() method to return the current size of the queue
+    public int size() {
+        return currentSize;
+    }
+
     // deleteQueue()
     public void deleteQueue() {
         arr = null;
         front = -1;
         rear = -1;
+        currentSize = 0; // Reset size to 0 when the queue is deleted
         System.out.println("Deleted Queue Successfully");
     }
 
@@ -94,25 +102,30 @@ package Stack_And_Queue;
         queueArray.enQueue(30);
         queueArray.enQueue(40);
 
+        System.out.println("Current queue size: " + queueArray.size());
+
         int result = queueArray.peek();
         System.out.println("Front element: " + result);
 
         result = queueArray.deQueue();
         System.out.println("Dequeued element: " + result);
 
+        System.out.println("Current queue size after dequeue: " + queueArray.size());
+
         queueArray.deleteQueue();
     }
 }
 
-// Output :
+// Output:
 /*
 The Queue is created with the size of 4
-Queue is Empty
 Successfully inserted 10 into the queue
 Successfully inserted 20 into the queue
 Successfully inserted 30 into the queue
 Successfully inserted 40 into the queue
+Current queue size: 4
 Front element: 10
 Dequeued element: 10
+Current queue size after dequeue: 3
 Deleted Queue Successfully
- */
+*/

@@ -6,13 +6,13 @@ public class Implementing_Queue_Using_2_Stacks {
     Stack<Integer> input;
     Stack<Integer> output;
 
-    /** Initialize your data structure here. */
+    //Initialize your data structure here.
     public Implementing_Queue_Using_2_Stacks() {
         input = new Stack<Integer>();
         output = new Stack<Integer>();
     }
 
-    /** Push element x to the back of queue. */
+    // Push() - Push element x to the back of queue.
     public void push(int x) {
         // Move all elements from input stack to output stack
         while (!input.empty()) {
@@ -29,7 +29,7 @@ public class Implementing_Queue_Using_2_Stacks {
         }
     }
 
-    /** Removes the element from in front of queue and returns that element. */
+    // Pop() - Removes the element from in front of queue and returns that element.
     public int pop() {
         if (input.empty()) {
             System.out.println("Queue is empty");
@@ -38,7 +38,7 @@ public class Implementing_Queue_Using_2_Stacks {
         return input.pop();
     }
 
-    /** Get the front element. */
+    // Peek() - Get the front element.
     public int peek() {
         if (input.empty()) {
             System.out.println("Queue is empty");
@@ -47,7 +47,7 @@ public class Implementing_Queue_Using_2_Stacks {
         return input.peek();
     }
 
-    /** Get the current size of the queue. */
+    // Size() - Get the current size of the queue.
     public int size() {
         return input.size();
     }
