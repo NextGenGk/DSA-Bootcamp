@@ -49,6 +49,11 @@ public class Implementing_Stack_Using_Single_Queue {
         return queue.peek();
     }
 
+    // Get the current size of the stack
+    public int size() {
+        return queue.size();
+    }
+
     // Delete the stack
     public void deleteStack() {
         queue.clear();
@@ -66,8 +71,14 @@ public class Implementing_Stack_Using_Single_Queue {
         stack.push(20);
         stack.push(10);
 
+        // Test size() method
+        System.out.println("Current stack size: " + stack.size());
+
         // Test pop() method
         System.out.println("Popped value: " + stack.pop());
+
+        // Test size() method again after pop
+        System.out.println("Current stack size after pop: " + stack.size());
 
         // Test peek() method
         System.out.println("Top value: " + stack.peek());
@@ -80,14 +91,16 @@ public class Implementing_Stack_Using_Single_Queue {
     }
 }
 
-// Output :
+// Output:
 /*
 Is stack empty? true
 Value inserted successfully
 Value inserted successfully
 Value inserted successfully
+Current stack size: 3
 Popped value: 10
+Current stack size after pop: 2
 Top value: 20
 Stack is successfully deleted
 Is stack empty? true
- */
+*/

@@ -12,17 +12,13 @@ public class Implementing_Stack_Using_Array {
 
     // Check if the stack is empty
     public boolean isEmpty() {
-        if (topOfStack == -1) {
-            return true;
-        } else {
-            return false;
-        }
+        return topOfStack == -1;
     }
 
     // Check if the stack is full
     public boolean isFull() {
         if (topOfStack == arr.length - 1) {
-            System.out.println("The Stack Is Full");
+            System.out.println("The Stack is Full");
             return true;
         } else {
             return false;
@@ -59,6 +55,11 @@ public class Implementing_Stack_Using_Array {
         }
     }
 
+    // Get the current size of the stack
+    public int size() {
+        return topOfStack + 1;
+    }
+
     // Delete the stack
     public void deleteStack() {
         arr = null;
@@ -78,6 +79,9 @@ public class Implementing_Stack_Using_Array {
         stack.push(20);
         stack.push(10);
 
+        // Test size() method
+        System.out.println("Current stack size: " + stack.size());
+
         // Test isFull() method
         System.out.println("Is stack full? " + stack.isFull());
 
@@ -87,6 +91,9 @@ public class Implementing_Stack_Using_Array {
         // Test peek() method
         System.out.println("Top value: " + stack.peek());
 
+        // Test size() method again after pop
+        System.out.println("Current stack size after pop: " + stack.size());
+
         // Test deleteStack() method
         stack.deleteStack();
 
@@ -95,15 +102,17 @@ public class Implementing_Stack_Using_Array {
     }
 }
 
-// Output :
+// Output:
 /*
 Is stack empty? true
 Value inserted successfully
 Value inserted successfully
 Value inserted successfully
+Current stack size: 3
 Is stack full? false
 Popped value: 10
 Top value: 20
+Current stack size after pop: 2
 Stack is successfully deleted
 Is stack empty? true
- */
+*/
