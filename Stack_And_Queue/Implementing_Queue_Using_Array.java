@@ -1,13 +1,13 @@
 package Stack_And_Queue;
 
- class Implementing_Queue_Using_Queue {
+ class Implementing_Queue_Using_Array {
     int[] arr;
     int front;
     int rear;
     int size;
 
     // Constructor
-    public Implementing_Queue_Using_Queue(int size) {
+    public Implementing_Queue_Using_Array(int size) {
         this.arr = new int[size];
         this.front = -1;
         this.rear = -1;
@@ -88,7 +88,7 @@ package Stack_And_Queue;
 
     // Main Function
     public static void main(String[] args) {
-        Implementing_Queue_Using_Queue queueArray = new Implementing_Queue_Using_Queue(4);
+        Implementing_Queue_Using_Array queueArray = new Implementing_Queue_Using_Array(4);
         queueArray.enQueue(10);
         queueArray.enQueue(20);
         queueArray.enQueue(30);
