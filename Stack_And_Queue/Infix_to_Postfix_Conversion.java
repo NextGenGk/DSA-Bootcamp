@@ -121,4 +121,42 @@ right of the operator.
 5. For evaluation, we evaluate it from left to right. Prefix expressions are also called polish notation.
  */
 
+// Algorithm :
+/*
+Step 1: Define Operator Precedence
+
+1. Define a function Prec(char ch) to return the precedence of the given operator:
+    i. + and - have a precedence value of 1.
+   ii. * and / have a precedence value of 2.
+  iii. ^ (exponentiation) has a precedence value of 3.
+Return -1 for non-operators.
+
+Step 2: Initialize Variables
+1. Initialize an empty string result to store the postfix expression.
+2. Initialize an empty stack stack to hold operators and parentheses during conversion.
+
+Step 3: Traverse the Infix Expression
+1. Loop through each character c in the infix expression exp:
+    i. If c is an operand (letter or digit):
+        i. Append c to result.
+   ii. If c is an opening parenthesis (:
+        i. Push c onto the stack.
+  iii. If c is a closing parenthesis ):
+        i. Pop characters from the stack and append them to result until an opening parenthesis ( is encountered.
+       ii. Discard the opening parenthesis ( by popping it from the stack.
+   iv. If c is an operator:
+        i. While the stack is not empty and the precedence of c is less than or equal to the precedence
+        of the operator on top of the stack:
+            Pop the top operator from the stack and append it to result.
+       ii. Push the current operator c onto the stack.
+
+Step 4: Pop Remaining Operators from the Stack
+1. After the traversal, pop all remaining operators from the stack and append them to result.
+2. If any opening parentheses ( are encountered, return "Invalid Expression" (indicating a mismatch in
+parentheses).
+
+Step 5: Return the Postfix Expression
+i. The string result now contains the postfix expression. Return this as the final output.
+ */
+
 // Striver (Video Explanation) : https://www.youtube.com/watch?v=4pIc9UBHJtk
