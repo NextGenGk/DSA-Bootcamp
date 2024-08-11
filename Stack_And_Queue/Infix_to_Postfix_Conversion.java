@@ -124,7 +124,6 @@ right of the operator.
 // Algorithm :
 /*
 Step 1: Define Operator Precedence
-
 1. Define a function Prec(char ch) to return the precedence of the given operator:
     i. + and - have a precedence value of 1.
    ii. * and / have a precedence value of 2.
