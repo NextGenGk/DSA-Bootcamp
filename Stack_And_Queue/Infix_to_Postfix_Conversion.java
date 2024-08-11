@@ -65,7 +65,6 @@ public class Infix_to_Postfix_Conversion {
                 }
                 stack.push(c);
             }
-
         }
 
         // pop all the operators from the stack
@@ -81,7 +80,7 @@ public class Infix_to_Postfix_Conversion {
     public static void main(String[] args) {
         String exp = "(p+q)*(m-n)";
         System.out.println("Infix expression: " + exp);
-        System.out.println("Prefix expression: " + infixToPostfix(exp));
+        System.out.println("Postfix expression: " + infixToPostfix(exp));
     }
 }
 
