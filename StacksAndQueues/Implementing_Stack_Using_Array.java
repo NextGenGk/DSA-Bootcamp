@@ -1,35 +1,38 @@
-package Stack_And_Queue;
+package StacksAndQueues;
 
-public class Implementing_Stack_Using_LinkedList {
+public class Implementing_Stack_Using_Array {
+    int[] arr;
+    int topOfStack;
 
-    // Node class
-    private class Node {
-        int value;
-        Node next;
-    }
-
-    private Node topOfStack;
-    private int size; // Variable to keep track of the size of the stack
-
-    // Constructor to initialize the stack
-    public Implementing_Stack_Using_LinkedList() {
-        topOfStack = null; // Stack is initially empty
-        size = 0; // Initialize size to 0
+    // Constructor to initialize the stack with a given size
+    public Implementing_Stack_Using_Array(int size) {
+        arr = new int[size];
+        topOfStack = -1; // Stack is initially empty
     }
 
     // Check if the stack is empty
     public boolean isEmpty() {
-        return topOfStack == null;
+        return topOfStack == -1;
+    }
+
+    // Check if the stack is full
+    public boolean isFull() {
+        if (topOfStack == arr.length - 1) {
+            System.out.println("The Stack is Full");
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // Push a value onto the stack
     public void push(int value) {
-        Node newNode = new Node();
-        newNode.value = value;
-        newNode.next = topOfStack;
-        topOfStack = newNode;
-        size++; // Increment size when a new element is pushed
-        System.out.println("Value inserted successfully");
+        if (isFull()) {
+            System.out.println("The Stack is full");
+        } else {
+            arr[++topOfStack] = value;
+            System.out.println("Value inserted successfully");
+        }
     }
 
     // Pop a value from the stack
@@ -38,10 +41,7 @@ public class Implementing_Stack_Using_LinkedList {
             System.out.println("The stack is empty");
             return -1;
         } else {
-            int topValue = topOfStack.value;
-            topOfStack = topOfStack.next;
-            size--; // Decrement size when an element is popped
-            return topValue;
+            return arr[topOfStack--];
         }
     }
 
@@ -51,24 +51,25 @@ public class Implementing_Stack_Using_LinkedList {
             System.out.println("The stack is empty");
             return -1;
         } else {
-            return topOfStack.value;
+            return arr[topOfStack];
         }
     }
 
     // Get the current size of the stack
     public int size() {
-        return size;
+        return topOfStack + 1;
     }
 
     // Delete the stack
     public void deleteStack() {
-        topOfStack = null;
-        size = 0; // Reset size to 0 when the stack is deleted
+        arr = null;
+        topOfStack = -1;
         System.out.println("Stack is successfully deleted");
     }
 
+    // Main Function
     public static void main(String[] args) {
-        Implementing_Stack_Using_LinkedList stack = new Implementing_Stack_Using_LinkedList();
+        Implementing_Stack_Using_Array stack = new Implementing_Stack_Using_Array(10);
 
         // Test isEmpty() method
         System.out.println("Is stack empty? " + stack.isEmpty());
@@ -80,6 +81,9 @@ public class Implementing_Stack_Using_LinkedList {
 
         // Test size() method
         System.out.println("Current stack size: " + stack.size());
+
+        // Test isFull() method
+        System.out.println("Is stack full? " + stack.isFull());
 
         // Test pop() method
         System.out.println("Popped value: " + stack.pop());
@@ -105,6 +109,7 @@ Value inserted successfully
 Value inserted successfully
 Value inserted successfully
 Current stack size: 3
+Is stack full? false
 Popped value: 10
 Top value: 20
 Current stack size after pop: 2

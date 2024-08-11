@@ -1,4 +1,4 @@
-package Stack_And_Queue;
+package StacksAndQueues;
 
 class Implementing_Queue_Using_Array {
     int[] arr;
