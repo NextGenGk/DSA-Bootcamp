@@ -63,6 +63,7 @@ Infix Expression: ((a+b)*c)
 1. Iterate an expression from start to end.
     i. if, scanned element is an operand, push the operand into the stack;
    ii. else, pop the two elements from the stack & whatever is the operator put it, in between them
+       eg: result : '(' + t2 + c + t1 + ')' )
 2. After that, return the stack's top
  */
 
