@@ -47,7 +47,7 @@ public class Postfix_to_Infix_Conversion {
 
 // Time Complexity : O(N) + (N + M)
 // Reason : In languages where strings are immutable (like Python, Java, etc.), concatenation often involves
-// creating a new string that combines the original strings. For example, in Python, using str1 + str2
+// creating a new string that combines the original strings. For example, in Java, using str1 + str2
 // creates a new string and involves copying the characters from both strings, resulting in O(n + m)
 // time complexity.
 // Space Complexity : O(N), for using stack
