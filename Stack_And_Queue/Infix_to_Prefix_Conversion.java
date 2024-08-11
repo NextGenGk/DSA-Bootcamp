@@ -138,6 +138,7 @@ then pop the top of the stack till the condition is true. If the condition is no
 // Algorithm :
 /*
 Step 1: Reverse the Infix Expression
+
 1. Initialize an empty string reversedInfix.
 2. Traverse the infix expression from right to left:
     i. If the current character is (, replace it with ), and vice versa.
