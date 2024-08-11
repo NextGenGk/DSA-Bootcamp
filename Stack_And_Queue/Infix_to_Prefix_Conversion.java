@@ -70,12 +70,12 @@ public class Infix_to_Prefix_Conversion {
                 }
                 // For other operators, pop from the stack to the result based on precedence
                 else {
-//                    while (!stack.isEmpty() && prec(c) < prec(stack.peek())) {
-//                        result.append(stack.pop());
-//                    }
-                    while (!stack.isEmpty() && prec(c) <= prec(stack.peek())) {
+                    while (!stack.isEmpty() && prec(c) < prec(stack.peek())) {
                         result.append(stack.pop());
                     }
+//                    while (!stack.isEmpty() && prec(c) <= prec(stack.peek())) {
+//                        result.append(stack.pop());
+//                    }
                     stack.push(c);  // Push the current operator onto the stack
                 }
             }
