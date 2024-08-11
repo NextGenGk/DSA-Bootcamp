@@ -112,6 +112,11 @@ public class Infix_to_Prefix_Conversion {
     }
 }
 
+// Time Complexity : O(N) + O(N) + O(N) ~ O(3N) ~ O(N)
+// Reason : O(N) for reverse a string, O(N) for stack operations, and another O(N) for reverse the
+// postfix expression.
+// Space Complexity : O(N) for using stack.
+
 // Output :
 /*
 Infix Expression: (p+q)*(c-d)

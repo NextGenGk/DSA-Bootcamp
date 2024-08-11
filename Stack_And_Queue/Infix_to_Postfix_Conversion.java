@@ -84,6 +84,9 @@ public class Infix_to_Postfix_Conversion {
     }
 }
 
+// Time Complexity : O(N)
+// Space Complexity : O(N), for using stack
+
 // Output :
 /*
 Infix expression: (p+q)*(m-n)
