@@ -35,7 +35,7 @@ public class Next_Greater_Element_II {
     }
 
     // Method 2 : Optimal Solution
-    // Time Complexity : O(4N), 0(@N) for traversing the array (hypothetically) and another O(2N)
+    // Time Complexity : O(4N), 0(2N) for traversing the array (hypothetically) and another O(2N)
     // for pushing and popping elements onto the stack.
     // Space Complexity : O(2N) + O(N), O(2N) for using stack twice and O(N) for returning the result.
     static int[] nextGreaterElement(int[] arr) {
