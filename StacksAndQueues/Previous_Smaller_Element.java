@@ -5,8 +5,8 @@ import java.util.Stack;
 public class Previous_Smaller_Element {
 
     // Method 1 : Brute Force
-    // Time Complexity : O(N^2)
-    // Space Complexity : O(N)
+    // Time Complexity : O(N^2) because we are using 2 loops
+    // Space Complexity : O(N) because of returning result
     static int[] justPreviousSmallerElements(int[] arr) {
         int n = arr.length;  // Get the length of the array
         int[] result = new int[n];  // Initialize the result array of the same length
