@@ -60,26 +60,29 @@ public class Sum_of_Subarray_Minimum {
 
         // Function to find the Previous Smaller Element (PSE) for each element in the array
         static int[] justPreviousSmallerElement(int[] arr) {
-            int n = arr.length;  // Get the length of the input array
-            Stack<Integer> stack = new Stack<>();  // Stack to store indices for tracking nearest smaller elements
-            int[] result = new int[n];  // Array to store the result
+            int n = arr.length; // Get the length of the input array
+            Stack<Integer> stack = new Stack<>(); // Stack to store indices for tracking nearest smaller elements
+            int[] result = new int[n]; // Array to store the result
 
             // Iterate over each element in the array
             for (int i = 0; i < n; i++) {
-                // Pop elements from the stack until we find a smaller element or the stack is empty
-                while (!stack.isEmpty() && stack.peek() >= arr[i]) {
+                // Pop elements from the stack until we find a smaller element or the stack is
+                // empty
+                while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
                     stack.pop();
                 }
 
-                // If the stack is empty, it means no smaller element exists on the left, so store -1
+                // If the stack is empty, it means no smaller element exists on the left, so
+                // store -1
                 // Otherwise, store the index of the nearest smaller element
                 result[i] = stack.isEmpty() ? -1 : stack.peek();
 
                 // Push the current index onto the stack for future comparisons
-                stack.push(arr[i]);
+                stack.push(i);
             }
 
-            // Return the result array containing indices of nearest smaller elements to the left
+            // Return the result array containing indices of nearest smaller elements to the
+            // left
             return result;
         }
 
@@ -91,12 +94,14 @@ public class Sum_of_Subarray_Minimum {
 
             // Loop through the array starting from the last element
             for (int i = n - 1; i >= 0; i--) {
-                // Pop elements from the stack while the stack is not empty and the top element is greater or equal to arr[i]
-                while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
+                // Pop elements from the stack while the stack is not empty and the top element
+                // is greater or equal to arr[i]
+                while (!stack.isEmpty() && arr[stack.peek()] > arr[i]) {
                     stack.pop();
                 }
 
-                // If the stack is empty, no smaller element exists to the right, so store n (indicating end of array)
+                // If the stack is empty, no smaller element exists to the right, so store n
+                // (indicating end of array)
                 // Otherwise, store the index of the nearest smaller element
                 result[i] = stack.isEmpty() ? n : stack.peek();
 
@@ -104,7 +109,8 @@ public class Sum_of_Subarray_Minimum {
                 stack.push(i);
             }
 
-            // Return the result array containing indices of nearest smaller elements to the right
+            // Return the result array containing indices of nearest smaller elements to the
+            // right
             return result;
         }
     }
