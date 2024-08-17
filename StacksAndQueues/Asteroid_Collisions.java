@@ -10,7 +10,7 @@ public class Asteroid_Collisions {
     // Method 1 : Optimal Solution
     // Time Complexity : O(2N), O(N) for traversing and another O(N) for pushing and popping
     // elements onto the stack.
-    // Space Complexity : O(2N) is for using external list data structure and another O(N) for converting
+    // Space Complexity : O(2N), O(N) is for using external list data structure and another O(N) for converting
     // list into array to return the answer
 
     // Function to simulate the asteroid collisions
