@@ -39,7 +39,7 @@ public class Sum_of_Subarray_Ranges {
         return sumSubarrayMax(arr) - sumSubarrayMin(arr);
     }
 
-    // Time Complexity : O(5N), O(2N) for finding nse and pse, and O(N) for traversing.
+    // Time Complexity : O(5N), O(4N) for finding nse and pse, and O(N) for traversing.
     // Space Complexity : O(4N), O(2N) for using stack and O(2N) for returning the answer.
     // Function to calculate the sum of maximums of all subarrays
     // Function to calculate the sum of subarray maximums
@@ -207,7 +207,7 @@ public class Sum_of_Subarray_Ranges {
 
 // Approach : Brute Force
 /*
-Generate all the subarray and find the largest and smallest element, and then calculate the sum of the
+Generate all the subarray and find the largest and smallest element of every subarray, and then calculate the sum of the
 total = largest - smallest and then return the total.
  */
 
