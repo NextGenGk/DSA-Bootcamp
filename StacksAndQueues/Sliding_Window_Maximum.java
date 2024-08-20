@@ -46,6 +46,12 @@ public class Sliding_Window_Maximum {
         int index = 0;                         // Index to insert max values in result
         Deque<Integer> q = new ArrayDeque<>();  // Deque to store indices
 
+        // base case
+        if (n == 0) {
+            return arr;
+        }
+
+        // Traverse the array
         for (int i = 0; i < arr.length; i++) {
             // Remove elements that are out of the current window (i - k)
             if (!q.isEmpty() && q.peek() == i - k) {
