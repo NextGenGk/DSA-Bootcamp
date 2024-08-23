@@ -127,7 +127,7 @@ public class Implement_LRU_Cache {
 
 // Output : [null,null,null,1,null,-1,null,-1,3,4]
 
-// Approach :
+// Approach : Optimal Solution
 /*
 1. Initialization (LRUCache):
     1. Initialize the cache with a given capacity.
