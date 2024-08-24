@@ -25,6 +25,8 @@ This repository is designed to assist learners with improving their coding skill
 - Queues
 - Sorting
 - Searching
+- Sliding Window
+- Two Pointers
 - and more...
 
 ## How to Use This Repository
@@ -47,3 +49,30 @@ To get started, follow these steps:
    ```bash
    git clone https://github.com/NextGenGk/DSA-Bootcamp.git
    cd DSA-Bootcamp
+
+2. Open the repository in your preferred code editor.
+3. Start exploring the folders and begin solving problems!
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**! You can contribute in the following ways:
+
+### Ways to Contribute
+
+1. **Adding New Problems:** If you find a problem that is not already covered, feel free to add it with a clear problem statement, solution, and explanation.
+2. **Optimizing Existing Solutions:** If you can optimize the time or space complexity of a solution, you are welcome to share your improved approach.
+3. **Improving Explanations:** Clearer explanations, comments, and better structuring of code will help others understand the problem and solutions more easily.
+4. **Bug Fixes:** If you notice any bugs or incorrect implementations in the solutions, feel free to fix them and open a pull request.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or have found a bug, please open an issue or submit a pull request.
+
+### License
+
+This project is licensed under the [MIT License](LICENSE).
+
+### Contact
+
+For inquiries or feedback, please reach out via [atkola12345@gmail.com.](mailto:atkola12345@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/gauravkumar077/).
+
