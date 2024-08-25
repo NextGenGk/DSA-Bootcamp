@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Fixed_Window {
 
+    // Method 1 : Optimal Solution
     public static int maxConsecutiveSum(ArrayList<Integer> arr, int K) {
         // Get the size of the input array
         int n = arr.size();
