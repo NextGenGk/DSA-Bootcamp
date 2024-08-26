@@ -9,25 +9,19 @@ public class Fixed_Window {
         // Get the size of the input array
         int n = arr.size();
 
-        // Check if the size of
-        // the array is less than K
+        // Check if the size of the array is less than K
         if (n < K) {
-            // Handle invalid input
-            // by returning 0
+            // Handle invalid input by returning 0
             return 0;
         }
 
-        // Initialize left and right
-        // pointers of the sliding window
-
+        // Initialize left and right pointers of the sliding window
         // Left pointer
         int left = 0;
-        // Right pointer,
-        // initialized to K-1
+        // Right pointer, initialized to K-1
         int right = K - 1;
 
-        // Initialize variables to store
-        // current sum and maximum sum
+        // Initialize variables to store current sum and maximum sum
 
         // Current sum
         int sum = 0;
