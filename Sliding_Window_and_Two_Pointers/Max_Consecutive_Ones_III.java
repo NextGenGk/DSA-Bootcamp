@@ -96,7 +96,7 @@ public class Max_Consecutive_Ones_III {
             }
 
             // If the number of zeros exceeds k, move the left pointer to shrink the window
-            while (zeroes > k) {
+            if (zeroes > k) {
                 // If the leftmost element in the window is 0, decrement the zero count
                 if (nums[left] == 0) {
                     zeroes--;
@@ -106,7 +106,9 @@ public class Max_Consecutive_Ones_III {
             }
 
             // Update the maximum length of the subarray
-            maxLength = Math.max(maxLength, right - left + 1);
+            if (zeroes <= k) {
+               maxLength = Math.max(maxLength, right - left + 1);
+            }
 
             // Move the right pointer to the right
             right++;
