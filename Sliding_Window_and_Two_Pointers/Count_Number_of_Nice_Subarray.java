@@ -58,7 +58,7 @@ public class Count_Number_of_Nice_Subarray {
 // Approach : Optimal Solution
 /*
 We convert this problem into a "Binary Subarray with Sum" problem. In binary subarray problem contains element
-only 0 & 1. So, In this problem we use the logic where we assume 0 as even and 1 as Odd to solve this problem
+only 0 & 1. So, In this problem we use the logic where we assume 0 as even and 1 as Odd to solve this problem.
 
 nums = [1, 5, 2, 1, 1]
 After Converting = [1, 1, 0, 1, 1]
