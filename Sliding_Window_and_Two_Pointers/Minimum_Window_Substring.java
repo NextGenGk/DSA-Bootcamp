@@ -42,8 +42,8 @@ public class Minimum_Window_Substring {
 
     // Method 2 : Optimal Solution
     // Time Complexity : O(2N) + O(M), O(2N) for traversing all the characters at most twice in worst case
-    // & O(M) for inserting all the characters in the hashArray
-    // Space Complexity : O(256), size of the hashArray
+    // & O(M) for inserting all the characters in the hashArray.
+    // Space Complexity : O(256), size of the hashArray with all the unique character in alphabets.
     public static String minWindow1(String s, String t) {
         // Get the lengths of the strings s and t
         int m = s.length();
