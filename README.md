@@ -25,8 +25,8 @@ This repository is designed to assist learners with improving their coding skill
 - Queues
 - Sorting
 - Searching
-- Sliding Window
-- Two Pointers
+- Sliding Window & Two Pointers
+- Greedy Algorithms
 - and more...
 
 ## How to Use This Repository
