@@ -1,4 +1,4 @@
-package Sliding_Window_and_Two_Pointers;
+package SlidingWindowTwoPointers;
 
 public class Count_Number_of_Nice_Subarray {
 

@@ -1,4 +1,4 @@
-package Sliding_Window_and_Two_Pointers.Patterns;
+package SlidingWindowTwoPointers.Patterns;
 
 import java.util.ArrayList;
 

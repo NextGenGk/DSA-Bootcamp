@@ -1,4 +1,4 @@
-package Sliding_Window_and_Two_Pointers;
+package SlidingWindowTwoPointers;
 
 public class Binary_Subarray_with_Sum {
 

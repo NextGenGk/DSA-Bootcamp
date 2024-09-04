@@ -1,4 +1,4 @@
-package Sliding_Window_and_Two_Pointers;
+package SlidingWindowTwoPointers;
 
 public class Minimum_Window_Substring {
 

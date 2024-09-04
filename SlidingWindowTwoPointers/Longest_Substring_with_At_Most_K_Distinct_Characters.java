@@ -1,8 +1,6 @@
-package Sliding_Window_and_Two_Pointers;
+package SlidingWindowTwoPointers;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Longest_Substring_with_At_Most_K_Distinct_Characters {
 
