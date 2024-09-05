@@ -43,31 +43,29 @@ public class Longest_SubArray_with_Sum_K_Positives_and_Negatives {
     // Method 3 - Optimal Solution (Using HashMap)
     // Time - O(N) or O(N*logN) depending on which map data structure we are using, where N = size of the array.
     // Space - O(N) because using Map Data Structure
-    static int lenOfLongSubarr(int[] arr, int n, int k) {
-        int sum = 0;
-        int maxLen = 0;
+    static int lenOfLongSubarr(int[] arr, int k) {
+        int left = 0;  // Left pointer
+        int sum = 0;   // To track the current window sum
+        int maxLength = 0;  // To track the maximum length of subarray
 
-        HashMap<Integer, Integer> map = new HashMap<>();
+        // Traverse the array with the right pointer
+        for (int right = 0; right < arr.length; right++) {
+            // Add current element to sum
+            sum += arr[right];
 
-        for (int i=0; i<n; i++) {
-            sum = sum + arr[i];
+            // While sum exceeds k, shrink the window from the left
+            while (sum > k && left <= right) {
+                sum -= arr[left];
+                left++;
+            }
 
+            // If we get a sum equal to k, update maxLength
             if (sum == k) {
-                maxLen = Math.max(maxLen, i+1);
-            }
-
-            int rem = sum - k;
-
-            if (map.containsKey(rem)) {
-                int len = i - map.get(rem);
-                maxLen = Math.max(maxLen, len);
-            }
-
-            if (!map.containsKey(sum)) {
-                map.put(sum, i);
+                maxLength = Math.max(maxLength, right - left + 1);
             }
         }
-        return maxLen;
+
+        return maxLength;
     }
 
     // Main Function
