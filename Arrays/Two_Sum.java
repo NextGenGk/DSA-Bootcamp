@@ -8,7 +8,7 @@ public class Two_Sum {
     // Brute Force
 //    public static boolean twoSum(int[] arr, int target) {
 //        for (int i=0; i< arr.length; i++) {
-//            for (int j=0; j< arr.length; j++) {
+//            for (int j=i+1; j< arr.length; j++) {
 //                if(arr[i] + arr[j] == target) {
 //                    return true;
 //                }
@@ -43,7 +43,7 @@ public class Two_Sum {
                 return new int[]{map.get(mainTarget), i};
             }
             else {
-                map.put(nums[i], i);
+                map.put(first, i);
             }
         }
         return new int[]{-1, -1};
