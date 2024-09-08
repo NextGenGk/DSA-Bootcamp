@@ -14,7 +14,7 @@ public class Lemonade_Change {
         int five = 0;
         int ten = 0;
 
-        // Loop through each bill in the input array
+        // Loop through each bill in the given input array
         for (int i = 0; i < bills.length; i++) {
             if (bills[i] == 5) {
                 five++; // Accept $5 bill, no change needed
@@ -73,7 +73,7 @@ If the customer pays with a 10$ bill, we check if there is at least one 5$ bill 
 provide change and decrement the counter.
 
 If the customer uses a 20$ bill, we provide change using 5$ and 10$ bills or with three 5$ bills.
-If at any point, we are not able to provide the required change we return false.
+If at any point, we are notto provide the required change we return false.
 
 Otherwise, if we successfully serve all customers with the correct change, we can return true.
 
