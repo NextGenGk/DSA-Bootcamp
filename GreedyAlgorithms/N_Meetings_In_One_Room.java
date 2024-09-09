@@ -6,6 +6,13 @@ import java.util.Comparator;
 
 public class N_Meetings_In_One_Room {
 
+    // Method 1 : Optimal Solution
+    // Time Complexity: O(N) to iterate through every position and insert them in a data structure.
+    // O(N log N)  to sort the data structure in ascending order of end time. O(n)  to iterate through
+    // the positions and check which meeting can be performed.
+    // Overall : O(N) +O(N log N) + O(N) ~ O(N log N)
+    // Space Complexity: O(N)  since we used an additional data structure for storing the start time,
+    // end time, and meeting no.
     static class Meeting {
         int start;   // The start time of the meeting
         int end;     // The end time of the meeting
