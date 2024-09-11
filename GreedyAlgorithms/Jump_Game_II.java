@@ -21,6 +21,7 @@ public class Jump_Game_II {
             return Integer.MAX_VALUE;
         }
 
+        // Count the minimum numbers of jump
         int minJumps = Integer.MAX_VALUE;
         // Try all jumps from 1 to nums[i]
         for (int jump = 1; jump <= nums[index]; jump++) {
