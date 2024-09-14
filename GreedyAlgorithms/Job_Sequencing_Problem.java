@@ -2,7 +2,7 @@ package GreedyAlgorithms;
 
 import java.util.Arrays;
 
-public class Job_Scheduling_Problem {
+public class Job_Sequencing_Problem {
 
     // Job Class
     static class Job {
