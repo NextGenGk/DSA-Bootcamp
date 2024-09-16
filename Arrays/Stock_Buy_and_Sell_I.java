@@ -5,37 +5,35 @@ public class Stock_Buy_and_Sell_I {
 
     // Method 1: Brute Force
     // Time - O(N^2), Space - O(1)
-//    static int maximize (int[] arr, int n) {
-//        int maxProfit = 0;
-//        for (int i=0; i<n; i++) {
-//            for (int j=i+1; j<n; j++) {
-//                if (arr[j] - arr[i] > maxProfit) {
-//                    maxProfit = arr[j] - arr[i];
-//                }
-//            }
-//        }
-//        return maxProfit;
-//    }
+   static int maximize (int[] arr, int n) {
+       int maxProfit = 0;
+       for (int i=0; i<n; i++) {
+           for (int j=i+1; j<n; j++) {
+               if (arr[j] - arr[i] > maxProfit) {
+                   maxProfit = arr[j] - arr[i];
+               }
+           }
+       }
+       return maxProfit;
+   }
 
     // Method 2: Better Solution (Using temp array)
     // Time - O(N), Space - O(N)
-//    static int maximize (int[] arr, int n) {
-//        int[] temp = new int[n];
-//
-//        temp[n-1] = arr[n-1];
-//
-//        for (int i=n-2; i>=0; i--) {
-//            temp[i] = Math.max(arr[i], temp[i+1]);
-//        }
-//
-//        int j = 0;
-//        int maxProfit = 0;
-//        for (int i=0; i<n; i++) {
-//            maxProfit = Math.max(maxProfit, temp[j] - arr[i]);
-//            j++;
-//        }
-//        return maxProfit;
-//    }
+   static int maximize (int[] arr, int n) {
+       int[] temp = new int[n];
+
+       temp[n-1] = arr[n-1];
+
+       for (int i=n-2; i>=0; i--) {
+           temp[i] = Math.max(arr[i], temp[i+1]);
+       }
+
+       int maxProfit = 0;
+       for (int i=0; i<n; i++) {
+           maxProfit = Math.max(maxProfit, temp[i] - arr[i]);
+       }
+       return maxProfit;
+   }
 
     // Method 3 - Optimal Solution (Using minPrice and maxProfit)
     // Time - O(N), Space - O(1)
