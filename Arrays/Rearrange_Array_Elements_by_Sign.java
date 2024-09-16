@@ -10,44 +10,44 @@ public class Rearrange_Array_Elements_by_Sign {
     // for adding those elements alternatively to the array, where N = size of the array A}.
     // Space - O(N/2 + N/2) = O(N) { N/2 space required for each of the positive and negative element arrays,
     // where N = size of the array A}.
-//    static int[] rearrange (int[] arr, int n) {
-//        ArrayList<Integer> pos = new ArrayList<>();
-//        ArrayList<Integer> neg = new ArrayList<>();
-//
-//        for (int i=0; i<n; i++){
-//            if (arr[i] >= 0)
-//                pos.add(arr[i]);
-//            else
-//                neg.add(arr[i]);
-//        }
-//
-//        for (int i=0; i<n/2; i++) {
-//            arr[2 * i] = pos.get(i);
-//            arr[2 * i + 1] = neg.get(i);
-//        }
-//        return arr;
-//    }
+   static int[] rearrange (int[] arr, int n) {
+       ArrayList<Integer> pos = new ArrayList<>();
+       ArrayList<Integer> neg = new ArrayList<>();
+
+       for (int i=0; i<n; i++){
+           if (arr[i] >= 0)
+               pos.add(arr[i]);
+           else
+               neg.add(arr[i]);
+       }
+
+       for (int i=0; i<n/2; i++) {
+           arr[2 * i] = pos.get(i);
+           arr[2 * i + 1] = neg.get(i);
+       }
+       return arr;
+   }
 
     // Method 2 - Optimal Solution (Using Extra Space)
     // Time - O(N) { O(N) for traversing the array once and substituting positives and negatives simultaneously using pointers,
     // where N = size of the array A}.
     // Space - O(N) { Extra Space used to store the rearranged elements separately in an array, where N = size of array A}.
-//    static int[] rearrange (int[] arr, int n) {
-//        int pos = 0, neg = 1;
-//        int[] temp = new int[n];
-//
-//        for (int i=0; i<n; i++) {
-//            if (arr[i] > 0) {
-//                temp[pos] = arr[i];
-//                pos += 2;
-//            }
-//            else {
-//                temp[neg] = arr[i];
-//                neg += 2;
-//            }
-//        }
-//        return temp;
-//    }
+   static int[] rearrange (int[] arr, int n) {
+       int pos = 0, neg = 1;
+       int[] temp = new int[n];
+
+       for (int i=0; i<n; i++) {
+           if (arr[i] > 0) {
+               temp[pos] = arr[i];
+               pos += 2;
+           }
+           else {
+               temp[neg] = arr[i];
+               neg += 2;
+           }
+       }
+       return temp;
+   }
 
     // Varient 2 - There’s an array ‘A’ of size ‘N’ with positive and negative elements (not necessarily equal)
     // Method 1 - Brute Force (Using Extra Space)
