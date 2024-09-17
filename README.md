@@ -74,5 +74,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 ### Contact
 
-For inquiries or feedback, please reach out via [atkola12345@gmail.com.](mailto:atkola12345@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/gauravkumar077/).
+For inquiries or feedback, please reach out via [gauravkumar4841@gmail.com.](mailto:gauravkumar4841@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/gauravkumar077/).
 
