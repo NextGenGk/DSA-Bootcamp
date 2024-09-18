@@ -32,7 +32,7 @@ public class Rearrange_Array_Elements_by_Sign {
     // Time - O(N) { O(N) for traversing the array once and substituting positives and negatives simultaneously using pointers,
     // where N = size of the array A}.
     // Space - O(N) { Extra Space used to store the rearranged elements separately in an array, where N = size of array A}.
-   static int[] rearrange (int[] arr, int n) {
+    static int[] rearrange1(int[] arr, int n) {
        int pos = 0, neg = 1;
        int[] temp = new int[n];
 
@@ -54,7 +54,7 @@ public class Rearrange_Array_Elements_by_Sign {
     // Time - O(2*N) { The worst case complexity is O(2*N) which is a combination of O(N) of traversing the array to
     // segregate into neg and pos array and O(N) for adding the elements alternatively to the main array}.
     // Space - O(N/2 + N/2) = O(N) { N/2 space required for each of the positive and negative element arrays, where N = size of the array A}.
-    static int[] rearrange (int[] arr, int n) {
+    static int[] rearrange2(int[] arr, int n) {
         ArrayList<Integer> pos = new ArrayList<>();
         ArrayList<Integer> neg = new ArrayList<>();
 

@@ -19,7 +19,7 @@ public class Stock_Buy_and_Sell_I {
 
     // Method 2: Better Solution (Using temp array)
     // Time - O(N), Space - O(N)
-   static int maximize (int[] arr, int n) {
+    static int maximize1(int[] arr, int n) {
        int[] temp = new int[n];
 
        temp[n-1] = arr[n-1];
@@ -37,7 +37,7 @@ public class Stock_Buy_and_Sell_I {
 
     // Method 3 - Optimal Solution (Using minPrice and maxProfit)
     // Time - O(N), Space - O(1)
-    static int maximize (int[] arr, int n) {
+    static int maximize2(int[] arr, int n) {
         int minPrice = arr[0];
         int maxProfit = 0;
 
