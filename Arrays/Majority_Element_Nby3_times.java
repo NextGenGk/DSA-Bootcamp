@@ -112,7 +112,7 @@ public class Majority_Element_Nby3_times {
 
     // Main Function
     public static void main(String[] args) {
-        int[] arr = {1, 1, 1, 3, 3, 2, 2, 2};
+        int[] arr = {2, 1, 1, 3, 1, 4, 5, 6};
         int n = arr.length;
 
         System.out.println(majorityElement2(arr, n));
