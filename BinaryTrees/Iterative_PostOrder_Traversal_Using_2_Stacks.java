@@ -39,7 +39,8 @@ public class Iterative_PostOrder_Traversal_Using_2_Stacks {
     // Function to perform postorder traversal
     // of a binary tree iteratively
     public static List<Integer> postOrder(TreeNode root) {
-        // Create two stacks: stack1 is used for traversal, stack2 stores the reverse of postorder traversal
+        // Create two stacks: stack1 is used for traversal, 
+        // stack2 stores the reverse of postorder traversal
         Stack<TreeNode> stack1 = new Stack<>();
         Stack<TreeNode> stack2 = new Stack<>();
 
