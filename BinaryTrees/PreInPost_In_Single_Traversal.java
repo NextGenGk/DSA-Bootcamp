@@ -39,6 +39,18 @@ public class PreInPost_In_Single_Traversal {
         }
     }
 
+    // Method 1 : Optimal Solution
+    // Time Complexity: O(3N) where N is the number of nodes in the Binary Tree. Each node is processed
+    // once for each traversal type (pre-order, in-order, and post-order). Hence, the algorithm effectively
+    // visits each node three times in total across the three traversal types.
+
+    // Space Complexity: O(4N) where N is the number of nodes in the Binary Tree. The following
+    // additional data structures are used:A stack to maintain traversal states, requiring additional
+    // space proportional to the maximum number of nodes in the stack at any point during traversal.
+    // Three vectors to store the preorder, inorder and postorder traversal. These arrays collectively
+    // occupy space proportional to the total number of nodes in the tree. Hence, 3N is added to the
+    // space complexity.
+
     // Function to perform preorder, inorder, and postorder traversal iteratively
     public static List<List<Integer>> preInPost(TreeNode root) {
         // Stack to simulate recursive traversal of the tree
