@@ -173,10 +173,10 @@ it pushes each value in separate arrays for preorder, inorder and postorder trav
 the current order and sequence. Hence, we are able to traverse the tree just once and get all three
 traversals from it.
 
-Algorithm:
+Algorithm :
 
 Step 1: Initialise a stack that holds a tree node and an integer value representing its state
-corresponding to pre order, inorder and postorder. Initialise empty arrays to store the three
+corresponding to preorder, inorder and postorder. Initialise empty arrays to store the three
 traversals as well.Check if the tree is empty. If so, return empty traversals.
 
 Step 2: Push the root node onto the stack along with its state ‘1’ (preorder) to start the traversal.
