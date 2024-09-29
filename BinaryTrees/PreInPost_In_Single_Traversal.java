@@ -26,7 +26,6 @@ public class PreInPost_In_Single_Traversal {
         }
     }
 
-
     // Pair class to store (node, number) pairs
     static class Pair {
         TreeNode node; // This holds a reference to the tree node
