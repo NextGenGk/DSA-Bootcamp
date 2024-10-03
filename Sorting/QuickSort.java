@@ -64,6 +64,12 @@ public class QuickSort {
 // an element as a pivot and partitions the given array around the picked pivot by placing
 // the pivot in its correct position in the sorted array
 
+// Idea :
+/*
+i is to find greater element than pivot.
+j is to find lesser element than pivot.
+*/
+
 // Algorithms (Approach) ->
 /*
 1. Set pivot as the element at index low in the array arr.
