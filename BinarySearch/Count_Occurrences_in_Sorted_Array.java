@@ -16,10 +16,6 @@ public class Count_Occurrences_in_Sorted_Array {
 //        return count;
 //    }
 
-//    static int count(int[] arr, int target) {
-//
-//    }
-
     // Method 2 : Optimal Solution
     // Time - O(log2N), Space - O(1) (Overall Time Complexity - (First and Last Occurrence & Count Occurrences))
 
