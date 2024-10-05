@@ -7,8 +7,12 @@ public class Find_Peak_Element {
     static int findPeak(int[] arr) {
         int n = arr.length;
 
-        if (n == 0) return 0;
+        // Edge Cases :
+        // means, there are 1 element in the given array
+        if (n == 1) return 0;
+        // means, the first element is the peak element
         if (arr[0] > arr[1]) return 0;
+        // means, the last element is the peak element
         if (arr[n-1] > arr[n-2]) return n-1;
 
         for (int i=1; i<=n-2; i++) {
@@ -25,8 +29,11 @@ public class Find_Peak_Element {
         int n = arr.length;
 
         // Seperate edge case for first and last element
+        // means, there are 1 element in the given array
         if (n == 1) return 0;
+        // means, the first element is the peak element
         if (arr[0] > arr[1]) return 0;
+        // means, the last element is the peak element
         if (arr[n-1] > arr[n-2]) return n-1;
 
         int low = 1;
