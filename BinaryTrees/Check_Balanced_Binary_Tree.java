@@ -23,6 +23,7 @@ public class Check_Balanced_Binary_Tree {
     }
 
     // Method 1 : Brute Force
+
     // Time Complexity: O(N2) where N is the number of nodes in the Binary Tree. This arises as
     // we calculate the height of each node and to calculate the height for each node, we traverse
     // the tree which is proportional to the number of nodes. Since this calculation is performed
