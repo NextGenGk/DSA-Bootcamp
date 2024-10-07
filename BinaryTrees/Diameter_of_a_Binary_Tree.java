@@ -104,7 +104,7 @@ public class Diameter_of_a_Binary_Tree {
         return 1 + Math.max(leftHeight, rightHeight);
     }
 
-    // Main method
+    // Main Function
     public static void main(String[] args) {
         // Creating a sample binary tree
         TreeNode root = new TreeNode(1);
