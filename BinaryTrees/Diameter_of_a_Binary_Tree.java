@@ -150,9 +150,9 @@ calculate its height in the Binary Tree.
 Step 3: Recursively start traversing from the root, consider the current node to be a potential
 Curving Point and for each node:
 
-1. Recursively calculate the height of its left and right subtrees.
-2. Compute the diameter at the current node by summing heights of the left and right subtrees.
-3. Update the global variable diameter as the max of the current diameter and the
+    1. Recursively calculate the height of its left and right subtrees.
+    2. Compute the diameter at the current node by summing heights of the left and right subtrees.
+    3. Update the global variable diameter as the max of the current diameter and the
 largest diameter encountered so far.
 
 Step 4: Return the maximum diameter found during traversal as the result.
@@ -179,9 +179,9 @@ Step 2: Base Case: If the node is null, return 0 indicating the height of an emp
 
 Step 3: Recursive Function:
 
-1. Recursively calculate the height of the left subtree then height of the right subtree.
-2. Set the current diameter as the sum of left subtree, right subtree + 1 for the current level.
-3. Update the diameter with the maximum of the current diameter and the global diameter.
+    1. Recursively calculate the height of the left subtree then height of the right subtree.
+    2. Set the current diameter as the sum of left subtree, right subtree + 1 for the current level.
+        3. Update the diameter with the maximum of the current diameter and the global diameter.
 
 Step 4: After the traversal if complete, return the maximum diameter found during the traversal as the result.
  */
