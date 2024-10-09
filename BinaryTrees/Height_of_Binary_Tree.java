@@ -133,7 +133,7 @@ public class Height_of_Binary_Tree {
 
 // Output : Maximum depth of the binary tree: 5
 
-// Approach / Intuition : Recursive
+// Approach / Intuition : Recursive Approach
 /*
 The intuition behind this code is to calculate the maximum depth of a binary tree by breaking
 it down recursively. If the tree is empty, the depth is zero. Otherwise, for each node, the
