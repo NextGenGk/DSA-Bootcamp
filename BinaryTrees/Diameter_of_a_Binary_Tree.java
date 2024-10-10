@@ -181,7 +181,7 @@ Step 3: Recursive Function:
 
     1. Recursively calculate the height of the left subtree then height of the right subtree.
     2. Set the current diameter as the sum of left subtree, right subtree + 1 for the current level.
-        3. Update the diameter with the maximum of the current diameter and the global diameter.
+    3. Update the diameter with the maximum of the current diameter and the global diameter.
 
 Step 4: After the traversal if complete, return the maximum diameter found during the traversal as the result.
  */
