@@ -153,7 +153,7 @@ Curving Point and for each node:
     1. Recursively calculate the height of its left and right subtrees.
     2. Compute the diameter at the current node by summing heights of the left and right subtrees.
     3. Update the global variable diameter as the max of the current diameter and the
-largest diameter encountered so far.
+       largest diameter encountered so far.
 
 Step 4: Return the maximum diameter found during traversal as the result.
  */
