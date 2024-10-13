@@ -63,19 +63,16 @@ public class Search_in_a_2D_Matrix_II {
     public static boolean searchMatrixII(ArrayList<ArrayList<Integer>> matrix, int target) {
         int n = matrix.size();
         int m = matrix.get(0).size();
+        int row = 0, col = m - 1;
 
-        //apply binary search:
-        int low = 0, high = n * m - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            int row = mid / m, col = mid % m;
+        //traverse the matrix from (0, m-1):
+        while (row < n && col >= 0) {
             if (matrix.get(row).get(col) == target) return true;
-            else if (matrix.get(row).get(col) < target) low = mid + 1;
-            else high = mid - 1;
+            else if (matrix.get(row).get(col) < target) row++;
+            else col--;
         }
         return false;
     }
-
 
     // Main Function
     public static void main(String[] args) {
@@ -167,47 +164,64 @@ Algorithm:
 // Algorithm : Optimal Solution
 /*
 Algorithm / Intuition
-If we flatten the given 2D matrix to a 1D array, the 1D array will also be sorted. By utilizing binary search on this
-sorted 1D array to locate the ‘target’ element, we can further decrease the time complexity. T
-he flattening will be like the following:
+We can enhance this method by adjusting how we move through the matrix. Let's take a look at the four corners:
+(0, 0), (0, m-1), (n-1, 0), and (n-1, m-1). By observing these corners, we can identify variations in how we traverse the matrix.
 
-But if we really try to flatten the 2D matrix, it will take O(N x M) time complexity and extra space to store the
-1D array. In that case, it will not be the optimal solution anymore.
+Assume the given ‘target’ = 14
 
-How to apply binary search on the 1D array without actually flattening the 2D matrix:
+Observations:
 
-If we can figure out how to convert the index of the 1D array into the corresponding cell number in the 2D matrix,
-our task will be complete. In this scenario, we will use the binary search with the indices of the
-imaginary 1D array, ranging from 0 to (NxM)-1(total no. of elements in the 1D array = NxM). When
-comparing elements, we will convert the index to the cell number and retrieve the element. Thus
-we can apply binary search in the imaginary 1D array.
+1. Cell (0, 0): Assume we are starting traversal from (0, 0) and we are searching for 14. Now, 
+this row and column are both sorted in increasing order. So, we cannot determine, how to move i.e. 
+row-wise or column-wise. That is why, we cannot start traversal from (0, 0).
 
-How to convert 1D array index to the corresponding cell of the 2D matrix:
+2. Cell (0, m-1): Assume we are starting traversal from (0, m-1) and we are searching for 14. Now, in 
+this case, the row is in decreasing order and the column is in increasing order. Therefore, if we
+start traversal from (0, m-1), in the following way, we can easily determine how we should move.
 
-We will use the following formula:
+    1. If matrix[0][m-1] > target: We should move row-wise.
+    2. If matrix[0][m-1] < target: We need bigger elements and so we should move column-wise.
 
-If index = i, and no. of columns in the matrix = m, the index i corresponds to the cell with
-row = i / m and col = i % m. More formally, the cell is (i / m, i % m)(0-based indexing).
+3. Cell (n-1, m-1): Assume we are starting traversal from (n-1, m-1) and we are searching for 14. Now, 
+this row and column are both sorted in decreasing order. So, we cannot determine, how to move i.e. 
+row-wise or column-wise. That is why, we cannot start traversal from (n-1, m-1).
 
-The range of the indices of the imaginary 1D array is [0, (NxM)-1] and in this range, we will apply binary search.
+4. Cell (n-1, 0): Assume we are starting traversal from (n-1, 0) and we are searching for 14. Now, in this case,
+the row is in increasing order and the column is in decreasing order. Therefore, if we start traversal from 
+(n-1, 0), in the following way,  we can easily determine how we should move.
+
+    1. If matrix[n-1][0] < target: We should move row-wise.
+    2. If matrix[n-1][0] > target: We need smaller elements and so we should move column-wise.
+
+From the above observations, it is quite clear that we should start the matrix traversal from either the cell 
+(0, m-1) or (n-1, 0).
+
+Note: Here in this approach, we have chosen the cell (0, m-1) to start with. You can choose otherwise.
+
+Using the above observations, we will start traversal from the cell (0, m-1) and every time we will compare
+the target with the element at the current cell. After comparing we will either eliminate the row or the column 
+accordingly like the following:
+
+If current element > target: We need the smaller elements to reach the target. But the column is in increasing 
+order and so it contains only greater elements. So, we will eliminate the column by decreasing the current column 
+value by 1(i.e. col--) and thus we will move row-wise.
+
+If current element < target: In this case, We need the bigger elements to reach the target. But the row is 
+in decreasing order and so it contains only smaller elements. So, we will eliminate the row by increasing the 
+current row value by 1(i.e. row++) and thus we will move column-wise.
 
 Algorithm:
 
-1. Place the 2 pointers i.e. low and high: Initially, we will place the pointers. The pointer low will point to 0 and
-the high will point to (NxM)-1.
-2. Calculate the ‘mid’: Now, inside the loop, we will calculate the value of ‘mid’ using the following formula:
-mid = (low+high) // 2 ( ‘//’ refers to integer division)
-3. Eliminate the halves based on the element at index mid: To get the element, we will convert index ‘mid’ to the
-corresponding cell using the above formula. Here no. of columns of the matrix = M.
-row = mid / M, col = mid % M.
-    1. If matrix[row][col] == target: We should return true here, as we have found the ‘target’.
-    2. If matrix[row][col] < target: In this case, we need bigger elements. So, we will eliminate the left half and
-    consider the right half (low = mid+1).
-    3. If matrix[row][col] > target: In this case, we need smaller elements. So, we will eliminate the right half and
-    consider the left half (high = mid-1).
-4. Steps 2-3 will be inside a while loop and the loop will end once low crosses high
-(i.e. low > high). If we are out of the loop, we can say the target does not exist in the matrix.
-So, we will return false.
+1. As we are starting from the cell (0, m-1), the two variables i.e. ‘row’ and ‘col’ will point to 0 and m-1 respectively.
+2. We will do the following steps until row < n and col >= 0(i.e. while(row < n && col >= 0)):
+    1. If matrix[row][col] == target: We have found the target and so we will return true.
+    2. If matrix[row][col] > target: We need the smaller elements to reach the target. But the column is in
+    increasing order and so it contains only greater elements. So, we will eliminate the column by decreasing
+    the current column value by 1(i.e. col--) and thus we will move row-wise.
+    3. If matrix[row][col] < target: In this case, We need the bigger elements to reach the target. But the
+    row is in decreasing order and so it contains only smaller elements. So, we will eliminate the row by 
+    increasing the current row value by 1(i.e. row++) and thus we will move column-wise.
+3. . If we are outside the loop without getting any matching element, we will return false.
  */
 
 // Striver (Video Explanation) : https://youtu.be/JXU4Akft7yk
