@@ -37,6 +37,26 @@ public class Find_Peak_Element_II {
         }
         return index;
     }
+
+    // Main Function
+    public static void main(String[] args) {
+        // Define a 2D matrix
+        int[][] mat = {
+                {10, 20, 15},
+                {21, 30, 14},
+                {7, 16, 32}
+        };
+
+        // Call the findPeakGrid method
+        int[] peak = findPeakGrid(mat);
+
+        // Print the result
+        if (peak[0] != -1 && peak[1] != -1) {
+            System.out.println("Peak element found at: (" + peak[0] + ", " + peak[1] + ")");
+        } else {
+            System.out.println("No peak element found.");
+        }
+    }
 }
 
 // Algorithm : Optimal Solution
