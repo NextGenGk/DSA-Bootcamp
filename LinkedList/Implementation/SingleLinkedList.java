@@ -34,114 +34,157 @@ public class SingleLinkedList {
         }
 
         // Inserting In Singly Linked List
-        public void insertInLinkedList(int nodeValue, int location) {
-            Node node = new Node(); // create a node
-            node.value = nodeValue; //  which takes a node value
+        static void insert(int location, int nodeValue) {
+            Node node = new Node();
+            node.data = nodeValue;
+        
+            // Case 1: If the list is empty, create a new singly linked list
             if (head == null) {
                 createSinglyLinkedList(nodeValue);
                 return;
-            } else if (location == 0) {
-                node.next = head;   // if we created ,then we are going to check location parameter
-                head = node;        // it means going to reference the first node then we change
-                // the head reference to point this node over here
-            } else if (location >= size) {
+            }
+            // Case 2: Insert at the beginning of the list
+            else if (location == 0) {
+                node.next = head;
+                head = node;
+            }
+            // Case 3: Insert at the end of the list
+            else if (location >= size) {
                 node.next = null;
                 tail.next = node;
                 tail = node;
-            } else {
+            }
+            // Case 4: Insert at a specific location within the list
+            else {
                 Node tempNode = head;
                 int index = 0;
+        
+                // Traverse the list to the node just before the desired insertion point
                 while (index < location - 1) {
-                    tempNode = tempNode.next; //tempNode is set to tempNode.next because each time we are going to next node
+                    tempNode = tempNode.next;
                     index++;
                 }
-                Node nextNode = tempNode.next;
-                tempNode.next = node;
-                node.next = nextNode;
+        
+                // Insert the new node at the desired location
+                node.next = tempNode.next; // Point the new node's `next` to the current node at the location
+                tempNode.next = node; // Point the previous node's `next` to the new node
             }
+        
+            // Increment the size after inserting the node
             size++;
         }
 
         // Traversing in Singly Linked List
-        public void traverse() {
+        static void traverse() {
+            // Check if the list is empty
             if (head == null) {
-                System.out.println("SLL does not exist");
-            } else {
-                Node tempNode = head;
-                for (int i = 0; i < size; i++) {
-                    System.out.print(tempNode.value);
-                    if (i != size - 1) {
-                        System.out.print("-->");
-                    }
-                    tempNode = tempNode.next;
-                }
+                System.out.println("The list is empty.");
+                return;
             }
-            System.out.println("\n");
+        
+            // Start at the head node
+            Node tempNode = head;
+        
+            // Traverse through the list
+            while (tempNode != null) {
+                // Print the data of the current node
+                System.out.print(tempNode.data + " -> ");
+        
+                // Move to the next node
+                tempNode = tempNode.next;
+            }
+        
+            // End of the list
+            System.out.println("null");
         }
+
 
         // Searching in Singly Linked List
-        public boolean searchValue(int nodeValue) {
-            if (head != null) {
-                Node tempNode = head;
-                for (int i = 0; i < size; i++) {
-                    if (tempNode.value == nodeValue) {
-                        System.out.print("Node Found ! at location: " + i + "\n");
-                        return true;
-                    }
-                    tempNode = tempNode.next;
+        static boolean search(int value) {
+            // Start at the head node
+            Node tempNode = head;
+        
+            // Traverse the list
+            int index = 0;
+            while (tempNode != null) {
+                // Check if the current node contains the value
+                if (tempNode.data == value) {
+                    System.out.println("Value " + value + " found at position " + index);
+                    return true;
                 }
-
+        
+                // Move to the next node
+                tempNode = tempNode.next;
+                index++;
             }
-            System.out.println("Node Not Found! ");
+        
+            // If the value is not found
+            System.out.println("Value " + value + " not found in the list.");
             return false;
         }
-
 
         // Deletion in Singly Linked List
         public void deleteNode(int location) {
             if (head == null) {
-                System.out.println("Sll does not exist");
+                System.out.println("The singly linked list does not exist.");
                 return;
-            } else if (location == 0) {
-                // more than one element
-                // head.next reference point ot the second node
+            }
+        
+            // Case 1: Deleting the first node (head)
+            if (location == 0) {
                 head = head.next;
                 size--;
-                if (size == 0) {             // only one element, tail and head points to null
+        
+                // If the list becomes empty, update tail to null as well
+                if (size == 0) {
                     tail = null;
                 }
-            } else if (location >= size) {     // deletion at ending
+            }
+        
+            // Case 2: Deleting the last node (tail)
+            else if (location >= size - 1) {
                 Node tempNode = head;
-                for (int i = 0; i < size - 1; i++) {
+        
+                // Traverse to the second-last node
+                for (int i = 0; i < size - 2; i++) {
                     tempNode = tempNode.next;
                 }
-                if (tempNode == head)           // only one element
-                {
-                    tail = null;
+        
+                // If there's only one node left
+                if (tempNode == head && head.next == null) {
                     head = null;
-                    size--;
-                    return;
+                    tail = null;
+                } else {
+                    // Set the next of the second-last node to null
+                    tempNode.next = null;
+                    tail = tempNode;
                 }
-                tempNode.next = null;           // more than one element
-                tail = tempNode;
                 size--;
-            } else {
+            }
+        
+            // Case 3: Deleting a node at a specific location (between head and tail)
+            else {
                 Node tempNode = head;
+        
+                // Traverse to the node just before the target node
                 for (int i = 0; i < location - 1; i++) {
                     tempNode = tempNode.next;
                 }
+        
+                // Bypass the node at the given location
                 tempNode.next = tempNode.next.next;
                 size--;
             }
         }
 
-        // All Single list deleted
-        public void deleteSLL() {
-            head = null;
-            tail = null;
-            System.out.println("deleted successfully");
+        // Delete the entire singly linked list
+            public void deleteSLL() {
+                head = null;
+                tail = null;
+                size = 0; // Reset the size to zero
+                System.out.println("The singly linked list has been deleted successfully.");
+            }
         }
-    }
 
     public static void main(String[] args) {
         SinglyLinkedList sLL = new SinglyLinkedList();
