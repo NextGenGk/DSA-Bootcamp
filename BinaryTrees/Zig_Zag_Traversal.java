@@ -140,7 +140,6 @@ achieved by introducing a `leftToRight` flag which controls the order in which n
 are processed at each level. When `leftToRight` is true, nodes are inserted into the
 level vector from left to right and when its false, nodes are inserted right to left.
 
-
 Algorithm:
 
 Step 1: Initialise an empty queue data structure to store the nodes during traversal.
