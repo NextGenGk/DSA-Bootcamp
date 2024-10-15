@@ -6,7 +6,7 @@ public class Find_Peak_Element_II {
     // Time : 0(log2m * n) where (m is high & n is low)
     // Reason : O(log2m) for binary search & O(n) for search max element in a column
     // Space : O(1) as we are not using any extra space.
-    public int[] findPeakGrid(int[][] mat) {
+    public static int[] findPeakGrid(int[][] mat) {
         int low = 0;
         int high = mat[0].length - 1;
         while (low <= high) {
