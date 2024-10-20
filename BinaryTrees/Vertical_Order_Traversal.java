@@ -157,7 +157,6 @@ level coordinate, denoted as 'y', represents the depth or level of a node in the
 It signifies the vertical position of a node within the hierarchy of levels. As we
 traverse down the tree, the 'y' value increases, indicating a deeper level.
 
-
 We create a map that serves as our organisational structure. The map is based on the
 vertical and level information of each node. The vertical information, represented by
 'x', signifies the vertical column, while the level information, denoted as 'y', acts
