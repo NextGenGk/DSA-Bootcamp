@@ -20,6 +20,7 @@ This repository is designed to assist learners with improving their coding skill
 
 - Arrays
 - Binary Search
+- Binary Trees
 - Linked Lists
 - Stacks
 - Queues
