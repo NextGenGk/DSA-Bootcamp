@@ -97,7 +97,7 @@ public class Vertical_Order_Traversal {
         System.out.println(); // Extra newline for better formatting
     }
 
-// Main Function
+    // Main Function
     public static void main(String[] args) {
         // Creating a sample binary tree
         TreeNode root = new TreeNode(1);
