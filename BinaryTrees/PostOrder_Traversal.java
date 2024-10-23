@@ -75,7 +75,7 @@ public class PostOrder_Traversal {
 
 // Output : Postorder Traversal: 4 5 2 3 1
 
-// Approach / Intuition
+// Approach / Intuition : Optimal Solution
 /*
 Left -> Right -> Root
 
