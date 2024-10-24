@@ -24,6 +24,8 @@ public class Vertical_Order_Traversal {
         }
     }
 
+    // Method 1 : Optimal Solution
+    
     // Helper class to store node and its vertical and level info
     static class NodeInfo {
         TreeNode node; // The tree node
