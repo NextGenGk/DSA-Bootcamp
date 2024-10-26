@@ -100,7 +100,7 @@ public class Top_View_of_Binary_Tree {
         return ans;
     }
 
-    // Pair Class to Store Custom Pair
+    // Pair Class to Store Custom Pair of (Node, Vertical Line Number)
     static class Pair<T, I extends Number> {
         public final TreeNode node;
         public final int line;
