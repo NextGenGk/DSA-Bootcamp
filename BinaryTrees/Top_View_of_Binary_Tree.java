@@ -34,6 +34,7 @@ public class Top_View_of_Binary_Tree {
     // It acquires space proportional to the number of nodes in the level it is exploring
     // hence in the worst case of a balanced binary tree, the queue will have at most N/2
     // nodes which is the maximum width.
+
     // Additionally, the map is used to store the top view nodes based on their vertical
     // positions hence its complexity will also be proportional to the greatest width level.
     // In the worst case, it may have N/2 entries as well.
@@ -51,49 +52,50 @@ public class Top_View_of_Binary_Tree {
 
         // Map to store the top view nodes
         // based on their vertical positions
-        Map<Integer, Integer> mpp = new TreeMap<>();
+        Map<Integer, Integer> map = new TreeMap<>();
 
         // Queue for BFS traversal, each element
         // is a pair containing node
         // and its vertical position
-        Queue<Pair<TreeNode, Integer>> q = new LinkedList<>();
+        Queue<Pair<TreeNode, Integer>> queue = new LinkedList<>();
 
         // Push the root node with its vertical
         // position (0) into the queue
-        q.add(new Pair<>(root, 0));
+        queue.add(new Pair<>(root, 0));
 
         // BFS traversal
-        while (!q.isEmpty()) {
+        while (!queue.isEmpty()) {
             // Retrieve the node and its vertical
             // position from the front of the queue
-            Pair<TreeNode, Integer> pair = q.poll();
+            Pair<TreeNode, Integer> pair = queue.poll();
             TreeNode node = pair.node;
             int line = pair.line;
 
             // If the vertical position is not already
             // in the map, add the node's data to the map
-            if (!mpp.containsKey(line)) {
-                mpp.put(line, node.val);
+            if (!map.containsKey(line)) {
+                map.put(line, node.val);
             }
 
             // Process left child
             if (node.left != null) {
                 // Push the left child with a decreased
                 // vertical position into the queue
-                q.add(new Pair<>(node.left, line - 1));
+                queue.add(new Pair<>(node.left, line - 1));
             }
 
             // Process right child
             if (node.right != null) {
                 // Push the right child with an increased
                 // vertical position into the queue
-                q.add(new Pair<>(node.right, line + 1));
+                queue.add(new Pair<>(node.right, line + 1));
             }
         }
 
         // Transfer values from the
         // map to the result list
-        for (int value : mpp.values()) {
+        // You can this statement also : ans.addAll(map.values())
+        for (int value : map.values()) {
             ans.add(value);
         }
 
