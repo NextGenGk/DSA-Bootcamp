@@ -166,7 +166,6 @@ Step 3:Initialise a queue to perform breadth first traversal. Each element of th
 is the node of the binary tree along with its vertical coordinate. Enqueue the root node
 into the queue with its vertical position initialised to 0.
 
-
 Step 4: While the queue is not empty, pop the front node of the queue and for this node:
 
     1. Get its vertical position. If this vertical position is not in the map, add the node’s data
