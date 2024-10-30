@@ -153,4 +153,70 @@ Step 3:The final result of the isSymmetric function is based on the outcome of t
 function `isSymmetricUtil` recursive function for the roots left and right subtree.
  */
 
+// Note :
+/*
+        1
+       / \
+      2   2
+     / \ / \
+    3  4 4  3
+
+Here’s a breakdown of how the recursive calls work on this tree:
+
+1. Initial Call:
+
+    1. isSymmetric(root) initiates the check with isSymmetricUtil(root.left, root.right).
+    2. In our example, this means calling isSymmetricUtil(2, 2) where both nodes are the
+       left and right children of the root 1.
+
+2. First Level of Recursion:
+
+    1. isSymmetricUtil(2, 2) checks if root1.data == root2.data (both 2), which is true.
+    2. Then it makes two recursive calls:
+        1. isSymmetricUtil(root1.left, root2.right) → isSymmetricUtil(3, 3)
+        2. isSymmetricUtil(root1.right, root2.left) → isSymmetricUtil(4, 4)
+
+3. Second Level of Recursion:
+
+    1. isSymmetricUtil(3, 3):
+
+        1. root1.data == root2.data is true (both 3).
+        2. It then makes two more recursive calls:
+            1. isSymmetricUtil(root1.left, root2.right) → isSymmetricUtil(null, null)
+               (since 3 has no children).
+            2. isSymmetricUtil(root1.right, root2.left) → isSymmetricUtil(null, null).
+        3. Both calls return true because both nodes are null.
+        4. So isSymmetricUtil(3, 3) returns true.
+
+    2. isSymmetricUtil(4, 4):
+
+        1. root1.data == root2.data is true (both 4).
+        2. It then makes two recursive calls:
+            1. isSymmetricUtil(root1.left, root2.right) → isSymmetricUtil(null, null).
+            2. isSymmetricUtil(root1.right, root2.left) → isSymmetricUtil(null, null).
+        3. Both calls return true because both nodes are null.
+        4. So isSymmetricUtil(4, 4) returns true.
+
+4. Returning to First Level:
+
+    1. Since both isSymmetricUtil(3, 3) and isSymmetricUtil(4, 4) returned true,
+    the initial call isSymmetricUtil(2, 2) also returns true.
+
+5. Final Result:
+
+    1. Since the initial call returned true, the tree is symmetric, and isSymmetric(root)
+       returns true.
+
+    Summary of Recursive Call Stack:
+    1. isSymmetricUtil(1.left, 1.right) → isSymmetricUtil(2, 2)
+    2. isSymmetricUtil(2.left, 2.right) → isSymmetricUtil(3, 3)
+    3. isSymmetricUtil(3.left, 3.right) → isSymmetricUtil(null, null) → true
+    4. isSymmetricUtil(3.right, 3.left) → isSymmetricUtil(null, null) → true
+    5. isSymmetricUtil(2.right, 2.left) → isSymmetricUtil(4, 4)
+    6. isSymmetricUtil(4.left, 4.right) → isSymmetricUtil(null, null) → true
+    7. isSymmetricUtil(4.right, 4.left) → isSymmetricUtil(null, null) → true
+
+Each call returns true up the stack, confirming the tree is symmetric.
+ */
+
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=nKggNAiEpBE
