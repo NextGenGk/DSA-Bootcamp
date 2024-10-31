@@ -139,7 +139,6 @@ Step 1:Initialise an empty vector to store the current path.
 Step 2: Initialise a recursive function to explore the Binary Tree using Depth First
 Search. Starting from the root node, we traverse the tree using the inorder sequence.
 
-
 Base Case: If the current node is null then we return false, indicating the end of
 the path. If the current node’s data value is equal to the given node then we return
 the true, signifying the completion of the path.
