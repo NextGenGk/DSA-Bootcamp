@@ -24,6 +24,11 @@ public class Lowest_Common_Ancestor {
         }
     }
 
+    // Method 1 : Optimal Solution
+
+    // Time complexity: O(N) where n is the number of nodes.
+    // Space complexity: O(N), auxiliary space.
+
     // Function to find the
     // Lowest Common Ancestor of Two Node
     static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
