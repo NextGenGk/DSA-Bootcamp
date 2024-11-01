@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Print_Root_To_Node {
 
+    // Definition for a binary tree node.
     static class TreeNode {
         int val;
         TreeNode left;
