@@ -27,9 +27,11 @@ public class Print_Root_To_Node {
         }
     }
 
+    // Method 1 : Optimal Solution
+
     // Time Complexity: O(N) where N is the number of nodes in the binary tree
     // as each node of the binary tree is visited exactly once in the inorder traversal.
-    //
+
     // Space Complexity: O(N), where N is the number of nodes in the binary tree.
     // This is because the stack can potentially hold all nodes in the tree when
     // dealing with a skewed tree (all nodes have only one child), consuming space
