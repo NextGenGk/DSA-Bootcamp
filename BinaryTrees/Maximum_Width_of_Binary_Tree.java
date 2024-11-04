@@ -27,6 +27,7 @@ public class Maximum_Width_of_Binary_Tree {
         }
     }
 
+    // Create a custom pair class to store pairs
     static class Pair<T, I extends Number> {
         TreeNode node;
         int num;
