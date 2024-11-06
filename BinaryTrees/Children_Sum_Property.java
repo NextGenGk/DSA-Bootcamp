@@ -24,6 +24,8 @@ public class Children_Sum_Property {
         }
     }
 
+    // Method 1 : Optimal Solution
+
     // Time Complexity: O(N) where N is the number of nodes in the binary tree.
     // This is because the algorithm traverses each node exactly once, performing
     // constant-time operations at each node.
