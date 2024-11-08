@@ -79,19 +79,19 @@ public class Children_Sum_Property {
         // Calculate the total sum of the
         // values of the left and right
         // children, if they exist.
-        int tot = 0;
+        int total = 0;
         if (root.left != null) {
-            tot += root.left.val;
+            total += root.left.val;
         }
         if (root.right != null) {
-            tot += root.right.val;
+            total += root.right.val;
         }
 
         // If either left or right child
         // exists, update the current node's
         // value with the total sum.
         if (root.left != null || root.right != null) {
-            root.val = tot;
+            root.val = total;
         }
     }
 
