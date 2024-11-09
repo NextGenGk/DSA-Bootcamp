@@ -25,6 +25,23 @@ public class Right_Side_View_of_a_Binary_Tree {
         }
     }
 
+    // Method 1 : Optimal Solution
+
+    // Time Complexity: O(log2N) where N is the number of nodes in the Binary Tree. 
+    // This complexity arises as we travel along the height of the Binary Tree. 
+    // For a balanced binary tree, the height is log2N but in the worst case when 
+    // the tree is skewed, the complexity becomes O(N).
+
+    // Space Complexity : O(log2N) where N is the number of nodes in the Binary Tree. 
+    // This complexity arises because we store the leftmost and rightmost nodes in an additional vector. 
+    // The size of this result vector is proportional to the height of the Binary Tree 
+    // which will be log2N when the tree is balanced and O(N) in the worst case of a skewed tree.
+
+    // O(H): Recursive Stack Space is used to calculate the height of the tree at each 
+    // node which is proportional to the height of the tree.
+    // The recursive nature of the getHeight function, which incurs space on the call 
+    // stack for each recursive call until it reaches the leaf nodes or the height of the tree.
+
     // Function to return the Right view of the binary tree
     public static List<Integer> rightsideView(TreeNode root) {
         // List to store the result
