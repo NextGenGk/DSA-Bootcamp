@@ -156,22 +156,24 @@ public class Print_All_Nodes_at_Distance_K {
 
 // Algorithm / Intuition : Optimal Solution
 /*
-    Example Usage:
-    Consider the following binary tree:
-            3
-           / \
-          5   1
-         / \ / \
-        6  2 0  8
-          / \
-         7   4
+Example Usage:
+Consider the following binary tree:
 
-    If the target node is `5` and `k = 2`, the function should return `[7, 4, 1]` because these nodes are 2 distance units away from the target node `5`.
-
-    Explanation:
-    - From node `5` at distance 0:
-      - At distance 1: nodes `3` (parent), `6` (left child), `2` (right child).
-      - At distance 2: nodes `1` (parent of `3`), `7`, `4` (children of `2`).
+                        3
+                       / \
+                      5   1
+                     / \ / \
+                    6  2 0  8
+                      / \
+                     7   4
+            
+If the target node is `5` and `k = 2`, the function should return `[7, 4, 1]`
+because these nodes are 2 distance units away from the target node `5`.
+            
+Explanation:
+- From node `5` at distance 0:
+- At distance 1: nodes `3` (parent), `6` (left child), `2` (right child).
+- At distance 2: nodes `1` (parent of `3`), `7`, `4` (children of `2`).                                
  */
 
 // Algorithm :
