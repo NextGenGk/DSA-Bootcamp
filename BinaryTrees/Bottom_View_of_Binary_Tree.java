@@ -149,7 +149,6 @@ centre are assigned positive vertical indexes. As we move to the right, the vert
 increases. Nodes to the left of the tree’s centre are assigned negative vertical indexes.
 As we move to the left, the vertical index decreases.
 
-
 We use a map data structure to store the nodes corresponding to each vertical level of the
 tree as the map automatically sorts the elements based on their ascending value. Against
 each vertical level, the node lowest in the tree at that vertical level is added by
