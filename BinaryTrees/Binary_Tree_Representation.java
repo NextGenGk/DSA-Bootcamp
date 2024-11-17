@@ -2,6 +2,7 @@ package BinaryTrees;
 
 public class Binary_Tree_Representation {
 
+    // Node Class
     static class Node {
         // Stores the value of the node
         int data;
