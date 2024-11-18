@@ -56,6 +56,7 @@ public class Minimum_TimeTaken_to_Burn_Binary_Tree {
         queue.offer(target);
         visited.add(target);
 
+        // Initialize the time
         int time = 0;
 
         // Level-order BFS traversal to burn the tree.
