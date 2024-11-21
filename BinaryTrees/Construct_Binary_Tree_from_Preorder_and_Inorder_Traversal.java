@@ -46,6 +46,11 @@ public class Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
     // Function to build a binary tree
     // from preorder and inorder traversals
     public static TreeNode buildTree(Vector<Integer> preorder, Vector<Integer> inorder) {
+        // Edge Case
+        if (inorder.size() != preorder.size()) {
+            return null;
+        }
+
         // Create a map to store indices
         // of elements in the inorder traversal
         Map<Integer, Integer> inMap = new HashMap<>();
