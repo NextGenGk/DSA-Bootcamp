@@ -51,6 +51,7 @@ public class Construct_Binary_Tree_from_Postorder_and_Inorder_Traversal {
         TreeNode root = buildTree(postorder, 0, postorder.size() - 1, inorder,
                 0, inorder.size() - 1, inMap);
 
+        // Finally, return the root of the tree
         return root;
     }
 
