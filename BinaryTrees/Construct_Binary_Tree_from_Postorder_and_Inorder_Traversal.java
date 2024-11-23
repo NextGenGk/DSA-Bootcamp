@@ -134,7 +134,7 @@ Postorder Vector: 40 50 20 60 30 10
 Inorder of Unique Binary Tree Created: 40 20 50 10 60 30
  */
 
-// Algorithm / Intuition :
+// Algorithm / Intuition : Optimal Solution
 /*
 Construct Binary Tree from Inorder and Preorder is a prerequisite to this problem as the
 core approach remains recursively focusing on creating one node at a time We identify a
