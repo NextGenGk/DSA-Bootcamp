@@ -51,6 +51,7 @@ public class Right_Side_View_of_a_Binary_Tree {
         // to populate the right-side view
         recursionRight(root, 0, res);
 
+        // Finally, return the result
         return res;
     }
 
