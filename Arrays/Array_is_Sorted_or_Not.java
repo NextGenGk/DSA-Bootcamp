@@ -68,4 +68,4 @@ public class Array_is_Sorted_or_Not {
    (i.e N = 0 or N = 1). Then we will return True else return False.
  */
 
-// Striver Video Link : https://youtu.be/37E9ckMDdTk
+// Striver's (Video Explanation) : https://youtu.be/37E9ckMDdTk
