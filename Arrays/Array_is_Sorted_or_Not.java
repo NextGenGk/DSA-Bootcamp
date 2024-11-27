@@ -42,7 +42,8 @@ public class Array_is_Sorted_or_Not {
     }
 }
 
-// Output: Array is not sorted
+// Output:
+// Array is not sorted
 
 // Algorithm: Brute Force (Using Two For Loops)
 /*
