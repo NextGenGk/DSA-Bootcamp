@@ -129,7 +129,7 @@ public class Construct_Binary_Tree_from_Postorder_and_Inorder_Traversal {
 
 // Output :
 /*
-Output: Inorder Vector: 40 20 50 10 60 30
+Inorder Vector: 40 20 50 10 60 30
 Postorder Vector: 40 50 20 60 30 10
 Inorder of Unique Binary Tree Created: 40 20 50 10 60 30
  */
