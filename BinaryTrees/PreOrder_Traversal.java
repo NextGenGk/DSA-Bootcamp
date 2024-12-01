@@ -20,6 +20,8 @@ public class PreOrder_Traversal {
         }
     }
 
+    // Method 1 : Optimal Solution
+
     // Function to perform preorder traversal
     // of the tree and store values in 'arr'
     static void preorder(Node root, List<Integer> arr) {
