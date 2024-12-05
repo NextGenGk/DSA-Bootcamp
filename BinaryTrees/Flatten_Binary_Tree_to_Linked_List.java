@@ -243,8 +243,6 @@ public class Flatten_Binary_Tree_to_Linked_List {
         System.out.println();
 
         // Uncomment the desired solution to test
-        // Solution_Brute.flatten(root);
-        // Solution_Better.flatten(root);
         new Solution_Optimal().flatten(root);
 
         System.out.print("Binary Tree After Flatten: ");
