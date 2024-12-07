@@ -100,10 +100,7 @@ public class Symmetric_Binary_Tree {
     }
 }
 
-// Output :
-/*
-Binary Tree (Inorder): 3 2 4 1 4 2 3 This Tree is Symmetrical
- */
+// Output : Binary Tree (Inorder): 3 2 4 1 4 2 3 This Tree is Symmetrical
 
 // Algorithm / Intuition : Optimal Solution
 /*
