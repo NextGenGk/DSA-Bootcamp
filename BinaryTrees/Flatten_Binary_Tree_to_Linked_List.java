@@ -257,7 +257,6 @@ public class Flatten_Binary_Tree_to_Linked_List {
 
 // Algorithm / Intuition : Brute Force
 /*
-Algorithm / Intuition
 The intuition behind this approach is to perform a reverse pre-order traversal where,
 instead of simply visiting nodes, we flatten the tree into a linked list as we traverse it.
 
