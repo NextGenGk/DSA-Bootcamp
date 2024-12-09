@@ -144,7 +144,7 @@ public class Check_Balanced_Binary_Tree {
         root.left.right.right.right = new TreeNode(7);
 
         // Creating an instance of the Solution class
-//        Solution solution = new Solution();
+        // Solution solution = new Solution();
 
         // Checking if the tree is balanced
         if (isBalanced(root)) {
@@ -193,7 +193,6 @@ postorder traversal operates in a bottom-up manner, calculating subtree informat
 to the parent node. We save on time complexity of calling the height of children over and over
 again as we have access to the height information of both subtrees when evaluating the balance
 condition at the parent.
-
 
 This also allows early detection of unbalanced nodes without unnecessary height calculate if a
 subtree is already found to be unbalanced, hence avoiding unnecessary function calls.
