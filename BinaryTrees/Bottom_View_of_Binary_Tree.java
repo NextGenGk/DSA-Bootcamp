@@ -33,7 +33,6 @@ public class Bottom_View_of_Binary_Tree {
     // The main space consuming data structure is the queue used for BFS traversal. It acquires
     // space proportional to the number of nodes in the level it is exploring hence in the worst
     // case of a balanced binary tree, the queue will have at most N/2 nodes which is the maximum width.
-
     // Additionally, the map is used to store the top view nodes based on their vertical positions
     // hence its complexity will also be proportional to the greatest width level. In the worst case,
     // it may have N/2 entries as well.
