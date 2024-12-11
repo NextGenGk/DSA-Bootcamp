@@ -122,7 +122,7 @@ public class Morris_Preorder_Traversal {
 
         List<Integer> preorder = getPreorder(root);
 
-        System.out.print("Binary Tree Morris Preorder Traveral: ");
+        System.out.print("Binary Tree Morris Preorder Traversal: ");
         for (int i = 0; i < preorder.size(); i++) {
             System.out.print(preorder.get(i) + " ");
         }
