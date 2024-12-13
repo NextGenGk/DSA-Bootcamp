@@ -138,8 +138,10 @@ public class Children_Sum_Property {
 }
 
 // Output :
-// Binary Tree before modification: 6 5 7 2 4 3 0 1 8,
-// Binary Tree after Children Sum Property: 6 17 7 11 4 25 0 8 8
+/*
+Binary Tree before modification: 6 5 7 2 4 3 0 1 8,
+Binary Tree after Children Sum Property: 6 17 7 11 4 25 0 8 8
+*/
 
 // Algorithm / Intuition : Optimal Solution
 /*
