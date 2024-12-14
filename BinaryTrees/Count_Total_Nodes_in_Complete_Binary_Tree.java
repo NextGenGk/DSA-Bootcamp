@@ -191,8 +191,10 @@ compare the left and right heights of the tree.
 
 1. If the left height equals right height, it indicates that the last level
 is completely filled.
+
 2. If the left height does not equal right height, the last level is not
 completely filled.
+
 3. In the case where left height and right height differ, we can employ a
 recursive approach. We recursively calculate the number of nodes in the left
 subtree and in the right subtree , and then return the total count as
