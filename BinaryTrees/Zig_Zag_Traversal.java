@@ -128,8 +128,10 @@ public class Zig_Zag_Traversal {
 }
 
 // Output :
-// Input: root = [3,9,20,null,null,15,7]
-// Output: [[3],[20,9],[15,7]]
+/*
+Input: root = [3,9,20,null,null,15,7]
+Output: [[3],[20,9],[15,7]]
+*/
 
 // Algorithm / Intuition : Optimal Solution
 /*
