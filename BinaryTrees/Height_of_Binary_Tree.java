@@ -25,6 +25,8 @@ public class Height_of_Binary_Tree {
         }
     }
 
+    // Method 1 : Optimal Solution
+
     // Recursive Approach
 
     // Time Complexity : The time complexity of this algorithm is O(N),
@@ -133,8 +135,10 @@ public class Height_of_Binary_Tree {
 
 // Output : Maximum depth of the binary tree: 5
 
-// Approach / Intuition : Recursive Approach
+// Approach / Intuition : Optimal Solution
 /*
+Recursive Approach
+
 The intuition behind this code is to calculate the maximum depth of a binary tree by breaking
 it down recursively. If the tree is empty, the depth is zero. Otherwise, for each node, the
 function calculates the maximum depth of its left and right subtrees. The depth of the current
