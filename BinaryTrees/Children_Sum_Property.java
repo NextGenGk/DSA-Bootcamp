@@ -31,7 +31,6 @@ public class Children_Sum_Property {
     // constant-time operations at each node.
 
     // Space Complexity: O(N) where N is the number of nodes in the Binary Tree.
-
     // In the worst case scenario the tree is skewed and the auxiliary recursion
     // stack space would be stacked up to the maximum height of the tree, resulting
     // in a space complexity of O(N).
