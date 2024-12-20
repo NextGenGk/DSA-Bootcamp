@@ -31,6 +31,8 @@ public class Construct_Binary_Tree_from_Postorder_and_Inorder_Traversal {
         }
     }
 
+    // Method 1 : Optimal Solution
+
     // Function to build a binary tree
     // from preorder and inorder traversals
     public static TreeNode buildTree(Vector<Integer> postorder, Vector<Integer> inorder) {
