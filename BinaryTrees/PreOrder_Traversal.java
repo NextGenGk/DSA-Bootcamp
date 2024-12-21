@@ -22,6 +22,12 @@ public class PreOrder_Traversal {
 
     // Method 1 : Optimal Solution
 
+    // Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary
+    // tree is visited exactly once.
+
+    // Space Complexity: O(N) where N is the number of nodes in the binary tree as an additional space
+    // for array is allocated to store the values of all ‘N’ nodes of the binary tree.
+
     // Function to perform preorder traversal
     // of the tree and store values in 'arr'
     static void preorder(Node root, List<Integer> arr) {
@@ -82,13 +88,4 @@ Root -> Left -> Right
 
 Pre-order Traversal is done by visiting the root node first, then recursively do a pre-order traversal
 of the left subtree, followed by a recursive pre-order traversal of the right subtree.
- */
-
-// Time & Space Complexity :
-/*
-Time Complexity: O(N) where N is the number of nodes in the binary tree as each node of the binary
-tree is visited exactly once.
-
-Space Complexity: O(N) where N is the number of nodes in the binary tree as an additional space
-for array is allocated to store the values of all ‘N’ nodes of the binary tree.
  */
