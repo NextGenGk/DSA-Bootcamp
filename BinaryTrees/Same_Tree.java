@@ -78,7 +78,8 @@ public class Same_Tree {
     }
 }
 
-// Output : The binary trees are identical.
+// Output : 
+// The binary trees are identical.
 
 // Approach / Intuition : Optimal Solution
 /*
