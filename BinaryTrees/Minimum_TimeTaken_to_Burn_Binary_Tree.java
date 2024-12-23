@@ -147,6 +147,7 @@ public class Minimum_TimeTaken_to_Burn_Binary_Tree {
 
 // Output : Minimum time to burn the tree: 3
 
+// Algorithm / Intuition : Optimal Solution
 /*
 Intuition:
 The task is to calculate the minimum time it takes to burn a binary tree starting from a given target node.
