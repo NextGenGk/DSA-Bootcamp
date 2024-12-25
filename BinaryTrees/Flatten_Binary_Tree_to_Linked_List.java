@@ -252,8 +252,10 @@ public class Flatten_Binary_Tree_to_Linked_List {
 }
 
 // Output :
-// Binary Tree Preorder: 1 2 4 5 6 3 8 7,
-// Binary Tree After Flatten: 1 2 4 5 6 3 8 7
+/*
+Binary Tree Preorder: 1 2 4 5 6 3 8 7,
+Binary Tree After Flatten: 1 2 4 5 6 3 8 7
+*/
 
 // Algorithm / Intuition : Brute Force
 /*
