@@ -50,6 +50,11 @@ public class Search_in_BST {
         printInOrder(root.right);
     }
 
+    // Method 1 : Optimal Solution
+
+    // Time Complexity : O(H) |(height of the tree, for a skewed tree H = N)
+    // Space Complexity : O(1) No extra memory is used, except for a few variables.
+
     // This function searches for a node with
     // a specified value in a Binary Search Tree (BST).
     public static TreeNode searchBST(TreeNode root, int val) {
