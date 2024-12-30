@@ -201,6 +201,7 @@ the node to its left child.
 Case 3: Node with Both Left and Right Children:
 If the node has both left and right children, we cannot simply remove it. The algorithm
 follows the "inorder predecessor" or "inorder successor" approach:
+
     1. We find the rightmost node in the left subtree, which is the largest node in the left subtree.
     2. We attach the original right subtree to this rightmost node (as it will be the
        largest node, it doesn’t violate the BST property).
