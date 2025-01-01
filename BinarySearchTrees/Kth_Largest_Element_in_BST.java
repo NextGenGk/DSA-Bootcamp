@@ -84,12 +84,12 @@ public class Kth_Largest_Element_in_BST {
     // In the case of a balanced tree, the space complexity is O(logN), where n is the no. of nodes
     // n the worst case (unbalanced tree), it could be O(N)
 
-    class Solution {
-        private int count = 0; // Counter to track visited nodes
-        private int result = -1; // Variable to store the k-th largest value
+    public class Solution {
+        private static int count = 0; // Counter to track visited nodes
+        private static int result = -1; // Variable to store the k-th largest value
 
         // Helper method for reverse inorder traversal
-        private void reverseInorder(TreeNode root, int k) {
+        private static void reverseInorder(TreeNode root, int k) {
             if (root == null || count >= k) {
                 return;
             }
@@ -111,10 +111,27 @@ public class Kth_Largest_Element_in_BST {
         }
 
         // Main method to find the k-th largest element
-        public int kthLargestOptimal(TreeNode root, int k) {
+        public static int kthLargestOptimal(TreeNode root, int k) {
             reverseInorder(root, k); // Perform reverse inorder traversal
             return result; // Return the k-th largest element
         }
+    }
+
+    // Main Function
+    public static void main(String[] args) {
+        // Construct BST
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(8);
+        root.left.left = new TreeNode(2);
+        root.left.right = new TreeNode(4);
+        root.right.left = new TreeNode(7);
+        root.right.right = new TreeNode(9);
+
+        int k = 3;
+
+        // Find the k-th largest element
+        System.out.println("K-th Largest Element: " + Solution.kthLargestOptimal(root, k)); // Output: 7
     }
 }
 

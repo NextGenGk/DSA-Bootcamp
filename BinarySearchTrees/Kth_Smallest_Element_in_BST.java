@@ -37,7 +37,7 @@ public class Kth_Smallest_Element_in_BST {
     // Space Complexity : O(N)
 
     // Helper method for preorder traversal
-    private void preOrderTraversal(TreeNode root, List<Integer> elements) {
+    private static void preOrderTraversal(TreeNode root, List<Integer> elements) {
         if (root == null) {
             return;
         }
@@ -49,7 +49,7 @@ public class Kth_Smallest_Element_in_BST {
     }
 
     // Main method to find k-th smallest element
-    public int kthSmallestBrute(TreeNode root, int k) {
+    public static int kthSmallestBrute(TreeNode root, int k) {
         List<Integer> elements = new ArrayList<>(); // To store all elements of the tree
         preOrderTraversal(root, elements); // Collect all elements in preorder
         Collections.sort(elements); // Sort the collected elements
@@ -62,14 +62,14 @@ public class Kth_Smallest_Element_in_BST {
     // Space Complexity: O(N) for the list storing all elements.
 
     // Inorder traversal to collect all elements in sorted order
-    private void inorder(TreeNode root, List<Integer> result) {
+    private static void inorder(TreeNode root, List<Integer> result) {
         if (root == null) return;
         inorder(root.left, result);
         result.add(root.val);
         inorder(root.right, result);
     }
 
-    public int kthSmallestBetter(TreeNode root, int k) {
+    public static int kthSmallestBetter(TreeNode root, int k) {
         List<Integer> sortedElements = new ArrayList<>();
         inorder(root, sortedElements); // Get sorted elements
         return sortedElements.get(k - 1); // Return the k-th smallest (0-indexed)
@@ -84,17 +84,17 @@ public class Kth_Smallest_Element_in_BST {
     // In the case of a balanced tree, the space complexity is O(logN), where n is the no. of nodes
     // n the worst case (unbalanced tree), it could be O(N)
 
-    class Solution {
-        private int count = 0; // To keep track of the number of nodes visited
-        private int result = -1; // To store the k-th smallest element
+    public class Solution {
+        private static int count = 0; // To keep track of the number of nodes visited
+        private static int result = -1; // To store the k-th smallest element
 
-        private void inorder(TreeNode root, int k) {
+        private static void inorder(TreeNode root, int k) {
             if (root == null) return;
 
             // Traverse left subtree
             inorder(root.left, k);
 
-            // Increment counter and check if current node is the k-th smallest
+            // Increment counter and check if the current node is the k-th smallest
             count++;
             if (count == k) {
                 result = root.val;
@@ -105,10 +105,28 @@ public class Kth_Smallest_Element_in_BST {
             inorder(root.right, k);
         }
 
-        public int kthSmallest(TreeNode root, int k) {
+        public static int kthSmallestOptimal(TreeNode root, int k) {
+            count = 0; // Reset count for each call
+            result = -1; // Reset result for each call
             inorder(root, k);
             return result; // Return the k-th smallest element
         }
+    }
+
+    public static void main(String[] args) {
+        // Create the binary search tree
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(8);
+        root.left.left = new TreeNode(2);
+        root.left.right = new TreeNode(4);
+        root.right.left = new TreeNode(7);
+        root.right.right = new TreeNode(9);
+
+        int k = 3;
+
+        // Find and print the k-th smallest element
+        System.out.println("Kth Smallest: " + Solution.kthSmallestOptimal(root, k)); // Should print the 3rd smallest element
     }
 }
 
