@@ -48,7 +48,7 @@ public class Kth_Smallest_Element_in_BST {
         preOrderTraversal(root.right, elements);
     }
 
-    // Main method to find k-th smallest element
+    // Find k-th smallest element function
     public static int kthSmallestBrute(TreeNode root, int k) {
         List<Integer> elements = new ArrayList<>(); // To store all elements of the tree
         preOrderTraversal(root, elements); // Collect all elements in preorder
