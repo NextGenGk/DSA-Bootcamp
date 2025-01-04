@@ -80,10 +80,7 @@ public class Lowest_Common_Ancestor_in_a_BST {
     }
 }
 
-// Output :
-/*
-Lowest Common Ancestor of nodes 2 and 4 is: 2
- */
+// Output : Lowest Common Ancestor of nodes 2 and 4 is: 2
 
 // Algorithm / Intuition : Optimal Solution
 /*
