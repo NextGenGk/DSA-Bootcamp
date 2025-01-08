@@ -251,4 +251,4 @@ Step 3: hasNext() function:
    ii. If the stack is empty, there are no more nodes to iterate over, hence return false.
  */
 
-// Striver's (Video Explanation) :
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=D2jMcmxU4bs
