@@ -10,16 +10,25 @@ public class BubbleSortRecursive {
             return;
         }
 
+        // Optimization
+        int didSwap = 0; // If no swap occurs, then the array is already sorted.
+
         for(int i=0; i<n-1; i++) {
             if(arr[i] > arr[i+1]) {
                 // Swap
                 int temp = arr[i];
                 arr[i] = arr[i+1];
                 arr[i+1] = temp;
+
+                didSwap = 1; // If any swap occurs, then set didSwap = 1
             }
         }
 
-        //Range reduced after recursion:
+        if (didSwap == 0) { // If didSwap = 0, then the array is already sorted.
+            return;
+        }
+
+        // Range reduced after recursion:
         bubbleSort(arr, n-1);
     }
 
@@ -41,7 +50,7 @@ public class BubbleSortRecursive {
     }
 }
 
-// In Bubble Sort - Push the maximum element to the last, using adjacent swaps
+// In Bubble Sort - Push the maximum element to the last, using adjacent swaps.
 
 // Output:
 // 1 2 4 8 9

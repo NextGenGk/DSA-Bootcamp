@@ -7,6 +7,9 @@ public class BubbleSort {
     public void bubbleSort(int[] arr) {
         int n = arr.length;
 
+        // Optimization
+        int didSwap = 0; // If no swap occurs, then the array is already sorted.
+
         // Outer Loop
         for (int i = 0; i < n - 1; i++) {
             // Inner Loop for all elements (So, each time biggest element is placed on last cell)
@@ -17,7 +20,12 @@ public class BubbleSort {
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
+
+                    didSwap = 1; // If any swap occurs, then set didSwap = 1
                 }
+            }
+            if (didSwap == 0) { // If didSwap = 0, then the array is already sorted.
+                break;
             }
         }
     }
