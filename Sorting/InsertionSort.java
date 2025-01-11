@@ -30,9 +30,9 @@ public class InsertionSort {
 
     // Main Method
     public static void main(String[] args) {
-        InsertionSort is = new InsertionSort();
         // Create an object of Insertion Sort Class
-        int[] arr = {1,9,4,6,8};
+        InsertionSort is = new InsertionSort();
+        int[] arr = {8, 4, 1, 5, 9, 2};
         is.insertionSort(arr);
         printArray(arr);
     }
