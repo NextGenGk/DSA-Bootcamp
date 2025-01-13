@@ -1,7 +1,5 @@
 package Arrays;
 
-import java.util.HashSet;
-
 public class Remove_Duplicates_from_Sorted_Array {
 
     // Method 1 - Brute Force (Using HashSet)
@@ -24,6 +22,7 @@ public class Remove_Duplicates_from_Sorted_Array {
     // Method 2 - Optimal Solution (Two Pointer Approach)
     // Time - O(N), Space - O(1)
     static int removeDuplicates(int[] nums) {
+        // first element is always unique
         int i = 0;
         for (int j=1; j<nums.length; j++) {
             if (nums[i] != nums[j]) {
