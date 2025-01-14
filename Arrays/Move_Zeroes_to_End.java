@@ -37,26 +37,32 @@ public class Move_Zeroes_to_End {
     // Method 2 - Optimal Solution (Using 2 Pointers)
     // Time - O(N), Space - O(1)
     static void pushZerosToEnd(int[] arr, int n) {
-        // place the pointer j:
+        // Initialize a pointer j to -1, which will keep track of the position of the first zero
         int j = -1;
-        for (int i=0; i<n; i++) {
+        
+        // Iterate through the array to find the first zero
+        for (int i = 0; i < n; i++) {
+            // Check if the current element is zero
             if (arr[i] == 0) {
+                // Set j to the current index and break the loop
                 j = i;
                 break;
             }
         }
-
-        //  non-zero elements
+        
+        // If no zeros are found, there is no need to move anything, so return
         if (j == -1) return;
-
-        // Move the pointers i and j
-        // and swap accordingly:
-        for (int i=j+1; i<n; i++) {
+        
+        // Iterate through the array starting from the element after the first zero
+        for (int i = j + 1; i < n; i++) {
+            // If the current element is not zero, swap it with the element at index j
             if (arr[i] != 0) {
-                // swap arr[i] and arr[j]
+                // Swap the elements at indices i and j
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
+                
+                // Move the pointer j to the next position
                 j++;
             }
         }
