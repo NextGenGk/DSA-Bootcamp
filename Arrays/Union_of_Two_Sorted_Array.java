@@ -47,41 +47,49 @@ public class Union_of_Two_Sorted_Array {
      */
     public static ArrayList<Integer> findUnion(int[] arr1, int[] arr2, int n, int m)
     {
-        // Create a list
+        // Create a list to store the union of the two arrays
         ArrayList<Integer> list = new ArrayList<>();
-
-        // pointers
+    
+        // Pointers for both arrays
         int i = 0;
         int j = 0;
-
+    
+        // Traverse both arrays simultaneously
         while (i < n && j < m) {
             if (arr1[i] <= arr2[j]) {
-                if (list.size() == 0 || list.get(list.size()-1) != arr1[i]) {   // Case 1 and 2
+                // Add arr1[i] to the list if it is not already the last element added
+                // This handles the case where elements are duplicated in arr1
+                if (list.size() == 0 || list.get(list.size()-1) != arr1[i]) {
                     list.add(arr1[i]);
                 }
                 i++;
-            }
-            else {
-                if (list.size() == 0 || list.get(list.size()-1) != arr2[j]) {   // Case 3
+            } else {
+                // Add arr2[j] to the list if it is not already the last element added
+                // This handles the case where elements are duplicated in arr2
+                if (list.size() == 0 || list.get(list.size()-1) != arr2[j]) {
                     list.add(arr2[j]);
                 }
                 j++;
             }
         }
-
-        while (i < n) {     // If any element left in arr1
+    
+        // If any elements are left in arr1, add them to the list
+        while (i < n) {
             if (list.get(list.size()-1) != arr1[i]) {
                 list.add(arr1[i]);
             }
             i++;
         }
-
-        while (j < m) {     // If any element left in arr2
+    
+        // If any elements are left in arr2, add them to the list
+        while (j < m) {
             if (list.get(list.size()-1) != arr2[j]) {
                 list.add(arr2[j]);
             }
             j++;
         }
+        
+        // Return the list containing the union of arr1 and arr2
         return list;
     }
 
