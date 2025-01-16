@@ -105,8 +105,7 @@ public class Longest_SubArray_with_Sum_K_Positives_and_Zeroes {
     }
 }
 
-// Output-
-// 4
+// Output: 4
 
 // Algorithm: Brute Force (Using 3 for Loops)
 /*
