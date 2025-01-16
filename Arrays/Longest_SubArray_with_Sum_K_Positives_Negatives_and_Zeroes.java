@@ -1,8 +1,6 @@
 package Arrays;
 
-import java.util.HashMap;
-
-public class Longest_SubArray_with_Sum_K_Positives_and_Negatives {
+public class Longest_SubArray_with_Sum_K_Positives_Negatives_and_Zeroes {
 
     // Method 1 - Brute Force (Using 3 for Loops)
 //    // Time - O(N^3), Space - O(1)
