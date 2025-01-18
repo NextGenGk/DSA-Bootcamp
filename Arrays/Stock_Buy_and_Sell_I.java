@@ -87,9 +87,9 @@ public class Stock_Buy_and_Sell_I {
  */
 
 // Algorithm: Optimal Solution (Using minPrice and maxProfit)
-// Idea : To sell this everyday, and we will see what was the minimum price before this day
-// Suppose if we sell on 4th day, then we will see what was the minimum price before 4th day
-// and then we will see what is the profit on 4th day, after selling
+// Idea : In order to maximize the profit, we need to minimize the cost price and maximize the selling price. 
+// So at every step, we keep track of the minimum buy price of stock encountered so far. For every price, 
+// we subtract with the minimum so far and if we get more profit than the current result, we update the result.
 /*
 1. Initialize minPrice = arr[0]
 2. Initialize maxProfit = 0
