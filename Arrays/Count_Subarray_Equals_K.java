@@ -111,7 +111,7 @@ public class Count_Subarray_Equals_K {
 }
 
 // Output:
-// 6
+// 5
 
 // Algorithm: Brute Force (Using 3 for Loops)
 /*
