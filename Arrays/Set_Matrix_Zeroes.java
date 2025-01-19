@@ -83,7 +83,7 @@ public class Set_Matrix_Zeroes {
 
     // Method 2 : Better Solution
     // Time : O(2 * n * m), Space : O(n) + O(m)
-    static void setMatrixZeroes(int[][] matrix, int n, int m) {
+    static void setMatrixZeroes11(int[][] matrix, int n, int m) {
         int[] row = new int[n];
         int[] col = new int[m];
 
