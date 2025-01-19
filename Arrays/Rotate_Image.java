@@ -31,21 +31,27 @@ public class Rotate_Image {
     static void rotateImage1(int[][] matrix) {
         int n = matrix.length;
 
-        // Transpose the matrix
+        // Step 1: Transpose the matrix
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i; j < n; j++) {
+                // Swap matrix[i][j] with matrix[j][i]
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
             }
         }
 
-        // Reverse each row
+        // Step 2: Reverse each row
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n / 2; j++) {
-                int temp = matrix[i][j];
-                matrix[i][j] = matrix[i][n - 1 - j];
-                matrix[i][n - 1 - j] = temp;
+            int start = 0;
+            int end = n - 1;
+            while (start < end) {
+                // Swap elements in the row to reverse the order
+                int temp = matrix[i][start];
+                matrix[i][start] = matrix[i][end];
+                matrix[i][end] = temp;
+                start++;
+                end--;
             }
         }
 
@@ -63,7 +69,7 @@ public class Rotate_Image {
         int[][] matrix = {{1,2,3},
                 {4,5,6},
                 {7,8,9}};
-        rotateImage(matrix);
+        rotateImage1(matrix);
     }
 }
 
