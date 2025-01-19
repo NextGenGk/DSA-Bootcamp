@@ -3,7 +3,7 @@ package Arrays;
 public class Set_Matrix_Zeroes {
 
     // Method 1 : Brute Force
-    // Time : O(N * M * (N + M)), Space : O(1)
+    // Time : O(N * M * (N + M)), Space : O(N * M)
 //    static void setMatrixZeroes (int[][] matrix, int n, int m) {
 //        // We will be using two boolean arrays to store the rows and columns which are to be made zero
 //        boolean[] row = new boolean[n];
@@ -35,6 +35,51 @@ public class Set_Matrix_Zeroes {
 //            }
 //        }
 //    }
+
+    // Method 1 : Brute Force (New Method)
+    // Time : O(N * M * (N + M)), Space : O(1)
+    static void setMatrixZeroes(int[][] matrix, int n, int m) {
+        // First pass: Mark the rows and columns that need to be set to zero
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                // If a zero is found, mark the corresponding row and column
+                if (matrix[i][j] == 0) {
+                    markRow(matrix, n, m, i); // Mark the row
+                    markCol(matrix, n, m, j); // Mark the column
+                }
+            }
+        }
+
+        // Second pass: Update the matrix to set the marked rows and columns to zero
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                // If an element is marked with -1, set it to zero
+                if (matrix[i][j] == -1) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+    }
+
+    // Mark Row
+    static void markRow(int[][] matrix, int n, int m, int i) {
+        for (int j = 0; j < m; j++) {
+            // Mark non-zero elements in the row with -1
+            if (matrix[i][j] != 0) {
+                matrix[i][j] = -1;
+            }
+        }
+    }
+
+    // Mark Col
+    static void markCol(int[][] matrix, int n, int m, int j) {
+        for (int i = 0; i < n; i++) {
+            // Mark non-zero elements in the column with -1
+            if (matrix[i][j] != 0) {
+                matrix[i][j] = -1;
+            }
+        }
+    }
 
     // Method 2 : Better Solution
     // Time : O(2 * n * m), Space : O(n) + O(m)
@@ -146,4 +191,4 @@ public class Set_Matrix_Zeroes {
 3. Iterate over the matrix again and make the rows and columns zero.
  */
 
-// Striver's Video Explanation : https://www.youtube.com/watch?v=N0MgLvceX7M
+// Striver's Video Explanation : https://www.youtube.com/watch?v=N0MgLvceX7M (Please refer the video)
