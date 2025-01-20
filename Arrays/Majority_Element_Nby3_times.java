@@ -74,10 +74,12 @@ public class Majority_Element_Nby3_times {
         int count2 = 0, ele2 = Integer.MIN_VALUE;
 
         for (int i=0; i<n; i++) {
+            // element2 is not holding the same element of element1
             if (count1 == 0 && arr[i] != ele2) {
                 count1 = 1;
                 ele1 = arr[i];
             }
+            // element1 is not holding the same element of element2
             else if (count2 == 0 && arr[i] != ele1) {
                 count2 = 1;
                 ele2 = arr[i];
