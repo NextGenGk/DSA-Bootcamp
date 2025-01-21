@@ -30,6 +30,7 @@ public class Merge_Overlapping_Intervals {
 
             // if answer list is not empty and end time of last interval is greater
             // than or equal to start time of current interval, then skip this interval
+            // means (lies in the merge interval, so skip this interval)
             if (!ans.isEmpty() && end <= ans.get(ans.size()-1).get(1)) {
                 continue;
             }
