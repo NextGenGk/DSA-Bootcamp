@@ -40,6 +40,7 @@ public class Find_First_Occurrence {
         return ans;
     }
 
+    // Main Function
     public static void main(String[] args) {
         int target = 13;
         int[] arr = {3,4,13,13,13,13,13,20,40};
