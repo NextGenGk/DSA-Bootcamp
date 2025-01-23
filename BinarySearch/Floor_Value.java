@@ -7,6 +7,7 @@ public class Floor_Value {
     static int floor(int[] arr, int target) {
         int n = arr.length;
 
+        // initialize pointers
         int low = 0;
         int high = n-1;
         int ans = -1;
@@ -40,7 +41,7 @@ public class Floor_Value {
     }
 }
 
-// Output -
+// Output :
 // 20
 
 // Floor Value Means -
