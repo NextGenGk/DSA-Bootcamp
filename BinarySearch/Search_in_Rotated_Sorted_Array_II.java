@@ -107,3 +107,5 @@ first index, and high will point to the last index.
 6. Once, the ‘mid’ points to the target, the index will be returned.
 7. This process will be inside a loop and the loop will continue until low crosses high. If no index is found, we will return -1.
  */
+
+// Striver (Video Explanation) : https://www.youtube.com/watch?v=w2G2W8l__pc
