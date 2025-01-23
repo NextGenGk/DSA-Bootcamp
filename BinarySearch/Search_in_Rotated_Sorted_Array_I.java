@@ -90,7 +90,9 @@ first index, and high will point to the last index.
  */
 
 /*
- Idea - Identify the sorted part (either left or right) & then check the given element between
+ Idea : In Simple Binary Search : we need to check on one halves and based on the one halves we go either left/right. 
+ Idea : But in this problem we need to check on both tha halves because we don't know our answer element lies in left/right halves.
+ So, first we need to identify the sorted part (either left or right) & then check the given element between
  low to mid & mid to high
  */
 
