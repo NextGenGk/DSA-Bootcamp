@@ -1,6 +1,6 @@
 package BitManipulation;
 
-public class Clear_Bit {
+public class Clear_ith_Bit {
 
 
     // Method 1 : Optimal Solution
