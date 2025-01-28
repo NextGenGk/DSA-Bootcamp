@@ -119,7 +119,8 @@ on the answer space.
 
 Algorithm:
 1. If m*k > arr.size: This means we have insufficient flowers. So, it is impossible to make m bouquets and we will return -1.
-2. Next, we will find the maximum element i.e. max(arr[]), and the minimum element i.e. min(arr[]) in the array.
+2. Next, we will find the maximum element (means if we need to bloom all flower we need the maximum one) i.e. max(arr[]), 
+   and the minimum element (In order to bloom atleast one flower we need th minimum one) i.e. min(arr[]) in the array.
 3. Place the 2 pointers i.e. low and high: Initially, we will place the pointers. The pointer low will point to
    min(arr[]) and the high will point to max(arr[]).
 4. Calculate the ‘mid’: Now, inside the loop, we will calculate the value of ‘mid’ using the following formula:
