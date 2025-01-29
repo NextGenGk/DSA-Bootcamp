@@ -312,4 +312,43 @@ Eliminate the halves based on the following conditions:
 The steps from 4-6 will be inside a loop and the loop will continue until low crosses high.
  */
 
+// Notes (Edge Case)
+/*
+// For r1 
+Consider two sorted arrays:
+
+a = [1, 3, 8] with length n1 = 3
+b = [7, 9, 10, 11] with length n2 = 4
+The merged array would look like this: [1, 3, 7, 8, 9, 10, 11].
+
+Using the binary search algorithm to find the median:
+
+Total length n = n1 + n2 = 7
+left = (n1 + n2 + 1) / 2 = 4
+During one of the iterations of the binary search, the value of mid1 might exceed the length of array a. For example, 
+if mid1 = 3, which is equal to n1, the algorithm will set r1 to Integer.MAX_VALUE as mid1 is not less than n1. 
+This ensures that the comparison correctly handles the case where the index is out of bounds.
+
+The code ensures that if mid1 goes beyond the bounds of array a, r1 is set to Integer.MAX_VALUE, which effectively 
+ignores the value of r1 in comparisons, maintaining the correct order of elements.
+
+// For r2
+Consider two sorted arrays:
+
+a = [1, 3, 8] with length n1 = 3
+b = [7, 9, 10, 11] with length n2 = 4
+The merged array would look like this: [1, 3, 7, 8, 9, 10, 11].
+
+Using the binary search algorithm to find the median:
+
+Total length n = n1 + n2 = 7
+left = (n1 + n2 + 1) / 2 = 4
+During one of the iterations of the binary search, the value of mid2 might exceed the length of array b. For example,
+if mid2 = 4, which is equal to n2, the algorithm will set r2 to Integer.MAX_VALUE as mid2 is not less than n2. 
+This ensures that the comparison correctly handles the case where the index is out of bounds.
+
+The code ensures that if mid2 goes beyond the bounds of array b, r2 is set to Integer.MAX_VALUE, which effectively 
+ignores the value of r2 in comparisons, maintaining the correct order of elements.
+*/
+
 // Video Explanation (Striver) : https://youtu.be/NTop3VTjmxk
