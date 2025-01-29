@@ -8,7 +8,7 @@ public class Kth_Missing_Positive_Number {
 //        int n = arr.length;
 //
 //        for (int i=0; i<n; i++) {
-//            if (arr[i] < k) k++;
+//            if (arr[i] <= k) k++;
 //            else break;
 //        }
 //        return k;
