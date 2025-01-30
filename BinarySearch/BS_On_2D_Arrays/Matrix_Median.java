@@ -86,7 +86,7 @@ public class Matrix_Median {
 }
 
 // Output :
-// The median of the row-wise sorted matrix is: 3
+// The median of the row-wise sorted matrix is: 5
 
 // Algorithm : Brute Force
 /*
