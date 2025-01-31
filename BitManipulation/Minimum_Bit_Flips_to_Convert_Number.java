@@ -3,6 +3,11 @@ package BitManipulation;
 public class Minimum_Bit_Flips_to_Convert_Number {
 
     // Method 1 : Optimal Solution
+    // Time Complexity: O(31) as the time complexity remains constant and because the
+    // loop iterates over a fixed number of bit positions which is constant and independent
+    // of the magnitude of the input numbers.
+    // Space Complexity: O(1) as the algorithm uses only a constant amount of extra space.
+    // The space required does not increase with the size of input numbers.
     // Function to calculate the number of
     // flips needed to convert the start
     // number to the goal number
