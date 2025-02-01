@@ -275,3 +275,7 @@ In summary, the algorithm uses bit manipulation to efficiently keep track of the
 bit position. By utilizing XOR and AND operations, it can identify the bits of the single number
 that appears only once in the array while ignoring the bits that appear multiple times.
  */
+
+// Note : https://leetcode.com/problems/single-number-ii/solutions/3714928/bit-manipulation-c-java-python-beginner-friendly/
+
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=5Bb2nqA40JY
