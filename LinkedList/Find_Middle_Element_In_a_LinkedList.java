@@ -24,6 +24,13 @@ public class Find_Middle_Element_In_a_LinkedList {
         }
     }
 
+    // Method 1 : Brute Force
+    // Time Complexity: O(N+N/2) The code traverses the entire linked list once and half times and then only half
+    // in the second iteration, first to count the number of nodes then then again to get to the middle node.
+    // Therefore, the time complexity is linear, O(N + N/2) ~ O(N).
+    // Space Complexity : O(1) There is constant space complexity because it uses a constant amount of extra
+    // space regardless of the size of the linked list. We only use a few variables to keep track of the middle
+    // position and traverse the list, and the memory required for these variables does not depend on the size of the list.
     // Function to find the middle node of a linked list
     static Node findMiddle(Node head) {
         // If the list is empty or has
@@ -33,46 +40,36 @@ public class Find_Middle_Element_In_a_LinkedList {
             return head;
         }
 
+        int count = 0;  // Step 1: Initialize a counter to count total nodes
         Node temp = head;
-        int count = 0;
 
-        // Count the number of nodes
-        // in the linked list.
+        // Step 2: First pass - Count total number of nodes in the linked list
         while (temp != null) {
-            count++;
-            temp = temp.next;
+            count++;  // Increment count for each node
+            temp = temp.next;  // Move to the next node
         }
 
-        // Calculate the position of the middle node.
-        int mid = count / 2 + 1;
-        temp = head;
+        // Step 3: Find the middle index (integer division automatically rounds down)
+        int middleIndex = count / 2;
 
-        while (temp != null) {
-            mid = mid - 1;
-
-            // Check if the middle
-            // position is reached.
-            if (mid == 0) {
-                // break out of the loop
-                // to return temp
-                break;
-            }
-            // Move temp ahead
-            temp = temp.next;
+        // Step 4: Second pass - Traverse again to reach the middle node
+        temp = head;  // Reset temp to head
+        for (int i = 0; i < middleIndex; i++) {
+            temp = temp.next;  // Move forward until reaching the middle index
         }
 
-        // Return the middle node.
+        // Step 5: Return the middle node
         return temp;
     }
 
-    // Method 1 : Brute Force
-    // Time Complexity: O(N+N/2) The code traverses the entire linked list once and half times and then only half
-    // in the second iteration, first to count the number of nodes then then again to get to the middle node.
-    // Therefore, the time complexity is linear, O(N + N/2) ~ O(N).
-    // Space Complexity : O(1) There is constant space complexity because it uses a constant amount of extra
-    // space regardless of the size of the linked list. We only use a few variables to keep track of the middle
-    // position and traverse the list, and the memory required for these variables does not depend on the size of the list.
-
+    // Method 2 : Optimal Solution
+    // Time Complexity: O(N/2) The algorithm requires the 'fast' pointer to reach the end of the list which it does
+    // after approximately N/2 iterations (where N is the total number of nodes). Therefore, the maximum number of
+    // iterations needed to find the middle node is proportional to the number of nodes in the list, making the
+    // time complexity linear, or O(N/2) ~ O(N).
+    // Space Complexity : O(1) There is constant space complexity because it uses a constant amount of extra space
+    // regardless of the size of the linked list. We only use a few variables to keep track of the middle position and
+    // traverse the list, and the memory required for these variables does not depend on the size of the list.
     static Node findMiddle1(Node head) {
         // Initialize the slow pointer to the head.
         Node slow = head;
@@ -92,16 +89,6 @@ public class Find_Middle_Element_In_a_LinkedList {
         // which is now at the middle node.
         return slow;
     }
-
-    // Method 2 : Optimal Solution
-    // Time Complexity: O(N/2) The algorithm requires the 'fast' pointer to reach the end of the list which it does
-    // after approximately N/2 iterations (where N is the total number of nodes). Therefore, the maximum number of
-    // iterations needed to find the middle node is proportional to the number of nodes in the list, making the
-    // time complexity linear, or O(N/2) ~ O(N).
-    //
-    // Space Complexity : O(1) There is constant space complexity because it uses a constant amount of extra space
-    // regardless of the size of the linked list. We only use a few variables to keep track of the middle position and
-    // traverse the list, and the memory required for these variables does not depend on the size of the list.
 
     // Main Function
     public static void main(String[] args) {
@@ -126,7 +113,7 @@ public class Find_Middle_Element_In_a_LinkedList {
 /*
 Using the brute force approach, we can find the middle node of a linked list by traversing the linked list and finding
 the total number of nodes as `count`. Then we reset the traversal pointer and traverse to the node at the
-[count/2 + 1]th position. That will be the middle node.
+[count/2]th position. That next element will be the middle node.
 
 Algorithm:
 
