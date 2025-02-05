@@ -57,4 +57,4 @@ Here, we make n even by subtracting 1 and then apply the squaring method.
 This approach effectively reduces the number of multiplications from O(n) to O(log n).
  */
 
-// Striver's (Video Explanation): https://www.youtube.com/watch?v=WBzZCm46mFo&
+// Apna College (Video Explanation): https://www.youtube.com/watch?v=WBzZCm46mFo&
