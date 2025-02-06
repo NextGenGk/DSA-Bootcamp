@@ -166,6 +166,26 @@ gcd(10, 5) = gcd(10-5, 5) = gcd(5, 5)
 gcd(5, 5) = gcd(5-5, 5) = gcd(0, 5)
 
 Hence, return 5 as the gcd.
+
+Eg, n1 = 52, n2 = 10:
+gcd(52, 10) = gcd(52-10, 10) = gcd(42, 10)
+gcd(42, 10) = gcd(42-10, 10) = gcd(32, 10)
+gcd(32, 10) = gcd(32-10, 10) = gcd(22, 10)
+gcd(22, 10) = gcd(22-10, 10) = gcd(12, 10)
+gcd(12, 10) = gcd(12-10, 10) = gcd(2, 10)
+gcd(2, 10) = gcd(10-2, 2) = gcd(8, 2)
+gcd(8, 2) = gcd(8-2, 2) = gcd(6, 2)
+gcd(6, 2) = gcd(6-2, 2) = gcd(4, 2)
+gcd(4, 2) = gcd(4-2, 2) = gcd(2, 2)
+gcd(2, 2) = gcd(2-2, 2) = gcd(0, 2)
+
+By observing the above examples :
+if we modulo greater value modulo smaller value then the result will be the same as the GCD of the two numbers.
+means we could definitely say that gcd(n1, n2) = gcd(n1 % n2, n2) if n1 > n2
+gcd(52, 10) = gcd (52 % 10, 10) = gcd(2, 10) (Skip the steps from 52 to 2 as we already know the result)
+gcd(2, 10) = gcd(2, 10 % 2) = gcd(2, 0) = 2 (Skip the steps from 2 to 0 as we already know the result)
+
+We see that after two iterations our gcd is calculated as 2. Hence, we can use the Euclidean Algorithm
  */
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=1xNbjMdbjug&t=2695s
