@@ -24,7 +24,6 @@ public class Number_of_Provinces {
         }
     }
 
-
     // Function to convert adjacency matrix to adjacency list and count provinces using DFS
     static int numProvinces(ArrayList<ArrayList<Integer>> adjMatrix, int V) {
         // Step 1: Convert Adjacency Matrix to Adjacency List
@@ -59,7 +58,7 @@ public class Number_of_Provinces {
         return countProvinces;
     }
 
-    // Method 1 : Optimal Solution (Using BFS Traversal)
+    // Method 2 : Optimal Solution (Using BFS Traversal)
     // Time Complexity: O(N) + O(V+2E), Where O(N) is for outer loop and inner loop
     // runs in total a single BFS over entire graph, and we know BFS takes a time of O(V+2E).
     // Space Complexity: O(N) + O(N), Space for queue data structure and visited array.
@@ -82,7 +81,7 @@ public class Number_of_Provinces {
         }
     }
 
-    // Main function to test the program
+    // Main Function
     public static void main(String[] args) {
         // Example adjacency matrix representing the graph
         ArrayList<ArrayList<Integer>> adjMatrix = new ArrayList<>();
@@ -96,7 +95,6 @@ public class Number_of_Provinces {
         System.out.println("Number of Provinces (DFS): " + numProvinces(adjMatrix, V));
         System.out.println("Number of Provinces (BFS): " + numProvinces(adjMatrix, V));
     }
-
 }
 
 // Output :
