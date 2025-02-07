@@ -218,7 +218,8 @@ public class Check_Palindrome_in_LinkedList {
     }
 }
 
-// Output: Original Linked List: 1 5 2 5 1 The linked list is a palindrome.
+// Output: 
+// Original Linked List: 1 5 2 5 1 The linked list is a palindrome.
 
 // Approach : Brute Force
 /*
