@@ -174,7 +174,11 @@ Therefore, it is not the most efficient algorithm, as we are traversing the enti
 
 To enhance efficiency, we will involve two pointers, a fast pointer and a slow pointer. The fast-moving pointer
 will initially be exactly N nodes ahead of the slow-moving pointer. After which, both of them will move one step at
-a time. When the fast pointer reaches the last node, i.e., the L-th node, the slow is guaranteed to be at the (L-N)-th node, where L is the total length of the linked list.
+a time. When the fast pointer reaches the last node, i.e., the L-th node, the slow is guaranteed to be at the (L-N)-th node,
+where L is the total length of the linked list.
+
+Idea :
+It happens because you initially move n steps ahead and then you covered the next set of steps.
 
 Algorithm
 
@@ -187,3 +191,5 @@ the slow pointer is guaranteed to be at the (L-N)th node.
 3. Point this slow pointer to the (L-N+2)th node, effectively skipping the Nth node from the end or the
 (L-N+1)th node from the start.
  */
+
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=3kMKYQ2wNIU
