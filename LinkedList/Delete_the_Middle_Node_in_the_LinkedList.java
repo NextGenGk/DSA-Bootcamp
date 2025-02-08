@@ -206,3 +206,5 @@ node by skipping it from the linked list.
 
 Step 4: Return the head of the modified linked list.
  */
+
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=ePpV-_pfOeI
