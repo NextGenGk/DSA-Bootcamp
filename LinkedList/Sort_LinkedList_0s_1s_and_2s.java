@@ -146,7 +146,7 @@ public class Sort_LinkedList_0s_1s_and_2s {
         System.out.println();
     }
 
-    // Main method to test the sorting
+    // Main Function
     public static void main(String[] args) {
         Node head = new Node(1);
         head.next = new Node(2);
