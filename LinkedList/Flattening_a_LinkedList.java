@@ -5,6 +5,7 @@ import java.util.Collections;
 
 public class Flattening_a_LinkedList {
 
+    // Node class
     static class Node {
         int data;
         Node next;
