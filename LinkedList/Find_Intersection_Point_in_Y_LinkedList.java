@@ -127,6 +127,8 @@ public class Find_Intersection_Point_in_Y_LinkedList {
         Node temp2 = head2;
 
         // Traverse both lists
+        // means both the list are not same then perform this whils condition
+        // (means in both the list the first element is the intersection point)
         while (temp1 != temp2) {
             // Move to the next node in the list
             temp1 = temp1.next;
