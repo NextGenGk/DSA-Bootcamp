@@ -135,6 +135,8 @@ public class Find_Pairs_with_Given_Sum_in_DoublyLinkedList {
     }
 }
 
+
+
 // Approach : Brute Force (Using the logic of 2 loops : Array)
 /*
 Intuition :
@@ -164,4 +166,4 @@ left and right pointers, else if check if left value and right value is greater 
 the right pointer else we move the left pointer because (i.e the list is sorted).
  */
 
-// Striver (Video Explanation) : https://www.youtube.com/watch?v=YitR4dQsddE
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=YitR4dQsddE
