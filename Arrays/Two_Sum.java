@@ -36,13 +36,12 @@ public class Two_Sum {
     // Method 3 - Using HashMap
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i=0; i<nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int first = nums[i];
             int mainTarget = target - first;
-            if(map.containsKey(mainTarget)) {
+            if (map.containsKey(mainTarget)) {
                 return new int[]{map.get(mainTarget), i};
-            }
-            else {
+            } else {
                 map.put(first, i);
             }
         }
@@ -54,7 +53,7 @@ public class Two_Sum {
         int[] arr = {2, 7, 11, 15};
         int target = 17;
         int[] res = twoSum(arr, target);
-        System.out.println(res);
+        System.out.println(Arrays.toString(res));
     }
 }
 
