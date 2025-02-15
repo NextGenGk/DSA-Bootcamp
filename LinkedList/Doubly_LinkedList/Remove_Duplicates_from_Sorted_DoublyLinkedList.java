@@ -43,7 +43,8 @@ public class Remove_Duplicates_from_Sorted_DoublyLinkedList {
             // Link the current node to the next unique node
             temp.next = nextNode;
 
-            // If nextNode is not null, set its prev to the current node
+            // Means, if there is no matching element and, If nextNode is not null,
+            // set its prev to the current node
             if (nextNode != null) nextNode.prev = temp;
 
             // Move to the next node in the list
