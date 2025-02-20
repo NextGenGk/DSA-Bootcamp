@@ -23,7 +23,8 @@ public class Palindrome_Partitioning_I {
     }
 
     // Helper function to generate partitions recursively
-    private static void generateValidPartition(String s, int index, List<List<String>> ans, List<String> path) {
+    private static void generateValidPartition(String s, int index,
+                                               List<List<String>> ans, List<String> path) {
         // Base case: if we have reached the end of the string, add current partition to the result
         if (index == s.length()) {
             ans.add(new ArrayList<>(path));
