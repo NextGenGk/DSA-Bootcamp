@@ -86,8 +86,8 @@ adding too many conditions is considered.
 
 Using this approach, we can get all the combinations.
 
-Base condition
-If index== size of array and  target == 0 include the combination in our answer
+Base condition :
+If (index == size) of array and  target == 0 include the combination in our answer
 
 Algorithm :
 1. Initialize an empty list to store all combinations.
