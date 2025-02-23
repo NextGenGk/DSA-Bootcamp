@@ -146,7 +146,7 @@ public class N_Queens {
     }
 
 
-    // Main function to test the solution
+    // Main Function
     public static void main(String[] args) {
         int n = 4; // Change n to test for different board sizes
         List<List<String>> solutions = solveNQueensOptimal(n);
