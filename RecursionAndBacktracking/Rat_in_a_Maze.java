@@ -149,13 +149,6 @@ public class Rat_in_a_Maze {
 
     // Function to find all paths in a grid from (0, 0) to (n-1, n-1)
     public static ArrayList<String> findPathSpaceOptimize(int[][] m, int n) {
-        // Create a visited array to keep track of visited cells
-        boolean[][] vis = new boolean[n][n];
-        // Initialize the visited array to false (not visited)
-        for (int i = 0; i < n; i++) {
-            Arrays.fill(vis[i], false);
-        }
-
         // List to store all valid paths
         ArrayList<String> ans = new ArrayList<>();
         // Start the recursive search from the top-left corner if it's valid
@@ -261,30 +254,27 @@ return an empty list.
 // Intuition : Optimal Solution (With Space Optimization)
 /*
 ### Intuition
-
-The given code solves the "Rat in a Maze" problem using recursion and backtracking. The goal
-is to find all possible paths from the top-left corner (0, 0) to the bottom-right corner
-(n-1, n-1) of a grid, where some cells are blocked. The rat can move in four directions: down,
-left, right, and up. The code ensures that the rat does not revisit any cell in the same path.
+The "Rat in a Maze" problem involves finding all possible paths from the top-left corner to the
+bottom-right corner of a grid, where some cells are blocked. The rat can move in four directions:
+down, left, right, and up. The solution uses recursion and backtracking to explore all possible
+paths while ensuring that no cell is visited more than once in a single path. This version of the
+solution optimizes space by marking cells directly in the grid instead of using a separate visited array.
 
 ### Algorithm
-
 1. **Initialization**:
-   - Create a visited array to keep track of visited cells.
-   - Initialize the visited array to `false` (not visited).
+   - Create a list to store all valid paths.
 
 2. **Recursive Function (`solveSpaceOptimize`)**:
    - **Boundary Conditions**: Check if the current cell is out of bounds, blocked, or already visited.
-     If any of these conditions are met, return.
+       If any of these conditions are met, return.
    - **Base Case**: If the current cell is the bottom-right corner, add the current path to the answer
-     list and return.
+       list and return.
    - **Mark the Current Cell as Visited**: Set the current cell in the matrix to `-1`.
    - **Move in Four Directions**: Recur for the next cell in each of the four possible directions
-     (down, left, right, up), appending the corresponding direction character to the path.
+       (down, left, right, up), appending the corresponding direction character to the path.
    - **Backtrack**: Unmark the current cell by setting it back to `1` before returning to explore other paths.
 
 3. **Main Function (`findPathSpaceOptimize`)**:
-   - Initialize the visited array.
    - Start the recursive search from the top-left corner if it is not blocked.
    - Return the list of paths found.
  */
