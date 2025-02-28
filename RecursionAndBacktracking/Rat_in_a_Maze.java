@@ -17,28 +17,28 @@ public class Rat_in_a_Maze {
             return;
         }
 
-        // Move downward
+        // Move downward (direction)
         if (i + 1 < n && vis[i + 1][j] == 0 && a[i + 1][j] == 1) {
             vis[i][j] = 1; // Mark the cell as visited
             solve(i + 1, j, a, n, ans, move + 'D', vis); // Recur for the next cell
             vis[i][j] = 0; // Backtrack: unmark the cell
         }
 
-        // Move left
+        // Move left (direction)
         if (j - 1 >= 0 && vis[i][j - 1] == 0 && a[i][j - 1] == 1) {
             vis[i][j] = 1; // Mark the cell as visited
             solve(i, j - 1, a, n, ans, move + 'L', vis); // Recur for the next cell
             vis[i][j] = 0; // Backtrack: unmark the cell
         }
 
-        // Move right
+        // Move right (direction)
         if (j + 1 < n && vis[i][j + 1] == 0 && a[i][j + 1] == 1) {
             vis[i][j] = 1; // Mark the cell as visited
             solve(i, j + 1, a, n, ans, move + 'R', vis); // Recur for the next cell
             vis[i][j] = 0; // Backtrack: unmark the cell
         }
 
-        // Move upward
+        // Move upward (direction)
         if (i - 1 >= 0 && vis[i - 1][j] == 0 && a[i - 1][j] == 1) {
             vis[i][j] = 1; // Mark the cell as visited
             solve(i - 1, j, a, n, ans, move + 'U', vis); // Recur for the next cell
