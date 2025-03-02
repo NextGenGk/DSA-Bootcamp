@@ -199,7 +199,7 @@ public class Clone_LinkedList_with_Random_and_Next_Pointer {
         }
     }
 
-    // Main function
+    // Main Function
     public static void main(String[] args) {
         // Example linked list: 7 -> 14 -> 21 -> 28
         Node head = new Node(7);
@@ -241,7 +241,7 @@ Data: 28, Random: 14
 
 // Approach : Brute Force
 /*
-Algorithm / Intuition
+Algorithm / Intuition :
 To create a deep copy of the original linked list we can use a map to establish a relationship between original
 nodes and their copied nodes.
 
@@ -249,7 +249,7 @@ We traverse the list first to create a copied node for each original node then t
 the correct connections between the copied nodes similar to the arrangement of next and random pointers
 of the original pointers. In the end, return the head of the copied list obtained from the map.
 
-Algorithm
+Algorithm :
 Step 1:Initialise variables ‘temp’ as a pointer to the head of the original linked list to traverse it.
 Create an empty unordered_map, to map original nodes to their corresponding copied nodes.
 
@@ -269,7 +269,7 @@ to the original head from the map.
 
 // Approach : Optimal Solution
 /*
-Algorithm / Intuition
+Algorithm / Intuition :
 The previous approach uses an extra space complexity of creating mappings between the original and copied
 nodes. Instead of creating duplicate nodes and storing them in a map, insert it in between the original
 node and the next node for quick access without the need for additional space.
@@ -278,7 +278,7 @@ Traverse the list again to set the random pointer of copied nodes to the corresp
 duplicating the original arrangement. As a final traversal, separate the copied and original nodes
 by detaching alternate nodes.
 
-Algorithm
+Algorithm :
 
 Step 1: Traverse the original node and create a copy of each node and insert it in between the original
 node and the next node.
