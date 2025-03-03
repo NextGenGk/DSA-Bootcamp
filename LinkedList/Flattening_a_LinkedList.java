@@ -129,7 +129,7 @@ public class Flattening_a_LinkedList {
         }
 
         // Connect the remaining
-        // elements if any
+        // elements if any of the list
         if (list1 != null) {
             res.child = list1;
         } else {
