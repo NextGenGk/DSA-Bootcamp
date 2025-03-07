@@ -59,6 +59,7 @@ public class Segregate_Odd_and_Even_Nodes_in_LinkedList {
 
     // Method 2 : Optimal Solution (Using Odd Even Solution)
     // Time Complexity : O(N/2) + O(N/2) ~ O(N) for traversing
+    // Space Complexity : O(1)
     static Node segregateToOddEven1(Node head) {
         if (head == null || head.next == null) return head;
 
