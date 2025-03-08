@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class Find_the_Length_of_Loop_LinkedList {
 
-    // Node class represents a node in a linked list
+    // Node class represents
+    // a node in a linked list
     static class Node {
         // Data stored in the node
         int data;
