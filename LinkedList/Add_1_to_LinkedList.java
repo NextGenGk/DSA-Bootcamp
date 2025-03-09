@@ -2,7 +2,8 @@ package LinkedList;
 
 public class Add_1_to_LinkedList {
 
-    // Node class represents a node in a linked list
+    // Node class represents 
+    // a node in a linked list
     static class Node {
         // Data stored in the node
         int data;
