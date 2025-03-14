@@ -41,6 +41,7 @@ public class Design_Browser_History {
         }
     }
 
+    // Browser History Class
     class BrowserHistory {
         // Pointer to the current page in the browser history
         Node currentPage;
