@@ -14,7 +14,6 @@ public class Representation_of_Graph_AdjacencyMatrix {
             int m = sc.nextInt();
 
             // adjacency matrix for undirected graph
-            // time complexity: O(n)
             int[][] adj = new int[n + 1][n + 1];
 
             for (int i = 0; i < m; i++) {
@@ -27,8 +26,4 @@ public class Representation_of_Graph_AdjacencyMatrix {
             sc.close();
         }
     }
-
-    // Adjacency List
-    // Time complexity: O(n + m)
-
 }
