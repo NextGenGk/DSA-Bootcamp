@@ -127,7 +127,8 @@ Why BFS?
 
 2. DFS would go deep into one path before exploring others, which is inefficient for problems like this
    where all sources spread simultaneously.
-Algorithm
+
+Algorithm :
 1. Initialization:
     i. Find all rotten oranges (2) in the grid and add them to a queue with time = 0.
    ii. Keep track of the number of fresh oranges (cntFresh).
