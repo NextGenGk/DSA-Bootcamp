@@ -5,18 +5,23 @@ import java.util.Queue;
 
 public class Rotten_Oranges {
 
-    // Main Function
-    public static void main(String[] args) {
-        int[][] mat = {
-                {2, 1, 1},
-                {1, 1, 0},
-                {0, 2, 1}
-        };
+    // Method 1 : Optimal Solution
+    // Time Complexity: O ( n x n ) x 4
+    // Reason: Worst-case - We will be making each fresh orange rotten in the grid and for each
+    // rotten orange will check in 4 directions
+    // Space Complexity: O ( n x n )
+    // Reason: worst-case -  If all oranges are Rotten, we will end up pushing all rotten oranges
+    // into the Queue data structure
+    private static class Pair {
+        int row;
+        int col;
+        int time;
 
-        Rotten_Oranges obj = new Rotten_Oranges();
-        int time = obj.orangesRotting(mat);
-
-        System.out.println("Time taken to rot all oranges: " + time);
+        Pair(int row, int col, int time) {
+            this.row = row;
+            this.col = col;
+            this.time = time;
+        }
     }
 
     public int orangesRotting(int[][] mat) {
@@ -89,23 +94,18 @@ public class Rotten_Oranges {
         return timeElapsed; // Return the time taken to rot all oranges
     }
 
-    // Method 1 : Optimal Solution
-    // Time Complexity: O ( n x n ) x 4
-    // Reason: Worst-case - We will be making each fresh orange rotten in the grid and for each
-    // rotten orange will check in 4 directions
-    // Space Complexity: O ( n x n )
-    // Reason: worst-case -  If all oranges are Rotten, we will end up pushing all rotten oranges
-    // into the Queue data structure
-    private static class Pair {
-        int row;
-        int col;
-        int time;
+    // Main Function
+    public static void main(String[] args) {
+        int[][] mat = {
+                {2, 1, 1},
+                {1, 1, 0},
+                {0, 2, 1}
+        };
 
-        Pair(int row, int col, int time) {
-            this.row = row;
-            this.col = col;
-            this.time = time;
-        }
+        Rotten_Oranges obj = new Rotten_Oranges();
+        int time = obj.orangesRotting(mat);
+
+        System.out.println("Time taken to rot all oranges: " + time);
     }
 }
 
