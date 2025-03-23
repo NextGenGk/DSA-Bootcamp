@@ -190,6 +190,21 @@ Pop operation:
 
 While making pop we will check if the top value is lesser than min, If it is then we must update our
 min to its previous value. In order to do that min = (2 * min) - (modified value) and we will pop the element.
+
+# Idea from switching back to the old value, and inserting a new value
+
+            2 × val - prevMini = newVal
+            prevMini = 2 × val - newVal
+
+                 10 < 12
+                val < mini
+
+                val - mini < 0
+            val + val - mini < val (both side taking val)
+
+            2 × val - prevMini = newVal
+            prevMini = 2 × val - newVal
+
  */
 
 // Striver : (Video Explanation) : https://www.youtube.com/watch?v=NdDIaH91P0g
