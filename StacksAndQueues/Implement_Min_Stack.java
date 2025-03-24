@@ -207,4 +207,4 @@ min to its previous value. In order to do that min = (2 * min) - (modified value
 
  */
 
-// Striver : (Video Explanation) : https://www.youtube.com/watch?v=NdDIaH91P0g
+// Striver's : (Video Explanation) : https://www.youtube.com/watch?v=NdDIaH91P0g
