@@ -65,9 +65,12 @@ public class Distance_of_Nearest_Cell_Having_1 {
                 int newCol = col + colDirection[i];
 
                 // Check for valid unvisited cells
-                if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && visited[newRow][newCol] == 0) {
-                    queue.add(new Cell(newRow, newCol, steps + 1));  // Add the new cell with incremented distance
-                    visited[newRow][newCol] = 1;  // Mark as visited
+                if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols
+                        && visited[newRow][newCol] == 0) {
+                    // Add the new cell with incremented distance
+                    queue.add(new Cell(newRow, newCol, steps + 1));
+                    // Mark as visited
+                    visited[newRow][newCol] = 1;
                 }
             }
         }
