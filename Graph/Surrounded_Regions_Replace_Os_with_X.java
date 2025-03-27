@@ -2,7 +2,7 @@ package Graph;
 
 public class Surrounded_Regions_Replace_Os_with_X {
 
-    // Method 1 : Optimal Solution
+    // Method 1 : Optimal Solution (Using DFS)
     // Time Complexity: O(N) + O(M) + O(NxMx4) ~ O(N x M), For the worst case, every element will
     // be marked as ‘O’ in the matrix, and the DFS function will be called for (N x M) nodes and
     // for every node, we are traversing for 4 neighbors, so it will take O(N x M x 4) time. Also,
