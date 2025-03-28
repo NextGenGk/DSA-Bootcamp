@@ -107,7 +107,7 @@ X X O O
 
 // Intuition : Optimal Solution
 /*
-Intuition
+Intuition :
 The problem requires us to replace all 'O's that are not connected to the boundary with 'X'.
 The 'O's that are connected to the boundary (directly or indirectly) must remain unchanged.
 This means we need to identify the regions of 'O' that are surrounded by 'X' and convert them.
