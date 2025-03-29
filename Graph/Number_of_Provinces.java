@@ -7,6 +7,24 @@ import java.util.Queue;
 
 public class Number_of_Provinces {
 
+    // Method 1 : Optimal Solution (Using DFS Traversal)
+    // Time Complexity: O(N) + O(V+2E), Where O(N) is for outer loop and inner loop
+    // runs in total a single DFS over entire graph, and we know DFS takes a time of O(V+2E).
+    // Space Complexity: O(N) + O(N),Space for recursion stack space and visited array.
+    // Function to count provinces using DFS
+    // DFS function to traverse the graph
+    static void dfs(int node, ArrayList<ArrayList<Integer>> adjList, boolean[] isVisited) {
+        isVisited[node] = true; // Mark node as visited
+
+        // Visit all connected (neighbor) nodes recursively
+        for (Integer neighbor : adjList.get(node)) {
+            if (!isVisited[neighbor]) {
+                dfs(neighbor, adjList, isVisited);
+            }
+        }
+    }
+
+
     // Function to convert adjacency matrix to adjacency list and count provinces using DFS
     static int numProvinces(ArrayList<ArrayList<Integer>> adjMatrix, int V) {
         // Step 1: Convert Adjacency Matrix to Adjacency List
@@ -39,23 +57,6 @@ public class Number_of_Provinces {
             }
         }
         return countProvinces;
-    }
-
-    // Method 1 : Optimal Solution (Using DFS Traversal)
-    // Time Complexity: O(N) + O(V+2E), Where O(N) is for outer loop and inner loop
-    // runs in total a single DFS over entire graph, and we know DFS takes a time of O(V+2E).
-    // Space Complexity: O(N) + O(N),Space for recursion stack space and visited array.
-    // Function to count provinces using DFS
-    // DFS function to traverse the graph
-    static void dfs(int node, ArrayList<ArrayList<Integer>> adjList, boolean[] isVisited) {
-        isVisited[node] = true; // Mark node as visited
-
-        // Visit all connected (neighbor) nodes recursively
-        for (Integer neighbor : adjList.get(node)) {
-            if (!isVisited[neighbor]) {
-                dfs(neighbor, adjList, isVisited);
-            }
-        }
     }
 
     // Method 1 : Optimal Solution (Using BFS Traversal)
