@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class Flood_Fill_Algorithm {
 
-    // Method 1 : Using DFS Traversal
+    // Method 1 : Optimal Solution (Using DFS Traversal)
     // Time Complexity: O(NxM + NxMx4) ~ O(N x M)
     // For the worst case, all of the pixels will have the same colour, so DFS function will be
     // called for (N x M) nodes and for every node we are traversing for 4 neighbours, so it will
@@ -51,7 +51,7 @@ public class Flood_Fill_Algorithm {
         }
     }
 
-    // Method 1 : Using BFS Traversal
+    // Method 1 : Optimal Solution (Using BFS Traversal)
     // Time Complexity: O(NxM + NxMx4) ~ O(N x M)
     // For the worst case, all of the pixels will have the same colour, so BFS function will be
     // called for (N x M) nodes and for every node we are traversing for 4 neighbours, so it will
