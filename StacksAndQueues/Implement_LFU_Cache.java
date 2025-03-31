@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class Implement_LFU_Cache {
 
+    // Helper Class LFU
     static class LFUCache {
-
         final int capacity; // Total capacity of the LFU cache
         int curSize; // Current number of items in the LFU cache
         int minFrequency; // Minimum frequency in the cache (used to evict the least frequently used item)
