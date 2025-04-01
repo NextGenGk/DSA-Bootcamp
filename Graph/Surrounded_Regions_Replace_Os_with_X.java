@@ -65,7 +65,6 @@ public class Surrounded_Regions_Replace_Os_with_X {
                 }
             }
         }
-
         return mat;
     }
 
@@ -105,7 +104,7 @@ X X X X
 X X O O
  */
 
-// Intuition : Optimal Solution
+// Intuition : Optimal Solution (Using DFS)
 /*
 Intuition :
 The problem requires us to replace all 'O's that are not connected to the boundary with 'X'.
