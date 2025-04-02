@@ -32,6 +32,7 @@ public class DFS_Traversal {
         }
     }
 
+    // Main Function
     public static void main(String args[]) {
         // Creating adjacency list for a graph with 5 vertices (0 to 4)
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
