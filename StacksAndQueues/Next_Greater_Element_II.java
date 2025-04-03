@@ -1,5 +1,6 @@
 package StacksAndQueues;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class Next_Greater_Element_II {
@@ -13,7 +14,7 @@ public class Next_Greater_Element_II {
 
         // Create an array to store the result, initialized with -1 (or any other sentinel value)
         int[] result = new int[n];
-        java.util.Arrays.fill(result, -1);  // Fill the result array with -1
+        Arrays.fill(result, -1);  // Fill the result array with -1
 
         // Iterate through each element in the array
         for (int i = 0; i < n; i++) {
