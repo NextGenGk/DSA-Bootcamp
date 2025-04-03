@@ -20,7 +20,7 @@ public class Next_Greater_Element_II {
         for (int i = 0; i < n; i++) {
             // Iterate through the rest of the array, starting from the next element
             // Use modulo operation to wrap around the array in case the index goes beyond the last element
-            for (int j = i + 1; j < i + n; j++) {
+            for (int j = i + 1; j < i + n - 1; j++) {
                 int index = j % n;
 
                 // If a greater element is found, store it in the result array and break out of the loop
