@@ -2,7 +2,7 @@ package StacksAndQueues;
 
 public class Trapping_Rainwater_Problem {
 
-    // Method 1 : Better Force
+    // Method 1 : Brute Force
     // Time Complexity: O(3*N) as we are traversing through the array only once. And O(2*N) for computing
     // prefix and suffix array.
     // Space Complexity: O(N)+O(N) for prefix and suffix arrays.
