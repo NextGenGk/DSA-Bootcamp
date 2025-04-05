@@ -2,7 +2,7 @@ package StacksAndQueues;
 
 public class Trapping_Rainwater_Problem {
 
-    // Method 1 : Brute Force
+    // Method 1 : Better Force
     // Time Complexity: O(3*N) as we are traversing through the array only once. And O(2*N) for computing
     // prefix and suffix array.
     // Space Complexity: O(N)+O(N) for prefix and suffix arrays.
@@ -46,7 +46,6 @@ public class Trapping_Rainwater_Problem {
         // Return the total amount of trapped water
         return waterTrapped;
     }
-
 
     // Method 2 : Optimal Solution
     // Time Complexity: O(N) because we are using 2 pointer approach.
@@ -97,7 +96,6 @@ public class Trapping_Rainwater_Problem {
         // Return the total amount of trapped water
         return res;
     }
-
 
     // Main Function
     public static void main(String[] args) {
