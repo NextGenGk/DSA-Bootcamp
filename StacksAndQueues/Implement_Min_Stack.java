@@ -115,7 +115,7 @@ public class Implement_Min_Stack {
             return mini.intValue(); // Return the current minimum value
         }
 
-        // Main function to test the MinStack implementation
+        // Main Function
         public static void main(String[] args) {
             MinStack1 minStack = new MinStack1(); // Create a MinStack object
 
