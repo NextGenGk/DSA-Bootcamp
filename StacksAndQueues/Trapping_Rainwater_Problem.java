@@ -132,4 +132,20 @@ to the left of r which is at least of height[r]. So by traversing these cases an
 approach the time complexity can be decreased without using extra space.
  */
 
+/*
+Intuition v2 :
+### 🔍 **Brief Intuition:**
+
+We use two pointers (`left` and `right`) to move inward from both ends of the array. The idea is to
+trap water where there are taller bars on both sides.
+
+At each step, we move the pointer on the **shorter side**, because the trapped water depends on the
+**smaller of the two max heights** (left or right).
+
+We keep track of the max height seen so far from the left (`maxLeft`) and right (`maxRight`).
+If the current height is less than the max on that side, we can trap water there.
+
+This way, we calculate the trapped water in **one pass** with **constant space**.
+ */
+
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=1_5VuquLbXg
