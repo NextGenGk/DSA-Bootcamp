@@ -141,3 +141,5 @@ previous smaller elements. The helper functions justPreviousSmallerElement and j
 use stacks to efficiently find the previous and next smaller elements for each array element. The main
 function uses these indices to calculate the contribution of each element to the total sum of minimums.
  */
+
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=v0e8p9JCgRc
