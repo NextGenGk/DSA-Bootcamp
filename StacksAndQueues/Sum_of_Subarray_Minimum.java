@@ -118,7 +118,7 @@ public class Sum_of_Subarray_Minimum {
     // Main Function
     public static void main(String[] args) {
         // Test array
-        int[] arr = {3, 1, 2, 4};
+        int[] arr = {1, 4, 6, 7, 3, 7, 8, 1};
 
         // Call the sumSubarrayMins function and print the result
         int result = new sumSubarrayMin().sumSubarrayMins(arr);
@@ -140,6 +140,43 @@ The sumSubarrayMins function calculates the sum of the minimums of all subarrays
 previous smaller elements. The helper functions justPreviousSmallerElement and justNextSmallerElement
 use stacks to efficiently find the previous and next smaller elements for each array element. The main
 function uses these indices to calculate the contribution of each element to the total sum of minimums.
+ */
+
+// Note : Explanation of Subarray
+/*
+Consider the array [1,4,6,7,3,7,8,1], where we want to focus on the contribution of 3 and determine
+in how many subarrays it will be the minimum.
+
+We eliminate 1 from both ends since it is smaller than 3, leaving us with [4,6,7,3,7,8].
+
+Now, for each subarray in [4,6,7,3,7,8] that starts at any of [4,6,7,3], the possible ending values
+are [3,7,8] (including 3 - since we focusing on 3 as minimum).
+
+There are 4 possible starting points, and for each starting point, there are 3 possible ending points.
+Thus, the total number of subarrays is 4 × 3 = 12.
+
+Example breakdown:
+Subarray starting at 4 (includes 3 ends at 3, 7, or 8):
+[4,6,7,3]
+[4,6,7,3,7]
+[4,6,7,3,7,8]
+
+Subarray starting at 6 (includes 3 and ends at 3, 7, or 8):
+[6,7,3]
+[6,7,3,7]
+[6,7,3,7,8]
+
+Subarray starting at 7 (includes 3 and ends at 3, 7, or 8):
+[7,3]
+[7,3,7]
+[7,3,7,8]
+
+Subarray starting at 3 (includes 3 and ends at 3, 7, or 8):
+[3]
+[3,7]
+[3,7,8]
+
+Thus, the total number of valid subarrays is 12.
  */
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=v0e8p9JCgRc
