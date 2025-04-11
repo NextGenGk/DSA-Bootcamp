@@ -1,8 +1,8 @@
 package StacksAndQueues;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class Asteroid_Collisions {
@@ -58,11 +58,63 @@ public class Asteroid_Collisions {
         return result;
     }
 
+    // Method 2 : Using Stack
+    // Time Complexity : O(2N), O(N) for traversing and another O(N) for pushing and popping
+    // elements onto the stack.
+    // Space Complexity : O(2N), O(N) is for using external stack data structure and another O(N) for converting
+    // stack into array to return the answer
+    // Function to simulate the asteroid collisions using Stack
+    // Function to simulate the asteroid collisions using a stack
+    public static int[] asteroidCollisionsUsingStack(int[] arr) {
+        // Stack to store the resulting asteroids after collisions
+        Stack<Integer> stack = new Stack<>();
+
+        // Loop through each asteroid in the array
+        for (int i = 0; i < arr.length; i++) {
+            // If the current asteroid is moving to the right (positive direction)
+            if (arr[i] > 0) {
+                // Push it directly to the stack (no collision with left-moving asteroids)
+                stack.push(arr[i]);
+            }
+            // If the current asteroid is moving to the left (negative direction)
+            else {
+                // Check for collisions with right-moving asteroids in the stack
+                while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < Math.abs(arr[i])) {
+                    // Remove the smaller right-moving asteroid since it collides and explodes
+                    stack.pop();
+                }
+
+                // If the stack is empty or the top of the stack is also moving to the left,
+                // or there are no more right-moving asteroids to collide with
+                if (stack.isEmpty() || stack.peek() < 0) {
+                    // Push the current left-moving asteroid to the stack
+                    stack.push(arr[i]);
+                }
+                // If the top of the stack is the same size but moving in the opposite direction
+                else if (stack.peek() == Math.abs(arr[i])) {
+                    // Both asteroids destroy each other
+                    stack.pop();
+                    // Don't push the current asteroid
+                }
+                // If the current left-moving asteroid is smaller, it's destroyed and we do nothing
+            }
+        }
+
+        // Convert the stack to an array (in correct order)
+        int[] result = new int[stack.size()];
+        for (int i = stack.size() - 1; i >= 0; i--) {
+            result[i] = stack.pop();
+        }
+
+        return result;
+    }
+
     // Main Function
     public static void main(String[] args) {
         int[] arr = {4, 7, 1, 1, 2, -3, -7, 17, 15, -16};
         int[] result1 = asteroidCollisions(arr);
-        System.out.println("Result 1: " + Arrays.toString(result1));
+        System.out.println("Result 1: " + Arrays.toString(result1)); // Using list
+        System.out.println(Arrays.toString(asteroidCollisionsUsingStack(arr))); // Using stack
     }
 }
 
