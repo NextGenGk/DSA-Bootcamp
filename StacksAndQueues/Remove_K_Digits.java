@@ -87,8 +87,9 @@ Result for num = 1234567890, k = 9 : 0
 
 // Approach : Optimal Solution
 /*
-// Intuition : The intuition is very simple is to keep the smaller digits at the start and get rid of the
-   larger ones, because we need to find the smallest integer after removing the K largest digit.
+Intuition : 
+The intuition is very simple is to keep the smaller digits at the start and get rid of the
+larger ones, because we need to find the smallest integer after removing the K largest digit.
 
 // Algorithm -
 1. We first initialize a stack to store the digits.
@@ -101,4 +102,5 @@ Result for num = 1234567890, k = 9 : 0
 8. We reverse the string builder and return the result.
  */
 
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=jmbuRzYPGrg
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=jmbuRzYPGrg
