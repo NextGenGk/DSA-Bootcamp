@@ -103,4 +103,3 @@ larger ones, because we need to find the smallest integer after removing the K l
  */
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=jmbuRzYPGrg
-// Striver's (Video Explanation) : https://www.youtube.com/watch?v=jmbuRzYPGrg
