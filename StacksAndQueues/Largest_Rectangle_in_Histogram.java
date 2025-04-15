@@ -104,6 +104,7 @@ public class Largest_Rectangle_in_Histogram {
 
         return maxArea; // Return the maximum rectangle area
     }
+    
     // Main Function
     public static void main(String args[]) {
         int histo[] = {3, 1, 5, 6, 2, 3};
