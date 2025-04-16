@@ -41,7 +41,9 @@ public class Largest_Rectangle_in_Histogram {
             // Push the current element onto the stack
             stack.push(i);
         }
-        return result; // Return the result array
+
+        // Return the result array
+        return result; 
     }
 
     // Instead of storing elements in the stack, we are storing the index of that particular element
@@ -89,6 +91,7 @@ public class Largest_Rectangle_in_Histogram {
                 int width = nse - pse - 1; // Width of the rectangle
                 maxArea = Math.max(maxArea, height * width); // Calculate the area and update maxArea
             }
+            
             // Push the current index onto the stack
             stack.push(i);
         }
