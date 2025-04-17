@@ -86,7 +86,7 @@ public class Maximal_Rectangle {
 
 // Approach : Optimal Solution
 /*
-Intuition : In this question we will use the problem in which we find the largest rectangle in Histogram.
+Intuition : In this question we will use the same approach in which we find the largest rectangle in Histogram.
 In this question we will use the same concept which is used in Largest Rectangle in Histogram.
 
 We assume the matrix[0] is an single array and same as for all the matrix[1] and so...on.
