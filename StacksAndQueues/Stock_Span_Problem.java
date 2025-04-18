@@ -42,7 +42,6 @@ public class Stock_Span_Problem {
     }
 
     // Method 2 : Optimal Solution
-    // Time Complexity
     static class StockSpanner1 {
         // Stack to store pairs of (span, price)
         Stack<int[]> stack;
