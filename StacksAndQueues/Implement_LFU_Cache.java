@@ -15,7 +15,7 @@ public class Implement_LFU_Cache {
         Map<Integer, DLLNode> cache; // Maps keys to their corresponding nodes (stores key-node mapping)
         Map<Integer, DoubleLinkedList> frequencyMap; // Maps frequency values to doubly linked lists of nodes
 
-        // Constructor
+        // Constructor to initialize LFU Cache
         public LFUCache(int capacity) {
             this.capacity = capacity; // Set the maximum capacity of the cache
             this.curSize = 0; // Initialize the current size of the cache as 0
@@ -204,7 +204,7 @@ public class Implement_LFU_Cache {
 4
  */
 
-// Algorithm :
+// Algorithm : Optimal Solution
 /*
 Input: capacity (max capacity of the LFU Cache).
 Initialize Variables:
