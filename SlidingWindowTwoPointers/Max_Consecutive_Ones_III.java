@@ -120,7 +120,7 @@ public class Max_Consecutive_Ones_III {
 
     // Main Function
     public static void main(String[] args) {
-        int[] nums = {0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1};
+        int[] nums = {0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1};
         int k = 3;
         int result = longestOnes2(nums, k);
         System.out.println(result);
