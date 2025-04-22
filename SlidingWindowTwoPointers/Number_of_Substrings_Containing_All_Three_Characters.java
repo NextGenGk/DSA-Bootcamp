@@ -168,7 +168,8 @@ as we iterate through the string. Here’s a breakdown of the thought process:
    in lastSeen is -1), the code calculates the number of valid substrings that can be formed. The number
    of valid substrings is determined by the position of the earliest occurrence of any of the three
    characters, which is found using Math.min(lastSeen, lastSeen, lastSeen). This value indicates how many
-   substrings can start from the beginning of the string up to that index, ensuring that each counted substring contains all three characters.
+   substrings can start from the beginning of the string up to that index, ensuring that each counted substring 
+   contains all three characters.
 4. Dynamic Counting: As the loop progresses, the code dynamically counts valid substrings, allowing
    for efficient updates without needing to re-evaluate previously counted substrings. Each time a new
    character is processed, the potential starting points for valid substrings are recalculated based on
