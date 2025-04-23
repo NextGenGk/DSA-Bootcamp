@@ -2,6 +2,7 @@ package SlidingWindowTwoPointers;
 
 public class Count_Number_of_Nice_Subarray {
 
+    // Method 1 : Optimal Solution
     // This function returns the number of subarrays with exactly 'k' odd numbers.
     public static int numberOfSubarrays(int[] nums, int k) {
         // To find the number of subarrays with exactly 'k' odd numbers,
