@@ -79,7 +79,8 @@ public class Fruits_Into_Baskets {
             right++;
         }
 
-        return maxLength;  // Return the maximum length of a subarray with at most 2 types of fruits
+        // Return the maximum length of a subarray with at most 2 types of fruits
+        return maxLength;  
     }
 
     // Method 3 : Optimal Solution
