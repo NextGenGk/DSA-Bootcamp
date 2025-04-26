@@ -156,7 +156,6 @@ left pointer adjusts to shrink the window whenever more than two fruit types are
 that the window always remains valid (with at most two types), while continuously updating the maximum
 length of such subarrays. By efficiently managing the window with a frequency map, the code achieves
 an optimal solution with a linear time complexity.
-
  */
 
 // Approach : Optimal Solution
