@@ -34,7 +34,7 @@ public class Max_Points_You_Can_Obtain_From_Cards {
         return maxScore;
     }
 
-    // Main method to test the function (for demonstration purposes)
+    // Main Function
     public static void main(String[] args) {
         int[] cardPoints = {1, 2, 3, 4, 5, 6, 1};  // Example array of card points
         int k = 3;  // Number of cards to pick
