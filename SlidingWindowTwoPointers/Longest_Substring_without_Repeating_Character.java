@@ -130,14 +130,10 @@ public class Longest_Substring_without_Repeating_Character {
 // Output : 3
 
 // Approach : Brute Force
-/*
-Generate all the substrings and find the longest length of the substring. (Using 3 Loops)
- */
+// Generate all the substrings and find the longest length of the substring. (Using 3 Loops)
 
 // Approach : Better Solution
-/*
-Generate all the substrings and find the longest length of the substring. (Using 2 Loops)
- */
+// Generate all the substrings and find the longest length of the substring. (Using 2 Loops)
 
 // Approach : Optimal Solution
 /*
