@@ -78,7 +78,8 @@ public class Fixed_Window {
     }
 }
 
-// Output : Maximum sum: 15
+// Output : 
+// Maximum sum: 15
 
 // Approach / Intuition :
 /*
