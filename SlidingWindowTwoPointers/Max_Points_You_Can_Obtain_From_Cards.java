@@ -43,7 +43,8 @@ public class Max_Points_You_Can_Obtain_From_Cards {
     }
 }
 
-// Output : Maximum score by picking 3 cards: 12
+// Output :
+// Maximum score by picking 3 cards: 12
 
 // Approach : Optimal Solution
 /*
