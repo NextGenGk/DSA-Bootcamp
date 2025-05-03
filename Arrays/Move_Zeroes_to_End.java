@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Move_Zeroes_to_End {
 
     // Method 1 - Brute Force (Using Temporary Array)
-    // Time - O(N), Space - O(N)
+    // Time Complexity - O(N)
+    // Space Complexity - O(N)
     static int[] moveZeroes(int[] arr, int n) {
         ArrayList<Integer> temp = new ArrayList<>();
 
@@ -35,7 +36,8 @@ public class Move_Zeroes_to_End {
     }
 
     // Method 2 - Optimal Solution (Using 2 Pointers)
-    // Time - O(N), Space - O(1)
+    // Time Complexity - O(N)
+    // Space Complexity - O(1)
     static void pushZerosToEnd(int[] arr, int n) {
         // Initialize a pointer j to -1, which will keep track of the position of the first zero
         int j = -1;
@@ -79,6 +81,9 @@ public class Move_Zeroes_to_End {
         System.out.println("");
     }
 }
+
+// Output :
+// 1 2 3 2 4 5 1 0 0 0
 
 // Algorithm: Brute Force
 /*
