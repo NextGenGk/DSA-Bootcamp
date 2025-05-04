@@ -3,7 +3,8 @@ package Arrays;
 public class Array_is_Sorted_or_Not {
 
     // Method 1 - Brute Force (Using Two For Loops)
-    // Time - O(N^2), Space - O(1)
+    // Time Complexity - O(N^2)
+    // Space Complexity - O(1)
 //    static int sorted(int[] arr, int n) {
 //        for(int i=0; i<n; i++) {
 //            for (int j=i+1; j<n; j++) {
@@ -16,7 +17,8 @@ public class Array_is_Sorted_or_Not {
 //    }
 
     // Method 2 - Optimal Solution (Using Single Traversal)
-    // Time - O(N), Space - O(1)
+    // Time Complexity - O(N)
+    // Space Complexity - O(1)
     static int sorted(int[] arr, int n) {
         for (int i=1; i<n-1; i++) {
             if (arr[i] < arr[i-1]) {
