@@ -1,7 +1,6 @@
 package Arrays;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class Union_of_Two_Sorted_Array {
 
@@ -103,6 +102,11 @@ public class Union_of_Two_Sorted_Array {
         System.out.println(list);
     }
 }
+
+// Output :
+/*
+
+ */
 
 // Algorithm: Brute Force (Using Set)
 /*
