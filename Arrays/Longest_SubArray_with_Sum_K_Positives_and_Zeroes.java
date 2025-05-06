@@ -77,6 +77,7 @@ public class Longest_SubArray_with_Sum_K_Positives_and_Zeroes {
 
         while (right < n) {
             // check still there is a subarray && summation is greater than k
+            // Go Gop Go (trim from the left)
             while (sum > k && left <= right) {
                 sum -= arr[left];
                 left++;
