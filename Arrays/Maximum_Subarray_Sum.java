@@ -122,6 +122,11 @@ public class Maximum_Subarray_Sum {
     }
 }
 
+// Output : 6
+
+// Note :  A subarray with a sum less than 0 will always reduce our answer and so this type of
+// subarray cannot be a part of the subarray with maximum sum.
+
 // Algorithm - Brute Force
 /*
 1. First, we will run a loop(say i) that will select every possible starting index of the subarray.

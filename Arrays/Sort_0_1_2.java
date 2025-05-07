@@ -74,6 +74,9 @@ public class Sort_0_1_2 {
     }
 }
 
+// Output :
+// [0, 0, 1, 1, 2, 2]
+
 // Algorithm - Brute Force
 /*
 1. Sort the array in ascending order.
