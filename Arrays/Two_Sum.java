@@ -5,7 +5,9 @@ import java.util.HashMap;
 
 public class Two_Sum {
 
-    // Brute Force
+    // Method 1 : Brute Force
+    // Time Complexity : O(N^2)
+    // Space Complexity : O(1)
 //    public static boolean twoSum(int[] arr, int target) {
 //        for (int i=0; i< arr.length; i++) {
 //            for (int j=i+1; j< arr.length; j++) {
@@ -18,6 +20,8 @@ public class Two_Sum {
 //    }
 
     // Method 2 - Using Two Pointer Approach
+    // Time Complexity : O(N log N) + O(N) ~ O(N log N)
+    // Space Complexity : O(1)
 //    public static boolean twoSum(int[] arr, int target) {
 //        Arrays.sort(arr);
 //        int left = 0;
@@ -34,6 +38,9 @@ public class Two_Sum {
 //    }
 
     // Method 3 - Using HashMap
+    // Time Complexity : O(N), Single pass through the array → O(n)
+    // Each map.containsKey() and map.put() is O(1) on average
+    // Space Complexity : O(N), The HashMap may store up to n elements in the worst case
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -56,6 +63,9 @@ public class Two_Sum {
         System.out.println(Arrays.toString(res));
     }
 }
+
+// Output :
+// [0, 3]
 
 // Approaches
 
