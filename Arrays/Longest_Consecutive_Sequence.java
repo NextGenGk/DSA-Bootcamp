@@ -95,7 +95,7 @@ public class Longest_Consecutive_Sequence {
 // Output
 // 4
 
-// Algorithm: Brute Force
+// Algorithm: Brute Force (Using 3 loops)
 /*
 1. We will traverse the array and for each element, we will check if the next element is present in the array or not.
 2. If the next element is present in the array, we will increment the count and move to the next element.
