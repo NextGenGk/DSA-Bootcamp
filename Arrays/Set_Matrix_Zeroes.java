@@ -105,7 +105,7 @@ public class Set_Matrix_Zeroes {
         }
     }
 
-    // Method 3 : Optimal Solution
+    // Method 3 : Optimal Solution (Giev some time)
     // Time : O(2 * n * m), Space : O(1)
     static void setMatrixZeroes1(int[][] matrix, int n, int m) {
 //        int[] row = new int[n]; // -> matrix[..][0]
