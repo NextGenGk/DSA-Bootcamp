@@ -22,7 +22,7 @@ public class Count_Subarray_Equals_K {
 //        return count;
 //    }
 
-    // Method 2 - Brute Force (Using 2 for Loops)
+    // Method 2 - Better Approach (Using 2 for Loops)
     // Time - O(N^2), Space - O(1)
 //    static int subarrayCounts(int[] arr, int n, int K) {
 //        int count = 0;
@@ -39,7 +39,7 @@ public class Count_Subarray_Equals_K {
 //        return count;
 //    }
 
-    // Method 3 - Better Solution (Using HashMap) (Real Solution)
+    // Method 3 - Optimal Solution (Using HashMap) (Real Solution)
     // Time - O(N) or O(N*logN) depending on which map data structure we are using, where N = size of the array.
     // Space - O(N) because using Map Data Structure
     static int subarrayCounts11(int[] arr, int n, int K) {
@@ -66,7 +66,7 @@ public class Count_Subarray_Equals_K {
         return count;
     }
 
-    // Method 3 - Better Solution (Using HashMap)
+    // Method 3 - Optimal Solution (Using HashMap)
     // Time - O(N) or O(N*logN) depending on which map data structure we are using, where N = size of the array.
     // Space - O(N) because using Map Data Structure
     static int subarrayCounts(int[] arr,int n, int k) {
