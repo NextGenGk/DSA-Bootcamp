@@ -78,12 +78,16 @@ public class Spiral_Matrix {
 In this approach, we will be using four loops to print all four sides of the matrix.
 
 1st loop: This will print the elements from left to right.
+left - > right : print(top)
 
 2nd loop: This will print the elements from top to bottom.
+top -> bottom : print(right);
 
 3rd loop: This will print the elements from right to left.
+right -> left : print(bottom)
 
 4th loop: This will print the elements from bottom to top.
+bottom -> top : print(left)
  */
 
 // Steps :
