@@ -171,11 +171,13 @@ public class Set_Matrix_Zeroes {
     }
 }
 
-// Output
-// 1 0 3 0
-// 0 0 0 0
-// 9 0 11 0
-// 0 0 0 0
+// Output :
+/*
+0 0 0 1
+0 0 0 0
+0 0 0 0
+0 0 0 0
+ */
 
 // Algorithm : Brute Force
 /*
