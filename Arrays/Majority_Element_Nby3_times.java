@@ -8,7 +8,7 @@ public class Majority_Element_Nby3_times {
 
     // Method 1 - Brute Force
     // Time - O(N^2), Space - O(1)
-    public static List<Integer> majorityElement(int []v) {
+    public static List<Integer> majorityElement(int[] v) {
         int n = v.length; //size of the array
         List<Integer> ls = new ArrayList<>(); // list of answers
 
@@ -47,7 +47,7 @@ public class Majority_Element_Nby3_times {
 
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             if (map.containsKey(arr[i])) {
                 map.put(arr[i], map.get(arr[i]) + 1);
             } else {
@@ -56,7 +56,7 @@ public class Majority_Element_Nby3_times {
         }
 
         for (int key : map.keySet()) {
-            if (map.get(key) > n/3) {
+            if (map.get(key) > n / 3) {
                 ans.add(key);
             }
         }
@@ -64,16 +64,16 @@ public class Majority_Element_Nby3_times {
     }
 
 
-//    // Method 3 : Optimal Solution (Using Moore's Voting Algorithm)
-//    // Time - O(N) + O(N), where N = size of the given array.
-//    // Reason: The first O(N) is to calculate the counts and find the expected majority elements.
-//    // The second one is to check if the calculated elements are the majority ones or not.
-//    // Space - O(1), because we are not using any extra space.
+    // Method 3 : Optimal Solution (Using Moore's Voting Algorithm)
+    // Time - O(N) + O(N), where N = size of the given array.
+    // Reason: The first O(N) is to calculate the counts and find the expected majority elements.
+    // The second one is to check if the calculated elements are the majority ones or not.
+    // Space - O(1), because we are not using any extra space.
     static List<Integer> majorityElement2(int[] arr, int n) {
         int count1 = 0, ele1 = Integer.MIN_VALUE;
         int count2 = 0, ele2 = Integer.MIN_VALUE;
 
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             // element2 is not holding the same element of element1
             if (count1 == 0 && arr[i] != ele2) {
                 count1 = 1;
@@ -83,8 +83,7 @@ public class Majority_Element_Nby3_times {
             else if (count2 == 0 && arr[i] != ele1) {
                 count2 = 1;
                 ele2 = arr[i];
-            }
-            else if (ele1 == arr[i]) count1++;
+            } else if (ele1 == arr[i]) count1++;
             else if (ele2 == arr[i]) count2++;
             else {
                 count1--;
@@ -96,14 +95,15 @@ public class Majority_Element_Nby3_times {
 
         // Manually check if the stored elements in
         // el1 and el2 are the majority elements:
-        int cnt1 = 0; int cnt2 = 0;
+        int cnt1 = 0;
+        int cnt2 = 0;
         for (int i = 0; i < n; i++) {
             if (arr[i] == ele1) cnt1++;
             if (arr[i] == ele2) cnt2++;
         }
 
-        if (cnt1 > n/3) ls.add(ele1);
-        if (cnt2 >= n/3) ls.add(ele2);
+        if (cnt1 > n / 3) ls.add(ele1);
+        if (cnt2 >= n / 3) ls.add(ele2);
 
         // Uncomment the following line
         // if it is told to sort the answer array:
