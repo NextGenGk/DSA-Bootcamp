@@ -13,7 +13,7 @@ public class Majority_Element_Nby3_times {
         List<Integer> ls = new ArrayList<>(); // list of answers
 
         for (int i = 0; i < n; i++) {
-            //selected element is v[i]:
+            // selected element is v[i]:
             // Checking if v[i] is not already
             // a part of the answer:
             if (ls.size() == 0 || ls.get(0) != v[i]) {
@@ -25,9 +25,10 @@ public class Majority_Element_Nby3_times {
                     }
                 }
 
-                // check if frquency is greater than n/3:
-                if (cnt > (n / 3))
+                // check if frequency is greater than n/3:
+                if (cnt > (n / 3)) {
                     ls.add(v[i]);
+                }
             }
 
             if (ls.size() == 2) break;
@@ -36,11 +37,12 @@ public class Majority_Element_Nby3_times {
         return ls;
     }
 
-
     // Method 2 - Better Solution
     // Time - O(N*logN) + O(N), where N = size of the given array.
-    // Reason: We are using a map data structure. Insertion in the map takes logN time. And we are doing it for N elements. So, it results in the first term O(N*logN).
-    // If we use unordered_map instead, the first term will be O(N) for the best and average case and for the worst case, it will be O(N2).
+    // Reason: We are using a map data structure. Insertion in the map takes logN time.
+    // And we are doing it for N elements. So, it results in the first term O(N*logN).
+    // If we use unordered_map instead, the first term will be O(N) for the best and average
+    // case and for the worst case, it will be O(N2).
     // Space - O(N), because using HashMap
     static List<Integer> majorityElement1(int[] arr, int n) {
         List<Integer> ans = new ArrayList<>();
