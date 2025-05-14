@@ -1,6 +1,5 @@
 package Arrays;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Count_Inversions {
@@ -50,7 +49,6 @@ public class Count_Inversions {
         }
 
         // if elements on the left half are still left //
-
         while (left <= mid) {
             temp.add(arr[left]);
             left++;
@@ -66,9 +64,11 @@ public class Count_Inversions {
         for (int i = low; i <= high; i++) {
             arr[i] = temp.get(i - low);
         }
+
         return cnt; // Modification 3
     }
 
+    // Merge Sort Code
     public static int mergeSort(int[] arr, int low, int high) {
         int cnt = 0;
         if (low >= high) return cnt;
