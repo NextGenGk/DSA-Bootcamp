@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class Reverse_Pairs {
 
+    // Method 1 : Optimal Solution
+    // Time Complexity: O(N*logN), where N = size of the given array.
+    // Reason: We are not changing the merge sort algorithm except by adding a variable to it. 
+    // So, the time complexity is as same as the merge sort.
+    // Space Complexity: O(N), as in the merge sort We use a temporary array to store elements in sorted order.
     static int divide(int[] arr, int low, int high) {
         int count = 0;
         if (low >= high) return count;
