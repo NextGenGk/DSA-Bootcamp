@@ -2,6 +2,9 @@ package BinarySearch;
 
 public class Ceil_Value {
 
+    // Method 1 : Optimal Solution
+    // Time Compelxity - O(log2N)
+    // Space Complexity - O(1)
     static int ceil(int[] arr, int target) {
         int n = arr.length;
 
