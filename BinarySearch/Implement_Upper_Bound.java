@@ -46,6 +46,8 @@ public class Implement_Upper_Bound {
     }
 }
 
+// Output : 15 (index 3)
+
 // Upper Bound - Means
 /*
 The upper bound algorithm finds the first or the smallest index in a sorted array where the value at that index
