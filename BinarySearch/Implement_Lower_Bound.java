@@ -47,6 +47,8 @@ public class Implement_Lower_Bound {
     }
 }
 
+// Output : 8 (index - 2)
+
 // Lower Bound - Means
 /*
 The lower bound algorithm finds the first or the smallest index in a sorted array where the value at that index
