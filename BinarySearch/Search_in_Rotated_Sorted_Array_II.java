@@ -26,7 +26,7 @@ public class Search_in_Rotated_Sorted_Array_II {
             int mid = low + (high - low) / 2;
             if (arr[mid] == target) return true;
 
-            // [3,1,2,3,3,3,3]
+            // [3,1,2,3,3,3,3] - Edge Case
             if (arr[low] == arr[mid] && arr[mid] == arr[high]) {
                 low++;
                 high--;
@@ -68,10 +68,12 @@ public class Search_in_Rotated_Sorted_Array_II {
         int[] arr = {7, 8, 1, 2, 3, 3, 3, 4, 5, 6};
         int k = 3;
         boolean ans = search(arr, k);
-        if (!ans)
+        if (!ans) {
             System.out.println("Target is not present.");
-        else
+        }
+        else {
             System.out.println("Target is present in the array.");
+        }
     }
 }
 
