@@ -17,7 +17,8 @@ public class Count_Occurrences_in_Sorted_Array {
 //    }
 
     // Method 2 : Optimal Solution
-    // Time - O(log2N), Space - O(1) (Overall Time Complexity - (First and Last Occurrence & Count Occurrences))
+    // Time - O(log2N), Space - O(1) 
+    // (Overall Time Complexity - (First and Last Occurrence & Count Occurrences))
 
     // Find First Occurrence Function
     // Method : Optimal Solution
