@@ -35,7 +35,7 @@ public class Find_The_Smallest_Divisor {
         return sum;
     }
 
-    // Method 2 : Optimal Solution (Suing Binary Search)
+    // Method 2 : Optimal Solution (Using Binary Search)
     // Time - O(log2(max(arr))) * O(N)
     // Reason: We are applying binary search on our answers that are in the range of [1, max(arr[])]. For every
     // possible divisor ‘mid’, we call the sumByD() function. Inside that function, we are traversing the
