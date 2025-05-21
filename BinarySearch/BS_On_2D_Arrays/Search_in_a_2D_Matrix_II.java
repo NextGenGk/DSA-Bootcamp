@@ -86,6 +86,9 @@ public class Search_in_a_2D_Matrix_II {
     }
 }
 
+// Output :
+// true
+
 // Examples :
 /*
 Problem Statement: You have been given a 2-D array ‘mat’ of size ‘N x M’ where ‘N’ and ‘M’ denote the number of
