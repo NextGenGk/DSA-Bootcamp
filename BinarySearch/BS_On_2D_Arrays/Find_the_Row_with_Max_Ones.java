@@ -27,7 +27,7 @@ public class Find_the_Row_with_Max_Ones {
         return index;
     }
 
-    // Implement Lower Bound
+    // Implement Lower Bound Function
     public static int lowerBound(ArrayList<Integer> arr, int n, int x) {
         int low = 0, high = n - 1;
         int ans = n;
