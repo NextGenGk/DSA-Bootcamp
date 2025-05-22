@@ -51,7 +51,7 @@ public class Matrix_Median {
         return count;
     }
 
-    // Upper Bound Code
+    // Upper Bound Function Code
     // Time - O(log2N), Space - O(1)
     static int upperBound(int[] arr, int target) {
         int n = arr.length;
