@@ -80,7 +80,6 @@ public class Find_the_Row_with_Max_Ones {
 
 // Algorithm : Brute Force
 /*
-Algorithm / Intuition
 In the question, it is clearly stated that we should return -1 if the matrix does not contain any 1.
 
 The extremely naive approach is to traverse the matrix as usual using nested loops and for every single
@@ -107,7 +106,6 @@ of 1’s is greater than cnt_max (we will not update if they are equal).
 
 // Algorithm : Optimal Solution
 /*
-Algorithm / Intuition
 We are going to use the Binary Search algorithm to optimize the approach.
 
 The primary objective of the Binary Search algorithm is to efficiently determine the appropriate half to eliminate,
@@ -144,4 +142,4 @@ Note: As we want the row with the minimum index, we will only update the index i
 than cnt_max (we will not update if they are equal).
  */
 
-// Striver (Video Explanation) : https://youtu.be/SCz-1TtYxDI
+// Striver's (Video Explanation) : https://youtu.be/SCz-1TtYxDI
