@@ -88,7 +88,7 @@ public class Search_in_a_2D_Matrix {
     }
 }
 
-// Examples :
+// Examples & Problem Statement:
 /*
 Problem Statement: You have been given a 2-D array ‘mat’ of size ‘N x M’ where ‘N’ and ‘M’ denote the number of
 rows and columns, respectively. The elements of each row are sorted in non-decreasing order. Moreover, the first
