@@ -21,7 +21,6 @@ public class Search_in_a_2D_Matrix {
 //        }
 //        return false;
 //    }
-//    public static boolean bs(ArrayList<Integer> mat, int target) {
 
     // Method 2 : Better Solution
     // Time : O(N + logM), where N = given row number, M = given column number.
@@ -76,7 +75,6 @@ public class Search_in_a_2D_Matrix {
         }
         return false;
     }
-
 
     // Main Function
     public static void main(String[] args) {
