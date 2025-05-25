@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Find_the_Row_with_Max_Ones {
 
     // Method 1 : Brute Force
-    // Time : O(n X m), where n = given row number, m = given column number.
+    // Time : O(n x m), where n = given row number, m = given column number.
     // Reason: We are using nested loops running for n and m times respectively.
     // Space : O(1) as we are not using any extra space.
     public static int rowWithMax(ArrayList<ArrayList<Integer>> matrix, int n, int m) {
