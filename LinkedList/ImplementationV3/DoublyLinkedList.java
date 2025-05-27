@@ -239,6 +239,11 @@ public class DoublyLinkedList {
         }
 
         // Store data to be deleted and remove the node
+        /*
+            i. Save the data of the node you want to delete.
+           ii. Link the previous node to the next node (skipping over the node to be deleted).
+          iii. Link the next node back to the previous node.
+         */
         int deletedData = current.data;
         current.prev.next = current.next;
         current.next.prev = current.prev;
