@@ -34,17 +34,25 @@ public class Segregate_Odd_and_Even_Nodes_in_LinkedList {
         Node temp = head;;
         ArrayList<Integer> list = new ArrayList<Integer>();
 
+        // If we have odd number of linked list 
+        // then we will end up missing last element
+        // means temp.next never goes inside the loop)
         while (temp != null && temp.next != null) {
             list.add(temp.data);
             temp = temp.next.next;
         }
+        // so, there is a check
         if (temp != null) list.add(temp.data);
 
         temp = head.next;
+        // If we have odd number of linked list 
+        // then we will end up missing last element
+        // means temp.next never goes inside the loop)
         while (temp != null && temp.next != null) {
             list.add(temp.data);
             temp = temp.next.next;
         }
+        // so, there is a check
         if (temp != null) list.add(temp.data);
 
         int i=0;
@@ -68,6 +76,8 @@ public class Segregate_Odd_and_Even_Nodes_in_LinkedList {
         Node evenHead = even; // Save the head of the even list to connect later
 
         // Loop to rearrange nodes into odd and even lists
+        // we use even because odd is bound to even and evey step 
+        // the even is always ahead of odd so, that's why we use even
         while (even != null && even.next != null) {
             odd.next = odd.next.next;
             even.next = even.next.next;
