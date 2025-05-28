@@ -78,6 +78,14 @@ public class Segregate_Odd_and_Even_Nodes_in_LinkedList {
         // Loop to rearrange nodes into odd and even lists
         // we use even because odd is bound to even and evey step 
         // the even is always ahead of odd so, that's why we use even
+        /*
+        > If even or even.next becomes null, it means there are no more even nodes left to process, 
+          and the rearrangement is complete.
+        > If you used odd instead, you might run into a NullPointerException or skip important checks, 
+          because even is always ahead (or at the same position) compared to odd.
+        > So, using even in the condition ensures the loop only proceeds while there are both odd and even
+          nodes to process safely. This is explicitly mentioned in the comments of the code:
+        */
         while (even != null && even.next != null) {
             odd.next = odd.next.next;
             even.next = even.next.next;
