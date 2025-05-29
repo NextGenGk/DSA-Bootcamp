@@ -91,6 +91,42 @@ public class Delete_the_Middle_Node_in_the_LinkedList {
         return head;
     }
 
+    // Method 1 : Brute Force (continued)
+    static Node deleteMiddleContinue(Node head) {
+        // If the list is empty or contains only one node, deleting the middle means returning null
+        if (head == null || head.next == null) {
+            return null;
+        }
+
+        int cnt = 0;
+        Node current = head;
+
+        // First pass: Count the total number of nodes in the list
+        while (current != null) {
+            cnt++;
+            current = current.next;
+        }
+
+        // Reset current to head for the second traversal
+        current = head;
+
+        // Calculate the middle index (0-based index)
+        // For even count, it deletes the second middle (e.g., 4 nodes → index 2 gets deleted)
+        int midIndex = cnt / 2;
+
+        // Traverse to the node just before the middle node
+        for (int i = 0; i < midIndex - 1; i++) {
+            current = current.next;
+        }
+
+        // Remove the middle node by skipping it
+        // (i.e., current.next is the middle node, we bypass it)
+        current.next = current.next.next;
+
+        // Return the modified list
+        return head;
+    }
+
     // Method 2 : Optimal Solution
     // Time Complexity: O(N/2) The algorithm traverses the linked list using the Tortoise and Hare approach.
     // The code increments both 'slow' and 'fast' pointers at different rates, effectively covering about half the
