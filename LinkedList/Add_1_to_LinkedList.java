@@ -95,6 +95,10 @@ public class Add_1_to_LinkedList {
         // If carry is still 1 after the loop, add a new node at the front
         if (carry == 1) {
             Node node = new Node(1);
+            /*
+            We reverse the list back before adding the new node so that the new node is added 
+            to the front in the correct (original) order, making it the most significant digit.
+            */
             head = reverseLinkedListIterative(head);
             node.next = head;
             return node;
