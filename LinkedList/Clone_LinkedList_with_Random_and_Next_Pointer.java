@@ -154,11 +154,13 @@ public class Clone_LinkedList_with_Random_and_Next_Pointer {
             // Creating a new List by
             // pointing to copied nodes
             res.next = temp.next;
+            // move res pointer to the next node
             res = res.next;
 
             // Disconnect and revert back to the
             // initial state of the original linked list
             temp.next = temp.next.next;
+            // move temp pointer to the next node
             temp = temp.next;
         }
 
