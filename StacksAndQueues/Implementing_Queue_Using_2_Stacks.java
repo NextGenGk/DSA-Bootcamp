@@ -3,6 +3,7 @@ package StacksAndQueues;
 import java.util.Stack;
 
 public class Implementing_Queue_Using_2_Stacks {
+    // Create stacks
     Stack<Integer> input;
     Stack<Integer> output;
 
