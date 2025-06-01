@@ -1,6 +1,7 @@
 package StacksAndQueues;
 
 public class Implementing_Stack_Using_Array {
+    // Declaration
     int[] arr;
     int topOfStack;
 
