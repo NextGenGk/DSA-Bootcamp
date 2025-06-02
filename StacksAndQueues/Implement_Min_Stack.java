@@ -149,11 +149,11 @@ Top element: 15
 Popped top, Min: 12
  */
 
-// Approach : Brute Force
+// Approach : Brute Force (Using pairs to store the value and minimum element till now)
 /*
-Solution 1: Using pairs to store the value and minimum element till now.
+Approach: 
 
-Approach: The first element in the pair will store the value and the second element will store the
+The first element in the pair will store the value and the second element will store the
 minimum element till now.
 
 When the first push operation comes in we will push the value and store it as minimum itself in the pair.
@@ -165,8 +165,6 @@ element to take the top’s second element.
 
 // Approach : Optimal Solution
 /*
-Approach:
-
 Let’s take a variable that stores the minimum number. So whenever a push operation comes in just
 take that number put it in the stack and update the variable to the number.
 
