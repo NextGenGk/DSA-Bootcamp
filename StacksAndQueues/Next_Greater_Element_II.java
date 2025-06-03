@@ -67,6 +67,7 @@ public class Next_Greater_Element_II {
             stack.push(arr[currentIndex]);
         }
 
+        // Return the array containing the next greater elements
         return result;
     }
 
