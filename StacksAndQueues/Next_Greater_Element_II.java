@@ -53,11 +53,18 @@ public class Next_Greater_Element_II {
             int currentIndex = i % n;
 
             // Pop elements from the stack that are less than or equal to the current element
+            /*
+            ii. and second if for simulating / establishing circular array
+             */
             while (!stack.isEmpty() && stack.peek() <= arr[currentIndex]) {
                 stack.pop();
             }
 
             // For the first pass (i < n), populate the result array
+            /*
+             i. First (i < n) is for populating the resultant array
+            ii. and second if for simulating / establishing circular array
+             */
             if (i < n) {
                 // If the stack is empty, no greater element exists; otherwise, the top of the stack is the next greater element
                 result[currentIndex] = stack.isEmpty() ? -1 : stack.peek();
