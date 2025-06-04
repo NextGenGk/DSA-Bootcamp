@@ -97,6 +97,44 @@ public class Trapping_Rainwater_Problem {
         return res;
     }
 
+    // Method 2 : Optimal Solution (v2)
+    // Time Complexity: O(N) because we are using 2 pointer approach.
+    // Space Complexity: O(1) because we are not using anything extra.
+
+    // Calculates the total amount of water that can be trapped between bars of different heights.
+    static int calculate(int[] height) {
+        int n = height.length;
+
+        // Edge case: if there are less than 3 bars, no water can be trapped
+        if (n < 3) return 0;
+
+        int l = 0;             // Left pointer
+        int r = n - 1;         // Right pointer
+        int leftMax = 0;       // Maximum height to the left of current left pointer
+        int rightMax = 0;      // Maximum height to the right of current right pointer
+        int waterTrapped = 0;  // Result to store total trapped water
+
+        while (l <= r) {
+            // Update leftMax and rightMax at each step
+            leftMax = Math.max(leftMax, height[l]);
+            rightMax = Math.max(rightMax, height[r]);
+
+            // Decide which side to process
+            if (leftMax < rightMax) {
+                // Water can be trapped only if current height is less than leftMax
+                waterTrapped += leftMax - height[l];
+                l++;
+            } else {
+                // Water can be trapped only if current height is less than rightMax
+                waterTrapped += rightMax - height[r];
+                r--;
+            }
+        }
+
+        return waterTrapped;
+    }
+
+
     // Main Function
     public static void main(String[] args) {
         int[] arr = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
@@ -146,6 +184,23 @@ We keep track of the max height seen so far from the left (`maxLeft`) and right 
 If the current height is less than the max on that side, we can trap water there.
 
 This way, we calculate the trapped water in **one pass** with **constant space**.
+ */
+
+// Intuition + Logic (v2) :
+/*
+Intuition
+
+1. Water trapped at any position depends on the minimum of the highest bars to its left and right,
+   minus the height of the current bar.
+2. Instead of precomputing left and right max for every bar (which takes extra space),
+   we use a two-pointer approach to optimize space.
+
+Logic : Two-pointer Traversal:
+
+1. The idea is to move from both ends toward the center.
+2. At each step, update the leftMax and rightMax.
+3. Whichever side has the smaller maximum height will decide the trapped water because
+   water can only be trapped up to the height of the smaller boundary.
  */
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=1_5VuquLbXg
