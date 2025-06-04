@@ -44,14 +44,20 @@ public class Next_Greater_Element_I {
             while (!stack.isEmpty() && arr[i] >= stack.peek()) {
                 stack.pop(); // Pop elements from the stack that are not greater than the current element
             }
-            // If the stack is empty, it means there is no greater element to the right
-            if (stack.isEmpty()) {
-                result[i] = -1; // Set result[i] to -1 indicating no greater element
-            }
-            // If the stack is not empty, the top element is the next greater element
-            else {
-                result[i] = stack.peek(); // Set result[i] to the top element of the stack
-            }
+            
+            // // If the stack is empty, it means there is no greater element to the right
+            // if (stack.isEmpty()) {
+            //     result[i] = -1; // Set result[i] to -1 indicating no greater element
+            // }
+            // // If the stack is not empty, the top element is the next greater element
+            // else {
+            //     result[i] = stack.peek(); // Set result[i] to the top element of the stack
+            // }
+
+            // If the stack is empty, there is no smaller element to the right, otherwise,
+            // take the top element from the stack
+            result[i] = stack.isEmpty() ? -1 : stack.peek();
+            
             // Push the current element onto the stack
             stack.push(arr[i]);
         }
