@@ -134,6 +134,110 @@ Generate all the subarray and find the minimum, and then calculate the sum of th
 then return the total sum.
  */
 
+// Approach : Optimal Solution v2
+/*
+High-Level Idea:
+Instead of generating all subarrays (which is O(n^2)) and finding their minimum (which is inefficient),
+this code smartly computes:
+
+For every element arr[i], how many subarrays have it as the minimum?
+
+Then multiplies its value by that count and adds to the total.
+*/
+
+/*
+Core Insight (Main Intuition):
+For any element arr[i], the total number of subarrays in which it is the minimum is:
+left * right
+
+Where:
+
+ i. left = number of elements to the left (including itself) for which arr[i] is the first smaller
+ii. right = number of elements to the right (including itself) for which arr[i] is the first smaller
+
+So the total contribution of arr[i] is:
+arr[i] * left * right
+
+You repeat this for every element and sum the contributions.
+*/
+
+/*
+⚙️ Working of Each Function:
+1. justPreviousSmallerElement(int[] arr) — 🔙
+    i. It finds for every index i, the index of the previous element smaller than arr[i].
+   ii. If none found → return -1.
+This helps us determine how far to the left the current element can "spread" as minimum.
+
+2. justNextSmallerElement(int[] arr) — 🔜
+    i. It finds for every index i, the index of the next element smaller than arr[i].
+   ii. If none found → return n (out of bounds).
+This helps us determine how far to the right the current element can "spread" as minimum.
+ */
+
+/*
+Input Example:
+int[] arr = {3, 1, 2, 4};
+
+Output Example:
+Sum of subarray minimums = 17
+
+Subarray and their minimums:
+| Subarray     | Minimum |
+| ------------ | ------- |
+| [3]          | 3       |
+| [3, 1]       | 1       |
+| [3, 1, 2]    | 1       |
+| [3, 1, 2, 4] | 1       |
+| [1]          | 1       |
+| [1, 2]       | 1       |
+| [1, 2, 4]    | 1       |
+| [2]          | 2       |
+| [2, 4]       | 2       |
+| [4]          | 4       |
+
+Sum = 3 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 2 + 4 = 17
+ */
+
+/*
+Step-by-Step Execution:
+int[] arr = {3, 1, 2, 4}; // n = 4
+
+Step 1: Compute PSE (Previous Smaller Element)
+justPreviousSmallerElement(arr) → returns [-1, -1, 1, 2]
+
+Explanation:
+3 → no previous smaller → -1
+1 → no previous smaller → -1
+2 → previous smaller is 1 at index 1 → 1
+4 → previous smaller is 2 at index 2 → 2
+
+Step 2: Compute NSE (Next Smaller Element)
+justNextSmallerElement(arr) → returns [1, 4, 4, 4]
+
+Explanation:
+3 → next smaller is 1 at index 1 → 1
+1 → no next smaller → 4 (out of bounds)
+2 → no next smaller → 4
+4 → no next smaller → 4
+
+Step 3: Calculate Contribution of Each Element
+| i | arr\[i] | PSE | NSE | left = i - PSE\[i] | right = NSE\[i] - i | Contribution = arr\[i] \* left \* right |
+| - | ------- | --- | --- | ------------------ | ------------------- | --------------------------------------- |
+| 0 | 3       | -1  | 1   | 1 - (-1) = 1       | 1 - 0 = 1           | 3 \* 1 \* 1 = 3                         |
+| 1 | 1       | -1  | 4   | 2                  | 3                   | 1 \* 2 \* 3 = 6                         |
+| 2 | 2       | 1   | 4   | 1                  | 2                   | 2 \* 1 \* 2 = 4                         |
+| 3 | 4       | 2   | 4   | 1                  | 1                   | 4 \* 1 \* 1 = 4                         |
+
+// Total Contribution = 3 + 6 + 4 + 4 = 17
+ */
+
+
+
+
+
+
+
+
 // Approach : Optimal Solution
 /*
 The sumSubarrayMins function calculates the sum of the minimums of all subarrays using the concept of next and
