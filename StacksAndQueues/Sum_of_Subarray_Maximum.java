@@ -198,8 +198,46 @@ We now compute how much each arr[i] contributes to the final answer:
 | 3 | 2       | 2       | 4       | 1    | 1     | 2 \* 1 \* 1 = 2  |
 
 Final Sum = 1 + 24 + 6 + 2 = 33
- */
 
+
+/*
+Input: arr = [1, 4, 3, 2]
+We want to find for each element:
+
+How many elements can be included on the left side (including itself) where it's the max.
+
+How many elements can be included on the right side (including itself) where it's the max.
+
+📘 Step-by-Step Intuition
+🔹 arr[0] = 1
+To the left: nothing — it's the first element → left = 1
+To the right: 4 is greater → can't include it → right = 1
+✅ So only the subarray [1] where 1 is max → 1 way
+
+🔹 arr[1] = 4
+To the left: 1 is smaller → include it → left = 2 ([1, 4] and [4])
+To the right: 3, 2 are both smaller → include them → right = 3 ([4], [4,3], [4,3,2])
+✅ So 4 is the max in all subarrays starting from arr[0] to arr[3] where it is inside
+
+Total combinations = 2 * 3 = 6 subarrays where 4 is the max
+
+🔹 arr[2] = 3
+To the left: 4 is greater → can't include it → only include itself → left = 1
+To the right: 2 is smaller → include it → right = 2 ([3], [3,2])
+✅ So 3 is max in 2 subarrays: [3] and [3,2] → 1 * 2 = 2
+
+🔹 arr[3] = 2
+To the left: 3 is greater → can't include → only itself → left = 1
+To the right: nothing → right = 1
+✅ So 2 is max in [2] → 1 * 1 = 1
+
+🧮 How to count elements?
+For left: go left until you find a greater element, count how many steps you moved (including current).
+
+For right: go right until you find a greater element, count how many steps you moved (including current).
+
+That’s what PGE and NGE help automate using a stack!
+ */
 
 
 
