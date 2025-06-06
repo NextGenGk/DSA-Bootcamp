@@ -121,6 +121,83 @@ the celebrity criteria. If such a person exists, their index is returned. If no 
 it returns -1 to indicate no celebrity.
  */
 
+// Approach : Optimal Solution v2
+/*
+Problem Statement
+In a party of n people (numbered 0 to n-1), a celebrity is a person who:
+
+✅ Is known by everyone else
+❌ Does not know anyone else
+
+The matrix matrix[i][j] is:
+1 → person i knows person j
+0 → person i does not know person j
+
+We want to return the index of the celebrity, or -1 if there is no celebrity.
+ */
+
+/*
+Step-by-step Logic
+🔁 Step 1: Eliminate Non-Celebrities
+Use two pointers:
+1. top starts from 0
+2. bottom starts from n-1
+
+Compare:
+1. If matrix[top][bottom] == 1, then top knows bottom, so top can't be a celebrity, move top up.
+2. Otherwise, bottom can't be a celebrity, move bottom down.
+3. Eventually, top will point to a potential celebrity.
+
+🔍 Step 2: Verify the Candidate
+Once a candidate is found (let’s say top = C), we verify:
+1. matrix[C][i] == 0 for all i ≠ C → C doesn't know anyone
+2. matrix[i][C] == 1 for all i ≠ C → everyone knows C
+
+If any of these checks fail → return -1.
+ */
+
+/*
+Example
+Let's take the following matrix of 4 people:
+
+int[][] matrix = {
+    {0, 1, 1, 0},
+    {0, 0, 1, 0},
+    {0, 0, 0, 0}, // Candidate celebrity
+    {0, 1, 1, 0}
+};
+
+Step 1: Eliminate non-celebrities
+Start:
+
+top = 0, bottom = 3
+1. matrix[0][3] == 0 → 0 doesn’t know 3 → 3 can’t be celebrity → bottom-- → bottom = 2
+2. matrix[0][2] == 1 → 0 knows 2 → 0 can’t be celebrity → top++ → top = 1
+3. matrix[1][2] == 1 → 1 knows 2 → 1 can’t be celebrity → top++ → top = 2
+
+Now top == bottom == 2 → Candidate is person 2
+
+➤ Step 2: Verify person 2
+Check if person 2 knows no one:
+
+1. matrix[2][0] == 0 ✅
+2. matrix[2][1] == 0 ✅
+3. matrix[2][3] == 0 ✅
+
+Check if everyone knows person 2:
+
+1. matrix[0][2] == 1 ✅
+2. matrix[1][2] == 1 ✅
+3. matrix[3][2] == 1 ✅
+
+All checks pass → ✅ Return 2
+
+✅ Final Output
+System.out.println(findCelebrity1(matrix)); // Output: 2
+ */
+
+
+
 // Approach : Optimal Solution
 /*
 
