@@ -1,7 +1,6 @@
 package StacksAndQueues;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
 
 public class Sliding_Window_Maximum {
@@ -124,6 +123,32 @@ is out of bounds of our present window size. If so, we need to pop that out. Als
 from the rear that the element present is smaller than the incoming element. If yes, there’s no point
 storing them and hence we pop them out. Finally, the element present at the front would be our largest
 element.
+
+Example input :
+arr = [1, 3, -1, -3, 5, 3, 7, 1, 6]
+k = 3
+We want to slide a window of size 3 and get the maximum in each window.
+
+We’ll keep a deque () to store indices (not values). The front of the deque always has the index
+of the largest element in the current window.
+
+Step-by-step with push and pop:
+
+| i | arr\[i] | Action                              | Deque (indexes) | Deque (values) | Result (if i ≥ 2) |
+| - | ------- | ----------------------------------- | --------------- | -------------- | ----------------- |
+| 0 | 1       | `push(0)`                           | \[0]            | \[1]           | -                 |
+| 1 | 3       | `pop(0)` (1 < 3), `push(1)`         | \[1]            | \[3]           | -                 |
+| 2 | -1      | `push(2)`                           | \[1, 2]         | \[3, -1]       | 3                 |
+| 3 | -3      | `push(3)`                           | \[1, 2, 3]      | \[3, -1, -3]   | 3                 |
+|   |         | `pop(1)` (index 1 is out of window) | \[2, 3]         | \[-1, -3]      |                   |
+| 4 | 5       | `pop(3)`, `pop(2)`, `push(4)`       | \[4]            | \[5]           | 5                 |
+| 5 | 3       | `push(5)`                           | \[4, 5]         | \[5, 3]        | 5                 |
+| 6 | 7       | `pop(5)`, `pop(4)`, `push(6)`       | \[6]            | \[7]           | 7                 |
+| 7 | 1       | `push(7)`                           | \[6, 7]         | \[7, 1]        | 7                 |
+| 8 | 6       | `pop(7)` (1 < 6), `push(8)`         | \[6, 8]         | \[7, 6]        | 7                 |
+
+Final Output : [3, 3, 5, 5, 7, 7, 7]
  */
+
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=NwBvene4Imo
