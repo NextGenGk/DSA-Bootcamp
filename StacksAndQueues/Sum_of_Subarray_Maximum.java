@@ -125,6 +125,86 @@ Generate all the subarrays and find the maximum, then calculate the sum of the t
 and return the total sum.
  */
 
+// Approach : Optimal Solution v2
+/*
+Problem Statement
+Given an array arr, calculate the sum of the maximum elements of all possible subarrays.
+
+Naively, you could generate all subarrays and find the maximum in each — but that would take O(n²) time,
+which is inefficient for large arrays.
+
+Instead, we solve it in O(n) time using a stack-based approach.
+ */
+
+/*
+Core Intuition
+Let’s say we want to find out how many subarrays exist where arr[i] is the maximum element.
+
+Instead of iterating all subarrays, we count the number of subarrays where each arr[i] is the maximum,
+and compute its total contribution.
+
+The key idea is:
+For each arr[i], compute:
+
+1. left = i - PGE[i] → how many elements to the left can pair with arr[i] to form subarrays
+   where arr[i] is maximum
+2. right = NGE[i] - i → how many elements to the right can pair with arr[i] to form subarrays
+   where arr[i] is still the max
+3. Total subarrays where arr[i] is the maximum = left * right
+
+So contribution = arr[i] * left * right
+ */
+
+/*
+Supporting Concepts
+Previous Greater Element (PGE): First element to the left of arr[i] that is greater than arr[i].
+
+Next Greater Element (NGE): First element to the right of arr[i] that is greater than arr[i].
+
+If no such greater element exists:
+
+PGE = -1
+NGE = n (length of array)
+
+We use monotonic decreasing stacks to compute PGE and NGE in O(n) time.
+ */
+
+/*
+Example: arr = [1, 4, 3, 2]
+Let’s calculate the result step by step.
+
+Step 1: Compute PGE (Previous Greater Element)
+We traverse from left to right. Stack keeps indices of elements in decreasing order.
+
+ PGE = [-1, -1, 1, 2]
+
+Step 2: Compute NGE (Next Greater Element)
+We traverse from right to left. Stack keeps indices in decreasing order.
+
+ NGE = [1, 4, 4, 4]
+
+Step 3: Calculate Contribution of Each Element
+We now compute how much each arr[i] contributes to the final answer:
+
+1. left = i - PGE[i]
+2. right = NGE[i] - i
+3. contribution = arr[i] * left * right
+
+| i | arr\[i] | PGE\[i] | NGE\[i] | left | right | Contribution     |
+| - | ------- | ------- | ------- | ---- | ----- | ---------------- |
+| 0 | 1       | -1      | 1       | 1    | 1     | 1 \* 1 \* 1 = 1  |
+| 1 | 4       | -1      | 4       | 2    | 3     | 4 \* 2 \* 3 = 24 |
+| 2 | 3       | 1       | 4       | 1    | 2     | 3 \* 1 \* 2 = 6  |
+| 3 | 2       | 2       | 4       | 1    | 1     | 2 \* 1 \* 1 = 2  |
+
+Final Sum = 1 + 24 + 6 + 2 = 33
+ */
+
+
+
+
+
+
 // Approach : Optimal Solution
 /*
 The sumSubarrayMax function calculates the sum of the maximums of all subarrays using the concept of next and
