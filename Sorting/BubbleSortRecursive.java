@@ -2,7 +2,6 @@ package Sorting;
 
 public class BubbleSortRecursive {
 
-
     // Bubble Sort Recursive Function
     public static void bubbleSort(int[] arr, int n) {
         // Base Case: range == 1.
