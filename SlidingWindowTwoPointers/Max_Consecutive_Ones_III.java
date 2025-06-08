@@ -76,7 +76,6 @@ public class Max_Consecutive_Ones_III {
         return maxLength;
     }
 
-
     // Method 3 : Optimal Solution
     // Time Complexity : O(N)
     // Space Complexity : O(1)
