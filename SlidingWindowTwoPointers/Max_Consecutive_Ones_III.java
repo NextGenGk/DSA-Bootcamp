@@ -26,7 +26,7 @@ public class Max_Consecutive_Ones_III {
                 }
                 // If the number of zeros exceeds k, break out of the inner loop to start a new subarray
                 else {
-                    break;
+                    break; // No need to continue further if zeros exceed k
                 }
             }
         }
@@ -97,6 +97,7 @@ public class Max_Consecutive_Ones_III {
             // If the number of zeros exceeds k, move the left pointer to shrink the window
             if (zeroes > k) {
                 // If the leftmost element in the window is 0, decrement the zero count
+                // We will not allowed to go beyond the max length, that's why we increment the left pointer
                 if (nums[left] == 0) {
                     zeroes--;
                 }
