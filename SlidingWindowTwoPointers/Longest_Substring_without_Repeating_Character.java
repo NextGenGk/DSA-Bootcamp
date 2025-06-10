@@ -46,7 +46,7 @@ public class Longest_Substring_without_Repeating_Character {
     // Time Complexity : O(N^3)
     // Space Complexity : O(N)
     // Method to find the length of the longest substring without repeating characters
-    public static int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstringv2(String s) {
         int n = s.length();
         int maxLength = 0;
     
@@ -115,7 +115,7 @@ public class Longest_Substring_without_Repeating_Character {
     // Time Complexity : O(N^2)
     // Space Complexity : O(N)
     // Method to find the length of the longest substring without repeating characters
-    public static int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring1v2(String s) {
         int n = s.length();
         int max = 0;
     
