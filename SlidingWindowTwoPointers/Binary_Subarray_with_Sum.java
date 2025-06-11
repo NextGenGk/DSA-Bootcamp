@@ -81,4 +81,47 @@ This idea is based based on the idea that by subtracting atMost(nums, goal - 1) 
 atMost(nums, goal), we are effectively removing subarrays whose sum is strictly less than goal.
  */
 
+// Why this approach works
+/*
+Why does this method work?
+The key lies in understanding this equation:
+
+numSubarraysWithSum(goal) = helper(goal) - helper(goal - 1)
+
+This works because of how subarrays and prefix sums behave.
+
+🔢 Think About It Like This:
+Suppose helper(nums, goal) gives:
+    i. Total number of subarrays with sum ≤ goal
+
+Then helper(nums, goal - 1) gives:
+    i. Total number of subarrays with sum ≤ goal - 1
+
+So, the difference between them is:
+    i. Only those subarrays whose sum is exactly goal
+
+✅ So what does helper(nums, goal) actually do?
+It counts all subarrays with sum ≤ goal using a sliding window. This works because all values
+in nums are 0 or 1 (binary array):
+    i. In a binary array, subarray sums are non-decreasing when you expand the window to the right — so the sliding window logic works without missing anything.
+
+🎯 Why only works on binary arrays?
+Because of this property:
+
+1. If nums had arbitrary integers (like negatives), the window could grow and shrink in unpredictable ways.
+2. But in binary arrays:
+    1. Every element is either 0 or 1
+    2. So, when the current window sum exceeds the target, you can safely shrink from the left.
+*/
+
+/*
+In summary:
+This method works because:
+
+1. The array contains only 0s and 1s.
+2. For binary arrays, counting subarrays with exact sum = goal can be reduced to:
+    count of subarrays with sum ≤ goal - count of subarrays with sum ≤ goal - 1
+3. The helper function uses a sliding window to count subarrays with sum ≤ target efficiently.
+ */
+
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=XnMdNUkX6VM
