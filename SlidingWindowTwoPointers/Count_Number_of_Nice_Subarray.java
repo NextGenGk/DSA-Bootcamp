@@ -56,7 +56,8 @@ public class Count_Number_of_Nice_Subarray {
     }
 }
 
-// Output : Number of subarrays with exactly 3 odd numbers: 2
+// Output : 
+// Number of subarrays with exactly 3 odd numbers: 2
 
 // Approach : Optimal Solution
 /*
