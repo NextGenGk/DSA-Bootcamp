@@ -72,6 +72,37 @@ public class Number_of_Substrings_Containing_All_Three_Characters {
         return cnt;
     }
 
+    // Method 3 : Optimal Solution v2
+    // Time Complexity : O(N)
+    // Space Complexity : O(1)
+    public static int numberOfSubstringsv2(String s) {
+        int n = s.length();
+        int count = 0;
+
+        // Array to store frequency of 'a', 'b', and 'c'
+        int[] hash = new int[3];
+
+        int left = 0;
+
+        // Move the right pointer across the string
+        for (int right = 0; right < n; right++) {
+            // Increase the count of the current character
+            hash[s.charAt(right) - 'a']++;
+
+            // If we have at least one of each character ('a', 'b', 'c') in the current window
+            while (hash[0] > 0 && hash[1] > 0 && hash[2] > 0) {
+                // All substrings from current left to the end with this 'right' are valid
+                count += n - right;
+
+                // Shrink the window from the left
+                hash[s.charAt(left) - 'a']--;
+                left++;
+            }
+        }
+
+        return count;
+    }
+
     // Method 3 : Optimal Solution
     // Time Complexity : O(N)
     // Space Complexity : O(1)
@@ -150,6 +181,40 @@ By combining these ideas, the code efficiently captures all valid substrings whi
 computations. The use of two pointers and a presence-tracking array allows the algorithm to explore
 the string in a structured manner, leading to a more optimal solution compared to a
 naive brute-force approach.
+ */
+
+// Algorithm : Optimal Solution v2
+/*
+High-Level Intuition
+We're asked to count substrings that contain at least one a, one b, and one c.
+
+Instead of generating all substrings (which is O(n²)), we use a sliding window approach
+to efficiently find valid substrings and count them.
+
+🔄 Sliding Window Logic
+We maintain a window [left...right] such that:
+
+1. right moves from 0 to end of string.
+2. For every right, we try to shrink left as much as possible while the window still contains at
+least one a, b, and c.
+3. Once the condition is met, we add all substrings that start between left and right and end
+at or after right. These are (n - right) substrings.
+
+🧠 Why (n - right) substrings?
+If s = "abcabc" and right = 3 (s.charAt(3) = 'a'), and window [left...right] is valid, then:
+
+1. All substrings starting from left, left+1, ..., to right and ending anywhere from right to n-1 are valid.
+2. This gives us (n - right) valid substrings ending at or after right.
+
+🧮 Hash Array
+We use a hash[3] array to keep count of 'a', 'b', and 'c' in the current window:
+
+hash[s.charAt(i) - 'a']++;
+'a' - 'a' = 0
+'b' - 'a' = 1
+'c' - 'a' = 2
+
+So hash[0] = count of 'a', etc.
  */
 
 // Approach : Optimal Solution
