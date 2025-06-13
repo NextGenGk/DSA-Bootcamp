@@ -125,6 +125,39 @@ public class Longest_Substring_with_At_Most_K_Distinct_Characters {
         return maxLength;
     }
 
+    // Method 4 : Optimal Solution v2
+    // Time Complexity : O(N)
+    // Space Complexity : O(256)
+    public int longestkSubstr(String s, int k) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        int max = -1;
+
+        int left = 0, right = 0;
+        while (right < s.length()) {
+            char ch = s.charAt(right);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+
+            // Shrink window if more than k distinct characters
+            while (map.size() > k) {
+                char leftChar = s.charAt(left);
+                map.put(leftChar, map.get(leftChar) - 1);
+                if (map.get(leftChar) == 0) {
+                    map.remove(leftChar);
+                }
+                left++;
+            }
+
+            // Check for valid window
+            if (map.size() == k) {
+                max = Math.max(max, right - left + 1);
+            }
+
+            right++;
+        }
+
+        return max;
+    }
+
     // Main Function
     public static void main(String[] args) {
         String str = "aabbcc";
