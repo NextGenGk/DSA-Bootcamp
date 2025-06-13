@@ -10,7 +10,7 @@ public class Longest_Substring_with_At_Most_K_Distinct_Characters {
     public static int kDistinctChars(String str, int k) {
         // Function to find the length of the longest substring with exactly k distinct characters
         int n = str.length(); // Get the length of the input string
-        int maxLength = 0; // Initialize the maximum length of the substring to 0
+        int maxLength = -1; // Initialize the maximum length of the substring to -1
 
         // Loop through each character in the string as the starting point of the substring
         for (int i = 0; i < n; i++) {
