@@ -5,46 +5,50 @@ public class Minimum_Window_Substring {
     // Method 1 : Brute Force
     // Time Complexity : O(N^2)
     // Space Complexity : O(256)
-    public static String minWindow(String s, String t) {
+    public static String minWindowv2(String s, String t) {
         int m = s.length();
         int n = t.length();
+        int startIndex = -1;
         int minLength = Integer.MAX_VALUE;
-        int startingIndex = -1;
 
-        for (int i = 0; i < m; i++) { // Adjusted loop to prevent out-of-bound
-            int[] hash = new int[256];
-            int cnt = 0;
+        // Build target frequency array only once — from 't', not 's'
+        int[] targetFreq = new int[256];
+        for (int i = 0; i < n; i++) {
+            targetFreq[t.charAt(i)]++;
+        }
 
-            // Count frequency of characters in t
-            for (int j = 0; j < n; j++) {
-                hash[t.charAt(j)]++;
-            }
+        for (int i = 0; i < m; i++) {
+            int[] hash = targetFreq.clone(); // Clone the target frequency array
+            int count = 0;
 
-            // Iterate over substring of s starting at index i
             for (int j = i; j < m; j++) {
-                if (hash[s.charAt(j)] > 0) cnt++;
-                hash[s.charAt(j)]--;
+                char c = s.charAt(j);
 
-                // Check if the current window contains all characters of t
-                if (cnt == n) {
+                if (hash[c] > 0) {
+                    count++;
+                }
+                hash[c]--; // Always decrement even if not needed
+
+                // When all characters of 't' are matched
+                if (count == n) {
                     if ((j - i + 1) < minLength) {
-                        minLength = j - i + 1;
-                        startingIndex = i;
+                        minLength = (j - i + 1);
+                        startIndex = i;
                     }
-                    break;
+                    break; // ✅ Break early after finding valid window
                 }
             }
         }
 
-        // Ensure valid substring is returned
-        return startingIndex == -1 ? "" : s.substring(startingIndex, startingIndex + minLength);
+        return startIndex == -1 ? "" : s.substring(startIndex, startIndex + minLength);
     }
+
 
     // Method 2 : Optimal Solution
     // Time Complexity : O(2N) + O(M), O(2N) for traversing all the characters at most twice in worst case
     // & O(M) for inserting all the characters in the hashArray.
     // Space Complexity : O(256), size of the hashArray with all the unique character in alphabets.
-    public static String minWindow1(String s, String t) {
+    public static String minWindowOptimal(String s, String t) {
         // Get the lengths of the strings s and t
         int m = s.length();
         int n = t.length();
@@ -112,12 +116,12 @@ public class Minimum_Window_Substring {
         String t = "ABC";
 
         // Call the minWindow1 function and print the result
-        String result = minWindow1(s, t);
+        String result = minWindowv2(s, t);
         System.out.println("The smallest window in '" + s + "' containing all characters of '" + t + "' is: '" + result + "'");
     }
 }
 
-// Output :
+// Output : The smallest window in 'ADOBECODEBANC' containing all characters of 'ABC' is: 'BANC'
 
 // Approach : Brute Force
 /*
