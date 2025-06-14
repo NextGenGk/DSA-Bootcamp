@@ -123,6 +123,17 @@ allowing for an O(n) time complexity solution.
 
 This idea is based on the idea that by subtracting atMost(nums, k - 1) from
 atMost(nums, k), we are effectively removing subarrays whose sum is strictly less than goal.
+
+Why this code works : High-Level Intuition
+To count the number of subarrays with exactly k distinct elements, 
+
+we use the formula:
+Exactly k = At most k - At most (k - 1)
+
+Why? Because:
+1. "At most k distinct" includes subarrays with 1 to k distinct elements.
+2. "At most (k-1)" includes subarrays with 1 to k-1 distinct elements.
+3. So subtracting gives subarrays with exactly k distinct elements.
  */
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=7wYGbV_LsX4
