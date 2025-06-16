@@ -7,7 +7,7 @@ public class Print_All_Subsequences {
 
     // Method 1 : Optimal Solution
     // Time Complexity: O(2^N) - As we have 2 choices for each element, either include or exclude
-    // Space Complexity: O(N) - As we are using recursion stack
+    // Space Complexity: O(N) - As we are using recursive stack space
     // Recursive function to generate all subsequences
     public static void generateSubsequences(int[] arr, int index, List<Integer> subsequence) {
         // Base Case : If index are out of bounds, print the subsequence and return
