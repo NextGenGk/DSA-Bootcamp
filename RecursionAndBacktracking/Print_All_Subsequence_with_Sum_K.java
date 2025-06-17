@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Print_All_Subsequence_with_Sum_K {
 
-    // Method 2 : Optimal Solution
+    // Method 1 : Optimal Solution
     // Time Complexity: O(2^N) - As we have 2 choices for each element, either include or exclude
     // Space Complexity: O(N) - As we are using recursion stack
     // Recursive function to find subsequences with sum k
