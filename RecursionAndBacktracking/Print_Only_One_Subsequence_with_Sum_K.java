@@ -32,7 +32,9 @@ public class Print_Only_One_Subsequence_with_Sum_K {
         // Don't pick the current element (Backtrack)
         subsequence.remove(subsequence.size() - 1);
         sum -= arr[index];
-        if (printOnlyOneSubsequenceWithSumK(arr, index + 1, subsequence, sum, k)) ;
+        if (printOnlyOneSubsequenceWithSumK(arr, index + 1, subsequence, sum, k)) {
+            return true;
+        }
 
         // If no subsequence found
         return false;
