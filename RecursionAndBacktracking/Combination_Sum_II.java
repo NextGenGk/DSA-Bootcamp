@@ -41,7 +41,7 @@ public class Combination_Sum_II {
             // Pick the element
             current.add(arr[i]);
             // Move to the next index (as elements can be used only once)
-            findCombinations(arr, i + 1, target - arr[i], ans, current);
+            findCombinations(arr, i + 1, target - arr[i], ans, current); // i+1 to avoid reusing the same element
             // Backtrack: Remove the element to try other possibilities
             current.remove(current.size() - 1);
         }
