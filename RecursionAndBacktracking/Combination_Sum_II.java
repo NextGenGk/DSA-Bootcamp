@@ -32,6 +32,7 @@ public class Combination_Sum_II {
         // Iterate through the array from the current index
         for (int i = index; i < arr.length; i++) {
             // Skip duplicate elements to avoid duplicate combinations
+            // Edge case : 1st element is always pick using this condition (i > index)
             if (i > index && arr[i] == arr[i - 1]) continue;
 
             // If the element is greater than the remaining target, break (since array is sorted)
