@@ -81,7 +81,7 @@ public class Subset_Sum_II {
 }
 
 // Output :
-//
+// [[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
 
 // Intuition : Brute Force
 /*
