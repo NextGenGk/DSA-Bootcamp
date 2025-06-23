@@ -83,7 +83,7 @@ public class Print_All_Permutations {
         return ans;
     }
 
-    // Main function to test the permutation generator
+    // Main Function
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
         List<List<Integer>> result = permute2(nums);
