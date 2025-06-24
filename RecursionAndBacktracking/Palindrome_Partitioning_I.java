@@ -15,7 +15,7 @@ public class Palindrome_Partitioning_I {
     // average length of the list of palindromes and if we have x such list of palindromes in our
     // final answer. The depth of the recursion tree is n, so the auxiliary space required is equal to the O(n).
 
-    // Main function to return all possible palindrome partitions of a given string
+    // Function to return all possible palindrome partitions of a given string
     public static List<List<String>> partition(String s) {
         List<List<String>> ans = new ArrayList<>();
         generateValidPartition(s, 0, ans, new ArrayList<>());
