@@ -21,6 +21,9 @@ public class N_Queens {
             col--;
         }
 
+        // You assign row = duprow; col = dupcol; every time to restore the original cell 
+        // coordinates before checking each new direction. This ensures each direction check 
+        // starts from the correct position on the board.
         row = duprow;
         col = dupcol;
         // Check left side in the same row
@@ -29,6 +32,9 @@ public class N_Queens {
             col--;
         }
 
+        // You assign row = duprow; col = dupcol; every time to restore the original cell 
+        // coordinates before checking each new direction. This ensures each direction check 
+        // starts from the correct position on the board.
         row = duprow;
         col = dupcol;
         // Check lower diagonal (left direction)
