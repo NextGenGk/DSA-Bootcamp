@@ -38,6 +38,7 @@ public class Sudoku_Solver {
         return true; // Return true when the board is completely solved
     }
 
+    // Function to check a character is valid at given index or not
     public static boolean isValid(char[][] board, int row, int col, char c) {
         // Check the current row, column, and 3x3 subgrid for conflicts
         for (int i = 0; i < 9; i++) {
