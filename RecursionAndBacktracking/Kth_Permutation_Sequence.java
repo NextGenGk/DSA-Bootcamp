@@ -100,7 +100,8 @@ public class Kth_Permutation_Sequence {
 
     // Main Function
     public static void main(String[] args) {
-        int n = 4, k = 17;
+        int n = 4; // numbers like [1, 2, 3, 4]
+        int k = 17; // kth permutation
         System.out.println(getPermutationOptimal(n, k));
     }
 }
