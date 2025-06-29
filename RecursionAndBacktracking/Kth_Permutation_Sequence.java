@@ -12,6 +12,7 @@ public class Kth_Permutation_Sequence {
     // data structure. Also, O(N! Log N!)  time required to sort the data structure
     // Space complexity: O(N)
     // Reason: Result stored in a vector, we are auxiliary space taken by recursion
+    
     // Helper function to swap two characters in an array
     static void swap(char s[], int i, int j) {
         char ch = s[i];
@@ -106,7 +107,8 @@ public class Kth_Permutation_Sequence {
     }
 }
 
-// Output: 3412
+// Output: 
+// 3412
 
 // Intuition : Brute Force
 /*
