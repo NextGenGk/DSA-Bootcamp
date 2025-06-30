@@ -50,7 +50,8 @@ public class Jump_Game {
     }
 }
 
-// Output Array representing maximum jump from each index: 4 3 7 1 2
+// Output :
+// Array representing maximum jump from each index: 4 3 7 1 2
 
 // Approach / Intuition : Optimal Solution
 /*
