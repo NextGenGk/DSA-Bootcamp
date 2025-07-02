@@ -70,6 +70,78 @@ public class Fractional_Knapsack {
     }
 }
 
+// Working on Online Editor like GFG
+/*
+import java.util.*;
+
+class Solution {
+
+    // Item class to hold value and weight
+    static class Item {
+        int value, weight;
+
+        Item(int value, int weight) {
+            this.value = value;
+            this.weight = weight;
+        }
+    }
+
+    // Main method to compute max value of fractional knapsack
+    double fractionalKnapsack(int[] values, int[] weights, int W) {
+        int n = values.length;
+        Item[] items = new Item[n];
+
+        // Step 1: Build item array from value and weight arrays
+        for (int i = 0; i < n; i++) {
+            items[i] = new Item(values[i], weights[i]);
+        }
+
+        // Step 2: Sort items by decreasing value-to-weight ratio using Comparator
+        Arrays.sort(items, new Comparator<Item>() {
+            @Override
+            public int compare(Item a, Item b) {
+                double r1 = (double) a.value / a.weight;
+                double r2 = (double) b.value / b.weight;
+                return Double.compare(r2, r1); // Sort in descending order
+            }
+        });
+
+        double finalValue = 0.0; // Total value we can take
+        int currentWeight = 0;   // Total weight accumulated
+
+        // Step 3: Iterate through sorted items and pick greedily
+        for (Item item : items) {
+            // If full item can be taken, take it
+            if (currentWeight + item.weight <= W) {
+                finalValue += item.value;
+                currentWeight += item.weight;
+            } 
+            // Otherwise take fraction of item that fits
+            else {
+                int remain = W - currentWeight;
+                finalValue += ((double) item.value / item.weight) * remain;
+                break; // Knapsack is full, break the loop
+            }
+        }
+
+        // Step 4: Return value rounded to 6 decimal places
+        return Math.round(finalValue * 1e6) / 1e6;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] values = {60, 100, 120};
+        int[] weights = {10, 20, 30};
+        int capacity = 50;
+
+        double result = sol.fractionalKnapsack(values, weights, capacity);
+        System.out.printf("Maximum value in Knapsack = %.6f\n", result);
+    }
+}
+*/
+
 // Output : Maximum value in Knapsack = 380.0
 
 // Approach / Intuition - Optimal Solution
