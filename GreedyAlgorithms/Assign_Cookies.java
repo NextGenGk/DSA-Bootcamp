@@ -14,43 +14,26 @@ public class Assign_Cookies {
     // of the input array. It does not require any additional data structures that scale with the input size.
     // Function to find the maximum number of content children
     public static int findContentChildren(int[] greed, int[] cookieSize) {
-        // Get the size of the greed array
-        int n = greed.length;
-
-        // Get the size of the cookieSize array
-        int m = cookieSize.length;
-
-        // Sort the greed factors in ascending
-        // order to try and satisfy the least greedy children first
+        // Sort the greed array so we try to satisfy the least greedy children first
         Arrays.sort(greed);
 
-        // Sort the cookie sizes in ascending
-        // order to use the smallest cookies first
+        // Sort the cookie sizes so we use the smallest cookies first
         Arrays.sort(cookieSize);
 
-        // Initialize a pointer for the cookieSize array,
-        // starting from the first cookie
-        int l = 0;
+        int child = 0;  // Index for the current child
+        int cookie = 0; // Index for the current cookie
 
-        // Initialize a pointer for the greed array,
-        // starting from the first child
-        int r = 0;
-
-        // Iterate while there are cookies and children left to consider
-        while (l < m && r < n) {
-            // If the current cookie can
-            // satisfy the current child's greed
-            if (greed[r] <= cookieSize[l]) {
-                // Move to the next child,
-                // as the current child is satisfied
-                r++;
+        // Go through both arrays as long as there are children and cookies left
+        while (child < greed.length && cookie < cookieSize.length) {
+            // If the current cookie can satisfy the current child
+            if (greed[child] <= cookieSize[cookie]) {
+                child++;  // The child is satisfied, move to the next one
             }
-            // Always move to the next cookie whether the current child was satisfied or not
-            l++;
+            cookie++;  // Move to the next cookie regardless
         }
 
-        // The value of r at the end of the loop represents the number of children that were satisfied
-        return r;
+        // The value of 'child' is the number of satisfied children
+        return child;
     }
 
     // Main Function
