@@ -18,7 +18,7 @@ public class Find_Minimum_No_of_Coins {
         // Traverse the coin array from the largest denomination to the smallest
         for (int i = n - 1; i >= 0; i--) {
             // While the current coin can still be used to reduce the value
-            if (value >= coins[i]) {
+            while (value >= coins[i]) {
                 // Subtract the coin's value from the remaining amount
                 value -= coins[i];
 
