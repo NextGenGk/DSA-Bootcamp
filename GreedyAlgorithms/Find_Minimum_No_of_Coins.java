@@ -30,7 +30,7 @@ public class Find_Minimum_No_of_Coins {
         return list;
     }
 
-    // Main method to test the coin change function
+    // Main Function
     public static void main(String[] args) {
         // Array representing the available denominations of coins
         int[] coins = {1, 2, 5, 10, 20, 50, 100, 500, 1000};
