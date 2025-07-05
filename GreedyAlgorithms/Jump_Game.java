@@ -19,6 +19,7 @@ public class Jump_Game {
             // If the current index is greater than the maximum reachable index
             // it means we cannot move forward and should return false
             // arr = [1, 2, 3, 1, 1, 0, 2, 5]
+            // idx = [0, 1, 2, 3, 4, 5, 6, 7]
             // where 'maxIndex' = 5, so we can't move further
             if (i > maxIndex) {
                 return false;
