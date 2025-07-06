@@ -47,6 +47,44 @@ public class N_Meetings_In_One_Room {
         }
     }
 
+    // Comparator working 
+    /*
+    [1: (1,2)], [2: (3,4)], [3: (0,5)], [4: (5,7)], [5: (8,9)], [6: (5,9)]
+
+    Step 1: Start Sorting (using comparator)
+    
+    Iteration 1: Compare Meeting 1 and Meeting 2
+    Meeting 1 end = 2, Meeting 2 end = 4
+    2 < 4 → return -1
+    Result: Meeting 1 goes before Meeting 2
+    
+    Iteration 2: Compare Meeting 3 and Meeting 2
+    Meeting 3 end = 5, Meeting 2 end = 4
+    5 > 4 → return 1
+    Result: Meeting 2 goes before Meeting 3
+    
+    Iteration 3: Compare Meeting 3 and Meeting 4
+    Meeting 3 end = 5, Meeting 4 end = 7
+    5 < 7 → return -1
+    Result: Meeting 3 goes before Meeting 4
+    
+    Iteration 4: Compare Meeting 5 and Meeting 6
+    Both end at 9
+    Compare position: Meeting 5 position = 5, Meeting 6 position = 6
+    5 < 6 → return -1
+    Result: Meeting 5 goes before Meeting 6
+    
+    Step 2: Final Sorted Order
+    After all pairwise comparisons, the sorted order is:
+    
+    Meeting 1 (end=2, pos=1)
+    Meeting 2 (end=4, pos=2)
+    Meeting 3 (end=5, pos=3)
+    Meeting 4 (end=7, pos=4)
+    Meeting 5 (end=9, pos=5)
+    Meeting 6 (end=9, pos=6)
+    */    
+
     // Function to find the maximum number of meetings that can be attended
     // without any overlap, and print the order in which they should be attended
     public static void maxMeetings(int[] start, int[] end, int n) {
