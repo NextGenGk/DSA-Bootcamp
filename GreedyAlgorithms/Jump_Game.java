@@ -18,6 +18,8 @@ public class Jump_Game {
         for (int i = 0; i < nums.length; i++) {
             // If the current index is greater than the maximum reachable index
             // it means we cannot move forward and should return false
+            // arr = [1, 2, 3, 1, 1, 0, 2, 5]
+            // where 'maxIndex' = 5, so we can't move further
             if (i > maxIndex) {
                 return false;
             }
@@ -51,7 +53,7 @@ public class Jump_Game {
     }
 }
 
-// Output :
+// Output : true
 // Array representing maximum jump from each index: 4 3 7 1 2
 
 // Approach / Intuition : Optimal Solution
