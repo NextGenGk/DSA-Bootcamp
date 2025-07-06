@@ -29,7 +29,8 @@ public class Jump_Game {
             maxIndex = Math.max(maxIndex, i + nums[i]);
         }
 
-        // If we complete the loop, it means we can reach the last index
+        // If we complete the loop,
+        // it means we can reach the last index
         return true;
     }
 
