@@ -54,7 +54,6 @@ public class Jump_Game {
 }
 
 // Output : true
-// Array representing maximum jump from each index: 4 3 7 1 2
 
 // Approach / Intuition : Optimal Solution
 /*
