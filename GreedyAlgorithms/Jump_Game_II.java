@@ -33,6 +33,7 @@ public class Jump_Game_II {
             }
         }
 
+        // return the minimum number of jumps
         return minJumps;
     }
 
