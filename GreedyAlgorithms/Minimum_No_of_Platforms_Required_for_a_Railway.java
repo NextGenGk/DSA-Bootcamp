@@ -65,7 +65,6 @@ public class Minimum_No_of_Platforms_Required_for_a_Railway {
 
     // Main Function
     public static void main(String[] args) {
-
         int[] arr = {900, 945, 955, 1100, 1500, 1800};
         int[] dep = {920, 1200, 1130, 1150, 1900, 2000};
         int n = arr.length;
