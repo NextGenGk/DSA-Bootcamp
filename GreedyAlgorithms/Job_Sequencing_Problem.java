@@ -17,7 +17,6 @@ public class Job_Sequencing_Problem {
 
     // Function to schedule jobs and return the maximum profit along with the number of jobs done
     static int[] scheduleJobs(Job[] arr, int n) {
-
         // Step 1: Sort jobs based on profit in decreasing order
         Arrays.sort(arr, (a, b) -> (b.profit - a.profit));
 
