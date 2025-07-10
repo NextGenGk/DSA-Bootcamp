@@ -118,6 +118,37 @@ public class Candy {
             // Adjust the sum for peak, since peak has been counted multiple times
             // If we had a peak higher than the downward slope, we need to subtract
             // extra candies that we might have added earlier.
+            /*
+            Why is this adjustment needed?
+            Suppose the downward slope after a peak is longer than the upward slope. In that case, the last child on 
+            the downward slope will receive more candies than the peak child, which breaks the problem's rule: the peak 
+            (highest rating) should have more candies than neighbors.
+            
+            To fix this, if the number of candies on the peak (peak) is greater than or equal to the length of the downward 
+            slope (down), you need to add peak - down candies to the sum. This ensures the peak is still higher than any 
+            child in the downward run.
+            
+            Example
+            Suppose ratings: [1, 2, 3, 2, 1]
+            
+            Upward slope: 1, 2, 3 (peak = 3)
+            Downward slope: 2, 1 (down = 2)
+            Without adjustment:
+            
+            Candies: 1, 2, 3, 2, 1
+            The peak (3) is higher than the downward values (2, 1), so no adjustment needed.
+            But if the downward slope was longer, for example: [1, 2, 3, 2, 1, 0]
+            
+            Downward run is 2, 1, 0 (down = 3)
+            Now, without adjustment, the last child would have as many candies as the peak.
+            So, the code checks:
+            
+            If peak >= down, add the difference to the sum, ensuring the peak remains the highest.
+            In short
+            
+            This adjustment ensures the "peak" in the ratings always gets more candies than anyone on the downward slope next to it,
+            maintaining the required rule of the problem.
+            */
             if (peak >= down) {
                 sum += peak - down;  // Adjust for peak if down slope is longer
             }
