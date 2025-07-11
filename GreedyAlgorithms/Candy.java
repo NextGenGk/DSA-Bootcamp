@@ -42,7 +42,7 @@ public class Candy {
         return sum;
     }
 
-    // Method 1 : Better Solution
+    // Method 2 : Better Solution
     // Time Complexity : O(2N)
     // Space Complexity : O(N)
     static int calculate1(int[] ratings) {
