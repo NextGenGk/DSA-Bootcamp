@@ -53,6 +53,7 @@ public class Insert_Interval {
         int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
 
+        // Results
         int[][] result = insert(intervals, newInterval);
         System.out.println("Result after inserting [4, 8]:");
         printIntervals(result);
