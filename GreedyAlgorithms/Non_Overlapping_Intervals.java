@@ -10,6 +10,7 @@ public class Non_Overlapping_Intervals {
     // O (N log N) for sorting the intervals.
     // Space complexity: O(1) no extra space is needed.
     public static int eraseOverlapIntervals(int[][] intervals) {
+        // Base Case
         if (intervals.length == 0) return 0;
 
         // Sort intervals by their end time
