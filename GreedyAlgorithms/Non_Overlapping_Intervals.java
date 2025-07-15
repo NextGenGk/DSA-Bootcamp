@@ -20,7 +20,7 @@ public class Non_Overlapping_Intervals {
             }
         });
 
-        int n = intervals.length;
+        int n = intervals.length; // no. of intervals
         int count = 1; // To count non-overlapping intervals
         int lastEndTime = intervals[0][1]; // Store the end time of the last added interval
 
