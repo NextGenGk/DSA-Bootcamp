@@ -30,6 +30,8 @@ public class Find_Largest_Element {
     }
 }
 
+// Output : 9
+
 // Approach 1 : Using Sorting
 /*
 1. Sort the array in ascending order.
