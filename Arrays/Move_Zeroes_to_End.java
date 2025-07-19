@@ -70,6 +70,27 @@ public class Move_Zeroes_to_End {
         }
     }
 
+    // Method 3 - Optimal Solution v2
+    // Time Complexity: O(N)
+    // Space Complexity: O(1) (in-place)
+    static void pushZerosToEndv2(int[] arr) {
+        int n = arr.length;
+        int index = 0; // points to the position where next non-zero element should go
+
+        // First pass: move all non-zero elements to the front
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                arr[index++] = arr[i];
+            }
+        }
+
+        // Second pass: fill the remaining positions with zeros
+        while (index < n) {
+            arr[index++] = 0;
+        }
+    }
+
+
     // Main Function
     public static void main(String[] args) {
         int[] arr = {1, 0, 2, 3, 2, 0, 0, 4, 5, 1};
@@ -105,5 +126,14 @@ the following steps.
        can again point to the first zero.
 4. Finally, our array will be set in the right manner.
  */
+
+// Note :
+/*
+Which One is Best?
+Solution 3 (index-based compacting and then filling zeros) is generally better because:
+1. Fewer operations: Only writes non-zero elements once and appends zeros.
+2. Easier to read and reason about.
+3. Better for performance-sensitive environments like embedded systems or mobile devices (fewer memory writes = less CPU cache stress).
+*/
 
 // Striver (Video Link) : https://youtu.be/wvcQg43_V8U
