@@ -76,6 +76,8 @@ public class Second_Largest_Element {
     }
 }
 
+// Output : 5
+
 // Algorithm - Brute Force
 /*
 1. Sort the array in ascending order.
