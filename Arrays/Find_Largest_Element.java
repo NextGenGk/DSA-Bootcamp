@@ -11,7 +11,6 @@ public class Find_Largest_Element {
 //        Arrays.sort(arr);
 //        return arr[arr.length-1];
 
-
         // Method 2 : Optimal Solution
         int max = arr[0];
         for(int i=1; i< arr.length; i++) {
