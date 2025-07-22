@@ -3,7 +3,8 @@ package Arrays;
 public class Left_Rotate_an_Array_by_K_Place {
 
     // Method 1 - Brute Force (Using Temporary Array)
-    // Time - O(N), Space - O(K) (K is the number of elements to be rotated)
+    // Time - O(N),
+    // Space - O(K) (K is the number of elements to be rotated)
 //    static void rotateLeft(int[] arr, int k, int n) {
 //        if (n == 0) return;
 //
@@ -27,7 +28,8 @@ public class Left_Rotate_an_Array_by_K_Place {
 //    }
 
     // Method - 2 Optimal Solution (Using Reverse Algorithm)
-    // Time - O(N), Space - O(1)
+    // Time - O(N)
+    // Space - O(1)
     static void rotateLeft(int[] arr, int k, int n) {
         // Reverse first k elements
         reverse(arr, 0, k-1);
