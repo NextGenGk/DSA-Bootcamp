@@ -3,7 +3,8 @@ package Arrays;
 public class Linear_Search {
 
     // Method 1 - Optimal Solution
-    // Time - O(N), Space - O(1)
+    // Time - O(N)
+    // Space - O(1)
     static int searchInSorted(int[] arr, int N, int K) {
         // Your code here
         for(int i=0; i<N; i++) {
