@@ -3,7 +3,7 @@ package Arrays;
 public class Left_Rotate_an_Array_by_K_Place {
 
     // Method 1 - Brute Force (Using Temporary Array)
-    // Time - O(N),
+    // Time - O(N)
     // Space - O(K) (K is the number of elements to be rotated)
 //    static void rotateLeft(int[] arr, int k, int n) {
 //        if (n == 0) return;
