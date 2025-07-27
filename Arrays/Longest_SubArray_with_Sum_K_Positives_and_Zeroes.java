@@ -68,7 +68,7 @@ public class Longest_SubArray_with_Sum_K_Positives_and_Zeroes {
 //        return maxLen;
 //    }
 
-    // Method 4 - Optimal Solution (Using HashMap)
+    // Method 4 - Optimal Solution (Using Two Pointers)
     // Time - O(2N), Space - O(1)
     static int lenOfLongSubarr(int[] arr, int n, int k) {
         int left = 0, right = 0;
@@ -146,7 +146,7 @@ public class Longest_SubArray_with_Sum_K_Positives_and_Zeroes {
 4. Return maxLen
  */
 
-// Algorithm: Optimal Solution (Using HashMap)
+// Algorithm: Optimal Solution (Using Two Pointers)
 /*
 1. Initialize left = 0, right = 0, maxLen = 0, sum = arr[0]
 2. Run a loop while right < n
