@@ -5,7 +5,8 @@ import java.util.HashMap;
 public class Longest_Subarray_with_Zero_Sum {
 
     // Method 1 - Brute Force (Using 3 loops)
-    // Time Complexity: O(N^3), Space Complexity: O(1)
+    // Time Complexity: O(N^3)
+    // Space Complexity: O(1)
     static int longestSubarray(int[] arr) {
         int n = arr.length;
 
@@ -27,7 +28,8 @@ public class Longest_Subarray_with_Zero_Sum {
     }
 
     // Method 2 - Better Solution (Using 2 loops)
-    // Time Complexity: O(N^2), Space Complexity: O(1)
+    // Time Complexity: O(N^2)
+    // Space Complexity: O(1)
     static int longestSubarray1(int[] arr) {
         int n = arr.length;
 
@@ -48,7 +50,8 @@ public class Longest_Subarray_with_Zero_Sum {
     }
 
     // Method 3 - Optimal Solution (Using HashMap)
-    // Time Complexity: O(N), Space Complexity: O(N)
+    // Time Complexity: O(N)
+    // Space Complexity: O(N)
     static int longestSubarray2(int[] arr) {
         int n = arr.length;
 
