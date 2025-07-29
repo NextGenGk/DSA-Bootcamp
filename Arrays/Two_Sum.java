@@ -68,7 +68,6 @@ public class Two_Sum {
 // [0, 3]
 
 // Approaches
-
 // Brute Force (Using Two Loops)
 /*
 1. First, we will use a loop(say i) to select the indices of the array one by one.
