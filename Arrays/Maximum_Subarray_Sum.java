@@ -43,22 +43,31 @@ public class Maximum_Subarray_Sum {
 
     // Method 3 - Optimal Solution
     // Time - O(N), Space - O(1)
-    static int subarraySum(int[] nums) {
-        int currSum = 0;
-        int maxSum = Integer.MIN_VALUE;
+    static int maxSubArray(int[] nums) {
+        // Initialize sum to keep track of the current subarray sum
+        int sum = 0;
 
-        for(int i =0; i<nums.length; i++) {
-            currSum += nums[i];
+        // Initialize max to the smallest possible integer value
+        // This ensures any sum will be larger than this initially
+        int max = Integer.MIN_VALUE;
 
-            if(currSum > maxSum) {
-                maxSum = currSum;
-            }
+        // Iterate through each element in the array
+        for (int num : nums) {
+            // Add current number to the running sum
+            sum += num;
 
-            if(currSum < 0) {
-                currSum = 0;
+            // Update max if the current sum is greater than the previous max
+            max = Math.max(max, sum);
+
+            // If the running sum becomes negative, reset it to 0
+            // because a negative sum would reduce the value of future subarrays
+            if (sum < 0) {
+                sum = 0;
             }
         }
-        return maxSum;
+
+        // Return the maximum subarray sum found
+        return max;
     }
 
     // Follow Up Question (To print the subarray)
