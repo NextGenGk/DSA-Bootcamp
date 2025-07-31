@@ -20,9 +20,9 @@ public class Next_Permutation {
 
     // Method 1 - Optimal Solution (Using some observations)
     // Time - O(3N), where N = size of the given array
-    //Finding the break-point, finding the next greater element, and reversal at the end takes O(N) for each,
+    // Finding the break-point, finding the next greater element, and reversal at the end takes O(N) for each,
     // where N is the number of elements in the input array. This sums up to 3*O(N) which is approximately O(3N). ,
-    //Space Complexity: Since no extra storage is required. Thus, its space complexity is O(1).
+    // Space Complexity: Since no extra storage is required. Thus, its space complexity is O(1).
     public static void nextPermutation (int[] arr, int n) {
         // Find longest prefix match (means find the dip)
         // case : {2, 1, | 5, 4, 3, 0, 0} ('|' stands for dip)
