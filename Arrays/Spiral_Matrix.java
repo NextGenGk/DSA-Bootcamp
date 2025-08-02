@@ -17,8 +17,10 @@ public class Spiral_Matrix {
         int m = matrix[0].length; // no. of columns
 
         // Initialize the pointers required for traversal.
-        int top = 0, left = 0;
-        int bottom = n-1, right = m-1;
+        int top = 0;
+        int left = 0;
+        int bottom = n-1; // n = row
+        int right = m-1; // m = col
 
         // Loop until all elements are not traversed.
         while (top <= bottom && left <= right) {
