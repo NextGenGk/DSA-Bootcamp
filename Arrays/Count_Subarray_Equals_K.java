@@ -44,25 +44,21 @@ public class Count_Subarray_Equals_K {
     // Space - O(N) because using Map Data Structure
     static int subarrayCounts11(int[] arr, int n, int K) {
         HashMap<Integer, Integer> map = new HashMap<>();
-
-        int preSum = 0;
+        int prefixSum = 0;
         int count = 0;
 
-        map.put(0, 1);
+        map.put(0, 1);  // for subarrays starting from index 0
 
-        for (int i=0; i<n; i++) {
-            preSum += arr[i];
+        for (int i = 0; i < nums.length; i++) {
+            prefixSum += nums[i];
 
-            if (map.containsKey(preSum - K)) {
-                count += map.get(preSum - K);
+            if (map.containsKey(prefixSum - k)) {
+                count += map.get(prefixSum - k);
             }
 
-            if (map.containsKey(preSum)) {
-                map.put(preSum, map.get(preSum) + 1);
-            } else {
-                map.put(preSum, 1);
-            }
+            map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
         }
+
         return count;
     }
 
