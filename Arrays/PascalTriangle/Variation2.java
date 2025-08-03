@@ -43,7 +43,6 @@ public class Variation2 {
         System.out.println();
     }
 
-
     // Main Function
     public static void main(String[] args) {
         int n = 5; // row number
