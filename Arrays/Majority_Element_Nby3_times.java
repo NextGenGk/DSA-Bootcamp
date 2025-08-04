@@ -116,12 +116,28 @@ public class Majority_Element_Nby3_times {
 
     // Main Function
     public static void main(String[] args) {
-        int[] arr = {2, 1, 1, 3, 1, 4, 5, 6};
+        int[] arr = {2, 1, 1, 3, 1, 4, 5, 6}; // edge case
         int n = arr.length;
 
         System.out.println(majorityElement2(arr, n));
     }
 }
+
+// Note :
+/*
+Observation: How many integers can occur more than floor(N/3) times in the given array:
+
+If we closely observe, in the given array, there can be a maximum of two integers that can occur more than floor(N/3) times. 
+Let’s understand it using the following scenario:
+
+Assume there are 8 elements in the given array. 
+
+Now, if there is any majority element, it should occur more than floor(8/3) = 2 times. 
+So, the majority of elements should occur at least 3 times. 
+
+Now, if we imagine there are 3 majority elements, then the total occurrence
+of them will be 3X3 = 9 i.e. greater than the size of the array. But this should not happen. That is why there can be a maximum of 2 majority elements.
+*/
 
 // Algorithm : Brute Force
 /*
