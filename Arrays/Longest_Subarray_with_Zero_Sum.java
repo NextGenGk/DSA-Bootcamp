@@ -56,6 +56,7 @@ public class Longest_Subarray_with_Zero_Sum {
         int n = arr.length;
 
         HashMap<Integer, Integer> map = new HashMap<>();
+        // Note : PrefixSum change with each iteration (either we find maxiumum length or not)
         int prefixSum = 0;
         int maxi = 0;
 
@@ -86,6 +87,13 @@ public class Longest_Subarray_with_Zero_Sum {
 }
 
 // Output: 8
+
+// Note :
+/*
+Key Logic
+1. If prefixSum == 0, it means all elements from index 0 to i sum to 0 → subarray length is i + 1.
+2. If prefixSum has been seen before, the subarray between that previous index and current index must have sum 0.
+*/
 
 // Algorithm : Brute Force (Using 3 loops)
 /*
