@@ -50,6 +50,41 @@ public class Merge_Overlapping_Intervals {
         }
         return ans;
     }
+
+    // Leetcode Version (Brute Force)
+    // Time Complexity: O(NlogN) + O(2N) = O(NlogN)
+    // Space Complexity: O(N)
+    public int[][] merge(int[][] intervals) {
+        int n = intervals.length;
+        List<int[]> merged = new ArrayList<>();
+
+        // 1. Sort the intervals by their starting points
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        for (int i = 0; i < n; i++) {
+            int start = intervals[i][0];
+            int end = intervals[i][1];
+
+            // Skip if already merged (i.e., overlaps with the last added interval)
+            if (!merged.isEmpty() && end <= merged.get(merged.size() - 1)[1]) {
+                continue;
+            }
+
+            // Merge all overlapping intervals
+            for (int j = i + 1; j < n; j++) {
+                if (intervals[j][0] <= end) {
+                    end = Math.max(end, intervals[j][1]);
+                } else {
+                    break;
+                }
+            }
+
+            merged.add(new int[]{start, end});
+        }
+
+        return merged.toArray(new int[merged.size()][]);
+    }
+    
     // Method 2 : Optimal Solution
     // Time Complexity: O(NlogN) + O(N) = O(NlogN)
     // Space Complexity: O(N)
@@ -78,6 +113,28 @@ public class Merge_Overlapping_Intervals {
             }
         }
         return ans;
+    }
+
+    // Leetcode Version (Optimal Solution)
+    // Time Complexity: O(NlogN) + O(N) = O(NlogN)
+    // Space Complexity: O(N)
+    public int[][] merge(int[][] intervals) {
+        int n = intervals.length;
+        List<int[]> merged = new ArrayList<>();
+
+        // 1. Sort the intervals by their starting points
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        for (int i = 0; i < n; i++) {
+            // Skip if already merged (i.e., overlaps with the last added interval)
+            if (merged.isEmpty() || intervals[i][0] > merged.get(merged.size() - 1)[1]) {
+                merged.add(new int[]{intervals[i][0], intervals[i][1]});
+            }
+            else {
+                merged.get(merged.size()-1)[1] = Math.max(intervals[i][1], merged.get(merged.size()-1)[1]);
+            }
+        }
+        return merged.toArray(new int[merged.size()][]);
     }
 
     // Main Function
@@ -147,3 +204,5 @@ loop that runs for N times. So, the time complexity will be O(N).
 Space Complexity: O(N), as we are using an answer list to store the merged intervals. Except for the answer array,
  we are not using any extra space.
  */
+
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=IexN60k62jo
