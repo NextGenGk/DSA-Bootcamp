@@ -57,6 +57,14 @@ public class Merge_Two_Sorted_Array_without_Using_Extra_Space {
     // Time Complexity: O(min(n, m)) + O(n*logn) + O(m*logm), where n and m are the sizes of the given arrays.
     // Reason: O(min(n, m)) is for swapping the array elements. And O(n*logn) and O(m*logm) are for sorting the two arrays.
     // Space Complexity: O(1) as we are not using any extra space.
+
+    /*
+    Intuition:
+    If we merge the given array, one thing we can assure is that arr1[] will contain all the smaller elements and
+    arr2[] will contain all the bigger elements. This is the logic we will use. Using the 2 pointers, we will swap 
+    the bigger elements of arr1[] with the smaller elements of arr2[] until the minimum of arr2[] becomes greater 
+    or equal to the maximum of arr1[].
+    */
     static void merge1(long[] arr1, long[] arr2, int n, int m) {
         // Declare 2 pointers:
         int left = n - 1;
@@ -72,6 +80,8 @@ public class Merge_Two_Sorted_Array_without_Using_Extra_Space {
                 left--;
                 right++;
             } else {
+                // hence, we know the all the elements to the right side of arr2 are greater
+                // so, we break the while loop
                 break;
             }
         }
