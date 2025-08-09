@@ -45,22 +45,34 @@ public class Maximum_Product_Subarray {
     // Method 3 : Optimal Solution
     // Time Complexity: O(n), where n is the size of the given array.
     // Reason: We are using only one loop running for n times. So, the time complexity will be O(n).
-    // Space Complexity: O(1) as we are not using any extra space.
-    static int maxProduct3(int[] arr) {
-        int n = arr.length;
-        int max = Integer.MIN_VALUE;
+    // Space Complexity: O(1) as we are not using any extra space.\
+    /*
+    Intuition :
+    If the given array also contains an odd number of negative numbers: Now, an odd number of negative
+    numbers when multiplied result in a negative number. Removal of 1 negative number out of the odd 
+    number of negative numbers will leave us with an even number of negatives. Hence the idea is to 
+    remove 1 negative number from the result. Now we need to decide which 1 negative number to remove 
+    such that the remaining subarray yields the maximum product.
 
-        int pre = 1;
-        int suf = 1;
+    * Upon observation, we notice that each chosen negative number divides the array into two parts.
+    * The answer will either be the prefix or the suffix of that negative number.
+    * To find the answer, we will check all possible prefix subarrays (starting from index 0) and all 
+      possible suffix subarrays (starting from index n-1).
+    * The maximum product obtained from these prefix and suffix subarrays will be our final answer.
+    */
+    public int maxProduct(int[] nums) {
+        int n = nums.length;
+        int max = nums[0];
+        int pre = 1, suf = 1;
 
-        for (int i=0; i<n; i++) {
-            pre *= arr[i];
-            suf *= arr[n-i-1];
+        for (int i = 0; i < n; i++) {
+            pre *= nums[i];
+            suf *= nums[n - i - 1];
+
+            max = Math.max(max, Math.max(pre, suf));
 
             if (pre == 0) pre = 1;
             if (suf == 0) suf = 1;
-
-            max = Math.max(max, Math.max(pre, suf));
         }
         return max;
     }
