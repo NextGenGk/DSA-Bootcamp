@@ -89,7 +89,6 @@ public class Find_Repeating_and_Missing_Number {
         return ans;
     }
 
-
     // Main Function
     public static void main(String[] args) {
         int[] a = {3, 1, 2, 5, 4, 6, 7, 5};
