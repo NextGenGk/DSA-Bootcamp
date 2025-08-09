@@ -23,7 +23,6 @@ public class Maximum_Product_Subarray {
 //        return max;
 //    }
 
-
     // Method 2 : Better Solution
     // Time Complexity: O(n^2), where n is the size of the given array.
     // Reason: We are using 2 nested loops each running for n times. So, the time complexity will be O(n^2).
@@ -69,6 +68,7 @@ public class Maximum_Product_Subarray {
             pre *= nums[i];
             suf *= nums[n - i - 1];
 
+            // it ensures that at every step, you’re tracking the largest product subarray seen so far from either direction.
             max = Math.max(max, Math.max(pre, suf));
 
             if (pre == 0) pre = 1;
