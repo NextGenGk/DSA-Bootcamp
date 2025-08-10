@@ -47,6 +47,7 @@ public class Search_Insert_Position {
     }
 }
 
+// Note :
 // Lower Bound - Means
 /*
 The lower bound algorithm returns the first occurrence of the target number if the number is present and otherwise,
