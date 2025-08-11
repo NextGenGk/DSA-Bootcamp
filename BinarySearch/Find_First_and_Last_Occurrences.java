@@ -61,6 +61,7 @@ public class Find_First_and_Last_Occurrences {
     // time - 2 * O(log2N), Space - O(1)
     static int[] findFirstAndLast(int[] arr, int n, int target) {
         int lb = lowerBound(arr, n, target);
+        // Note : Edge Cases
         // lb == n (hypothetical situation - means element is not present)
         // arr[lb] != target (value at this index is not equal to target)
         if (lb == n || arr[lb] != target) return new int[]{-1, -1};
