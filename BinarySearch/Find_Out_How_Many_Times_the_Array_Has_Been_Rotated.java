@@ -43,6 +43,8 @@ public class Find_Out_How_Many_Times_the_Array_Has_Been_Rotated {
 
             //if left part is sorted:
             if (arr[low] <= arr[mid]) {
+                // Note : We manually check the the answers
+                // But in rotated sorted array we use the concept of Math.min()
                 // keep the minimum:
                 if (arr[low] < ans) {
                     index = low;
@@ -52,7 +54,8 @@ public class Find_Out_How_Many_Times_the_Array_Has_Been_Rotated {
                 // Eliminate left half:
                 low = mid + 1;
             } else { //if right part is sorted:
-
+                // Note : We manually check the the answers
+                // But in rotated sorted array we use the concept of Math.min()
                 // keep the minimum:
                 if (arr[mid] < ans) {
                     index = mid;
