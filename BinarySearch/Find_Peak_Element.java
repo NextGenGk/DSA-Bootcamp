@@ -15,6 +15,7 @@ public class Find_Peak_Element {
         // means, the last element is the peak element
         if (arr[n-1] > arr[n-2]) return n-1;
 
+        // Loop through the array
         for (int i=1; i<=n-2; i++) {
             if (arr[i] > arr[i-1] && arr[i] > arr[i+1]) {
                 return i;
