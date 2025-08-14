@@ -21,6 +21,9 @@ public class Koko_Eating_Bananas {
         int totalHours = 0;
 
         for (int i=0; i<n; i++) {
+            // Note :
+            // We want to keep the fractional part until after Math.ceil() runs.
+            // To do that, we need floating-point division, which happens when at least one operand is a double.
             totalHours += (int) Math.ceil((double) arr[i] / (double) hourly);
         }
         return totalHours;
