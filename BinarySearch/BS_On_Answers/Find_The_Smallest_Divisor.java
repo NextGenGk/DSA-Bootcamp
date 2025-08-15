@@ -30,6 +30,9 @@ public class Find_The_Smallest_Divisor {
         //Find the summation of division values:
         int sum = 0;
         for (int i = 0; i < n; i++) {
+        // Note : Without double, the fractional part is lost before ceil() ever sees it.
+
+// With double, ceil() works on the true decimal value.
             sum += (int) Math.ceil((double)(arr[i]) / (double)(div));
         }
         return sum;
