@@ -20,7 +20,7 @@ public class Aggressive_Cows {
 //        return limit;
 //    }
 
-    // canWePlace function is used to check cows is perfectly placed or not
+    // canWePlace() function is used to check cows is perfectly placed or not
     static boolean canWePlace(int[] stalls, int dist, int cows) {
         int n = stalls.length;
 
