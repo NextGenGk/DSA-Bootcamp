@@ -9,86 +9,116 @@ public class Kth_Element_of_Two_Sorted_Array {
     // Reason: We traverse through both arrays linearly.
     // Space Complexity: O(m+n), where m and n are the sizes of the given arrays.
     // Reason: We are using an extra array of size (m+n) to solve this problem.
-    public static int kthElementBrute(ArrayList<Integer> a, ArrayList<Integer> b, int m, int n, int k) {
-        ArrayList<Integer> arr3 = new ArrayList<>();
-
+    public static int kthElementBrute(int[] a, int[] b, int m, int n, int k) {
+        int[] arr3 = new int[m + n]; // using array instead of ArrayList
+    
         // apply the merge step:
-        int i = 0, j = 0;
+        int i = 0, j = 0, idx = 0;
         while (i < m && j < n) {
-            if (a.get(i) < b.get(j)) arr3.add(a.get(i++));
-            else arr3.add(b.get(j++));
+            if (a[i] < b[j]) arr3[idx++] = a[i++];
+            else arr3[idx++] = b[j++];
         }
-
+    
         // copy the left-out elements:
-        while (i < m) arr3.add(a.get(i++));
-        while (j < n) arr3.add(b.get(j++));
-
-        return arr3.get(k - 1);
+        while (i < m) arr3[idx++] = a[i++];
+        while (j < n) arr3[idx++] = b[j++];
+    
+        return arr3[k - 1];
     }
-
+    
     // Method 2 :  Better Solution
     // Time Complexity: O(m+n), where m and n are the sizes of the given arrays.
     // Reason: We traverse through both arrays linearly.
     // Space Complexity: O(1), as we are not using any extra space to solve this problem.
-    public static int kthElementBetter(ArrayList<Integer> a, ArrayList<Integer> b, int m, int n, int k) {
+    public static int kthElementBetter(int[] a, int[] b, int m, int n, int k) {
         int ele = -1;
-        int cnt = 0; //counter
+        int cnt = 0; // counter
         // apply the merge step:
         int i = 0, j = 0;
         while (i < m && j < n) {
-            if (a.get(i) < b.get(j)) {
-                if (cnt == k - 1) ele = a.get(i);
+            if (a[i] < b[j]) {
+                if (cnt == k - 1) ele = a[i];
                 cnt++;
                 i++;
             } else {
-                if (cnt == k - 1) ele = b.get(j);
+                if (cnt == k - 1) ele = b[j];
                 cnt++;
                 j++;
             }
         }
-
+    
         // copy the left-out elements:
         while (i < m) {
-            if (cnt == k - 1) ele = a.get(i);
+            if (cnt == k - 1) ele = a[i];
             cnt++;
             i++;
         }
         while (j < n) {
-            if (cnt == k - 1) ele = b.get(j);
+            if (cnt == k - 1) ele = b[j];
             cnt++;
             j++;
         }
-
+    
         return ele;
     }
-
+    
     // Method 3 : Optimal Solution
     // Time Complexity: O(log(min(m, n))), where m and n are the sizes of two given arrays.
     // Reason: We are applying binary search on the range [max(0, k-n2), min(k, n1)].
     // The range length <= min(m, n).
     // Space Complexity: O(1), as we are not using any extra space to solve this problem.
-    public static int kthElementOptimal(ArrayList<Integer> a, ArrayList<Integer> b, int m, int n, int k) {
+    public static int kthElementOptimal(int[] a, int[] b, int m, int n, int k) {
         if (m > n) return kthElementOptimal(b, a, n, m, k);
-
+    
         int left = k; // length of left half
+           
+        // We are binary searching how many elements to take from array a.
+        // mid1 = number of elements taken from a
+        // mid2 = number of elements taken from b = k - mid1
+        //
+        // The valid search space for mid1 is:
+        //   low  = max(0, k - n)
+        //   high = min(k, m)
+        //
+        // Why?
+        // 1. low = max(0, k - n):
+        //    - If b has fewer than k elements, we MUST take at least (k - n) from a.
+        //    Example:
+        //        a = [2, 3, 6, 7, 9], m = 5
+        //        b = [1, 4],         n = 2
+        //        k = 6
+        //        --> b has only 2 elements, so at least (6 - 2 = 4) must come from a.
+        //        So mid1 cannot be < 4.
+        //
+        // 2. high = min(k, m):
+        //    - We cannot take more than k total elements, nor more than the size of a.
+        //    Example:
+        //        a = [2, 3],        m = 2
+        //        b = [1, 4, 8, 10], n = 4
+        //        k = 5
+        //        --> we cannot take more than 2 elements from a (its size).
+        //        --> we also cannot take more than 5 in total.
+        //        So mid1 cannot be > 2.
+        // 
+        // Thus mid1 is always bounded safely between [max(0, k-n), min(k, m)].
+        int low = Math.max(0, k - n), high = Math.min(k, m);
 
         // apply binary search:
-        int low = Math.max(0, k - n), high = Math.min(k, m);
         while (low <= high) {
             int mid1 = (low + high) >> 1;
             int mid2 = left - mid1;
             // calculate l1, l2, r1, and r2
             int l1 = Integer.MIN_VALUE, l2 = Integer.MIN_VALUE;
             int r1 = Integer.MAX_VALUE, r2 = Integer.MAX_VALUE;
-            if (mid1 < m) r1 = a.get(mid1);
-            if (mid2 < n) r2 = b.get(mid2);
-            if (mid1 - 1 >= 0) l1 = a.get(mid1 - 1);
-            if (mid2 - 1 >= 0) l2 = b.get(mid2 - 1);
-
+            if (mid1 < m) r1 = a[mid1];
+            if (mid2 < n) r2 = b[mid2];
+            if (mid1 - 1 >= 0) l1 = a[mid1 - 1];
+            if (mid2 - 1 >= 0) l2 = b[mid2 - 1];
+    
             if (l1 <= r2 && l2 <= r1) {
                 return Math.max(l1, l2);
             }
-
+    
             // eliminate the halves:
             else if (l1 > r2) high = mid1 - 1;
             else low = mid1 + 1;
@@ -96,15 +126,13 @@ public class Kth_Element_of_Two_Sorted_Array {
         return 0; // dummy statement
     }
 
+    // Main Function
     public static void main(String[] args) {
-        ArrayList<Integer> a = new ArrayList<>();
-        a.add(2); a.add(3); a.add(6); a.add(7); a.add(9);
-
-        ArrayList<Integer> b = new ArrayList<>();
-        b.add(1); b.add(4); b.add(8); b.add(10);
-
+        int[] a = {2, 3, 6, 7, 9};  // using arrays instead of ArrayList
+        int[] b = {1, 4, 8, 10};
+    
         System.out.println("The k-th element of two sorted arrays is: " +
-                kthElementOptimal(a, b, a.size(), b.size(), 5));
+                kthElementOptimal(a, b, a.length, b.length, 5));
     }
 }
 
