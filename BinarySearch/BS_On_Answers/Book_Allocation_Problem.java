@@ -37,8 +37,14 @@ public class Book_Allocation_Problem {
 //            return -1;
 //        }
 //
-//        int low = Collections.max(arr);
-//        int high = arr.stream().mapToInt(Integer::intValue).sum();
+    // low = max element (one student must take at least one book)
+    // int low = Integer.MIN_VALUE;
+    // int high = 0;
+
+    // for (int pages : arr) {
+    //     low = Math.max(low, pages);
+    //     high += pages;
+    // }
 //
 //        for (int pages=low; pages<=high; pages++) {
 //            if (countStudents(arr, pages) == m) {
