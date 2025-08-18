@@ -109,6 +109,53 @@ and then find the middle element. You can use built-in sorting methods like Arra
 before finding the median.
  */
 
+// Note : Intuition + Summary + Example
+/*
+Intuition Summary ------
+1. Median Definition:
+    - The median is the middle value when all elements are sorted.
+
+2. Why Binary Search?
+    - Each row is sorted.
+    - You can quickly count, for any value (mid), how many numbers in the matrix are less than or equal to mid.
+    
+3. Algorithm Steps:
+    - Set your search range from the smallest to largest element in the matrix.
+    - Use binary search: for each guess (mid), count how many elements are ≤ mid.
+    - If that count is less than or equal to half the total elements, the median must be bigger.
+    - If the count is more, the median is smaller.
+    - Repeat until you find the median.
+    
+Simple Example
+Matrix:
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+  
+Flattened sorted: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Median (middle value): 5
+
+Step-by-Step:
+The smallest is 1 (matrix[0][0]), largest is 9 (matrix[2][2]).
+
+Guess mid = 5:
+
+Count elements ≤ 5:
+Row 1: 3 (1,2,3)
+Row 2: 2 (4,5)
+Row 3: 0
+ 
+Total: 5
+Total elements: 9; Half: 4
+
+5 > 4, so 5 could be the median.
+The process continues, adjusting the range until you confirm that 5 is the median.
+
+Summary:
+You use binary search on possible values, counting how many numbers are ≤ each guess, until you land at the median.
+You never need to flatten or fully sort the matrix!
+*/
+
 // Algorithm : (Optimal Solution) 
 /*
 1. The findMedian function takes a 2D integer array arr, along with its dimensions n (number of rows)
