@@ -73,6 +73,27 @@ public class Matrix_Median {
         return ans;
     }
 
+    /*
+    Core Intuition
+    1. Median definition:
+        - The median is the "middle element" when all numbers are sorted.
+        - So we want a number X such that half of the numbers are ≤ X and the other half are > X.
+
+    2. Why Binary Search?
+        - Directly flattening & sorting is too costly.
+          Instead, think:
+        - If I pick a number mid, can I quickly count how many numbers in the matrix are ≤ mid?
+        - If that count is too small, it means mid is too small → search higher.
+        - If that count is too large, it means mid might be too big → search lower.
+
+    3. How to count efficiently?
+        - Each row is sorted.
+        - So, to count "numbers ≤ mid" in one row, just find the upper bound index (first element > mid).
+        - That index = count of numbers ≤ mid in that row.
+    
+    Do this for all rows → we get total count.
+    */
+
     // Main Function
     public static void main(String[] args) {
         int row = 3, col = 3;
