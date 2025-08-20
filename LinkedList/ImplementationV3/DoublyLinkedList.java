@@ -145,6 +145,56 @@ public class DoublyLinkedList {
             current = current.next;
         }
 
+        /*
+        Example Scenario
+        Suppose you have the following doubly linked list:
+        [10] <--> [20] <--> [30]
+
+        Let current point to the node with value 20.
+        You want to insert a new node (newNode) with value 15 between 10 and 20.
+
+        Step-by-Step Execution
+        Initial State:
+
+        current = Node(20)
+        current.prev = Node(10)
+        newNode = Node(15)
+
+        1. newNode.next = current;
+        Action: Set newNode.next to point to current (Node 20).
+        Result:
+
+        newNode.next = Node(20)
+        newNode now points to Node(20) as its next node.
+
+        2. newNode.prev = current.prev;
+        Action: Set newNode.prev to point to current.prev (Node 10).
+        Result:
+
+        newNode.prev = Node(10)
+        newNode now points to Node(10) as its previous node.
+
+        3. current.prev.next = newNode;
+        Action: Update the next pointer of current.prev (Node 10) to point to newNode.
+        Result:
+
+        Node(10).next = Node(15)
+        Node(10) now points to newNode as its next node.
+
+        4. current.prev = newNode;
+        Action: Update the prev pointer of current (Node 20) to point to newNode.
+        Result:
+
+        Node(20).prev = Node(15)
+        Node(20) now recognizes newNode as its previous node.
+
+        5. Final State:
+         [10] <--> [15] <--> [20] <--> [30]
+
+        15 is successfully inserted between 10 and 20.
+        All next and prev pointers are correctly updated.
+         */
+
         // Insert the new node
         newNode.next = current;
         newNode.prev = current.prev;
@@ -209,8 +259,6 @@ public class DoublyLinkedList {
         System.out.println("Deleted " + deletedData + " from the end");
     }
 
-    // ==================== TRAVERSAL OPERATIONS ====================
-
     // Delete element at a specified position (0-based indexing)
     // Time Complexity: O(n)
     public void deleteAtPosition(int position) {
@@ -251,6 +299,8 @@ public class DoublyLinkedList {
         size--;
         System.out.println("Deleted " + deletedData + " from position " + position);
     }
+
+    // ==================== TRAVERSAL OPERATIONS ====================
 
     // Display all elements in the list (Forward Traversal)
     // Time Complexity: O(n)
