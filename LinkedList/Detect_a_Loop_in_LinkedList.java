@@ -131,6 +131,24 @@ public class Detect_a_Loop_in_LinkedList {
     }
 }
 
+// Note : For Optimal Solution (Intuition) 
+/*
+Theory :
+1. Imagine two people running on a circular track.
+2. One runs slowly (1 step at a time), the other runs fast (2 steps at a time).
+3. If the track is straight (no cycle) → the fast runner will run out of track (reach NULL).
+4. If the track is circular (cycle) → the fast runner will keep going round and round.
+5.Since the fast runner moves quicker, sooner or later he will catch up with the slow runner inside the circle.
+Reason : That’s why if slow and fast pointers meet → a cycle exists. 
+
+Practical :
+1. Use two pointers:
+    - Slow → moves 1 step
+    - Fast → moves 2 steps
+2. No cycle → Fast pointer eventually reaches NULL.
+3. Cycle exists → Fast pointer will “lap” the slow pointer inside the cycle and they will meet (slow == fast).
+Reason: Fast moves 1 step ahead of slow per iteration, so in a circular track it must catch up.
+
 // Approach : Brute Force
 /*
 Algorithm:
