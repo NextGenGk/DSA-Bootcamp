@@ -116,6 +116,8 @@ public class Find_the_Length_of_Loop_LinkedList {
     // Function to find the length
     // of the loop in a linked list
     static int lengthOfLoop1(Node head) {
+        // Create two pointers
+        // slow and fast
         Node slow = head;
         Node fast = head;
 
