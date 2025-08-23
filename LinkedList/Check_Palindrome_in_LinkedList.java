@@ -194,6 +194,58 @@ public class Check_Palindrome_in_LinkedList {
         System.out.println();
     }
 
+    // Updated : Optimal Solution
+    /*
+    class Solution {
+        // Find Middle Index Function
+        public ListNode findMiddle(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            
+            // Find !st middle element
+            while(fast.next != null && fast.next.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            return slow;
+        }
+        
+        // Reverse Linked List Function
+        public ListNode reverse(ListNode head) {
+            ListNode cur = head;
+            ListNode prev = null;
+            
+            while(cur != null) {
+                ListNode temp = cur.next;
+                cur.next = prev;
+                prev = cur;
+                cur = temp;
+            }
+            return prev;
+        }
+        
+        // Is Palindrome Function
+        public boolean isPalindrome(ListNode head) {
+            if(head == null || head.next == null) {
+                return true;
+            }
+            
+            ListNode middle = findMiddle(head);
+            ListNode secondHalfStart = reverse(middle.next);
+            
+            ListNode firstHalfStart = head;
+            while(secondHalfStart != null) {
+                if(firstHalfStart.val != secondHalfStart.val) {
+                    return false;
+                }
+                firstHalfStart = firstHalfStart.next;
+                secondHalfStart = secondHalfStart.next;
+            }
+            return true;
+        }
+    }
+    */
+
     // Main Function
     public static void main(String[] args) {
         // Create a linked list with
