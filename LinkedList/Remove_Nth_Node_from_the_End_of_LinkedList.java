@@ -147,6 +147,7 @@ public class Remove_Nth_Node_from_the_End_of_LinkedList {
     3. Move both first and second until first reaches end.
     4. second.next will be the node to remove.
      */
+    /* HINT : Maintain two pointers and update one with a delay of n steps. */
     public static Node removeNthFromEnd(Node head, int n) {
         Node dummy = new Node(0);
         dummy.next = head;
