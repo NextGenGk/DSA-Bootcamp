@@ -127,6 +127,10 @@ public class Sort_a_LinkedList {
         }
 
         // Initializing slow and fast pointers
+        /*
+        1. Starting fast = head.next ensures slow always points to the first middle in even-length lists.
+        2. That guarantees the split is always valid and avoids infinite recursion.
+        */
         Node slow = head;
         Node fast = head.next;
 
