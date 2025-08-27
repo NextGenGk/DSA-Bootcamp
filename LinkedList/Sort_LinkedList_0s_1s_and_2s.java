@@ -99,39 +99,47 @@ public class Sort_LinkedList_0s_1s_and_2s {
     // Time Complexity : O(N)
     // Space Complexity : O(1)
     static Node sortLinkedList2(Node head) {
+        // If list is empty or has a single element, it's already sorted
         if (head == null || head.next == null) return head;
-
-        // Dummy nodes to create separate lists
+    
+        // Create 3 dummy nodes for three separate linked lists:
+        // one for 0s, one for 1s, and one for 2s.
         Node dummy0 = new Node(0);
         Node dummy1 = new Node(0);
         Node dummy2 = new Node(0);
-
-        // Pointers to the current end of each list
+    
+        // Pointers to track the current "tail" of each list
         Node zero = dummy0;
         Node one = dummy1;
         Node two = dummy2;
-
+    
+        // Traverse the original list and distribute nodes into 0,1,2 lists
         Node temp = head;
         while (temp != null) {
             if (temp.data == 0) {
-                zero.next = temp;
-                zero = zero.next;
+                zero.next = temp;   // attach current node to 0-list
+                zero = zero.next;   // move zero pointer forward
             } else if (temp.data == 1) {
-                one.next = temp;
-                one = one.next;
+                one.next = temp;    // attach current node to 1-list
+                one = one.next;     // move one pointer forward
             } else {
-                two.next = temp;
-                two = two.next;
+                two.next = temp;    // attach current node to 2-list
+                two = two.next;     // move two pointer forward
             }
-            temp = temp.next;
+            temp = temp.next;       // move to next node in original list
         }
-
-        // Connect the separate lists
+    
+        // Connect the three lists together:
+        // if there are 1s, connect 0-list → 1-list, otherwise connect 0-list → 2-list
         zero.next = (dummy1.next != null) ? dummy1.next : dummy2.next;
+    
+        // connect 1-list → 2-list
         one.next = dummy2.next;
+    
+        // mark end of final list
         two.next = null;
-
-        // The new head of the sorted list
+    
+        // The head of the new sorted list will be dummy0.next
         head = dummy0.next;
         return head;
     }
@@ -178,29 +186,6 @@ Sorted list:
 
 // Approach : Better Solution
 /*
-Initialization:
-
-1. Three dummy nodes (dummy0, dummy1, dummy2) are created to serve as the starting points for the separate lists
-for 0s, 1s, and 2s.
-2. Pointers zero, one, and two are used to traverse and build these lists.
-
-Building the Lists:
-
-1. The original list is traversed, and nodes are appended to the respective dummy nodes based on their values.
-
-Connecting the Lists:
-
-1. The separate lists are connected by setting zero.next to the head of the list of 1s or 2s if 1s are not present.
-2. one.next is set to the head of the list of 2s.
-3. two.next is set to null to terminate the list.
-
-Setting the New Head:
-
-1. The head of the new sorted list is set to dummy0.next.
- */
-
-// Approach : Optimal Solution
-/*
 Initialize Counters:
 
 1. Create three integer variables count0, count1, and count2 to keep track of the number of 0s, 1s, and 2s in the linked
@@ -222,6 +207,29 @@ Repopulate the Linked List:
 Return the Sorted Linked List:
 
 1. Return the head of the sorted linked list.
+ */
+
+// Approach : Optimal Solution
+/*
+Initialization:
+
+1. Three dummy nodes (dummy0, dummy1, dummy2) are created to serve as the starting points for the separate lists
+for 0s, 1s, and 2s.
+2. Pointers zero, one, and two are used to traverse and build these lists.
+
+Building the Lists:
+
+1. The original list is traversed, and nodes are appended to the respective dummy nodes based on their values.
+
+Connecting the Lists:
+
+1. The separate lists are connected by setting zero.next to the head of the list of 1s or 2s if 1s are not present.
+2. one.next is set to the head of the list of 2s.
+3. two.next is set to null to terminate the list.
+
+Setting the New Head:
+
+1. The head of the new sorted list is set to dummy0.next.
  */
 
 // Striver (Video Explanation) : https://www.youtube.com/watch?v=gRII7LhdJWc
