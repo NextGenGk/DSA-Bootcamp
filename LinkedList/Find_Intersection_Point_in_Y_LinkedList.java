@@ -34,6 +34,9 @@ public class Find_Intersection_Point_in_Y_LinkedList {
         if (head1 == null || head2 == null) return null;
 
         // Create a HashMap to store nodes of the first linked list
+        // LOGIC : 
+        // You’re not storing values (temp.data), but node references (temp).
+        // So the HashMap remembers the exact memory addresses of nodes in head1.
         HashMap<Node, Integer> map = new HashMap<Node, Integer>();
         Node temp = head1;
 
@@ -61,6 +64,19 @@ public class Find_Intersection_Point_in_Y_LinkedList {
     // Method 2 : Better Solution
     // Time Complexity : O(N1) + O(N2) + O(N2 - N1) + O(N1) ~ O(N1 + 2N2)
     // Space Complexity : O(1)
+    // LOGIC : 
+    /*
+    1. If two linked lists intersect, the intersection must happen at the same distance from the end.
+    Example:
+    List A: 1 → 2 → 3 → 6 → 7
+    List B:     4 → 5 → 6 → 7
+    
+    Length(A) = 5, Length(B) = 4.
+    Difference = 1.
+    
+    If you skip 1 node in A, both lists have exactly 4 nodes left.
+    Now traverse in sync → when nodes are equal, that’s the intersection.
+    */
     static Node findIntersectionPoint1(Node head1, Node head2) {
         // If either of the heads is null, there can't be an intersection
         if (head1 == null || head2 == null) return null;
@@ -119,6 +135,12 @@ public class Find_Intersection_Point_in_Y_LinkedList {
     // Method 3 : Optimal Solution
     // Time Complexity : O(N1 + N2) for traversing the nodes of N1 and N2
     // Space Complexity : O(1)
+    // LOGIC :
+    /*
+    1. If two linked lists intersect, then from the intersection point to the end they share the same nodes.
+    2. If you traverse both lists, but switch heads when one pointer reaches the end, both pointers will travel 
+       the same total distance and eventually meet at the intersection (or both reach null if no intersection).
+    */
     static Node findIntersectionPoint2(Node head1, Node head2) {
         // If either of the heads is null, there can't be an intersection
         if (head1 == null || head2 == null) return null;
@@ -135,6 +157,12 @@ public class Find_Intersection_Point_in_Y_LinkedList {
             temp2 = temp2.next;
 
             // If both pointers are equal after moving, that's the intersection
+            // Edge case :
+            /*
+            1. Both the exit conditions are satisfied
+                - If there is no intersection point then both of the pointer will reaches the null.
+                - If there is intersection point we simply say that this is our intersection point.
+            */
             if (temp1 == temp2) return temp1;
 
             // If temp1 reaches the end of its list, start from head2
