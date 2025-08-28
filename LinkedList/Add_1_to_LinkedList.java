@@ -66,45 +66,60 @@ public class Add_1_to_LinkedList {
     // Space Complexity : O(1)
     // Function to add 1 to a number represented as a linked list
     static Node add1(Node head) {
-        // If the list is empty or contains only one node, return the head as it is
-        if (head == null || head.next == null) {
-            if (head != null) {
-                head.data += 1;  // Add 1 if there's only one node
-            }
-            return head;
+        // If the list is empty, just return a new node with value 1
+        if (head == null) {
+            return new Node(1);
         }
-
-        // Reverse the linked list
+        
+        // Case: only one node in the list
+        if (head.next == null) {
+            head.data += 1; // Add 1 to the single node
+            
+            // If no carry is generated, return the head
+            if (head.data < 10) {
+                return head;
+            }
+            else {
+                // If carry is generated (e.g., 9 -> 10)
+                head.data = 0; // Set current digit to 0
+                Node newHead = new Node(1); // Create a new node for carry
+                newHead.next = head;        // Attach original node
+                return newHead;
+            }
+        }
+        
+        // Step 1: Reverse the linked list to make addition easier (start from LSB)
         head = reverseLinkedListIterative(head);
-        int carry = 1;  // Initialize carry as 1 since we are adding 1
-
+        
         Node temp = head;
-        // Traverse the reversed list and add the carry
+        int carry = 1; // We need to add 1
+        
+        // Step 2: Traverse list and handle carry
         while (temp != null) {
-            temp.data = temp.data + carry;
-            if (temp.data < 10) {
-                carry = 0;  // If no carry generated, break the loop
+            temp.data += carry; // Add carry to current digit
+            
+            if (temp.data < 10) {  
+                // No carry generated, break out
+                carry = 0;
                 break;
-            } else {
-                temp.data = 0;  // If carry is generated, set current node to 0 and carry to 1
-                carry = 1;
             }
-            temp = temp.next;
+            else {
+                // If carry generated (digit >= 10)
+                temp.data = 0; // Set digit to 0
+                carry = 1;     // Carry forward
+            }
+            temp = temp.next; // Move to next digit
         }
-
-        // If carry is still 1 after the loop, add a new node at the front
+        
+        // Step 3: If carry is still left after full traversal (e.g., 999 + 1 = 1000)
         if (carry == 1) {
-            Node node = new Node(1);
-            /*
-            We reverse the list back before adding the new node so that the new node is added 
-            to the front in the correct (original) order, making it the most significant digit.
-            */
-            head = reverseLinkedListIterative(head);
-            node.next = head;
+            Node node = new Node(1);          // Create a new node for extra carry
+            head = reverseLinkedListIterative(head); // Reverse back the list
+            node.next = head;                 // Attach to the front
             return node;
         }
-
-        // Reverse the list again to restore the original order
+        
+        // Step 4: Reverse back the list to restore original order
         head = reverseLinkedListIterative(head);
         return head;
     }
@@ -113,33 +128,45 @@ public class Add_1_to_LinkedList {
     // Time Complexity : O(N)
     // Space Complexity : O(1)
     // Function to add 1 to a number represented as a linked list using recursion
-    static Node add1s(Node head) {
-        // Recursive helper function call
-        int carry = helper(head);
-        // If there's a carry left after processing the entire list, add a new node at the front
-        if (carry == 1) {
-            Node node = new Node(1);
-            node.next = head;
-            head = node;
+    public Node addOne(Node head) {
+        // Edge case: If the linked list is empty, return a new node with value 1
+        if (head == null) {
+            return new Node(1);
         }
+
+        // Recursive helper function will update nodes and return carry
+        int carry = helper(head);
+
+        // If carry is still 1 after processing all digits (e.g., 999 → 000 with carry 1)
+        if (carry == 1) {
+            Node newHead = new Node(1);  // create a new node with 1
+            newHead.next = head;         // attach old list after it
+            head = newHead;              // update head
+        }
+
+        // Return the updated linked list
         return head;
     }
 
-    // Helper function to recursively add 1 to the linked list
-    private static int helper(Node head) {
-        // Base case: If the node is null, return carry 1 (for adding 1 at the end)
+    // Recursive helper function to add 1 from the last node
+    private int helper(Node head) {
+        // Base case: if we reach null (past the last node), return carry = 1
         if (head == null) {
             return 1;
         }
-        // Recursive call for the next node
+
+        // Recursively call for the next node (move towards the last node)
         int carry = helper(head.next);
-        // Add the carry to the current node's data
-        head.data = head.data + carry;
-        // If the current node's data is less than 10, no carry is needed, return 0
+
+        // Add carry to the current node's data
+        head.data += carry;
+
+        // If the sum is less than 10, no carry forward
         if (head.data < 10) {
-            return 0;
+            return 0;  // no more carry
         }
-        // If the current node's data is 10 or more, set the data to 0 and return carry 1
+
+        // Otherwise, we set current node = 0 and return carry = 1
         head.data = 0;
         return 1;
     }
