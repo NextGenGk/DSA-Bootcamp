@@ -45,7 +45,7 @@ public class Reverse_a_Doubly_Linked_List {
         return head; // Return the modified head
     }
 
-    // Method 2 : Optimal Solution
+    // Method 2 : Optimal Solution (Using Simple reversal)
     // Time Complexity : O(N) because we are traversing the list only once
     // Space Complexity : O(1) no extra space is using
     // Method to reverse a doubly linked list
