@@ -85,6 +85,15 @@ public class Clone_LinkedList_with_Random_and_Next_Pointer {
         return map.get(head);
     }
 
+    // Method 2 : Optimal Solution
+    // Time Complexity: O(3N)where N is the number of nodes in the linked list. The algorithm makes
+    // three traversals of the linked list, once to create copies and insert them between original
+    // nodes, then to set the random pointers of the copied nodes to their appropriate copied nodes
+    // and then to separate the copied and original nodes.
+    // Space Complexity : O(N) where N is the number of nodes in the linked list as the only extra
+    // additional space allocated it to create the copied list without creating any other additional
+    // data structures.
+
     // Function to insert a copy of each
     // node in between the original nodes
     static void insertCopyInBetween(Node head) {
@@ -106,15 +115,6 @@ public class Clone_LinkedList_with_Random_and_Next_Pointer {
             temp = nextElement;
         }
     }
-
-    // Method 2 : Optimal Solution
-    // Time Complexity: O(3N)where N is the number of nodes in the linked list. The algorithm makes
-    // three traversals of the linked list, once to create copies and insert them between original
-    // nodes, then to set the random pointers of the copied nodes to their appropriate copied nodes
-    // and then to separate the copied and original nodes.
-    // Space Complexity : O(N) where N is the number of nodes in the linked list as the only extra
-    // additional space allocated it to create the copied list without creating any other additional
-    // data structures.
 
     // Function to connect random
     // pointers of the copied nodes
