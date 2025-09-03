@@ -23,7 +23,7 @@ public class Merge_Overlapping_Intervals {
 
         List<List<Integer>> ans = new ArrayList<>();
 
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             // pointer to start and end of current interval
             int start = arr[i][0];
             int end = arr[i][1];
@@ -31,12 +31,12 @@ public class Merge_Overlapping_Intervals {
             // if answer list is not empty and end time of last interval is greater
             // than or equal to start time of current interval, then skip this interval
             // means (lies in the merge interval, so skip this interval)
-            if (!ans.isEmpty() && end <= ans.get(ans.size()-1).get(1)) {
+            if (!ans.isEmpty() && end <= ans.get(ans.size() - 1).get(1)) {
                 continue;
             }
 
             // if next interval overlaps with current interval, then update end time
-            for (int j=i+1; j<n; j++) {
+            for (int j = i + 1; j < n; j++) {
                 // means overlap
                 if (arr[j][0] <= end) {
                     end = Math.max(end, arr[j][1]);
@@ -49,6 +49,43 @@ public class Merge_Overlapping_Intervals {
             ans.add(Arrays.asList(start, end));
         }
         return ans;
+    }
+
+    // Method 2 : Optimal Solution
+    // Time Complexity: O(NlogN) + O(N) = O(NlogN)
+    // Space Complexity: O(N)
+    static List<List<Integer>> mergeIntervals1(int[][] arr) {
+        int n = arr.length;
+
+        Arrays.sort(arr, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                return a[0] - b[0];
+            }
+        });
+
+        List<List<Integer>> ans = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            // this case means there is no overlapping between the intervals
+            // means, a new interval is added or new interval is formed (so we can added a new interval)
+            if (ans.isEmpty() || arr[i][0] > ans.get(ans.size() - 1).get(1)) {
+                ans.add(Arrays.asList(arr[i][0], arr[i][1]));
+            }
+            // this case means overlapping
+            // so, we can simply check the last element of previous element, or (start, end) of current interval
+            else {
+                ans.get(ans.size() - 1).set(1, Math.max(ans.get(ans.size() - 1).get(1), arr[i][1]));
+            }
+        }
+        return ans;
+    }
+
+    // Main Function
+    public static void main(String[] args) {
+        int[][] arr = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        List<List<Integer>> ans = mergeIntervals1(arr);
+        System.out.println(ans);
     }
 
     // Leetcode Version (Brute Force)
@@ -84,41 +121,11 @@ public class Merge_Overlapping_Intervals {
 
         return merged.toArray(new int[merged.size()][]);
     }
-    
-    // Method 2 : Optimal Solution
-    // Time Complexity: O(NlogN) + O(N) = O(NlogN)
-    // Space Complexity: O(N)
-    static List<List<Integer>> mergeIntervals1(int[][] arr) {
-        int n = arr.length;
-
-        Arrays.sort(arr, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] a, int[] b) {
-                return a[0] - b[0];
-            }
-        });
-
-        List<List<Integer>> ans = new ArrayList<>();
-
-        for (int i=0; i<n; i++) {
-            // this case means there is no overlapping between the intervals
-            // means, a new interval is added or new interval is formed (so we can added a new interval)
-            if (ans.isEmpty() || arr[i][0] > ans.get(ans.size()-1).get(1)) {
-                ans.add(Arrays.asList(arr[i][0], arr[i][1]));
-            }
-            // this case means overlapping
-            // so, we can simply check the last element of previous element, or (start, end) of current interval
-            else {
-                ans.get(ans.size()-1).set(1, Math.max(ans.get(ans.size()-1).get(1), arr[i][1]));
-            }
-        }
-        return ans;
-    }
 
     // Leetcode Version (Optimal Solution)
     // Time Complexity: O(NlogN) + O(N) = O(NlogN)
     // Space Complexity: O(N)
-    public int[][] merge(int[][] intervals) {
+    public int[][] mergeUpdate(int[][] intervals) {
         int n = intervals.length;
         List<int[]> merged = new ArrayList<>();
 
@@ -129,19 +136,11 @@ public class Merge_Overlapping_Intervals {
             // Skip if already merged (i.e., overlaps with the last added interval)
             if (merged.isEmpty() || intervals[i][0] > merged.get(merged.size() - 1)[1]) {
                 merged.add(new int[]{intervals[i][0], intervals[i][1]});
-            }
-            else {
-                merged.get(merged.size()-1)[1] = Math.max(intervals[i][1], merged.get(merged.size()-1)[1]);
+            } else {
+                merged.get(merged.size() - 1)[1] = Math.max(intervals[i][1], merged.get(merged.size() - 1)[1]);
             }
         }
         return merged.toArray(new int[merged.size()][]);
-    }
-
-    // Main Function
-    public static void main(String[] args) {
-        int[][] arr = {{1,3}, {2,6}, {8,10}, {15,18}};
-        List<List<Integer>> ans = mergeIntervals1(arr);
-        System.out.println(ans);
     }
 }
 
