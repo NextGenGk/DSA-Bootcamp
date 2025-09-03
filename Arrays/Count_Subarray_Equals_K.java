@@ -42,7 +42,7 @@ public class Count_Subarray_Equals_K {
     // Method 3 - Optimal Solution (Using HashMap) (Real Solution)
     // Time - O(N) or O(N*logN) depending on which map data structure we are using, where N = size of the array.
     // Space - O(N) because using Map Data Structure
-    static int subarrayCounts11(int[] arr, int n, int K) {
+    static int subarrayCounts11(int[] nums, int n, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int prefixSum = 0;
         int count = 0;
@@ -65,7 +65,7 @@ public class Count_Subarray_Equals_K {
     // Method 3 - Optimal Solution (Using HashMap)
     // Time - O(N) or O(N*logN) depending on which map data structure we are using, where N = size of the array.
     // Space - O(N) because using Map Data Structure
-    static int subarrayCounts(int[] arr,int n, int k) {
+    static int subarrayCounts(int[] arr, int n, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
         int preSum = 0;
@@ -73,11 +73,11 @@ public class Count_Subarray_Equals_K {
 
         map.put(0, 1);
 
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             preSum += arr[i];
 
-            if (map.containsKey(preSum-k)) {
-                count += map.get(preSum-k);
+            if (map.containsKey(preSum - k)) {
+                count += map.get(preSum - k);
             }
 
             // This line essentially counts occurrences of preSum values by updating their frequencies in the map.
