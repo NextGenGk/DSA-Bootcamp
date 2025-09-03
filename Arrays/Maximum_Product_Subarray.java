@@ -59,7 +59,7 @@ public class Maximum_Product_Subarray {
       possible suffix subarrays (starting from index n-1).
     * The maximum product obtained from these prefix and suffix subarrays will be our final answer.
     */
-    public int maxProduct(int[] nums) {
+    public static int maxProduct(int[] nums) {
         int n = nums.length;
         int max = nums[0];
         int pre = 1, suf = 1;
@@ -80,7 +80,7 @@ public class Maximum_Product_Subarray {
     // Main Function
     public static void main(String[] args) {
         int[] arr = {2, 3, -1, 4};
-        System.out.println(maxProduct3(arr));
+        System.out.println(maxProduct(arr));
     }
 }
 
