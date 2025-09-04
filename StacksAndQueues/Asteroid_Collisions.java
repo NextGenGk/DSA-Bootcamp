@@ -12,6 +12,7 @@ public class Asteroid_Collisions {
     // elements onto the stack.
     // Space Complexity : O(2N), O(N) is for using external list data structure and another O(N) for converting
     // list into array to return the answer
+    
     // Function to simulate the asteroid collisions
     public static int[] asteroidCollisions(int[] arr) {
         // List to store the resulting asteroids after collisions
@@ -62,7 +63,7 @@ public class Asteroid_Collisions {
     // elements onto the stack.
     // Space Complexity : O(2N), O(N) is for using external stack data structure and another O(N) for converting
     // stack into array to return the answer
-    // Function to simulate the asteroid collisions using Stack
+    
     // Function to simulate the asteroid collisions using a stack
     public static int[] asteroidCollisionsUsingStack(int[] arr) {
         // Stack to store the resulting asteroids after collisions
