@@ -125,8 +125,9 @@ public class Maximum_Subarray_Sum {
 
     // Main Function
     public static void main(String[] args) {
-        int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4};
-        int res = subarraySum(arr);
+        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int n = arr.length;
+        int res = (int) maxSubarraySum(arr, n);
         System.out.println(res);
     }
 }
