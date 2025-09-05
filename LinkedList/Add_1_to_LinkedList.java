@@ -2,29 +2,6 @@ package LinkedList;
 
 public class Add_1_to_LinkedList {
 
-    // Node class represents 
-    // a node in a linked list
-    static class Node {
-        // Data stored in the node
-        int data;
-        // Pointer to the next node in the list
-        Node next;
-
-        // Constructor with both data
-        // and next node as parameters
-        Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
-
-        // Constructor with only data as
-        // a parameter, sets next to null
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
     // Reverse LinkedList Function
     static Node reverseLinkedListIterative(Node head) {
         // Initialize 'temp' at
@@ -70,16 +47,15 @@ public class Add_1_to_LinkedList {
         if (head == null) {
             return new Node(1);
         }
-        
+
         // Case: only one node in the list
         if (head.next == null) {
             head.data += 1; // Add 1 to the single node
-            
+
             // If no carry is generated, return the head
             if (head.data < 10) {
                 return head;
-            }
-            else {
+            } else {
                 // If carry is generated (e.g., 9 -> 10)
                 head.data = 0; // Set current digit to 0
                 Node newHead = new Node(1); // Create a new node for carry
@@ -87,30 +63,29 @@ public class Add_1_to_LinkedList {
                 return newHead;
             }
         }
-        
+
         // Step 1: Reverse the linked list to make addition easier (start from LSB)
         head = reverseLinkedListIterative(head);
-        
+
         Node temp = head;
         int carry = 1; // We need to add 1
-        
+
         // Step 2: Traverse list and handle carry
         while (temp != null) {
             temp.data += carry; // Add carry to current digit
-            
-            if (temp.data < 10) {  
+
+            if (temp.data < 10) {
                 // No carry generated, break out
                 carry = 0;
                 break;
-            }
-            else {
+            } else {
                 // If carry generated (digit >= 10)
                 temp.data = 0; // Set digit to 0
                 carry = 1;     // Carry forward
             }
             temp = temp.next; // Move to next digit
         }
-        
+
         // Step 3: If carry is still left after full traversal (e.g., 999 + 1 = 1000)
         if (carry == 1) {
             Node node = new Node(1);          // Create a new node for extra carry
@@ -118,10 +93,37 @@ public class Add_1_to_LinkedList {
             node.next = head;                 // Attach to the front
             return node;
         }
-        
+
         // Step 4: Reverse back the list to restore original order
         head = reverseLinkedListIterative(head);
         return head;
+    }
+
+    // Function to print the linked list
+    static void printList(Node head) {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    // Main Function
+    public static void main(String[] args) {
+        // Create the linked list representing the number 129
+        Node head = new Node(9);
+        head.next = new Node(9);
+        head.next.next = new Node(9);
+
+        System.out.println("Original list:");
+        printList(head);
+
+        // Add 1 to the number
+        head = add1(head);
+
+        System.out.println("List after adding 1:");
+        printList(head);
     }
 
     // Method 2 : Optimal Solution
@@ -171,31 +173,27 @@ public class Add_1_to_LinkedList {
         return 1;
     }
 
-    // Function to print the linked list
-    static void printList(Node head) {
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+    // Node class represents
+    // a node in a linked list
+    static class Node {
+        // Data stored in the node
+        int data;
+        // Pointer to the next node in the list
+        Node next;
+
+        // Constructor with both data
+        // and next node as parameters
+        Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
         }
-        System.out.println();
-    }
 
-    // Main Function
-    public static void main(String[] args) {
-        // Create the linked list representing the number 129
-        Node head = new Node(9);
-        head.next = new Node(9);
-        head.next.next = new Node(9);
-
-        System.out.println("Original list:");
-        printList(head);
-
-        // Add 1 to the number
-        head = add1s(head);
-
-        System.out.println("List after adding 1:");
-        printList(head);
+        // Constructor with only data as
+        // a parameter, sets next to null
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }
 
