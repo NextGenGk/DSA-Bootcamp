@@ -42,6 +42,26 @@ public class String_Compression {
             }
             // Write the character
             chars[write++] = current;
+
+            /*
+            Detailed Explanation
+            1. if (count > 1) { ... }
+                i. Only runs when a character appears more than once consecutively, since for a single occurrence,
+                the count is omitted by convention in string compression.
+
+            2. String cntStr = Integer.toString(count);
+                i. Converts the integer count (e.g., 12) into its string representation ("12"). This is necessary
+                   because direct casting from int to char yields the corresponding Unicode character, not the digit
+                   character you want in output.
+
+            3. for (char c : cntStr.toCharArray()) { ... }
+                i. Converts the string (such as "12") to a char array (['1','2']), so each digit can be written
+                   separately to the compressed array.
+
+            4. chars[write++] = c;
+                i. Writes each count digit (as chars) into the chars array at the current write position, and advances
+                   the pointer for each digit.
+             */
             // Write each digit of count if > 1
             if (count > 1) {
                 String cntStr = Integer.toString(count);
@@ -63,7 +83,6 @@ public class String_Compression {
 The idea is to use two pointers: one for reading the input array and another for writing the compressed characters.
 We count consecutive characters and write the character followed by its count (if greater than 1) to the array.
  */
-
 
 // Algorithm: Two Pointer Approach
 /*
