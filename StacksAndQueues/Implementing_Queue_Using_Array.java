@@ -44,7 +44,7 @@ class Implementing_Queue_Using_Array {
                 return;
             }
             System.out.println("Dequeued: " + queue[front]);
-            if (front == rear) {
+            if (front > rear) {
                 // Reset queue if last element is removed
                 front = rear = -1;
             } else {
