@@ -6,22 +6,32 @@ public class Remove_Outermost_Parentheses {
     // Time Complexity: O(n), where n is the length of the input string.
     // Space Complexity: O(n) for the result string.
     public static String removeOuterParentheses(String s) {
+        // StringBuilder to build the final result (faster than string concatenation)
         StringBuilder result = new StringBuilder();
+
+        // Depth counter to track how deep we are inside parentheses
         int depth = 0;
 
+        // Iterate through each character of the string
         for (char c : s.toCharArray()) {
             if (c == '(') {
+                // If depth > 0, it means this '(' is not the outermost one, so include it
                 if (depth > 0) {
                     result.append(c);
                 }
+                // Increase depth when encountering '('
                 depth++;
-            } else {
+            } else { // when character is ')'
+                // Decrease depth first because this ')' closes a parenthesis
                 depth--;
+                // If depth > 0 after decrement, then it's not the outermost ')', so include it
                 if (depth > 0) {
                     result.append(c);
                 }
             }
         }
+
+        // Return the final string after removing outermost parentheses
         return result.toString();
     }
 
