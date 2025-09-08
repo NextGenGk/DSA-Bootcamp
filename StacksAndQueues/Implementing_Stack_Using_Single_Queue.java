@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Implementing_Stack_Using_Single_Queue {
+    // Create a queue
     Queue<Integer> queue;
 
     // Constructor to initialize the stack
