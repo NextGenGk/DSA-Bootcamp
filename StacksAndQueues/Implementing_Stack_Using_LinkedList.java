@@ -8,6 +8,7 @@ public class Implementing_Stack_Using_LinkedList {
         Node next;
     }
 
+    // Create variables
     private Node topOfStack;
     private int size; // Variable to keep track of the size of the stack
 
