@@ -1,6 +1,7 @@
 package StacksAndQueues;
 
 public class Implementing_Queue_Using_LinkedList {
+    
     // Node class
     class Node {
         int data;
@@ -13,6 +14,7 @@ public class Implementing_Queue_Using_LinkedList {
         }
     }
 
+    // Initialize variables
     private Node front;
     private Node rear;
     private int size; // Counter to track the size of the queue
