@@ -52,9 +52,9 @@ public class Valid_Parentheses {
 
 // Output : True
 
-// Approach :
+// Intuition :
 /*
-Intuition:  We have to keep track of previous as well as most recent opening brackets and also keep in
+We have to keep track of previous as well as most recent opening brackets and also keep in
 mind the sequence, as after opening of the bracket there should be opposite pairs of brackets. Also
 handle the corner cases like [ ) ( ] where closing bracket occurs first and opening bracket after it,
 which is an invalid sequence, as well as [ ( ] ) where the most recent opening didn't get its opposite
