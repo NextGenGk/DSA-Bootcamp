@@ -7,6 +7,7 @@ public class Valid_Parentheses {
     // Method 1 : Optimal Solution
     // Time Complexity : O(N) for single traversal
     // Space Complexity : O(N) for using external stack data structure
+    
     static boolean isValid(String str) {
         // Create a stack to keep track of opening brackets
         Stack<Character> stack = new Stack<Character>();
