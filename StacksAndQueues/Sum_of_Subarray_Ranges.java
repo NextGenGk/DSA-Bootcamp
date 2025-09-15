@@ -117,6 +117,7 @@ public class Sum_of_Subarray_Ranges {
         return result;
     }
 
+    // Function to find the Subarray Minimum
     public static int sumSubarrayMin(int[] arr) {
         int n = arr.length; // Get the length of the input array
         long total = 0; // Variable to store the total sum of minimums
