@@ -7,6 +7,7 @@ public class Implement_Min_Stack {
     // Method 1 : Brute Force
     // Time Complexity : O(1)
     // Space Complexity : O(2 * N) Because we are storing pairs in stack
+    
     // Class to represent a pair of integers.
     // x stores the value pushed onto the stack, y stores the minimum value at that point.
     class Pair {
@@ -62,6 +63,7 @@ public class Implement_Min_Stack {
     // Method 2 : Optimal Solution
     // Time Complexity : O(1)
     // Space Complexity : O(N)
+    
     // Class to implement a stack that supports push, pop, top, and getMin operations in constant time
     static class MinStack1 {
         Stack<Long> st = new Stack<Long>(); // Stack to store modified values for maintaining the minimum
