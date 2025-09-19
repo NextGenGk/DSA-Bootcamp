@@ -7,7 +7,7 @@ public class Implementing_Queue_Using_LinkedList {
         int data;
         Node next;
 
-        // Constructor
+        // Constructor to initialize
         public Node(int data) {
             this.data = data;
             this.next = null;
