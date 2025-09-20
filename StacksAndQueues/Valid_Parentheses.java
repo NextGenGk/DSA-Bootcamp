@@ -7,7 +7,6 @@ public class Valid_Parentheses {
     // Method 1 : Optimal Solution
     // Time Complexity : O(N) for single traversal
     // Space Complexity : O(N) for using external stack data structure
-    
     static boolean isValid(String str) {
         // Create a stack to keep track of opening brackets
         Stack<Character> stack = new Stack<Character>();
@@ -73,3 +72,5 @@ topmost element of the stack is the opposite pair of the closing bracket or not.
 5. After we move out of the string the stack has to be empty if it is non-empty then return it as
 invalid else it is a valid string.
  */
+
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=xwjS0iZhw4I
