@@ -170,7 +170,7 @@ element to take the top’s second element.
 Let’s take a variable that stores the minimum number. So whenever a push operation comes in just
 take that number put it in the stack and update the variable to the number.
 
-Push operation:
+push() operation:
 
 Now if there is a push operation just check whether that number is less than the min number.
 If it is smaller than min we will push a modified value which is a push(2 * Val - min) into the
@@ -181,12 +181,12 @@ getMin() operation:
 
 We will just return the value of min.
 
-Top operation:
+top() operation:
 
 While returning the top value we know that it is a modified value. We will check if the top value is
 lesser than min, If it is then we will return the min as the top value.
 
-Pop operation:
+pop() operation:
 
 While making pop we will check if the top value is lesser than min, If it is then we must update our
 min to its previous value. In order to do that min = (2 * min) - (modified value) and we will pop the element.
