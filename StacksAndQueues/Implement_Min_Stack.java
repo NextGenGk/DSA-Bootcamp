@@ -9,7 +9,8 @@ public class Implement_Min_Stack {
     // Space Complexity : O(2 * N) Because we are storing pairs in stack
     
     // Class to represent a pair of integers.
-    // x stores the value pushed onto the stack, y stores the minimum value at that point.
+    // x stores the value pushed onto the stack, 
+    // y stores the minimum value at that point.
     class Pair {
         int x; // Stores the value pushed onto the stack
         int y; // Stores the minimum value at that point in the stack
@@ -64,7 +65,8 @@ public class Implement_Min_Stack {
     // Time Complexity : O(1)
     // Space Complexity : O(N)
     
-    // Class to implement a stack that supports push, pop, top, and getMin operations in constant time
+    // Class to implement a stack that supports push, pop, top,
+    // and getMin operations in constant time
     static class MinStack1 {
         Stack<Long> st = new Stack<Long>(); // Stack to store modified values for maintaining the minimum
         Long mini; // Variable to store the current minimum value
