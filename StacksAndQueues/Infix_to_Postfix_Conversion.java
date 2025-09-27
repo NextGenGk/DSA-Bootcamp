@@ -32,7 +32,7 @@ public class Infix_to_Postfix_Conversion {
         String result = new String("");
 
         // initializing empty stack
-        Stack < Character > stack = new Stack < > ();
+        Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < exp.length(); ++i) {
             char c = exp.charAt(i);
