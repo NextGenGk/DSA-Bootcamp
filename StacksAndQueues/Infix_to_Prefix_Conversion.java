@@ -4,6 +4,11 @@ import java.util.Stack;
 
 public class Infix_to_Prefix_Conversion {
 
+    // Time Complexity : O(N) + O(N) + O(N) ~ O(3N) ~ O(N)
+    // Reason : O(N) for reverse a string, O(N) for stack operations, and another O(N) for reverse the
+    // postfix expression.
+    // Space Complexity : O(N) for using stack.
+
     // Function to determine the precedence of an operator
     static int prec(char ch) {
         return switch (ch) {
@@ -111,11 +116,6 @@ public class Infix_to_Prefix_Conversion {
         System.out.println("Prefix Expression: " + prefix);
     }
 }
-
-// Time Complexity : O(N) + O(N) + O(N) ~ O(3N) ~ O(N)
-// Reason : O(N) for reverse a string, O(N) for stack operations, and another O(N) for reverse the
-// postfix expression.
-// Space Complexity : O(N) for using stack.
 
 // Output :
 /*
