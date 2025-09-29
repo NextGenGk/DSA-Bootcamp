@@ -19,11 +19,11 @@ public class Postfix_to_Infix_Conversion {
             // If the character is an operator
             else {
                 // Pop the top two elements from the stack
-                String t1 = stack.pop();
                 String t2 = stack.pop();
+                String t1 = stack.pop();
 
                 // Form the new infix expression by placing the operator between the two operands
-                String result = '(' + t2 + c + t1 + ')';
+                String result = '(' + t1 + c + t2 + ')';
 
                 // Push the new infix expression back onto the stack
                 stack.push(result);
