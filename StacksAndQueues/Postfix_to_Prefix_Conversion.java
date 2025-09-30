@@ -4,6 +4,13 @@ import java.util.Stack;
 
 public class Postfix_to_Prefix_Conversion {
 
+    // Time Complexity : O(N) + (N + M)
+    // Reason : In languages where strings are immutable (like Python, Java, etc.), concatenation often involves
+    // creating a new string that combines the original strings. For example, in Java, using str1 + str2
+    // creates a new string and involves copying the characters from both strings, resulting in O(n + m)
+    // time complexity.
+    // Space Complexity : O(N), for using stack
+
     // Function to convert a postfix expression to an prefix expression.
     static String postfixToPrefix(String exp) {
         // Create a stack to hold the operands
@@ -48,13 +55,6 @@ public class Postfix_to_Prefix_Conversion {
         System.out.println("Prefix Expression: " + prefixExp);
     }
 }
-
-// Time Complexity : O(N) + (N + M)
-// Reason : In languages where strings are immutable (like Python, Java, etc.), concatenation often involves
-// creating a new string that combines the original strings. For example, in Java, using str1 + str2
-// creates a new string and involves copying the characters from both strings, resulting in O(n + m)
-// time complexity.
-// Space Complexity : O(N), for using stack
 
 // Output :
 /*
