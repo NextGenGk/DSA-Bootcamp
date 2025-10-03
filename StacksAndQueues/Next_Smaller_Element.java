@@ -106,4 +106,4 @@ Algorithm :
 Note: To achieve the same order, we store indices in the stack instead of values.
  */
 
-// Article : https://www.geeksforgeeks.org/next-smaller-element/
+// Article (Striver's) : https://www.geeksforgeeks.org/next-smaller-element/
