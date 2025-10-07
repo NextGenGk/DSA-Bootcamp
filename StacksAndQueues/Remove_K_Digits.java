@@ -10,6 +10,7 @@ public class Remove_K_Digits {
     // and another O(N) is for removing leading zeroes & O(K) is for removing extra digits (i.e. k).
     // Space Complexity : O(N) + O(N) ~ O(2N) ~ O(N)
     // Reason : O(N) for using Stack DS and another O(N) for returning the result string.
+    
     static String removeKDigits(String str, int k) {
         int n = str.length(); // Get the length of the input string
         Stack<Character> stack = new Stack<Character>(); // Initialize a stack to store the digits
