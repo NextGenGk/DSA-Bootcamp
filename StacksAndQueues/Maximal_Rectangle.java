@@ -22,6 +22,7 @@ public class Maximal_Rectangle {
             // Update the prefix sum (histogram) for the current row
             for (int j = 0; j < m; j++) {
                 if (matrix[i][j] == '1') {
+                    // prefixSum[j] = prefixSum[j] + 1;
                     prefixSum[j]++;  // Increment the height if it's '1'
                 } else {
                     prefixSum[j] = 0;  // Reset the height if it's '0'
