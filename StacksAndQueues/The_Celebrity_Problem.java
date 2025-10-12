@@ -58,13 +58,12 @@ public class The_Celebrity_Problem {
 
         // At this point, top is the potential celebrity
         // Need to verify whether the person at 'top' is truly a celebrity
-
         for (int i = 0; i < n; i++) {
             if (i == top) continue;  // Skip the comparison with the person themselves
 
             // A celebrity shouldn't know anyone and everyone should know them
             if (matrix[top][i] == 1 || matrix[i][top] == 0) {
-                return -1;  // If top knows someone or someone doesn't know top, return -1 (no celebrity)
+                 return -1;  // If top knows someone or someone doesn't know top, return -1 (no celebrity)
             }
         }
 
