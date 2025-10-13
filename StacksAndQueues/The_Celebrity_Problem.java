@@ -93,7 +93,8 @@ public class The_Celebrity_Problem {
     }
 }
 
-// Output : The celebrity is person 1.
+// Output : 
+// The celebrity is person 1.
 
 // Approach : Brute Force
 /*
@@ -194,8 +195,6 @@ All checks pass → ✅ Return 2
 ✅ Final Output
 System.out.println(findCelebrity1(matrix)); // Output: 2
  */
-
-
 
 // Approach : Optimal Solution
 /*
