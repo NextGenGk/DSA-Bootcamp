@@ -105,8 +105,6 @@ public class Implement_LRU_Cache {
 
     // Main Function
     public static void main(String[] args) {
-        // Example of calling LRUCache class methods as described by LeetCode test cases
-
         // Create an LRUCache with a capacity of 2
         LRUCache cache = new LRUCache(2);
 
