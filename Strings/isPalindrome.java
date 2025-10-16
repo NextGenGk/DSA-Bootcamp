@@ -53,7 +53,7 @@ public class isPalindrome {
             i++;
             j--;
         }
-        return true;
+        return true; // all matched
     }
 }
 
