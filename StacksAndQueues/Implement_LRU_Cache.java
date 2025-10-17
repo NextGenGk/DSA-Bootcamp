@@ -23,7 +23,8 @@ public class Implement_LRU_Cache {
         public LRUCache(int capacity) {
             this.capacity = capacity;
 
-            // Link head and tail together, establishing a doubly linked list structure
+            // Link head and tail together,
+            // establishing a doubly linked list structure
             head.next = tail;
             tail.prev = head;
         }
