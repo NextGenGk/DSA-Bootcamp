@@ -65,7 +65,12 @@ true
 true
  */
 
-// Algorithm: Two Pointer Approach
+// Algorithm: Optimal Solution
+/*
+Simple Palindrome check
+*/
+
+// Algorithm: Optimal Solution (Two Pointer Approach) 
 /*
 1. Initialize two pointers, i at the start (0) and j at the end (length - 1) of the string.
 2. While i is less than j:
