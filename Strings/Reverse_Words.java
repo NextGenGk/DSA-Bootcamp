@@ -67,6 +67,7 @@ public class Reverse_Words {
 // Output:
 // blue is sky the
 // world hello
+// example good a
 
 // Algorithm: Reverse Words by Traversing Backwards
 /*
