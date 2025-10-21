@@ -4,6 +4,7 @@ public class Reverse_Words {
 
     // Main Function
     public static void main(String[] args) {
+        // Creating an Object
         Reverse_Words sol = new Reverse_Words();
 
         String s1 = "the sky is blue";
