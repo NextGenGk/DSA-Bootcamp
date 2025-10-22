@@ -43,7 +43,7 @@ public class Remove_Outermost_Parentheses {
 }
 
 // Output :
-// ()()()
+// ()()() (This is Valid Parentheses)
 
 // Intuition:
 /*
