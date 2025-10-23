@@ -25,7 +25,7 @@ public class String_Compression {
         System.out.println();
     }
 
-    // Method 1 : Optimal Approach (Two Pointers)
+    // Method 1 : Optimal Approach (Two Pointers Approach)
     // Time Complexity: O(n), where n is the length of the input array.
     // Space Complexity: O(1) as we are using only constant space.
     public int compress(char[] chars) {
