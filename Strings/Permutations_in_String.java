@@ -4,6 +4,7 @@ public class Permutations_in_String {
 
     // Main Function
     public static void main(String[] args) {
+        // Creating an object
         Permutations_in_String sol = new Permutations_in_String();
 
         String s1 = "ab";
