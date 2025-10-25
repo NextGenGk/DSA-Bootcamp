@@ -16,7 +16,7 @@ public class Permutations_in_String {
         System.out.println(sol.checkInclusion(s3, s4)); // Output: false
     }
 
-    // Method 1 : Optimal Approach (Sliding Window + Frequency Array)
+    // Method 1 : Optimal Approach (Sliding Window Approach + Frequency Array)
     // Time Complexity: O(n), where n is the length of s2.
     // Space Complexity: O(1) as the frequency arrays have a fixed size of 26.
     public boolean checkInclusion(String s1, String s2) {
