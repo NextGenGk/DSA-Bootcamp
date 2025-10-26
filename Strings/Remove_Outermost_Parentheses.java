@@ -134,4 +134,3 @@ So if we skip those two, we are left with exactly the "inside content."
         3.2.1 If depth > 0 after decrementing, append ')' to the result.
 4. Convert the StringBuilder to a string and return it.
  */
-
