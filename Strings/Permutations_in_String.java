@@ -32,6 +32,7 @@ public class Permutations_in_String {
             freq1[s1.charAt(i) - 'a']++;
         }
 
+        // Store the window size
         int windowSize = s1.length();
 
         // Build the first window in s2 of size = windowSize
