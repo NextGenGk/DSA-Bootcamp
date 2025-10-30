@@ -55,7 +55,7 @@ public class Permutations_in_String {
             if (matches(freq1, freq2)) return true;
         }
 
-        // No window matched → return false
+        // No window matched than return false
         return false;
     }
 
