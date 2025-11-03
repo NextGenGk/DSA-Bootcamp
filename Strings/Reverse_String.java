@@ -2,6 +2,9 @@ package Strings;
 
 public class Reverse_String {
 
+    // Method 1 : Optimal Solution (Two Pointer Approach)
+    // Time Complexity: O(n), where n is the length of the string.
+    // Space Complexity: O(n), for the character array.
     public static String reverseString(String s) {
         // Convert string to char array
         char[] arr = s.toCharArray();
