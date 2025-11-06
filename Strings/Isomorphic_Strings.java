@@ -7,7 +7,6 @@ public class Isomorphic_Strings {
     // Method : HashMap based One-to-One Mapping
     // Time Complexity: O(N^2) in worst case because map.containsValue() is O(N)
     // Space Complexity: O(N) for storing mapping of characters
-
     public boolean isIsomorphic(String s, String t) {
         HashMap<Character, Character> map = new HashMap<>();
 
