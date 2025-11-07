@@ -28,6 +28,7 @@ public class Longest_Common_Prefix {
         return res.toString();
     }
 
+    // Main Function
     public static void main(String[] args) {
         Longest_Common_Prefix lcp = new Longest_Common_Prefix();
         String[] strs = {"flower", "flow", "flight"};
