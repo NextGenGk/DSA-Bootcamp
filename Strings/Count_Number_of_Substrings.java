@@ -9,7 +9,6 @@ public class Count_Number_of_Substrings {
     // Space Complexity: O(K), where K is the number of distinct characters in the map.
     // Returns substrings with at most K distinct characters
     public static int atMostKDistinct(String s, int k) {
-
         // HashMap to store character frequency in current window
         HashMap<Character, Integer> map = new HashMap<>();
 
