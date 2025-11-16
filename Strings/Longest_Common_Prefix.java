@@ -25,6 +25,7 @@ public class Longest_Common_Prefix {
             res.append(first[i]);
         }
 
+        // Return the result
         return res.toString();
     }
 
