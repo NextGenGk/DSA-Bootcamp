@@ -8,6 +8,7 @@ public class Isomorphic_Strings {
     // Time Complexity: O(N^2) in worst case because map.containsValue() is O(N)
     // Space Complexity: O(N) for storing mapping of characters
     public boolean isIsomorphic(String s, String t) {
+        // Create a hashmap
         HashMap<Character, Character> map = new HashMap<>();
 
         // Edge Case: If lengths are different, they can't be isomorphic
