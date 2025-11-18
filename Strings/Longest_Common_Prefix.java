@@ -8,6 +8,7 @@ public class Longest_Common_Prefix {
     // Time Complexity: O(N log N), where N is the number of strings in the array.
     // Space Complexity: O(1), no extra space is needed.
     public static String longestCommonPrefix(String[] strs) {
+        // Create a stringbuider object
         StringBuilder res = new StringBuilder();
 
         // Sort the array
