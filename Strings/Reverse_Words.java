@@ -7,6 +7,7 @@ public class Reverse_Words {
         // Creating an Object
         Reverse_Words sol = new Reverse_Words();
 
+        // Examples
         String s1 = "the sky is blue";
         System.out.println(sol.reverseWords(s1)); // Output: "blue is sky the"
 
