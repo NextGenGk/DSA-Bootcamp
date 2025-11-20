@@ -7,6 +7,7 @@ public class Permutations_in_String {
         // Creating an object
         Permutations_in_String sol = new Permutations_in_String();
 
+        // Examples
         String s1 = "ab";
         String s2 = "eidbaooo";
         System.out.println(sol.checkInclusion(s1, s2)); // Output: true
