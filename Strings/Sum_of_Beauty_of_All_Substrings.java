@@ -6,7 +6,10 @@ public class Sum_of_Beauty_of_All_Substrings {
 
     // Main Function
     public static void main(String[] args) {
+        // Creating an object
         Sum_of_Beauty_of_All_Substrings solution = new Sum_of_Beauty_of_All_Substrings();
+
+        // Examples
         String input = "aabcb";
         int result = solution.beautySum(input);
         System.out.println("The sum of beauty of all substrings of \"" + input + "\" is: " + result);
