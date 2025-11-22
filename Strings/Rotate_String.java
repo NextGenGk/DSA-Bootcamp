@@ -26,7 +26,8 @@ Input: s = "abcde", goal = "cdeab"
 Output: true
 */
 
-/* Idea -
+// Idea - 
+/*
 We can easily see whether it is rotated if goal can be found in (s + s).
 For example, with s = "abcde", goal = "cdeab", we have
 
