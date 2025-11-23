@@ -4,7 +4,7 @@ public class Remove_Outermost_Parentheses {
 
     // Method 1: Optimal Approach (Depth Counter)
     // Time Complexity: O(n), where n is the length of the input string.
-    // Space Complexity: O(n) for the result string.
+    // Space Complexity: O(n), for the result string.
     public static String removeOuterParentheses(String s) {
         // StringBuilder to build the final result (faster than string concatenation)
         StringBuilder result = new StringBuilder();
