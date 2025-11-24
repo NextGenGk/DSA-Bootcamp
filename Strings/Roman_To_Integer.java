@@ -46,6 +46,7 @@ public class Roman_To_Integer {
         // Add the value of the last character (always added, no next-character check)
         res += roman.get(s.charAt(s.length() - 1));
 
+        // Finally, return the result
         return res;
     }
 }
