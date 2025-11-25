@@ -21,10 +21,13 @@ public class BubbleSort {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
 
-                    didSwap = 1; // If any swap occurs, then set didSwap = 1
+                    // If any swap occurs, then set didSwap = 1
+                    didSwap = 1; 
                 }
             }
-            if (didSwap == 0) { // If didSwap = 0, then the array is already sorted.
+
+            // If didSwap = 0, then the array is already sorted.
+            if (didSwap == 0) { 
                 break;
             }
         }
