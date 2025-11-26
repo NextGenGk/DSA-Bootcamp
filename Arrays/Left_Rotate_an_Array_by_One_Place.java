@@ -53,4 +53,4 @@ public class Left_Rotate_an_Array_by_One_Place {
 4. Print the array.
  */
 
-// Striver (Video Link) : https://youtu.be/wvcQg43_V8U
+// Striver's (Video Explanation) : https://youtu.be/wvcQg43_V8U
