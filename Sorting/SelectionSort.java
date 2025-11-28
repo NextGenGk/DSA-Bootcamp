@@ -41,7 +41,7 @@ public class SelectionSort {
     }
 }
 
-// In Selection Sort (idea) - Find the minimum elements from an array, and swap with its correct position
+// In Selection Sort (idea) - Find the minimum elements from an array, and swap with its correct position (it sort the value form start to end)
 
 // Output
 /*
