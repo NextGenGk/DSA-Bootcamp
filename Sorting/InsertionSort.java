@@ -38,7 +38,7 @@ public class InsertionSort {
     }
 }
 
-// In Insertion Sort (Idea) - Take an element from unsorted array and insert it at its correct position
+// In Insertion Sort (Idea) - Take an element from unsorted array and insert it at its correct position (it filling the elements from startimg)
 // in sorted array.
 
 // Output
