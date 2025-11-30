@@ -135,4 +135,4 @@ Solution 3 (index-based compacting and then filling zeros) is generally better b
 3. Better for performance-sensitive environments like embedded systems or mobile devices (fewer memory writes = less CPU cache stress).
 */
 
-// Striver (Video Link) : https://youtu.be/wvcQg43_V8U
+// Striver's (Video Explanation) : https://youtu.be/wvcQg43_V8U
