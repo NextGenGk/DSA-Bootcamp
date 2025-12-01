@@ -11,7 +11,7 @@ public class Move_Zeroes_to_End {
         ArrayList<Integer> temp = new ArrayList<>();
 
         // copy non-zero elements
-        // from original -> temp array:
+        // from original to temp array:
         for (int i=0; i<n; i++) {
             if (arr[i] != 0) {
                 temp.add(arr[i]);
