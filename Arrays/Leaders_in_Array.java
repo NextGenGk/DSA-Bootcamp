@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Leaders_in_Array {
 
     // Method 1 - Brute Force
-    // Time - O(N^2), Space - O(N) for storing the answer
+    // Time - O(N^2)
+    // Space - O(N) for storing the answer
 //    static ArrayList<Integer> leadersInArray (int[] arr, int n) {
 //        ArrayList<Integer> ans = new ArrayList<>();
 //
@@ -31,7 +32,8 @@ public class Leaders_in_Array {
 //    }
 
     // Method 2 - Optimal Solution
-    // Time - O(N), Space - O(N) for storing the answer
+    // Time - O(N)
+    // Space - O(N) for storing the answer
     static ArrayList<Integer> leadersInArray(int[] arr, int n) {
         ArrayList<Integer> ans = new ArrayList<>();
 
