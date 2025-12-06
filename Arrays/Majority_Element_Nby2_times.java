@@ -115,4 +115,4 @@ public class Majority_Element_Nby2_times {
 9. If count2 > n/2, then return result.
  */
 
-// Striver - https://www.youtube.com/watch?v=nP_ns3uSh80
+// Striver (Video Explanation) - https://www.youtube.com/watch?v=nP_ns3uSh80
