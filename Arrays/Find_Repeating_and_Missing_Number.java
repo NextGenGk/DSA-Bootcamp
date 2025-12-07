@@ -132,6 +132,7 @@ Sn = (N*(N+1))/2
 Let’s say, S = the summation of all the elements in the given array.
 
 Therefore, S - Sn = X - Y…………………equation 1
+
 // Step 2: Form equation 2:
 
 Now, we know the summation of squares of the first N numbers is:
