@@ -76,7 +76,7 @@ public class Find_the_Number_that_Appear_Once {
 //        return -1;
 //    }
 
-    // Method 4 : Optimal Solution (Using Xor)
+    // Method 4 : Optimal Solution (Using XOR)
     // Time - O(N), Space - O(1)
     static int getSingleElement(int[] arr) {
         int n = arr.length;
