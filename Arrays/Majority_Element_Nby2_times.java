@@ -86,6 +86,9 @@ public class Majority_Element_Nby2_times {
     }
 }
 
+// Output -
+// 3
+
 // Algorithm - Brute Force
 /*
 1. Traverse the array and for each element, count its frequency.
