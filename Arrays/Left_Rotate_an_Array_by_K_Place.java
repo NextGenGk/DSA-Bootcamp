@@ -6,10 +6,11 @@ public class Left_Rotate_an_Array_by_K_Place {
     // Time - O(N)
     // Space - O(K) (K is the number of elements to be rotated)
 //    static void rotateLeft(int[] arr, int k, int n) {
+        // Base case
 //        if (n == 0) return;
-//
+        // For preventing overflow
 //        k = k % n;
-//
+        // Creating temp array
 //        int[] temp = new int[k];
 //
 //        for (int i=0; i<k; i++) {
@@ -83,4 +84,4 @@ After Rotating the elements to left
 3. Reverse whole array
  */
 
-// Striver (Video Link) : https://youtu.be/wvcQg43_V8U
+// Striver's (Video Explanation) : https://youtu.be/wvcQg43_V8U
