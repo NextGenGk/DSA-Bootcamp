@@ -150,4 +150,4 @@ than the longest variable.
 7. We will return the longest variable.
  */
 
-// Striver (Video Link): https://youtu.be/oO5uLE7EUlM
+// Striver's (Video Explanation): https://youtu.be/oO5uLE7EUlM
