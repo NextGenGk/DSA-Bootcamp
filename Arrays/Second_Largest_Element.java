@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class Second_Largest_Element {
 
-    // Method 1 - Brute Force - Time - O(NLogN), Space - O(1)
+    // Method 1 - Brute Force 
+    // Time - O(NLogN)
+    // Space - O(1)
 //    public static int secondLargest(int[] arr) {
 //        Arrays.sort(arr);
 //        int n = arr.length;
@@ -20,7 +22,9 @@ public class Second_Largest_Element {
 //        return sLargest;
 //    }
 
-    // Method 2 - Better Solution -> Time - O(N), Space - O(1)
+    // Method 2 - Better Solution
+    // Time - O(N)
+    // Space - O(1)
     // Find Largest Element in an Array
 //    public static int largest(int[] arr) {
 //        int n = arr.length;
@@ -47,7 +51,9 @@ public class Second_Largest_Element {
 //        return sLargest;
 //    }
 
-    // Method 3 - Optimal Solution - Time - O(N), Space - O(1)
+    // Method 3 - Optimal Solution
+    // Time - O(N)
+    // Space - O(1)
     public static int secondLargest(int[] arr) {
         int n = arr.length;
 
@@ -106,4 +112,3 @@ element’s value
  */
 
 // Striver (Video Explanation) - https://www.youtube.com/watch?v=37E9ckMDdTk
-
