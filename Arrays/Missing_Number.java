@@ -67,7 +67,8 @@ public class Missing_Number {
     // Method 4 - Optimal Solution (Using XOR)
     // Time - O(N), Space - O(1)
     static int missingNumber(int[] arr, int n) {
-        // find numbers between 1 to n using xor operation, like {1, 2, 3, 4, 5}
+        // find numbers between 1 to n using xor operation
+        // like {1, 2, 3, 4, 5}
         int xor1 = 0;
         for (int i=1; i<=n; i++) {
             xor1 = xor1 ^ i;
