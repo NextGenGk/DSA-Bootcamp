@@ -3,7 +3,7 @@ package Arrays;
 public class Remove_Duplicates_from_Sorted_Array {
 
     // Method 1 - Brute Force (Using HashSet)
-    // Time - ((N*NlogN) + N), Space - O(N)
+    // Time - O(2N) ~ O(N), Space - O(N)
 //    static int removeDuplicates(int[] nums) {
 //        HashSet<Integer> set = new HashSet<>();
 //        for (int i=0; i< nums.length; i++) {
