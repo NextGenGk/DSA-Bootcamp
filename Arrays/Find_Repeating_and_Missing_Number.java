@@ -118,7 +118,8 @@ public class Find_Repeating_and_Missing_Number {
 // Algorithm : Optimal Solution 1
 /*
 Intuition:
-The idea is to convert the given problem into mathematical equations. Since we have two variables i.e. missing and repeating, we will try to form two linear equations. And then we will find the values of two variables using those equations.
+The idea is to convert the given problem into mathematical equations. Since we have two variables i.e. missing and repeating, 
+we will try to form two linear equations. And then we will find the values of two variables using those equations.
 
 Assume the repeating number to be X and the missing number to be Y.
 
