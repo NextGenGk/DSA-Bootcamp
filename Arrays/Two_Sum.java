@@ -99,10 +99,4 @@ we will return either “NO” or {-1, -1} as per the variant of the question.
 8. If no such pair is found, return [-1, -1]
  */
 
-// Time & Space Complexity
-/*
-Time Complexity: O(N)
-Space Complexity: O(N)
- */
-
 // Striver - https://www.youtube.com/watch?v=UXDSeD9mN-k
