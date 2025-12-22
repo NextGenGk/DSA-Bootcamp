@@ -135,4 +135,4 @@ from pos[] and neg[] at index 2*i and 2*i+1 respectively.
 7. Finally return the array.
  */
 
-// Striver - (Video Link) https://youtu.be/h4aBagy4Uok
+// Striver (Video Explanation) : https://youtu.be/h4aBagy4Uok
