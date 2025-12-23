@@ -2,6 +2,7 @@ package Arrays;
 
 public class Next_Permutation {
 
+    // Helper Functions
     // Swap Function
     static void swap (int[] arr, int i, int j) {
         int temp = arr[i];
@@ -125,4 +126,4 @@ Space - Since we are not using any extra spaces except stack spaces for recursio
 it has a space complexity of O(1).
  */
 
-// Striver - https://youtu.be/JDOXKqF60RQ
+// Striver (Video Explanation) - https://youtu.be/JDOXKqF60RQ
