@@ -193,4 +193,4 @@ public class Set_Matrix_Zeroes {
 3. Iterate over the matrix again and make the rows and columns zero.
  */
 
-// Striver's Video Explanation : https://www.youtube.com/watch?v=N0MgLvceX7M (Please refer the video)
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=N0MgLvceX7M (Please refer the video)
