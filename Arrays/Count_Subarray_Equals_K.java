@@ -143,3 +143,5 @@ public class Count_Subarray_Equals_K {
     4.3 Insert (preSum, preSum + 1) in the HashMap
 5. Return count
  */
+
+// Striver's (Video Explanation) : https://youtu.be/xvNwoz-ufXA?si=Y_Hjui0qwxHS0Otv
