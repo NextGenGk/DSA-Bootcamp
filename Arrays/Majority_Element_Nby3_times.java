@@ -9,7 +9,7 @@ public class Majority_Element_Nby3_times {
     // Method 1 - Brute Force
     // Time - O(N^2), Space - O(1)
     public static List<Integer> majorityElement(int[] v) {
-        int n = v.length; //size of the array
+        int n = v.length; // size of the array
         List<Integer> ls = new ArrayList<>(); // list of answers
 
         for (int i = 0; i < n; i++) {
