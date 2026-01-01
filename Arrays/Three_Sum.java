@@ -5,7 +5,8 @@ import java.util.*;
 public class Three_Sum {
 
     // Method 1 - Brute Force
-    // Time Complexity: O(N^3), Space Complexity: O(N)
+    // Time Complexity: O(N^3) 
+    // Space Complexity: O(N)
 //    static List<List<Integer>> threeSum(int[] arr) {
 //        int n = arr.length;
 //        Set<List<Integer>> set = new HashSet<>();
@@ -29,7 +30,8 @@ public class Three_Sum {
 //    }
 
     // Method 2 - Better Solution
-    // Time Complexity: O(N^2 * log m), Space Complexity: O(N) + (no. of triplets) * 2
+    // Time Complexity: O(N^2 * log m)
+    // Space Complexity: O(N) + (no. of triplets) * 2
 //    static List<List<Integer>> threeSum(int[] arr) {
 //        HashSet<List<Integer>> mainSet = new HashSet<>();
 //
@@ -56,7 +58,8 @@ public class Three_Sum {
 //    }
 
     // Method 3 - Optimal Solution (Using Two Pointer Approach)
-    // Time : O(N^2) + O(N*logN), Space : O(3*k)  // k is the no.of triplets.
+    // Time : O(N^2) + O(N*logN)
+    // Space : O(3*k)  // k is the no.of triplets.
     static List<List<Integer>> threeSum(int[] arr) {
         List<List<Integer>> ans = new ArrayList<>();
 
