@@ -31,6 +31,7 @@ public class Four_Sum {
                 }
             }
         }
+        
         // To return the answer
         List<List<Integer>> ans = new ArrayList<>(set);
         return ans;
@@ -42,7 +43,8 @@ public class Four_Sum {
     // data structure which take log(M) time complexity.
     // Space Complexity: O(2 * no. of the quadruplets)+O(N)
     // Reason: we are using a set data structure and a list to store the quads. This results in the first term. And the
-    // second space is taken by the set data structure we are using to store the array elements. At most, the set can contain approximately all the array elements and so the space complexity is O(N).
+    // second space is taken by the set data structure we are using to store the array elements. At most, 
+    // the set can contain approximately all the array elements and so the space complexity is O(N).
     public static List<List<Integer>> fourSum2(int[] nums, int target) {
         int n = nums.length; // size of the array
         Set<List<Integer>> st = new HashSet<>();
