@@ -43,7 +43,6 @@ public class Reverse_Pairs {
         }
 
         // if elements on the left half are still left //
-
         while (left <= mid) {
             temp.add(arr[left]);
             left++;
