@@ -133,3 +133,5 @@ the maximum product obtained from both the iterations.
 6. Update max = max(max, max(pre, suf)).
 7. Return max.
  */
+
+// Striver's (Video Explanation) : https://youtu.be/hnswaLJvr6g?si=wdb_wgtDjiRG5zN2
