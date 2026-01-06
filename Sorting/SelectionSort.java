@@ -13,7 +13,7 @@ public class SelectionSort {
                     minElementIndex = j;
                 }
             }
-            // Swapping
+            // Swapping the elements
             // swap the smallest element with the element at i
 //            if (minElementIndex != i) {
 //                int temp = arr[i];
