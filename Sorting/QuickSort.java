@@ -2,7 +2,7 @@ package Sorting;
 
 public class QuickSort {
 
-    // Partition Function
+    // Partitioning Function
     public static int partition(int[] arr, int low, int high) {
         int pivot = arr[low];
         // i find the greatest element than pivot in each iteration
@@ -35,12 +35,22 @@ public class QuickSort {
 
     // QuickSort Function
     public static void quickSort(int[] arr, int low, int high) {
-        if (low < high) {
-            int pivotIndex = partition(arr, low, high);
-            // Recursively sort elements before and after partition
-            quickSort(arr, low, pivotIndex - 1);
-            quickSort(arr, pivotIndex + 1, high);
-        }
+        // Base condition
+        if (start >= end) return;
+
+        // Find the pivot
+        int pivotIndex = partition(arr, low, high);
+        // Recursively sort elements before and after partition
+        quickSort(arr, low, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, high);
+
+        // You can use in this pattern also
+        // if (low < high) {
+        //     int pivotIndex = partition(arr, low, high);
+        //     // Recursively sort elements before and after partition
+        //     quickSort(arr, low, pivotIndex - 1);
+        //     quickSort(arr, pivotIndex + 1, high);
+        // }
     }
 
     // Print Method (Print all the sorted elements)
