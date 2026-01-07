@@ -3,7 +3,7 @@ package Sorting;
 // Merge Sort Class
 public class MergeSort {
 
-    // Main Merge Sort Function
+    // Merge Function
     public static void conquer(int[] arr, int startIndex, int mid, int endIndex) {
         // Create an empty merged (temp) array (size of array)
         int merged[] = new int[endIndex - startIndex + 1];
@@ -54,7 +54,7 @@ public class MergeSort {
         }
     }
 
-    // Merge Sort Function
+    // Divide Function
     public static void mergeSort(int[] arr, int startIndex, int endIndex) {
         // If at a point starting index is greater than & equal to ending index,
         // then know, we have a single element or know, destroy an array
