@@ -7,6 +7,7 @@ public class Variation2 {
 
     // Calculating nCr
     // Time - O(r)
+    // Space - O(1)
     public static long nCr(int n, int r) {
         long res = 1;
 
