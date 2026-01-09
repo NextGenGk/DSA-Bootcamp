@@ -97,6 +97,15 @@ public class Majority_Element_Nby3_times {
 
         // Manually check if the stored elements in
         // el1 and el2 are the majority elements:
+        /* Edge Case
+        Consider this array:
+        int[] nums = {1, 2, 3, 4, 5, 6};
+        1. No element appears more than n/3
+        2. But after the first pass:
+            i. el1 and el2 will still contain some values
+           ii. Their counters may be non-zero
+        So without verification, you'd return wrong answers.
+        */
         int cnt1 = 0;
         int cnt2 = 0;
         for (int i = 0; i < n; i++) {
@@ -105,7 +114,8 @@ public class Majority_Element_Nby3_times {
         }
 
         if (cnt1 > n / 3) ls.add(ele1);
-        if (cnt2 >= n / 3) ls.add(ele2);
+        // check the element twice
+        if (cnt2 > n / 3 && ele1 != ele2) ls.add(ele2);
 
         // Uncomment the following line
         // if it is told to sort the answer array:
@@ -122,6 +132,9 @@ public class Majority_Element_Nby3_times {
         System.out.println(majorityElement2(arr, n));
     }
 }
+
+// Output :
+// 1
 
 // Note :
 /*
