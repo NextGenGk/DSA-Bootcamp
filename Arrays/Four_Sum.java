@@ -142,7 +142,7 @@ public class Four_Sum {
 // [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]] (Output arr)
 // [[1, 1, 1, 5], [1, 1, 2, 4], [1, 2, 2, 3], [1, 1, 3, 3]] (Output arr1)
 
-// Note : This problem is solved using previous probelm (Three Sum)
+// Note : This problem is solved using previous problem (Three Sum)
 
 // Algorithm : Brute Force (Using 4 loops)
 /*
