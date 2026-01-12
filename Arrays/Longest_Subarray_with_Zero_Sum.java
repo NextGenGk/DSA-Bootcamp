@@ -70,6 +70,9 @@ public class Longest_Subarray_with_Zero_Sum {
                     maxi = Math.max(maxi, i - map.get(prefixSum));
                 }
                 else {
+                    // HashMap stores first occurrence of each prefix sum
+                    // Same prefix sum again → do not update map
+                    // This guarantees longest subarray length
                     map.put(prefixSum, i);
                 }
             }
