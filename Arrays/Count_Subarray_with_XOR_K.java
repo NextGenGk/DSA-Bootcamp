@@ -53,13 +53,13 @@ public class Count_Subarray_with_XOR_K {
         int cnt = 0;
 
         for (int i = 0; i < n; i++) {
-            // prefix XOR till index i:
+            // Prefix XOR till index i:
             xr = xr ^ arr[i];
 
-            //By formula: x = xr^k:
+            // By formula: x = xr^k:
             int x = xr ^ k;
 
-            // add the occurrence of xr^k
+            // Add the occurrence of xr^k
             // to the count:
             if (map.containsKey(x)) {
                 cnt += map.get(x);
