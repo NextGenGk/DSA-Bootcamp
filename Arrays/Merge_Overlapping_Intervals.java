@@ -8,7 +8,7 @@ import java.util.List;
 public class Merge_Overlapping_Intervals {
 
     // Method 1 : Brute Force
-    // Time Complexity: O(NlogN) + O(2N) = O(NlogN)
+    // Time Complexity: O(NlogN) + O(2N) ~ O(NlogN)
     // Space Complexity: O(N)
     static List<List<Integer>> mergeIntervals(int[][] arr) {
         int n = arr.length;
@@ -88,6 +88,7 @@ public class Merge_Overlapping_Intervals {
         System.out.println(ans);
     }
 
+    
     // Leetcode Version (Brute Force)
     // Time Complexity: O(NlogN) + O(2N) = O(NlogN)
     // Space Complexity: O(N)
