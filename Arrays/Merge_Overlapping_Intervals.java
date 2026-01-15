@@ -52,7 +52,7 @@ public class Merge_Overlapping_Intervals {
     }
 
     // Method 2 : Optimal Solution
-    // Time Complexity: O(NlogN) + O(N) = O(NlogN)
+    // Time Complexity: O(NlogN) + O(N) ~ O(NlogN)
     // Space Complexity: O(N)
     static List<List<Integer>> mergeIntervals1(int[][] arr) {
         int n = arr.length;
@@ -90,7 +90,7 @@ public class Merge_Overlapping_Intervals {
 
     
     // Leetcode Version (Brute Force)
-    // Time Complexity: O(NlogN) + O(2N) = O(NlogN)
+    // Time Complexity: O(NlogN) + O(2N) ~ O(NlogN)
     // Space Complexity: O(N)
     public int[][] merge(int[][] intervals) {
         int n = intervals.length;
