@@ -73,7 +73,7 @@ public class Reverse_Pairs {
         return count;
     }
 
-    // Inversion Function (Question)
+    // Inversion Function (Actual Question)
     static int inversions(int[] arr, int n) {
         return divide(arr, 0, n-1);
     }
