@@ -87,7 +87,7 @@ public class Maximum_Product_Subarray {
 // Output -
 // 6
 
-// Algorithm : Brute Force (Generate all subarrays)
+// Algorithm : Brute Force (Generat all the subarrays)
 /*
 1. Start a loop from i=0 to n.
 2. Start another loop from j=i to n.
@@ -96,7 +96,7 @@ public class Maximum_Product_Subarray {
 5. Return the maximum product.
  */
 
-// Algorithm : Better Solution (Generate all subarrays)
+// Algorithm : Better Solution (Generate all the subarrays)
 /*
 1. Start a loop from i=0 to n.
 2. Initialize a variable prod = 1.
