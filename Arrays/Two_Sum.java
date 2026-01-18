@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Two_Sum {
 
-    // Method 1 : Brute Force
+    // Method 1 : Brute Force Approach
     // Time Complexity : O(N^2)
     // Space Complexity : O(1)
 //    public static boolean twoSum(int[] arr, int target) {
