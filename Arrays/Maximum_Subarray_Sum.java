@@ -118,8 +118,7 @@ public class Maximum_Subarray_Sum {
         // To consider the sum of the empty subarray
         // uncomment the following check:
 
-        //if (maxi < 0) maxi = 0;
-
+        // if (maxi < 0), update the maxi = 0;
         return maxi;
     }
 
