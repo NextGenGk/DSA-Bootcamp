@@ -2,8 +2,7 @@ package Arrays;
 
 public class Next_Permutation {
 
-    // Helper Functions
-    // Swap Function
+    // Swap Helper Function
     static void swap (int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
