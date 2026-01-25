@@ -65,4 +65,4 @@ public class Remove_Duplicates_from_Sorted_Array {
 4. Return i+1.
  */
 
-// Striver (Video Explanation) : https://youtu.be/37E9ckMDdTk
+// Striver's (Video Explanation) : https://youtu.be/37E9ckMDdTk
