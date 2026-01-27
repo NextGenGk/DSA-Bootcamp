@@ -83,7 +83,6 @@ public class Longest_Consecutive_Sequence {
         return longest;
     }
     
-
     // Optimal Solution v2 
     static int longestConsecutive(int[] nums) {
         HashSet<Integer> set = new HashSet<>();
