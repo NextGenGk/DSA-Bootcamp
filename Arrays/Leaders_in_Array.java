@@ -76,4 +76,4 @@ public class Leaders_in_Array {
 4. Return the answer array.
  */
 
-// Striver (Video Link) : https://youtu.be/cHrH9CQ8pmY
+// Striver (Video Explanation) : https://youtu.be/cHrH9CQ8pmY
