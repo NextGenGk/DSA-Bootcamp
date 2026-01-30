@@ -6,7 +6,7 @@ public class Maximum_Subarray_Sum {
     // Time - O(N^3), Space - O(1)
 //    static int subarraySum(int[] arr) {
 //        int n = arr.length;
-//        int maxSum = Integer.MIN_VALUE;   // maximum sum of subarray
+//        int maxSum = Integer.MIN_VALUE;   // maximum sum of subarray at start
 //        for(int i=0; i<n; i++) {
 //            for (int j=i; j<n; j++) {
 //                // subarray = arr[i.....j]
