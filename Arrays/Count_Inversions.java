@@ -140,4 +140,4 @@ cnt += mid-left+1 (mid+1 = size of the left half)
 5. Finally, we will return this cnt, as our answer from mergeSort().
  */
 
-// Striver's Video Explanation : https://www.youtube.com/watch?v=AseUmwVNaoY
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=AseUmwVNaoY
