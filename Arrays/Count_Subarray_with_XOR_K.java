@@ -48,7 +48,7 @@ public class Count_Subarray_with_XOR_K {
     public static int subarrayWithXorK(int []arr, int k) {
         int n = arr.length; //size of the given array.
         int xr = 0;
-        HashMap<Integer, Integer> map = new HashMap<>(); //declaring the map.
+        HashMap<Integer, Integer> map = new HashMap<>(); // declaring the map.
         map.put(xr, 1); // We store 0 with count 1 to handle subarrays that themselves directly XOR to k starting from index 0.
         int cnt = 0;
 
