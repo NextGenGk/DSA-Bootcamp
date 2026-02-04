@@ -41,10 +41,11 @@ public class Second_Largest_Element {
 //    // Find Second Largest Element in an Array
 //    public static int secondLargest(int[] arr) {
 //        int n = arr.length;
+//        int fLargest = largest(arr);
 //
 //        int sLargest = -1;
 //        for(int i=0; i<n; i++) {
-//            if(arr[i] > sLargest && arr[i] != largest(arr)) {
+//            if(arr[i] > sLargest && arr[i] != fLargest) {
 //                sLargest = arr[i];
 //            }
 //        }
