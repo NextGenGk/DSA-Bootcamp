@@ -46,6 +46,9 @@ public class Remove_Duplicates_from_Sorted_Array {
     }
 }
 
+// Output:
+// Output: [1,2,3,_,_,_,_]
+
 // Algorithm: Brute Force
 /*
 1. Declare a HashSet.
