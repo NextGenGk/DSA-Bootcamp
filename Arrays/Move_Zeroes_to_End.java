@@ -105,7 +105,7 @@ public class Move_Zeroes_to_End {
 // Output :
 // 1 2 3 2 4 5 1 0 0 0
 
-// Algorithm: Brute Force
+// Algorithm: Brute Force Approach
 /*
 1. Suppose, there are N-X zeros and X non-zero elements in the array. We will first copy those
  X non-zero elements from the original array to a temporary array.
