@@ -75,6 +75,7 @@ public class Missing_Number {
         }
 
         // xor of array elements
+        // like {1, 2, 3, 5}
         int xor2 = 0;
         for (int i=0; i<n; i++) {
             xor2 = xor2 ^ arr[i];
@@ -132,4 +133,4 @@ The missing number is: 3
 3. The xor of both the above values will be the missing number.
  */
 
-// Striver's - (Video Explanation) https://youtu.be/bYWLJb3vCWY
+// Striver's - (Video Explanation) : https://youtu.be/bYWLJb3vCWY
