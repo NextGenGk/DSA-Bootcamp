@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Sort_0_1_2 {
 
     // Method 1 - Brute Force
-    // Time - O(NLogN), Space - O(N)
+    // Time - O(NLogN), Space - O(1)
 //    public static void sort(int[] arr) {
 //        Arrays.sort(arr);
 //    }
