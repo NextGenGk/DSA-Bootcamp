@@ -66,8 +66,9 @@ public class Majority_Element_Nby2_times {
 
             /*
             So logically:
-            count → helps find a candidate
-            count2 → helps confirm the candidate
+            > count → helps find a candidate
+            > count2 → helps confirm the candidate
+            > Use count2 only if majority is not guaranteed
             */
             int count2 = 0;
             for (int j=0; j<nums.length; j++) {
