@@ -102,10 +102,11 @@ public class Sort_0_1_2 {
 This algorithm contains 3 pointers i.e. low, mid, and high, and 3 main rules.  The rules are the following:
 
 1. arr[0….low-1] contains 0. [Extreme left part]
-2. arr[low….mid-1] contains 1.
-3. arr[high+1….n-1] contains 2. [Extreme right part], n = size of the array
+2. arr[low….mid-1] contains 1. [Middle]
+3. arr[mid...high-1] contains unsorted elements [0, 1, 2]
+4. arr[high+1….n-1] contains 2. [Extreme right part], n = size of the array
 The middle part i.e. arr[mid….high] is the unsorted segment. So, hypothetically the array with different
 markers will look like the following:
  */
 
-// Striver - https://www.youtube.com/watch?v=tp8JIuCXBaU
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=tp8JIuCXBaU
