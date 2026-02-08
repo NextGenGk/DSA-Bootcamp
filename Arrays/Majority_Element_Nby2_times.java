@@ -64,6 +64,11 @@ public class Majority_Element_Nby2_times {
                 count = 1;
             }
 
+            /*
+            So logically:
+            count → helps find a candidate
+            count2 → helps confirm the candidate
+            */
             int count2 = 0;
             for (int j=0; j<nums.length; j++) {
                 if (nums[j] == result) {
