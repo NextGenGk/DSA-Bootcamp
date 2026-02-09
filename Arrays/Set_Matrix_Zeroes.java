@@ -38,6 +38,8 @@ public class Set_Matrix_Zeroes {
 
     // Method 1 : Brute Force (New Method)
     // Time : O(N * M * (N + M)), Space : O(1)
+    // We iterate through every cell (m * n), and for each zero, we potentially mark its entire row
+    // (O(n)) and column (O(m)), leading to O(m * n * (m + n)) overall.
     static void setMatrixZeroes(int[][] matrix, int n, int m) {
         // First pass: Mark the rows and columns that need to be set to zero
         for (int i = 0; i < n; i++) {
