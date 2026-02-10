@@ -10,6 +10,12 @@ public class Variation1 {
     // Calculating nCr
     static int nCr(int n, int r) {
         long ans = 1;
+
+        // base condition
+        if (r == 0 || n == r) {
+            return 1;
+        }
+        
         for (int i=0; i<r; i++) {
             ans = ans * (n - i);
             ans = ans / (i + 1);
