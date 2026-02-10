@@ -84,6 +84,39 @@ public class Majority_Element_Nby2_times {
         return -1;
     }
 
+    // New Method (Which works with Majority Element N/3)
+    static int majorityElement2(int[] arr) {
+        int cnt1 = 0;
+        int ele1 = Integer.MIN_VALUE;
+
+        // Step 1: Find candidate
+        for (int i = 0; i < arr.length; i++) {
+            if (cnt1 == 0) {
+                ele1 = arr[i];
+                cnt1 = 1;
+            } else if (arr[i] == ele1) {
+                cnt1++;
+            } else {
+                cnt1--;
+            }
+        }
+
+        // Step 2: Verify candidate
+        int cnt2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == ele1) {
+                cnt2++;
+            }
+        }
+
+        // Step 3: Check majority condition
+        if (cnt2 > arr.length / 2) {
+            return ele1;
+        }
+
+        return -1; // no majority element
+    }
+
     // Main Function
     public static void main(String[] args) {
         int[] arr = {1, 1, 2, 3, 1};
