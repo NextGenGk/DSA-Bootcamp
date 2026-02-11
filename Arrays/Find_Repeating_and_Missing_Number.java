@@ -20,10 +20,9 @@ public class Find_Repeating_and_Missing_Number {
 
             if (cnt == 2) repeating = i;
             else if (cnt == 0) missing = i;
-
-            if (repeating != -1 && missing != -1)
-                break;
         }
+        if (repeating != -1 && missing != -1) break;
+                
         int[] ans = {repeating, missing};
         return ans;
     }
