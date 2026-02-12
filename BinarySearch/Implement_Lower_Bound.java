@@ -81,4 +81,4 @@ We will declare the 2 pointers and an ‘ans’ variable initialized to n i.e. t
     3. Case 2 – If arr[mid] < x: In this case, mid cannot be our answer and we need to find some bigger element. So, we will eliminate the left half and search in the right half for the answer.
  */
 
-// Striver Video Explanation : https://www.youtube.com/watch?v=6zhGS79oQ4k
+// Striver (Video Explanation) : https://www.youtube.com/watch?v=6zhGS79oQ4k
