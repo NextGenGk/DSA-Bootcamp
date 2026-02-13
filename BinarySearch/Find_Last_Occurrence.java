@@ -72,4 +72,4 @@ element is present or not.
 6. Else do low = mid+1 (move rightwards)
  */
 
-// Striver Video Explanation : https://www.youtube.com/watch?v=hjR1IYVx9lY
+// Strivers (Video Explanation) : https://www.youtube.com/watch?v=hjR1IYVx9lY
