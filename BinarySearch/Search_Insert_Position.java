@@ -47,6 +47,8 @@ public class Search_Insert_Position {
     }
 }
 
+// Output : 3
+
 // Note :
 // Lower Bound - Means
 /*
