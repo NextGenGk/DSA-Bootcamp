@@ -36,7 +36,9 @@ public class QuickSort {
     // QuickSort Function
     public static void quickSort(int[] arr, int low, int high) {
         // Base condition
-        if (start >= end) return;
+        if (low >= high) {
+            return;
+        }
 
         // Find the pivot
         int pivotIndex = partition(arr, low, high);
