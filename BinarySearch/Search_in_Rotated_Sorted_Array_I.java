@@ -63,7 +63,7 @@ public class Search_in_Rotated_Sorted_Array_I {
     }
 }
 
-// Output -
+// Output :
 // 4
 
 // Algorithm : Brute Force
@@ -96,4 +96,4 @@ first index, and high will point to the last index.
  low to mid & mid to high
  */
 
-// Striver Video Explanation : https://www.youtube.com/watch?v=5qGrJbHhqFs
+// Striver (Video Explanation) : https://www.youtube.com/watch?v=5qGrJbHhqFs
