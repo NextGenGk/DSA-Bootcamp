@@ -125,4 +125,4 @@ The algorithm already takes care of this case, so there is no need for explicit 
 // If the left sorted part never have your answer, then tha right sorted part might have the answer
 // {Sorted half may or may not have the answer}
 
-// Striver Video Explanation : https://www.youtube.com/watch?v=nhEMDKMB44g
+// Striver (Video Explanation) : https://www.youtube.com/watch?v=nhEMDKMB44g
