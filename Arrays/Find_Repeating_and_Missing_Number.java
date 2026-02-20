@@ -21,8 +21,7 @@ public class Find_Repeating_and_Missing_Number {
             if (cnt == 2) repeating = i;
             else if (cnt == 0) missing = i;
         }
-        if (repeating != -1 && missing != -1) break;
-                
+
         int[] ans = {repeating, missing};
         return ans;
     }
@@ -67,7 +66,7 @@ public class Find_Repeating_and_Missing_Number {
         long S1 = 0, S2 = 0;
         for (int i = 0; i < n; i++) {
             S1 += arr[i];
-            S2 += (long)arr[i] * (long)arr[i];
+            S2 += (long) arr[i] * (long) arr[i];
         }
 
         //S1-Sn = X-Y:
@@ -84,7 +83,7 @@ public class Find_Repeating_and_Missing_Number {
         long x = (val1 + val2) / 2;
         long y = x - val1;
 
-        int[] ans = {(int)x, (int)y};
+        int[] ans = {(int) x, (int) y};
         return ans;
     }
 
