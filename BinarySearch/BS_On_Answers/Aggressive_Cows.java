@@ -38,7 +38,7 @@ public class Aggressive_Cows {
     }
 
     // Method 2 : Optimal Solution
-    // Time : O(NlogN) + O(N * log(max(stalls[])-min(stalls[]))), where N = size of the array, max(stalls[]) = maximum
+    // Time : O(NlogN) + O(N * log(max(stalls[]) - min(stalls[]))), where N = size of the array, max(stalls[]) = maximum
     // element in stalls[] array, min(stalls[]) = minimum element in stalls[] array.
     // Reason: O(NlogN) for sorting the array. We are applying binary search on [1, max(stalls[])-min(stalls[])].
     // Inside the loop, we are calling canWePlace() function for each distance, ‘mid’. Now, inside the canWePlace()
