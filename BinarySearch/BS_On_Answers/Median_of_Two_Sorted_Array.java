@@ -1,6 +1,5 @@
 package BinarySearch.BS_On_Answers;
 
-import javax.imageio.ImageTranscoder;
 import java.util.ArrayList;
 import java.util.List;
 
