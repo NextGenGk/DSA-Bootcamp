@@ -42,18 +42,17 @@ public class Isomorphic_Strings {
 }
 
 /*
----------------------------- OUTPUT ----------------------------
+Output :
 Input:  s = "egg", t = "add"
 Output: true
 Explanation:
     e -> a
     g -> d
     One-to-one mapping holds.
-----------------------------------------------------------------
 */
 
 /*
----------------------------- ALGORITHM -------------------------
+Algorithm :
 1. If lengths differ, return false.
 2. Create a HashMap<Character, Character> to store mapping from s → t.
 3. Loop through both strings:
@@ -63,16 +62,14 @@ Explanation:
           return false (prevents many-to-one mapping)
      c. Otherwise, store mapping c1 → c2 into map.
 4. If loop completes without mismatch, return true.
-----------------------------------------------------------------
 */
 
 /*
----------------------------- EDGE CASES ------------------------
+Edge Case :
 1. s = "ab", t = "aa"   → false (b cannot also map to a)
 2. s = "paper", t = "title" → true
 3. s = "foo", t = "bar" → false (mapping conflict)
 4. Different lengths → false immediately
-----------------------------------------------------------------
 */
 
 // Striver's (Article Explanation): https://takeuforward.org/data-structure/isomorphic-string
