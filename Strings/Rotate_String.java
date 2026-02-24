@@ -36,4 +36,4 @@ For example, with s = "abcde", goal = "cdeab", we have
 goal is found in (s + s), so goal is a rotated string of A.
 */
 
-// Strivers's (Article Explanation): https://takeuforward.org/data-structure/rotate-string-check-if-one-string-is-rotation-of-another/
+// Striver's (Article Explanation): https://takeuforward.org/data-structure/rotate-string-check-if-one-string-is-rotation-of-another/
