@@ -47,6 +47,32 @@ public class Integer_to_Roman {
 // Output:
 // The Roman numeral representation of 1994 is: MCMXCIV
 
+// Intuition : 
+/*
+Reason: Greedy Strategy
+Roman numeral conversion works best using a greedy approach:
+
+Always take the largest possible Roman value first.
+Why?
+
+Because Roman numerals are built from biggest symbols to smallest.
+Example:
+
+num = 1994
+
+Take 1000 → M
+Remaining = 994
+
+Take 900 → CM
+Remaining = 94
+
+Take 90 → XC
+Remaining = 4
+
+Take 4 → IV
+Result = MCMXCIV
+*/
+
 // Algorithm :
 /*
 1. Define two arrays: one for integer values of Roman numerals (including subtractive forms) and another for their corresponding symbols.
