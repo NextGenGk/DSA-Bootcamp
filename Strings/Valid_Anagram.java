@@ -42,7 +42,7 @@ public class Valid_Anagram {
 }
 
 // Output :
-// Are "anagram" and "nagaram" anagrams? true
+// true
 
 // Algorithm :
 /*
