@@ -42,6 +42,7 @@ public class Longest_Substring_without_Repeating_Character {
         // Return the length of the longest substring without repeating characters
         return maxLength;
     }
+    
     // Method 1 : Brute Force v2
     // Time Complexity : O(N^3)
     // Space Complexity : O(N)
