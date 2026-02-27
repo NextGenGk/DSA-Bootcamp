@@ -101,7 +101,8 @@ public class Subarray_with_K_Different_Integers {
     }
 }
 
-// Output : Number of subarrays with exactly 2 distinct integers: 7
+// Output : 
+// Number of subarrays with exactly 2 distinct integers: 7
 
 // Approach : Brute Force
 /*
