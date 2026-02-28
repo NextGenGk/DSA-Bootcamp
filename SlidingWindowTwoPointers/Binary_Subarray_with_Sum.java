@@ -11,7 +11,7 @@ public class Binary_Subarray_with_Sum {
         return helper(nums, goal) - helper(nums, goal - 1);
     }
 
-    // Helper function to count the subarray <= goal
+    // Helper function to count the (subarray <= goal)
     private static int helper(int[] nums, int goal) {
         // Base case: If the goal is negative, there can be no valid subarray.
         if (goal < 0) return 0;
