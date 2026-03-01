@@ -31,11 +31,11 @@ public class Fruits_Into_Baskets {
                     maxLength = Math.max(maxLength, j - i + 1);
                 }
                 else {
-                    break;              // If more than 2 types of fruits are found, break out of the loop
+                    break; // If more than 2 types of fruits are found, break out of the loop
                 }
             }
         }
-        return maxLength;               // Return the maximum length found
+        return maxLength; // Return the maximum length found
     }
 
     // Method 2 : Better Solution
