@@ -5,6 +5,17 @@ public class Binary_Subarray_with_Sum {
     // Method 1 : Optimal Solution
     // Time Complexity : O(2 * 2N), because we call helper functions two times.
     // Space Complexity : O(1), no extra space is needed.
+    /* 
+    Note : Because sliding window cannot directly count subarrays with EXACT sum when the array contains 0s.
+
+    Instead, we convert the problem:
+    1. count subarrays with sum ≤ goal
+    2. count subarrays with sum ≤ goal-1
+
+    Then subtract them.
+    So:
+    exact(goal) = atMost(goal) − atMost(goal-1)
+    */
     public static int numSubarraysWithSum(int[] nums, int goal) {
         // Calculate the number of subarrays that sum up to 'goal'
         // by using the difference between two helper function calls.
