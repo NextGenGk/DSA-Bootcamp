@@ -68,6 +68,7 @@ public class Number_of_Substrings_Containing_All_Three_Characters {
                 }
             }
         }
+        
         // Return the total count of valid substrings that contain 'A', 'B', and 'C'
         return cnt;
     }
@@ -129,6 +130,7 @@ public class Number_of_Substrings_Containing_All_Three_Characters {
                 cnt += (Math.min(lastSeen[0], Math.min(lastSeen[1], lastSeen[2])) + 1);
             }
         }
+        
         // Return the total count of valid substrings that contain 'A', 'B', and 'C'
         return cnt;
     }
