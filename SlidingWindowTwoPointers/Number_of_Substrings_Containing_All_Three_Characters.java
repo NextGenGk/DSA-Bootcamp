@@ -97,6 +97,7 @@ public class Number_of_Substrings_Containing_All_Three_Characters {
 
                 // Shrink the window from the left
                 hash[s.charAt(left) - 'a']--;
+                // increase the pointer
                 left++;
             }
         }
