@@ -6,7 +6,7 @@ public class Longest_Substring_with_At_Most_K_Distinct_Characters {
 
     // Method 1 : Brute Force
     // Time Complexity : O(N^2)
-    // Space Complexity : O(256)
+    // Space Complexity : O(k)
     public static int kDistinctChars(String str, int k) {
         // Function to find the length of the longest substring with exactly k distinct characters
         int n = str.length(); // Get the length of the input string
@@ -41,7 +41,7 @@ public class Longest_Substring_with_At_Most_K_Distinct_Characters {
 
     // Method 2 : Better Solution
     // Time Complexity : O(2N)
-    // Space Complexity : O(256)
+    // Space Complexity : O(k)
     public static int kDistinctChars1(String str, int k) {
         // Function to find the length of the longest substring with exactly k distinct characters
         int n = str.length(); // Get the length of the input string
@@ -84,7 +84,7 @@ public class Longest_Substring_with_At_Most_K_Distinct_Characters {
 
     // Method 3 : Optimal Solution
     // Time Complexity : O(N)
-    // Space Complexity : O(256)
+    // Space Complexity : O(k)
     public static int kDistinctChars2(String str, int k) {
         // Function to find the length of the longest substring with exactly k distinct characters
         int n = str.length(); // Get the length of the input string
