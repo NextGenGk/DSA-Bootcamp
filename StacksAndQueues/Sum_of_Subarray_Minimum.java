@@ -231,13 +231,6 @@ Step 3: Calculate Contribution of Each Element
 // Total Contribution = 3 + 6 + 4 + 4 = 17
  */
 
-
-
-
-
-
-
-
 // Approach : Optimal Solution
 /*
 The sumSubarrayMins function calculates the sum of the minimums of all subarrays using the concept of next and
