@@ -279,4 +279,4 @@ i. After the recursion completes, check if there is still a carry left. If carry
 with data 1 and add it to the front of the list to handle cases like 999 + 1 = 1000.
  */
 
-// Striver (Video Explanation) : https://www.youtube.com/watch?v=aXQWhbvT3w0
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=aXQWhbvT3w0
