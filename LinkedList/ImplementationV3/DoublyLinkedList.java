@@ -113,8 +113,6 @@ public class DoublyLinkedList {
         System.out.println("Inserted " + data + " at the end");
     }
 
-    // ==================== DELETION OPERATIONS ====================
-
     // Insert a new element at a specified position (0-based indexing)
     // Time Complexity: O(n)
     public void insertAtPosition(int position, int data) {
@@ -204,6 +202,8 @@ public class DoublyLinkedList {
         size++;
         System.out.println("Inserted " + data + " at position " + position);
     }
+
+    // ==================== DELETION OPERATIONS ====================
 
     // Delete the first element from the list
     // Time Complexity: O(1)
@@ -439,5 +439,4 @@ public class DoublyLinkedList {
             this.prev = null;
         }
     }
-
 }
