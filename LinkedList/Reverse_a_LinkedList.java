@@ -65,6 +65,7 @@ public class Reverse_a_LinkedList {
             // in the linked list
             temp = temp.next;
         }
+        
         // Return the new head of
         // the reversed linked list
         return head;
@@ -179,6 +180,9 @@ public class Reverse_a_LinkedList {
         printLinkedList(head);
     }
 }
+
+// Output : 
+// null <- 1 <- 2 <- 3 <- 4
 
 // Approach : Brute Force
 /*
