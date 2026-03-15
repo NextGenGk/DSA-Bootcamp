@@ -102,9 +102,11 @@ public class Find_the_Length_of_Loop_LinkedList {
         while(slow!=fast){
 
             // at each node increase
-            // count by 1 and move fast
-            // forward by one step
+            // count by 1 
             cnt++;
+
+            // and move fast
+            // forward by one step
             fast = fast.next;
         }
 
