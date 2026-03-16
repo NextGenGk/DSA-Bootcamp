@@ -149,4 +149,4 @@ arraylist data
 2. Changing the link for the even index
  */
 
-// Striver (Video Explanation) : https://www.youtube.com/watch?v=qf6qp7GzD5Q
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=qf6qp7GzD5Q
