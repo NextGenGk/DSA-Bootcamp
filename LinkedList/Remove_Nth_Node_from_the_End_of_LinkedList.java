@@ -196,7 +196,8 @@ public class Remove_Nth_Node_from_the_End_of_LinkedList {
     }
 }
 
-// Output: 1 2 4 5
+// Output: 
+// 1 2 4 5
 
 // Approach : Brute Force
 /*
