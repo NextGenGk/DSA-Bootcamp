@@ -71,7 +71,7 @@ public class Remove_Nth_Node_from_the_End_of_LinkedList {
         return head;
     }
 
-    // Method 1 : Brute Force Solution (continued)
+    // Method 1 : Brute Force Solution (v2)
     /*
 💡   Idea:
     1. Traverse the list to get its total length.
@@ -138,7 +138,7 @@ public class Remove_Nth_Node_from_the_End_of_LinkedList {
         return head;
     }
 
-    // Method 2  : Optimal Solution (continued)
+    // Method 2  : Optimal Solution (v2)
     /*
     Using (Two Pointer / Fast-Slow Pointer)
 💡   Idea:
