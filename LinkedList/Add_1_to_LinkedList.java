@@ -271,7 +271,7 @@ i. Recursively call the helper function on the next node. This moves the recursi
     i. Add the carry returned by the recursive call to the current node's data.
    ii. If the resulting data is less than 10, it means no further carry is needed. Return 0 as the carry.
   iii. If the resulting data is 10 or more, set the current node's data to 0 (since 10 becomes 0 with a carry)
-    and return a carry of 1 to propagate it to the next significant digit.
+       and return a carry of 1 to propagate it to the next significant digit.
 
 4. Handle Remaining Carry:
 
