@@ -83,7 +83,7 @@ public class Add_2_Number_in_LinkedList {
         System.out.println();
     }
 
-    // Main function for testing
+    // Main Function
     public static void main(String[] args) {
         // Create the first linked list representing the number 342 (2 -> 4 -> 3)
         Node head1 = new Node(2);
