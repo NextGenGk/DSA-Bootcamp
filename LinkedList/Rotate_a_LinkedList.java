@@ -114,4 +114,4 @@ Steps to the algorithm:-
 3. Iterate to cut the link of the last node and start a node of k%length of the list rotated list.
  */
 
-// Striver (Video Explanation) : https://www.youtube.com/watch?v=uT7YI7XbTY8
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=uT7YI7XbTY8
