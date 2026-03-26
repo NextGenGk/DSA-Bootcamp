@@ -194,7 +194,6 @@ public class Reverse_LinkedList_of_Group_Size_K {
 
 // Approach : Optimal Solution
 /*
-Approach:
 The approach simplifies reversing linked list nodes by breaking the list into segments of K nodes and
 reversing each segment individually. Starting from the head, the algorithm traverses the list to
 identify segments of K nodes. Upon finding a segment, it reverses it, returning the modified list.
