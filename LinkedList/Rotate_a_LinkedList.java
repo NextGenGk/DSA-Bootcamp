@@ -103,7 +103,8 @@ public class Rotate_a_LinkedList {
     }
 }
 
-// Output : 4 5 1 2 3
+// Output : 
+// 4 5 1 2 3
 
 // Approach : Optimal Solution
 /*
