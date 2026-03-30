@@ -5,7 +5,6 @@ public class Design_Browser_History {
     // Method 1 : Optimal Solution
     // Time Complexity: O(steps) where 'steps' denotes the number of steps to move backward or
     // forward in the browsing history.
-
     // To visit a web page ie. create a node takes constant time ie. O(1) and it doesn’t depend
     // on the number of existing web pages as it only adds a new node in front of the current page pointer.
 
