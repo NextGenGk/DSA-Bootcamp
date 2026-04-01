@@ -70,6 +70,7 @@ public class Implementing_Stack_Using_Array {
 
     // Main Function
     public static void main(String[] args) {
+        // Creating an object
         Implementing_Stack_Using_Array stack = new Implementing_Stack_Using_Array(10);
 
         // Test isEmpty() method
