@@ -74,7 +74,7 @@ class Implementing_Queue_Using_Array {
             System.out.println();
         }
 
-        // Main method to test the queue
+        // Main Function
         public static void main(String[] args) {
             Queue q = new Queue(5);
 
