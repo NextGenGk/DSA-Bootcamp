@@ -68,6 +68,7 @@ public class Implementing_Stack_Using_LinkedList {
         System.out.println("Stack is successfully deleted");
     }
 
+    // Main Function
     public static void main(String[] args) {
         Implementing_Stack_Using_LinkedList stack = new Implementing_Stack_Using_LinkedList();
 
