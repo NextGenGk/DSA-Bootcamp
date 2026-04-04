@@ -33,6 +33,7 @@ public class Valid_Parentheses {
                 else return false; // If they don't match, the string is invalid
             }
         }
+        
         // If the stack is empty after processing the entire string, the string is valid
         return stack.isEmpty();
     }
