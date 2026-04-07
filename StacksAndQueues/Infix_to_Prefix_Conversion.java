@@ -176,4 +176,4 @@ Step 4: Return the Prefix Expression
 i. The reversed postfix string is the final prefix expression.
  */
 
-// Striver (Video Explanation) : https://www.youtube.com/watch?v=4pIc9UBHJtk
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=4pIc9UBHJtk
