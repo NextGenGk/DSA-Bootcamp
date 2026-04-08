@@ -112,4 +112,4 @@ But we actually don’t require any extra space. We can just traverse the array 
 a loop 2*N times, where N is the size of the given array.
  */
 
-// Striver (Video Explanation) : https://www.youtube.com/watch?v=e7XQLtOQM3I
+// Striver's (Video Explanation) : https://www.youtube.com/watch?v=e7XQLtOQM3I
