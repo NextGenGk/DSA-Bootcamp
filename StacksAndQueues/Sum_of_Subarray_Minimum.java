@@ -276,4 +276,18 @@ Subarray starting at 3 (includes 3 and ends at 3, 7, or 8):
 Thus, the total number of valid subarrays is 12.
  */
 
+// Note 
+/*
+When CAN you push values? You can push values only when:
+1. Yes — you can use values for:
+
+PSE (value)
+PGE (value)
+NSE (value)
+NGE (value)
+
+❗ But only when the problem asks for values, NOT positions or counts.
+2. NOT distances / counts / contributions
+*/
+
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=v0e8p9JCgRc
