@@ -79,6 +79,7 @@ public class Asteroid_Collisions {
             // If the current asteroid is moving to the left (negative direction)
             else {
                 // Check for collisions with right-moving asteroids in the stack
+                // Eg: [3, 5, -6]
                 while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < Math.abs(arr[i])) {
                     // Remove the smaller right-moving asteroid since it collides and explodes
                     stack.pop();
@@ -86,11 +87,13 @@ public class Asteroid_Collisions {
 
                 // If the stack is empty or the top of the stack is also moving to the left,
                 // or there are no more right-moving asteroids to collide with
+                // Eg: [-3, -5]
                 if (stack.isEmpty() || stack.peek() < 0) {
                     // Push the current left-moving asteroid to the stack
                     stack.push(arr[i]);
                 }
                 // If the top of the stack is the same size but moving in the opposite direction
+                // Eg: [-4, 4]
                 else if (stack.peek() == Math.abs(arr[i])) {
                     // Both asteroids destroy each other
                     stack.pop();
@@ -122,6 +125,10 @@ public class Asteroid_Collisions {
 
 // Approach : Optimal Solution
 /*
+Why Stack :
+Stack is best because collisions always depend on the most recent unresolved asteroid, 
+and stack gives instant access + efficient removal for that.
+
 Intuition & Idea Behind Using List :
 
 1. Positive asteroids move right and are added to the list because they don't affect each other.
