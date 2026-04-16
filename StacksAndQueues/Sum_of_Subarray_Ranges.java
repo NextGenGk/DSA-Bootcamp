@@ -36,6 +36,7 @@ public class Sum_of_Subarray_Ranges {
     // Time Complexity : O(10N) ~ O(N)
     // Space Complexity : O(4N)) ~ O(N)
     static int sumOfSubarrayRanges1(int[] arr) {
+        // Return the subarrayMax() - subarrayMin() to get the ranges
         return sumSubarrayMax(arr) - sumSubarrayMin(arr);
     }
 
