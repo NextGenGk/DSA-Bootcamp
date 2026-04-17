@@ -59,7 +59,7 @@ public class Three_Sum {
 
     // Method 3 - Optimal Solution (Using Two Pointer Approach)
     // Time : O(N^2) + O(N*logN)
-    // Space : O(3*k)  // k is the no.of triplets.
+    // Space : O(3*k), k is the no.of triplets.
     static List<List<Integer>> threeSum(int[] arr) {
         List<List<Integer>> ans = new ArrayList<>();
 
