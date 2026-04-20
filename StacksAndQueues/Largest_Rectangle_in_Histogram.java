@@ -7,6 +7,7 @@ public class Largest_Rectangle_in_Histogram {
     // Method 1 : Brute Force
     // Time Complexity : O(5N)
     // Space Complexity : O(4N)
+    
     // Function is to find the Largest Rectangle in Histogram
     static int largestRectangleArea(int[] histogram) {
         int n = histogram.length;
