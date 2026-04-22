@@ -6,7 +6,7 @@ import java.util.Deque;
 public class Sliding_Window_Maximum {
 
     // Method 1 : Brute Force
-    // Time Complexity : O(N-K) * K
+    // Time Complexity : O(N-k) * k
     // Space Complexity : O(N-k) for storing the result and return.
     static int[] slidingWindowMax(int[] arr, int k) {
         int n = arr.length;  // Get the length of the input array
