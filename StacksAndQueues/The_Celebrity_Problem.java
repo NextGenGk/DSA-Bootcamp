@@ -198,7 +198,6 @@ System.out.println(findCelebrity1(matrix)); // Output: 2
 
 // Approach : Optimal Solution
 /*
-
 The intuition behind this code is rooted in efficiently narrowing down the possible celebrity among n people
 based on specific characteristics of a celebrity. The goal is to find one person who is known by everyone
 else but does not know anyone.
