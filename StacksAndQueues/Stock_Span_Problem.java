@@ -77,6 +77,7 @@ public class Stock_Span_Problem {
 
     // Main Function
     public static void main(String[] args) {
+        // Creating an object
         StockSpanner stockSpanner = new StockSpanner();
 
         // Example stock prices
