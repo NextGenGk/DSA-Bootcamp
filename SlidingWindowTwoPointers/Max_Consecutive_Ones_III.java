@@ -127,8 +127,7 @@ public class Max_Consecutive_Ones_III {
     }
 }
 
-// Output : 
-// 10
+// Output : 10
 
 // Approach : Brute Force
 /*
