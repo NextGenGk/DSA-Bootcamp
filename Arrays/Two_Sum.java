@@ -99,4 +99,4 @@ we will return either “NO” or {-1, -1} as per the variant of the question.
 8. If no such pair is found, return [-1, -1]
  */
 
-// Striver - https://www.youtube.com/watch?v=UXDSeD9mN-k
+// Striver's (Video Explanation) - https://www.youtube.com/watch?v=UXDSeD9mN-k
