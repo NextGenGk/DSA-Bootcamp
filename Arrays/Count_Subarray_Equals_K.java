@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Count_Subarray_Equals_K {
 
-    // Method 1 - Brute Force (Using 3 for Loops)
+    // Method 1 - Brute Force (Using 3 For Loops)
     // Time - O(N^3), Space - O(1)
 //    static int subarrayCounts(int[] arr, int n, int K) {
 //        int count = 0;
