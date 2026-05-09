@@ -50,4 +50,4 @@ public class Find_Largest_Element {
 4. Print the max variable.
  */
 
-// Striver (Videos Explanation) - https://www.youtube.com/watch?v=37E9ckMDdTk
+// Striver's (Videos Explanation) - https://www.youtube.com/watch?v=37E9ckMDdTk
