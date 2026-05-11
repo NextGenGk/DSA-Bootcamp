@@ -77,4 +77,4 @@ public class Max_Consecutive_Ones {
 6. Return the max.
  */
 
-// Striver - (Video Link) https://youtu.be/bYWLJb3vCWY
+// Striver's (Video Explanation) https://youtu.be/bYWLJb3vCWY
