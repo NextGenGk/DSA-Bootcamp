@@ -96,4 +96,4 @@ Intersection of the two arrays: 1 2 3
 7. Return the list.
  */
 
-// Striver (Video Link) : https://youtu.be/wvcQg43_V8U
+// Striver's (Video Explanation) : https://youtu.be/wvcQg43_V8U
