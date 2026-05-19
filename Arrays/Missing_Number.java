@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 public class Missing_Number {
 
-
     // Method 1 - Brute Force (Using Linear Search)
     // Time - O(N * N), Space - O(1)
 //    static int missingNumber(int[] arr, int n) {
