@@ -87,7 +87,6 @@ public class Merge_Overlapping_Intervals {
         List<List<Integer>> ans = mergeIntervals1(arr);
         System.out.println(ans);
     }
-
     
     // Leetcode Version (Brute Force)
     // Time Complexity: O(NlogN) + O(2N) ~ O(NlogN)
