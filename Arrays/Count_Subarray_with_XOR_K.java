@@ -119,4 +119,4 @@ inner loop will start from j to k.
     4. Then we will store the current prefix XOR, xr in the map increasing its occurrence by 1.
  */
 
-// Striver (Video Explanation) : https://youtu.be/eZr-6p0B7ME
+// Striver's (Video Explanation) : https://youtu.be/eZr-6p0B7ME
