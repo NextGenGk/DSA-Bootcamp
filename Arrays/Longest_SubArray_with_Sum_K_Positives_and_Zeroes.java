@@ -159,4 +159,4 @@ public class Longest_SubArray_with_Sum_K_Positives_and_Zeroes {
 3. Return maxLen
  */
 
-// Striver (Video Link) : https://youtu.be/frf7qxiN2qU
+// Striver's (Video Explanation) : https://youtu.be/frf7qxiN2qU
