@@ -5,7 +5,8 @@ import java.util.HashMap;
 public class Majority_Element_Nby2_times {
 
     // Method 1 - Brute Force
-    // Time Complexity: O(N^2), Space Complexity: O(1)
+    // Time Complexity: O(N^2)
+    // Space Complexity: O(1)
 //    static int majorityElement(int[] arr, int n) {
 //        for(int i=0; i<n; i++) {
 //            int count = 0;
