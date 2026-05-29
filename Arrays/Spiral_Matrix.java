@@ -6,8 +6,8 @@ import java.util.List;
 public class Spiral_Matrix {
 
     // Method 1 : Optimal Solution
-    // Time - O(N*M), { Since all the elements are being traversed once and there are total n x m elements
-    // (m elements in each row and total n rows) so the time complexity will be O(n x m)}.
+    // Time - O(N*M), Since all the elements are being traversed once and there are total n x m elements
+    // (m elements in each row and total n rows) so the time complexity will be O(n x m).
     // Space - O(N*M), for storing the answers
     public List<Integer> spiralOrder(int[][] matrix) {
         // Define ans list to store the result.
