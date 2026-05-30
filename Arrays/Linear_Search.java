@@ -22,4 +22,4 @@ public class Linear_Search {
 4. If no, return -1.
  */
 
-// Striver (Video Link) : https://youtu.be/wvcQg43_V8U
+// Striver's (Video Explanation) : https://youtu.be/wvcQg43_V8U
