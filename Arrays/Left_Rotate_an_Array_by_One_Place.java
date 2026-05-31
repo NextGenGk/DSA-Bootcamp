@@ -36,6 +36,9 @@ public class Left_Rotate_an_Array_by_One_Place {
     }
 }
 
+// Output:
+// 2,3,4,5,6,7, 1
+
 // Algorithm: Brute Force
 /*
 1. Create a temporary array of size n.
