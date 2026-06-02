@@ -78,4 +78,4 @@ After Rotating the elements to left
 3. Reverse the whole array.
  */
 
-// Striver (Video Link) : https://youtu.be/wvcQg43_V8U
+// Striver's (Video Explanation) : https://youtu.be/wvcQg43_V8U
