@@ -53,7 +53,7 @@ public class Merge_Two_Sorted_Array_without_Using_Extra_Space {
 //        }
 //    }
 
-    // Method 2 : Optimal Solution
+    // Method 2 : Optimal Solution 1 (Easy)
     // Time Complexity: O(min(n, m)) + O(n*logn) + O(m*logm), where n and m are the sizes of the given arrays.
     // Reason: O(min(n, m)) is for swapping the array elements. And O(n*logn) and O(m*logm) are for sorting the two arrays.
     // Space Complexity: O(1) as we are not using any extra space.
@@ -91,7 +91,7 @@ public class Merge_Two_Sorted_Array_without_Using_Extra_Space {
         Arrays.sort(arr2);
     }
 
-    // Method 3 : Optimal Solution
+    // Method 3 : Optimal Solution 2 (Hard)
     // Time Complexity: O((n+m)*log(n+m)), where n and m are the sizes of the given arrays.
     // Reason: The gap is ranging from n+m to 1 and every time the gap gets divided by 2. So, the time complexity of the
     // outer loop will be O(log(n+m)). Now, for each value of the gap, the inner loop can at most run for (n+m) times.
