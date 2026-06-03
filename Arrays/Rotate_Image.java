@@ -89,6 +89,45 @@ public class Rotate_Image {
 // Algorithm : Optimal Solution (Using Transpose and Reverse)
 /*
 1. Transpose the matrix.
+Example
+
+Initial matrix:
+
+1 2 3
+4 5 6
+7 8 9
+	​
+After first swap:
+2 ↔ 4
+
+Matrix becomes:
+1 4 3
+2 5 6
+7 8 9
+
+Later the reverse swap happens:
+4 ↔ 2
+
+Matrix again becomes:
+1 2 3
+4 5 6
+7 8 9
+
+So transpose fails.
+
+Correct Approach
+for (int i = 0; i < n; i++) {
+    for (int j = i; j < n; j++) {
+        int temp = matrix[i][j];
+        matrix[i][j] = matrix[j][i];
+        matrix[j][i] = temp;
+    }
+}
+
+This ensures:
+No duplicate swaps
+Diagonal elements swap with themselves only once
+
 2. Reverse the matrix.
 3. Print the matrix.
  */
