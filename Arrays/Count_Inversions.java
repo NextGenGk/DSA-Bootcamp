@@ -36,7 +36,6 @@ public class Count_Inversions {
         int cnt = 0;
 
         //storing elements in the temporary array in a sorted manner//
-
         while (left <= mid && right <= high) {
             if (arr[left] <= arr[right]) {
                 temp.add(arr[left]);
