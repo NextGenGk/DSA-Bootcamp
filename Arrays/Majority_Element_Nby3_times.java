@@ -189,6 +189,26 @@ of them will be 3X3 = 9 i.e. greater than the size of the array. But this should
 6. If cnt1 > n/3, then add ele1 to ls
 7. If cnt2 > n/3, then add ele2 to ls
 8. Return ls
+
+Edge Case :
+Suppose:
+el1 = 1, cnt1 = 0
+el2 = 2, cnt2 = 3
+nums[i] = 2
+
+Without the check:
+el1 = 2;
+cnt1 = 1;
+
+Now:
+el1 = 2
+el2 = 2
+
+Both candidates are identical ❌
+
+We lose the ability to track two different potential majority elements.
+
+The condition prevents this.
  */
 
 // Striver's (Video Explanation) https://youtu.be/vwZj1K0e9U8
