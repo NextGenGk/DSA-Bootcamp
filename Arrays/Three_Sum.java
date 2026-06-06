@@ -41,6 +41,8 @@ public class Three_Sum {
 //            HashSet<Integer> hashSet = new HashSet<>();
 //
 //            for (int j = i + 1; j < n; j++) {
+                  // arr[i] + arr[j] + arr[k] = 0
+                  // arr[k] = -(arr[i] + arr[j])
 //                int third = -(arr[i] + arr[j]);
 //                if (hashSet.contains(third)) {
 //                    List<Integer> tempList = new ArrayList<>();
