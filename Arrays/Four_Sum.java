@@ -56,6 +56,8 @@ public class Four_Sum {
                 for (int k = j + 1; k < n; k++) {
                     // taking bigger data type
                     // to avoid integer overflow:
+                    // nums[i] + nums[j] + nums[k] = target
+                    //  fourth = target - (nums[i] + nums[j] + nums[k])
                     long sum = nums[i] + nums[j];
                     sum += nums[k];
                     long fourth = target - sum;
