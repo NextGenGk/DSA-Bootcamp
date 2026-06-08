@@ -102,7 +102,33 @@ public class Merge_Two_Sorted_LinkedList {
             current = current.next;
         }
 
-        // Append any remaining nodes from either list
+        // The key idea is that once one list becomes null, 
+        // the other list is already completely sorted and can be attached as-is
+        // eg : l1 = 7, 8 
+        // l2 = 1, 2, 3, 4
+        // After completing the merge step the merged list looks like 1 -> 2 -> 3 -> 4
+        /* 
+        Now execute
+        if (l1 != null) {
+            current.next = l1;
+        } else {
+            current.next = l2;
+        }
+        Since l1 is not null:
+        
+        current.next = l1;
+        4.next = 7
+        
+        But notice:
+        7 -> 8
+        already exists.
+        
+        So after connecting 4 to 7:
+        1 -> 2 -> 3 -> 4 -> 7 -> 8
+        That's it!
+        
+        Note : You don't need to separately connect 7 to 8 because that link already exists inside the original list.
+        */
         if (l1 != null) {
             current.next = l1;
         } else {
