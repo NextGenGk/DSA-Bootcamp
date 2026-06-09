@@ -86,6 +86,11 @@ public class Add_1_to_LinkedList {
             temp = temp.next; // Move to next digit
         }
 
+        // Note :
+        /*
+        Step 4 (return head) → use it when the existing nodes are enough to store the answer.
+        Step 3 (return node) → use it when an extra digit is created and a new head node must be added.
+        */
         // Step 3: If carry is still left after full traversal (e.g., 999 + 1 = 1000)
         if (carry == 1) {
             Node node = new Node(1);          // Create a new node for extra carry
