@@ -146,8 +146,10 @@ public class Remove_Nth_Node_from_the_End_of_LinkedList {
     2. Move a first pointer n + 1 steps ahead (dummy counts as one).
     3. Move both first and second until first reaches end.
     4. second.next will be the node to remove.
+    Note : 
+    Maintain a fixed gap of n+1 between the fast and slow pointers. When the fast pointer falls off the list, 
+    the slow pointer is guaranteed to be standing immediately before the nth node from the end.
      */
-    /* HINT : Maintain two pointers and update one with a delay of n steps. */
     public static Node removeNthFromEnd(Node head, int n) {
         Node dummy = new Node(0);
         dummy.next = head;
