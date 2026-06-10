@@ -161,6 +161,20 @@ public class Find_Intersection_Point_in_Y_LinkedList {
             /*
             1. Both the exit conditions are satisfied
                 - If there is no intersection point then both of the pointer will reaches the null.
+                    (Case : No intersection)
+                    Example:
+                    List 1: 1 → 2 → 3 → null
+                    List 2: 4 → 5 → null
+                    
+                    Traversal:
+                    temp1: 1 → 2 → 3 → null → 4 → 5 → null
+                    temp2: 4 → 5 → null → 1 → 2 → 3 → null
+                    Eventually both become null at the same time.
+                    
+                    Then:
+                    temp1 == temp2   // null == null → true
+                    The loop stops and returns null.  
+                    
                 - If there is intersection point we simply say that this is our intersection point.
             */
             if (temp1 == temp2) return temp1;
