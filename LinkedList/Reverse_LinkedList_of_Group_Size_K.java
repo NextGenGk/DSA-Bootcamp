@@ -164,6 +164,57 @@ public class Reverse_LinkedList_of_Group_Size_K {
         System.out.println();
     }
 
+    // Optimal Solution (Using Recursion)
+    /*
+    // Simple Length of Linked list Function
+    public int length(ListNode head) {
+        int count = 0;
+        ListNode curr = head;
+        while (curr != null) {
+            curr = curr.next;
+            count++;
+        }
+        return count;
+    }
+    
+    // Reverse Function
+    public ListNode reverseKGroup(ListNode head, int k, int length) {
+            // base case
+            if(length < k) return head;
+            
+            // initialize variables
+            int count = 0;
+            ListNode curr = head;
+            ListNode prev = null;
+            ListNode temp = null;
+            
+            // condition curr is not equal to null
+            // && count is less than k
+            while(curr != null && count < k) {
+                temp = curr.next;
+                curr.next = prev;
+                prev = curr;
+                curr = temp;
+                count++;
+            }
+            
+            // connect reverse recursion function to head next
+            if(temp != null) {
+                head.next = reverseKGroup(temp, k, length-k);
+            }
+            
+            return prev;
+        }
+        
+        // Reverse K Group Function
+        public ListNode reverseKGroup(ListNode head, int k) {
+            // calculate length
+            int length = length(head);
+            // call reverseKGroup function
+            return reverseKGroup(head, k, length);
+        }
+        */
+
     // Main Function
     public static void main(String[] args) {
         // Create a linked list with
