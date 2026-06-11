@@ -118,6 +118,7 @@ public class Flattening_a_LinkedList {
         while (list1 != null && list2 != null) {
             if (list1.data < list2.data) {
                 res.child = list1;
+                // Now res moves to the newly attached node.
                 res = list1;
                 list1 = list1.child;
             } else {
