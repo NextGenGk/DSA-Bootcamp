@@ -78,6 +78,7 @@ public class Find_Starting_Point_of_Loop_in_LinkedList {
         Node fast = head;
 
         // Phase 1: Detect the loop
+        // Note : fast moving towards slow by 2 and slow moving away from fast by 1
         while (fast != null && fast.next != null) {
             // Move slow one step
             slow = slow.next;
