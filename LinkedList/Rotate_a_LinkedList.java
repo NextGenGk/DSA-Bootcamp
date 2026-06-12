@@ -25,18 +25,6 @@ public class Rotate_a_LinkedList {
         }
     }
 
-    // Function to find the k-th node in the linked list
-    static Node findKthNode(Node temp, int k) {
-        int cnt = 1;
-        // Traverse the list to find the k-th node
-        while (temp != null) {
-            if (cnt == k) return temp;
-            cnt++;
-            temp = temp.next;
-        }
-        return temp; // This will return null if k is out of bounds
-    }
-
     // Method 1 : Optimal Solution
     // Time Complexity: O(length of list) + O(length of list - (length of list%k))
     // Reason: O(length of the list) for calculating the length of the list.
@@ -44,39 +32,47 @@ public class Rotate_a_LinkedList {
     // Space Complexity: O(1)
     // Reason: No extra data structure is used for computation.
 
-    // Function to rotate the linked list by k nodes
-    static Node rotateLinkedList(Node head, int k) {
-        // Base cases: if the list is empty, has only one node, or no rotation is needed
-        if (head == null || head.next == null || k == 0) return head;
-
-        // Calculate the length of the linked list
-        int len = 1;
-        Node tail = head;
-        while (tail.next != null) {
-            len++;
-            tail = tail.next;
+    // Function to rotate the linked list to the right by k positions
+    staic Node rotateRight(Node head, int k) {
+        // Edge cases: empty list, single node list, or no rotation needed
+        if (head == null || head.next == null || k == 0) {
+            return head;
         }
-
-        // If k is a multiple of the length, no rotation is needed
-        if (k % len == 0) return head;
-
-        // Calculate the effective rotations needed
-        k = k % len;
-
-        // Link the last node to the first node to make it a circular list
+    
+        // Find the length of the list and the last node (tail)
+        int length = 1;
+        Node tail = head;
+    
+        while (tail.next != null) {
+            tail = tail.next;
+            length++;
+        }
+    
+        // Connect the tail to the head to form a circular linked list
         tail.next = head;
-
-        // Find the node that will be the new tail after rotation
-        Node lastNode = findKthNode(head, len - k);
-
-        // The new head is the next node of the new tail
-        head = lastNode.next;
-
-        // Break the loop to finalize the rotated list
-        lastNode.next = null;
-
-        // return the head of the modified list
-        return head;
+    
+        // Reduce unnecessary rotations
+        // Rotating by length times results in the same list
+        k = k % length;
+    
+        // Find the position of the new tail
+        // New tail will be at (length - k)th node
+        int stepsToNewTail = length - k;
+        Node newTail = head;
+    
+        // Move to the node just before the new head
+        for (int i = 1; i < stepsToNewTail; i++) {
+            newTail = newTail.next;
+        }
+    
+        // The node after newTail becomes the new head
+        Node newHead = newTail.next;
+    
+        // Break the circular linked list
+        newTail.next = null;
+    
+        // Return the rotated list
+        return newHead;
     }
 
     // Main Function
