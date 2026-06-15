@@ -12,6 +12,7 @@ public class Sudoku_Solver {
         solve(board);
     }
 
+    // Solve function to solve the board recursively
     public static boolean solve(char[][] board) {
         // Traverse the board to find an empty cell (represented by '.')
         for (int i = 0; i < board.length; i++) {
