@@ -105,7 +105,7 @@ public class Union_of_Two_Sorted_Array {
 
 // Output :
 /*
-
+[1, 2, 3, 4, 5]
  */
 
 // Algorithm: Brute Force (Using Set)
