@@ -154,4 +154,4 @@ public class Three_Sum {
 6. Return ans
  */
 
-// Striver (Video Explanation) : https://youtu.be/DhFh8Kw7ymk
+// Striver's (Video Explanation) : https://youtu.be/DhFh8Kw7ymk
