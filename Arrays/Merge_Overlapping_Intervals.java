@@ -21,6 +21,7 @@ public class Merge_Overlapping_Intervals {
             }
         });
 
+        // create a list to store answer
         List<List<Integer>> ans = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
