@@ -11,7 +11,63 @@ public class Print_All_Subsequence_with_Sum_K {
     // Recursive function to find subsequences with sum k
     public static void subsequencesWithSumK(int[] arr, int index,
                                             List<Integer> subsequence, int sum, int k) {
-        // Base case: If index reaches the end
+        /* 
+        Base Case Note:
+        We check `index == arr.length` because only then is the subsequence completely formed. 
+        Even if `sum == k` in the middle of recursion, there may still be elements left to pick or not pick. 
+        The recursion must continue until all decisions are made. At the leaf node (`index == arr.length`), 
+        we verify whether the complete subsequence has sum `k` and print it if it does.
+        */
+
+        /* 
+        Shortcut to remember:
+        "A subsequence is valid only after decisions for all elements are completed. 
+        That's why we check sum == k at index == arr.length."
+        */
+
+        /* Example
+        Base Case Note:
+
+        We check `index == arr.length` because only then is the subsequence completely formed. 
+        Even if `sum == k` in the middle of recursion, there may still be elements left to pick or not pick. 
+        The recursion must continue until all decisions are made.
+        
+        Example:
+        
+        ```java
+        arr = {1, 2, 3}
+        k = 3
+        ```
+        
+        At one point:
+        ```java
+        subsequence = [1, 2]
+        sum = 3
+        index = 2
+        ```
+        
+        Although `sum == k`, there is still one element (`3`) left to process.
+        
+        Possible outcomes:
+        ```java
+        [1, 2, 3] -> sum = 6
+        [1, 2]    -> sum = 3
+        ```
+        
+        Only after reaching:
+        ```java
+        index == arr.length
+        ```
+        
+        do we know the final subsequence. Then we check:
+        ```java
+        if(sum == k)
+        ```
+        and print it if valid.
+        
+        Remember:
+        "A subsequence is complete only when all elements have been considered."
+        */
         if (index == arr.length) {
             if (sum == k) { // If sum matches k, print the subsequence
                 System.out.println(subsequence);
