@@ -25,45 +25,41 @@ public class Print_All_Subsequence_with_Sum_K {
         That's why we check sum == k at index == arr.length."
         */
 
-        /* Example
-        Base Case Note:
-
-        We check `index == arr.length` because only then is the subsequence completely formed. 
-        Even if `sum == k` in the middle of recursion, there may still be elements left to pick or not pick. 
-        The recursion must continue until all decisions are made.
-        
-        Example:
-        
-        ```java
+        /* Example    
         arr = {1, 2, 3}
         k = 3
-        ```
         
-        At one point:
-        ```java
+        At some point:
         subsequence = [1, 2]
         sum = 3
         index = 2
-        ```
         
-        Although `sum == k`, there is still one element (`3`) left to process.
+        We already got sum == k, but we're not at the end:
+        index = 2
+        arr.length = 3
         
-        Possible outcomes:
-        ```java
-        [1, 2, 3] -> sum = 6
-        [1, 2]    -> sum = 3
-        ```
+        There is still one element (3) left to decide on.
+        Only after making the decision about the last element do we reach:
+            index == arr.length
+        Then we know the subsequence is complete.
+
+        Why not print immediately?
+        If you do:
+        if(sum == k){
+            System.out.println(subsequence);
+        }
         
-        Only after reaching:
-        ```java
-        index == arr.length
-        ```
+        before the base case, then for:
+        arr = {1,2,0}
+        k = 3
         
-        do we know the final subsequence. Then we check:
-        ```java
-        if(sum == k)
-        ```
-        and print it if valid.
+        you would print:
+        [1,2]
+        
+        and later:
+        [1,2,0]
+        
+        because both have sum 3.
         
         Remember:
         "A subsequence is complete only when all elements have been considered."
