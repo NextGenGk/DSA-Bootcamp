@@ -62,7 +62,7 @@ Algorithm :
 8. Return the total count.
  */
 
-// Recursion Tree :
+// Recursion Tree : arr = {1, 2, 1}
 /*
                                    (0, 0)
                             /                     \
