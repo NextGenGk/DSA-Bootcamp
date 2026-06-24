@@ -33,6 +33,20 @@ public class Combination_Sum_II {
         for (int i = index; i < arr.length; i++) {
             // Skip duplicate elements to avoid duplicate combinations
             // Edge case : 1st element is always pick using this condition (i > index)
+            // If this value has already been tried as a sibling at the current recursion level, skip it; otherwise explore it.
+            // Same level (siblings) duplicate  -> SKIP
+            // Different level (parent-child)   -> ALLOW
+            /* Eg - [1, 1, 2]
+             ___________________    []
+            |          /        |   |           \
+            |     1(idx 0)      | 1(idx 1)      2(idx 2)
+            |     /  \          |    |      \
+            |  1(idx 1) 2(idx 2)|   2(2)     X
+            |    |     |        |    |
+            |    X   [1,2]      |  [1,2]
+            |___________________|
+             (This is called same level)
+            */
             if (i > index && arr[i] == arr[i - 1]) continue;
 
             // If the element is greater than the remaining target, break (since array is sorted)
