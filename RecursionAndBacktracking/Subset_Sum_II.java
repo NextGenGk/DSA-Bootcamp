@@ -106,7 +106,7 @@ In the previous method, we were taking extra time to store the unique combinatio
 the help of a set. To make the solution efficient we will have to decide on a method that
 will consider only the unique combinations without the help of additional data structure.
 
-Lets  understand  with an example where arr = [1,2,2 ].
+Lets  understand  with an example where arr = [1,2,2].
 
 Initially start with an empty data structure. In the first recursion, call make a subset of size
 one, in the next recursion call a subset of size 2, and so on. But first, in order to make a subset
