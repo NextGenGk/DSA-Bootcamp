@@ -70,7 +70,14 @@ public class N_Queens {
         char[][] board = new char[n][n]; // Create an empty board
 
         // Initialize board with empty spaces ('.')
+        for (int i = 0; i < board.length; i++) {
+            char[] row = board[i];
+            Arrays.fill(row, '.');
+        }
+
+        /* Write it as
         for (char[] row : board) Arrays.fill(row, '.');
+        */
 
         // Start solving from the first column
         solve(0, board, ans, n);
