@@ -158,7 +158,6 @@ public class N_Queens {
         return res;
     }
 
-
     // Main Function
     public static void main(String[] args) {
         int n = 4; // Change n to test for different board sizes
