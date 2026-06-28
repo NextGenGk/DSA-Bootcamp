@@ -129,6 +129,7 @@ public class N_Queens {
         // Try placing a queen in each row of the current column
         for (int row = 0; row < board.length; row++) {
             // Check if the row, upper diagonal, and lower diagonal are free
+            // leftRow[row] == 0, means the row is empty (no queen has been placed in that created row - additonal array).
             if (leftRow[row] == 0 && lowerDiagonal[row + col] == 0 &&
                     upperDiagonal[board.length - 1 + col - row] == 0) {
                 // Place the queen
