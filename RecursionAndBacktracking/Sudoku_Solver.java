@@ -3,10 +3,25 @@ package RecursionAndBacktracking;
 public class Sudoku_Solver {
 
     // Method 1 : Optimal Solution
-    // Time Complexity: O(9(n ^ 2)), in the worst case, for each cell in the n2 board,
-    // we have 9 possible numbers.
-    // Space Complexity: O(1), since we are refilling the given board itself, there is no
-    // extra space required, so constant space complexity.
+    /*
+    Time Complexity 
+    Best Case: O(1) (board is already solved)
+    Average Case: Much better than O(9^k) due to pruning (no fixed average-case complexity)
+    Worst Case: O(9^k), where k is the number of empty cells (maximum O(9^81) for a standard Sudoku)
+    
+    - A Sudoku board has 9 × 9 = 81 cells.
+    - In the worst case, suppose every cell is empty.
+    - For each empty cell, you may try 9 possible digits (1–9).
+    - This forms a recursion tree where:
+    - Branching factor = 9
+    - Maximum depth = 81 (one level for each cell)
+    - More generally, for an n × n Sudoku board (where n^2 cell exist)
+                O(9^n^2) = O(9^81)
+                
+    Space Complexity
+    O(k) (recursion stack), where k is the number of empty cells.
+    For a 9×9 Sudoku, k ≤ 81, so it is O(81) = O(1).
+    */
     public static void solveSudoku(char[][] board) {
         // Calls the recursive function to solve the Sudoku board
         solve(board);
