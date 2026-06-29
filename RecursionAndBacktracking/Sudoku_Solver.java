@@ -89,7 +89,7 @@ public class Sudoku_Solver {
 
 // Intuition : Optimal Solution
 /*
-Intuition
+Intuition :
 The problem of solving a Sudoku puzzle can be approached using backtracking, a depth-first search
 (DFS)-based technique for exploring possible solutions systematically.
 
@@ -101,7 +101,7 @@ be placed, we backtrack by undoing the previous placement and trying another pos
 The key to making the approach efficient is the isValid() function, which quickly determines
 whether a number can be placed in a given cell by checking row, column, and 3×3 subgrid constraints.
 
-Algorithm
+Algorithm :
 The algorithm follows a recursive backtracking approach:
 
 Step 1: Identify Empty Cells
@@ -118,7 +118,6 @@ Step 3: Recursive Exploration
     3. If no valid number can be placed, backtrack by resetting board[i][j] = '.' and trying the next number.
 Step 4: Base Case
     1. If all cells are filled (i.e., no empty cell is found), the board is solved, and we return true.
-
 
 Input Board (Partially Filled Sudoku)
 
