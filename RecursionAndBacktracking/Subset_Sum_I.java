@@ -46,7 +46,8 @@ public class Subset_Sum_I {
     }
 }
 
-// Output: [0, 1, 2, 3, 3, 4, 5, 6]
+// Output: 
+// [0, 1, 2, 3, 3, 4, 5, 6]
 
 // Intuition : Optimal Solution (Using Recursion and Backtracking)
 /*
