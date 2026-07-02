@@ -19,7 +19,8 @@ public class Print_All_Permutations {
     }
 
     // Recursive function to generate permutations
-    private static void recurPermute(int[] nums, List<List<Integer>> ans, List<Integer> ds, boolean[] frequency) {
+    private static void recurPermute(int[] nums, List<List<Integer>> ans, 
+                                     List<Integer> ds, boolean[] frequency) {
         // Base Case: If ds contains all elements, add it to the answer list
         if (ds.size() == nums.length) {
             ans.add(new ArrayList<>(ds)); // Add a copy of ds to ans
