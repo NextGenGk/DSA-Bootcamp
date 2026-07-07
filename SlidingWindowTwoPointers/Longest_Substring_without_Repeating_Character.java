@@ -132,7 +132,6 @@ public class Longest_Substring_without_Repeating_Character {
         return max;
     }
 
-
     // Method 3 : Optimal Solution
     // Time Complexity : O(N) where N is the length of the string. Each character is processed at most twice,
     // once by the right pointer and once by the left pointer when duplicates are found.
