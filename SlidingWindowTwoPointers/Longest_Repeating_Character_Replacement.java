@@ -34,7 +34,7 @@ public class Longest_Repeating_Character_Replacement {
 
     // Method 2 : Better Solution
     // Time Complexity : O(2N * 26)
-    // Space Complexity : O(26)
+    // Space Complexity : O(26) for the hash array.
     public static int characterReplacement1(String s, int k) {
         int n = s.length();  // Length of the input string
         int left = 0;  // Left pointer for the sliding window
@@ -76,7 +76,7 @@ public class Longest_Repeating_Character_Replacement {
 
     // Method 3 : Optimal Solution
     // Time Complexity : O(N)
-    // Space Complexity : O(26)
+    // Space Complexity : O(26) for the hash array.
     public static int characterReplacement2(String s, int k) {
         int n = s.length();  // Length of the input string
         int left = 0;  // Left pointer for the sliding window
