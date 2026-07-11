@@ -1,6 +1,7 @@
 package SlidingWindowTwoPointers;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Binary_Subarray_with_Sum {
 
@@ -93,7 +94,68 @@ public class Binary_Subarray_with_Sum {
 
 
     // ============================================================
-    // Method 3 : Optimal Solution (Sliding Window / Two Pointers)
+    // Method 3 : Prefix Sum + HashMap
+    // Time Complexity  : O(N), single pass through the array.
+    // Space Complexity : O(N), for the hashmap storing prefix sum counts.
+    // ============================================================
+    /*
+    Idea:
+    This is the classic "Subarray Sum Equals K" pattern, applied here
+    since goal is just our target sum K.
+
+    For any subarray nums[i+1..j], its sum can be written as:
+        prefixSum[j] - prefixSum[i] = goal
+
+    Rearranged:
+        prefixSum[i] = prefixSum[j] - goal
+
+    So, as we walk through the array maintaining a running prefix sum
+    ('sum'), at every index j we ask: "how many earlier prefix sums
+    equal (sum - goal)?" Each one of those marks a valid subarray
+    ending at j. We use a HashMap<prefixSum, frequency> to answer that
+    in O(1) instead of re-scanning the array.
+
+    We initialize the map with {0 : 1} to correctly count subarrays
+    that start right from index 0 (i.e., a "prefix sum of 0" occurring
+    before the array starts).
+
+    Unlike the sliding window trick used in the Optimal method, this
+    approach works for ANY integers (positive, negative, zero) - it
+    doesn't rely on the array being binary. That makes it more general,
+    though it costs O(N) extra space.
+    */
+    public static int numSubarraysWithSum_PrefixSumHashMap(int[] nums, int goal) {
+        // Map to store: prefixSum -> number of times it has occurred so far
+        HashMap<Integer, Integer> prefixCount = new HashMap<>();
+
+        // A prefix sum of 0 has occurred once before we start (empty prefix)
+        prefixCount.put(0, 1);
+
+        int sum = 0;   // running prefix sum
+        int count = 0; // total subarrays found with sum == goal
+
+        // Walk through the array once
+        for (int num : nums) {
+            sum += num; // update running prefix sum up to current index
+
+            // We need an earlier prefix sum equal to (sum - goal)
+            // so that the subarray between them sums exactly to 'goal'.
+            int needed = sum - goal;
+
+            // If that prefix sum has occurred before, add its frequency
+            // to our count - each occurrence gives one valid subarray.
+            count += prefixCount.getOrDefault(needed, 0);
+
+            // Record the current prefix sum's occurrence for future indices
+            prefixCount.put(sum, prefixCount.getOrDefault(sum, 0) + 1);
+        }
+
+        return count;
+    }
+
+
+    // ============================================================
+    // Method 4 : Optimal Solution (Sliding Window / Two Pointers)
     // Time Complexity  : O(2 * 2N) ~ O(N), because we call the helper
     //                    function two times, each doing an O(N) sweep.
     // Space Complexity : O(1), no extra space is needed.
@@ -159,31 +221,35 @@ public class Binary_Subarray_with_Sum {
 
         // ---- Test case 1 ----
         System.out.println("Test Case 1 : nums = " + Arrays.toString(nums1) + ", goal = " + goal1);
-        System.out.println("Brute   -> " + numSubarraysWithSum_Brute(nums1, goal1));
-        System.out.println("Better  -> " + numSubarraysWithSum_Better(nums1, goal1));
-        System.out.println("Optimal -> " + numSubarraysWithSum_Optimal(nums1, goal1));
+        System.out.println("Brute            -> " + numSubarraysWithSum_Brute(nums1, goal1));
+        System.out.println("Better           -> " + numSubarraysWithSum_Better(nums1, goal1));
+        System.out.println("PrefixSum+HashMap-> " + numSubarraysWithSum_PrefixSumHashMap(nums1, goal1));
+        System.out.println("Optimal          -> " + numSubarraysWithSum_Optimal(nums1, goal1));
 
         System.out.println();
 
         // ---- Test case 2 ----
         System.out.println("Test Case 2 : nums = " + Arrays.toString(nums2) + ", goal = " + goal2);
-        System.out.println("Brute   -> " + numSubarraysWithSum_Brute(nums2, goal2));
-        System.out.println("Better  -> " + numSubarraysWithSum_Better(nums2, goal2));
-        System.out.println("Optimal -> " + numSubarraysWithSum_Optimal(nums2, goal2));
+        System.out.println("Brute            -> " + numSubarraysWithSum_Brute(nums2, goal2));
+        System.out.println("Better           -> " + numSubarraysWithSum_Better(nums2, goal2));
+        System.out.println("PrefixSum+HashMap-> " + numSubarraysWithSum_PrefixSumHashMap(nums2, goal2));
+        System.out.println("Optimal          -> " + numSubarraysWithSum_Optimal(nums2, goal2));
     }
 }
 
 // Output :
 /*
 Test Case 1 : nums = [1, 0, 1, 0, 1], goal = 2
-Brute   -> 4
-Better  -> 4
-Optimal -> 4
+Brute             -> 4
+Better            -> 4
+PrefixSum+HashMap -> 4
+Optimal           -> 4
 
 Test Case 2 : nums = [0, 0, 0, 0, 0], goal = 0
-Brute   -> 15
-Better  -> 15
-Optimal -> 15
+Brute             -> 15
+Better            -> 15
+PrefixSum+HashMap -> 15
+Optimal           -> 15
 */
 
 // ============================================================
@@ -203,7 +269,18 @@ Optimal -> 15
    - Since the array is binary (only 0s and 1s), we can also break early
      once the running sum exceeds the goal (sum is non-decreasing).
 
-3. OPTIMAL (O(N)):
+3. PREFIX SUM + HASHMAP (O(N) time, O(N) space):
+   - Classic "Subarray Sum Equals K" trick, works for ANY array of
+     integers (not just binary 0/1), since it doesn't rely on any
+     monotonic window property.
+   - Maintain a running prefix sum while scanning left to right.
+   - At each index, check how many earlier prefix sums equal
+     (currentPrefixSum - goal) using a HashMap<prefixSum, frequency>.
+     Each match is a valid subarray ending at the current index.
+   - Needs O(N) extra space for the hashmap, unlike the O(1) space
+     sliding window approach - the trade-off is generality vs. space.
+
+4. OPTIMAL (O(N) time, O(1) space):
    - Direct sliding window cannot count EXACT sum subarrays cleanly when
      zeros are present (window can't shrink/grow in one unambiguous way
      for an exact match).
@@ -214,11 +291,14 @@ Optimal -> 15
      expand right and only decreases as we shrink left.
    - This gives us the O(N) approach, calling the helper twice: once for
      goal, once for goal - 1, then subtracting.
+   - Same time complexity as the prefix sum + hashmap method, but uses
+     only O(1) extra space by exploiting the fact that the array is binary.
 
 Why brute/better work but are slower:
-   - They exhaustively check every subarray without exploiting the
-     special "0/1 only" structure of the array, so they don't benefit
-     from the monotonic sliding window trick that the optimal solution uses.
+   - They exhaustively check every subarray without exploiting either
+     the prefix-sum trick or the special "0/1 only" structure of the
+     array, so they don't benefit from the shortcuts the other two
+     methods use.
 
 Striver's (Video Explanation) : https://www.youtube.com/watch?v=XnMdNUkX6VM
 */
