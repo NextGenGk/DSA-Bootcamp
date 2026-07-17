@@ -117,7 +117,8 @@ public class Minimum_Window_Substring {
 
         // Call the minWindow1 function and print the result
         String result = minWindowv2(s, t);
-        System.out.println("The smallest window in '" + s + "' containing all characters of '" + t + "' is: '" + result + "'");
+        System.out.println("The smallest window in '" + s 
+                           + "' containing all characters of '" + t + "' is: '" + result + "'");
     }
 }
 
