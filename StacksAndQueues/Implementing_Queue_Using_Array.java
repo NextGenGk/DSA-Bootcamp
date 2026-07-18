@@ -30,6 +30,21 @@ class Implementing_Queue_Using_Array {
                 System.out.println("Queue is full! Cannot enqueue.");
                 return;
             }
+            /* Final state: If the element should be inserted is the first
+            front = 0
+            rear = 0
+            
+            Queue:
+            +----+----+----+----+
+            | 10 |    |    |    |
+            +----+----+----+----+
+              ^
+            front
+              ^
+            rear
+            
+            Both front and rear point to the same element because there's only one item.
+            */
             if (isEmpty()) {
                 front = 0; // Set front when first element is inserted
             }
