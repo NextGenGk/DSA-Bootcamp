@@ -61,6 +61,7 @@ public class Implementing_Stack_Using_Single_Queue {
         System.out.println("Stack is successfully deleted");
     }
 
+    // Main Function
     public static void main(String[] args) {
         Implementing_Stack_Using_Single_Queue stack = new Implementing_Stack_Using_Single_Queue();
 
