@@ -40,6 +40,17 @@ public class Implementing_Queue_Using_LinkedList {
             front = rear = newNode;
         } else {
             // Otherwise, add the new node at the end of the queue and update rear
+            /*
+            front
+              |
+              v
+            +----+     +----+     +----+
+            | 10 | --> | 20 | --> | 30 | --> null
+            +----+     +----+     +----+
+                                        ^
+                                        |
+                                       rear
+            */
             rear.next = newNode;
             rear = newNode;
         }
