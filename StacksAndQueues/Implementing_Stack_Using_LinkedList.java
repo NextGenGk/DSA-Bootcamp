@@ -40,6 +40,26 @@ public class Implementing_Stack_Using_LinkedList {
             return -1;
         } else {
             int topValue = topOfStack.value;
+            /*
+            topOfStack = topOfStack.next;
+            
+            This is the actual removal.
+            topOfStack.next points to the next node (20).
+            
+            Before:
+            topOfStack
+                 |
+                 v
+               [30] --> [20] --> [10]
+            
+            After:
+            topOfStack
+                 |
+                 v
+               [20] --> [10]
+            
+            The node containing 30 is no longer referenced by the stack.
+            */
             topOfStack = topOfStack.next;
             size--; // Decrement size when an element is popped
             return topValue;
