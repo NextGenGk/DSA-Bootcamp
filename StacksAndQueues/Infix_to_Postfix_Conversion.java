@@ -59,20 +59,22 @@ public class Infix_to_Postfix_Conversion {
             } else // an operator is encountered
             {
                 /*
-                Current Operator
-                    |
-                    v
-                Stack Top
-                    |
-                    v
-            Higher precedence?
-                  YES ---> POP
-            
-            Same precedence?
-                  |
-                  +  --> + - * / ? ---> POP
-                  |
-                  + --> ^ ? ---------> DON'T POP
+                      Current Operator
+                            |
+                            v
+                        Stack Top
+                            |
+                            v
+                    Higher precedence?
+                          YES ---> POP
+                    
+                    Same precedence?
+                          |
+                          +  --> + - * / ? ---> POP
+                          |
+                          + --> ^ ? ---------> DON'T POP
+
+                (Note : Please refer to bottom for explanation)
                 */
                 while (!stack.isEmpty() &&
                       (prec(c) < prec(stack.peek()) ||
@@ -178,5 +180,136 @@ parentheses).
 Step 5: Return the Postfix Expression
 i. The string result now contains the postfix expression. Return this as the final output.
  */
+
+// Note : Explanation
+/*
+Rule 1: Higher precedence on the stack → Pop
+
+Example:
+
+Expression:
+
+A * B + C
+
+When you reach +:
+
+Output: AB
+Stack: *
+Current: +
+
+Compare:
+
+Stack: *  (precedence = 2)
+Current: + (precedence = 1)
+
+Since 2 > 1, * should be performed first.
+
+So:
+
+Pop *
+Output: AB*
+Push +
+
+✅ Result:
+
+AB*C+
+Rule 2: Equal precedence + Left Associative → Pop
+
+Operators:
+
++  -  *  /
+Example:
+A - B + C
+
+When you reach +:
+
+Output: AB
+Stack: -
+Current: +
+
+Both have precedence 1.
+
+Which should happen first?
+
+A - B
+
+or
+
+B + C
+
+Correct:
+
+(A - B) + C
+
+So we pop -.
+
+Pop -
+Output: AB-
+Push +
+
+Final postfix:
+
+AB-C+
+
+Another example:
+
+A / B * C
+
+When * comes:
+
+Stack: /
+Current: *
+
+Same precedence.
+
+Correct evaluation:
+
+(A / B) * C
+
+So:
+
+Pop /
+Push *
+Rule 3: Equal precedence + Right Associative (^) → Don't Pop
+
+Example:
+
+A ^ B ^ C
+
+When second ^ comes:
+
+Output: AB
+Stack: ^
+Current: ^
+
+Same precedence.
+
+Should we pop?
+
+❌ No.
+
+Because exponent is evaluated from right to left.
+
+Correct:
+
+A ^ (B ^ C)
+
+Not
+
+(A ^ B) ^ C
+
+So:
+
+Don't pop.
+Push another ^
+
+Stack becomes:
+
+^ ^
+
+Finally:
+
+Output: ABC^^
+*/
 
 // Striver (Video Explanation) : https://www.youtube.com/watch?v=4pIc9UBHJtk
