@@ -58,8 +58,26 @@ public class Infix_to_Postfix_Conversion {
                 stack.pop();
             } else // an operator is encountered
             {
-                while (!stack.isEmpty() && Prec(c) <=
-                        Prec(stack.peek())) {
+                /*
+                Current Operator
+                    |
+                    v
+                Stack Top
+                    |
+                    v
+            Higher precedence?
+                  YES ---> POP
+            
+            Same precedence?
+                  |
+                  +  --> + - * / ? ---> POP
+                  |
+                  + --> ^ ? ---------> DON'T POP
+                */
+                while (!stack.isEmpty() &&
+                      (prec(c) < prec(stack.peek()) ||
+                      (prec(c) == prec(stack.peek()) && 
+                      c != '^'))) {
 
                     result += stack.pop();
                 }
