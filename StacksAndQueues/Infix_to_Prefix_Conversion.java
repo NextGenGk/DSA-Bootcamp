@@ -75,7 +75,7 @@ public class Infix_to_Prefix_Conversion {
                             v
                     Higher precedence?
                           YES ---> POP
-                    
+
                     Same precedence?
                           |
                           +  --> + - * / ? ---> POP
@@ -86,10 +86,10 @@ public class Infix_to_Prefix_Conversion {
                 */
                 while (!stack.isEmpty() &&
                       (prec(c) < prec(stack.peek()) ||
-                      (prec(c) == prec(stack.peek()) && 
+                      (prec(c) == prec(stack.peek()) &&
                       c != '^'))) {
 
-                    result += stack.pop();
+                    result.append(stack.pop());  // FIX: use append() instead of += (StringBuilder has no += operator)
                 }
                 stack.push(c);
             }
@@ -123,6 +123,17 @@ public class Infix_to_Prefix_Conversion {
         // Convert the infix expression to prefix
         String prefix = infixToPrefix(infix);
         System.out.println("Prefix Expression: " + prefix);
+
+        // A couple more sanity checks, including right-associative '^'
+        String[] tests = {
+            "a+b*c",
+            "a^b^c",
+            "(a+b)*(c-d)",
+            "a+b+c"
+        };
+        for (String t : tests) {
+            System.out.println(t + "  ->  " + infixToPrefix(t));
+        }
     }
 }
 
@@ -147,7 +158,7 @@ the operator of lower precedence or same precedence.
 then pop the top of the stack till the condition is true. If the condition is not true, push the ^ operator.
 9. When we reach the end of the expression, pop, and print all the operators from the top of the stack.
 10. If the operator is ')', then push it into the stack.
-11. If the operator is '(', then pop all the operators from the stack till it finds the ‘)’ bracket in the stack.
+11. If the operator is '(', then pop all the operators from the stack till it finds the '(' bracket in the stack.
 12. If the top of the stack is ')', push the operator on the stack.
 13. In the end, reverse the output. And print it.
  */
