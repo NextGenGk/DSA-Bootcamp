@@ -79,9 +79,9 @@ public class Infix_to_Postfix_Conversion {
                 while (!stack.isEmpty() &&
                       (prec(c) < prec(stack.peek()) ||
                       (prec(c) == prec(stack.peek()) && 
-                      c != '^'))) {
+                      c == '^'))) {
 
-                    result += stack.pop();
+                    result.append(stack.pop());
                 }
                 stack.push(c);
             }
