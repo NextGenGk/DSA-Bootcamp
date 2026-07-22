@@ -66,23 +66,32 @@ public class Infix_to_Prefix_Conversion {
             }
             // If the character is an operator
             else {
-                // Special handling for the exponentiation operator '^'
-                // (Basically we can't store two powers in stack together)
-                if (c == '^') {
-                    while (!stack.isEmpty() && prec(c) <= prec(stack.peek())) {
-                        result.append(stack.pop());
-                    }
+                /*
+                      Current Operator
+                            |
+                            v
+                        Stack Top
+                            |
+                            v
+                    Higher precedence?
+                          YES ---> POP
+                    
+                    Same precedence?
+                          |
+                          +  --> + - * / ? ---> POP
+                          |
+                          + --> ^ ? ---------> DON'T POP
+
+                (Note : Please refer to bottom for explanation)
+                */
+                while (!stack.isEmpty() &&
+                      (prec(c) < prec(stack.peek()) ||
+                      (prec(c) == prec(stack.peek()) && 
+                      c != '^'))) {
+
+                    result += stack.pop();
                 }
-                // For other operators, pop from the stack to the result based on precedence
-                else {
-                    while (!stack.isEmpty() && prec(c) < prec(stack.peek())) {
-                        result.append(stack.pop());
-                    }
-//                    while (!stack.isEmpty() && prec(c) <= prec(stack.peek())) {
-//                        result.append(stack.pop());
-//                    }
-                    stack.push(c);  // Push the current operator onto the stack
-                }
+                stack.push(c);
             }
         }
 
@@ -175,5 +184,45 @@ i. Reverse the postfix string to obtain the prefix expression.
 Step 4: Return the Prefix Expression
 i. The reversed postfix string is the final prefix expression.
  */
+
+/*
+Associativity (Short Note)
+Associativity tells us which direction to evaluate operators when they have the same precedence.
+1. Left Associative (Left → Right)
+
+Operators:
++  -  *  /  %
+
+Example:
+A - B - C
+= (A - B) - C
+
+In Infix → Postfix:
+✅ Pop when precedence is the same.
+
+2. Right Associative (Right → Left)
+
+Operator:
+^
+
+Example:
+A ^ B ^ C
+= A ^ (B ^ C)
+
+In Infix → Postfix:
+❌ Don't pop when precedence is the same.
+
+Code Rule
+// Left associative (+,-,*,/)
+prec(c) == prec(stack.peek()) → POP
+
+// Right associative (^)
+prec(c) == prec(stack.peek()) → DON'T POP
+Memory Trick
+
+NOTE TO REMEMBER
+Precedence decides which operator comes first.
+Associativity decides which direction to evaluate when precedence is equal.
+*/
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=4pIc9UBHJtk
