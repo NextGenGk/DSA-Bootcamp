@@ -312,4 +312,44 @@ Finally:
 Output: ABC^^
 */
 
+/*
+Associativity (Short Note)
+Associativity tells us which direction to evaluate operators when they have the same precedence.
+1. Left Associative (Left → Right)
+
+Operators:
++  -  *  /  %
+
+Example:
+A - B - C
+= (A - B) - C
+
+In Infix → Postfix:
+✅ Pop when precedence is the same.
+
+2. Right Associative (Right → Left)
+
+Operator:
+^
+
+Example:
+A ^ B ^ C
+= A ^ (B ^ C)
+
+In Infix → Postfix:
+❌ Don't pop when precedence is the same.
+
+Code Rule
+// Left associative (+,-,*,/)
+prec(c) == prec(stack.peek()) → POP
+
+// Right associative (^)
+prec(c) == prec(stack.peek()) → DON'T POP
+Memory Trick
+
+NOTE TO REMEMBER
+Precedence decides which operator comes first.
+Associativity decides which direction to evaluate when precedence is equal.
+*/
+
 // Striver (Video Explanation) : https://www.youtube.com/watch?v=4pIc9UBHJtk
