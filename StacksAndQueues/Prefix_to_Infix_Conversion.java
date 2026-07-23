@@ -3,13 +3,8 @@ package StacksAndQueues;
 import java.util.Stack;
 
 public class Prefix_to_Infix_Conversion {
-
-    /**
-     * Converts a prefix expression to an infix expression.
-     *
-     * @param exp The prefix expression to be converted.
-     * @return The corresponding infix expression.
-     */
+    
+    // Converts a prefix expression to an infix expression.
     public static String prefixToInfix(String exp) {
         // Create a stack to hold intermediate infix expressions
         Stack<String> stack = new Stack<String>();
