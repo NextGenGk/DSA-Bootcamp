@@ -41,7 +41,31 @@ public class Next_Greater_Element_I {
         // Iterate over the array from the last element to the first
         for (int i = n - 1; i >= 0; i--) {
             // While stack is not empty and the top element of the stack is less than or equal to the current element
-            while (!stack.isEmpty() && arr[i] >= stack.peek()) {
+            /*
+            Why <=?
+            The problem asks for the next greater element, not the next greater-or-equal element.
+            
+            For example:
+            arr = {5, 5}
+            
+            Your code (<) does this:
+            1. Start from the last 5: answer = -1, stack = [5]
+            2. First 5: stack.peek() < 5 is false, so it doesn't pop.
+            3. Answer becomes 5.
+            
+            Output:
+            [5, -1]
+            This is wrong, because 5 is not greater than 5.
+            
+            With <=:
+            1. The equal 5 is popped.
+            2. Stack becomes empty.
+            3. Answer becomes -1.
+            
+            Correct output:
+            [-1, -1]
+            */
+            while (!stack.isEmpty() && stack.peek() <= arr[i]) {
                 stack.pop(); // Pop elements from the stack that are not greater than the current element
             }
             
