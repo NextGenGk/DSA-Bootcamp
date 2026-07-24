@@ -54,8 +54,30 @@ public class Next_Greater_Element_II {
 
             // Pop elements from the stack that are less than or equal to the current element
             /*
-            ii. and second if for simulating / establishing circular array
-             */
+            Why <=?
+            The problem asks for the next greater element, not the next greater-or-equal element.
+            
+            For example:
+            arr = {5, 5}
+            
+            Your code (<) does this:
+            1. Start from the last 5: answer = -1, stack = [5]
+            2. First 5: stack.peek() < 5 is false, so it doesn't pop.
+            3. Answer becomes 5.
+            
+            Output:
+            [5, -1]
+            This is wrong, because 5 is not greater than 5.
+            
+            With <=:
+            1. The equal 5 is popped.
+            2. Stack becomes empty.
+            3. Answer becomes -1.
+            
+            Correct output:
+            [-1, -1]
+            */
+            */
             while (!stack.isEmpty() && stack.peek() <= arr[currentIndex]) {
                 stack.pop();
             }
