@@ -6,7 +6,6 @@ public class Trapping_Rainwater_Problem {
     // Time Complexity: O(3*N) as we are traversing through the array only once. And O(2*N) for computing
     // prefix and suffix array.
     // Space Complexity: O(N)+O(N) for prefix and suffix arrays.
-    
     static int trapWater(int[] height) {
         // Get the size of the array
         int n = height.length;
@@ -102,7 +101,6 @@ public class Trapping_Rainwater_Problem {
     // Method 2 : Optimal Solution (v2)
     // Time Complexity: O(N) because we are using 2 pointer approach.
     // Space Complexity: O(1) because we are not using anything extra.
-
     // Calculates the total amount of water that can be trapped between bars of different heights.
     static int calculate(int[] height) {
         int n = height.length;
