@@ -51,6 +51,9 @@ public class Sum_of_Subarray_Minimum {
 
                 // Calculate the contribution of arr[i] to the total sum and apply modulo
                 total = (total + (long) left * right * arr[i]) % mod;
+
+                // if error in test cases (use this)
+                // total = (total + ((long) left * right * arr[i]) % mod) % mod;
             }
 
             // Return the result as an integer
