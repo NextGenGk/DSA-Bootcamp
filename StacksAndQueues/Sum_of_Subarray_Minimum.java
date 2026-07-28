@@ -31,7 +31,7 @@ public class Sum_of_Subarray_Minimum {
     }
 
     // Method 2 : Optimal Solution
-    // Time Complexity : O(5N), O(2N) for finding nse and pse, and O(N) for traversing.
+    // Time Complexity : O(5N), 2 * O(2N) for finding nse and pse, and O(N) for traversing.
     // Space Complexity : O(4N), O(2N) for using stack and O(2N) for returning the answer.
     // Function to calculate the sum of minimums of all subarrays
     static class sumSubarrayMin {
