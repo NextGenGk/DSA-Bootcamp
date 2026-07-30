@@ -62,19 +62,23 @@ public class Remove_K_Digits {
         // Test cases
         String num1 = "1432219";
         int k1 = 3;
-        System.out.println("Result for num = " + num1 + ", k = " + k1 + " : " + removeKDigits(num1, k1)); // Expected output: "1219"
+        // Expected output: "1219"
+        System.out.println("Result for num = " + num1 + ", k = " + k1 + " : " + removeKDigits(num1, k1)); 
 
         String num2 = "10200";
         int k2 = 1;
-        System.out.println("Result for num = " + num2 + ", k = " + k2 + " : " + removeKDigits(num2, k2)); // Expected output: "200"
+        // Expected output: "200"
+        System.out.println("Result for num = " + num2 + ", k = " + k2 + " : " + removeKDigits(num2, k2)); 
 
         String num3 = "10";
         int k3 = 2;
-        System.out.println("Result for num = " + num3 + ", k = " + k3 + " : " + removeKDigits(num3, k3)); // Expected output: "0"
+        // Expected output: "0"
+        System.out.println("Result for num = " + num3 + ", k = " + k3 + " : " + removeKDigits(num3, k3)); 
 
         String num4 = "1234567890";
         int k4 = 9;
-        System.out.println("Result for num = " + num4 + ", k = " + k4 + " : " + removeKDigits(num4, k4)); // Expected output: "0"
+        // Expected output: "0"
+        System.out.println("Result for num = " + num4 + ", k = " + k4 + " : " + removeKDigits(num4, k4)); 
     }
 }
 
