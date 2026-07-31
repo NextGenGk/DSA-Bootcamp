@@ -35,42 +35,57 @@ public class Sliding_Window_Maximum {
         return result;
     }
 
-    // Method 2 : Optimal Solution
-    // Time Complexity : O(2N), O(N) for traversing and O(N) for pushing and popping elements in dequeue.
-    // Space Complexity : O(K) + O(N-K) for storing at max k elements in deque and O(N-K) for storing and
-    // returning the result.
-    public static int[] slidingWindowMax1(int[] arr, int k) {
-        int n = arr.length;                   // Length of the array
-        int[] result = new int[n - k + 1];       // Result array to store max values
-        int index = 0;                         // Index to insert max values in result
-        Deque<Integer> q = new ArrayDeque<>();  // Deque to store indices
+    // Method 2: Optimal Solution (Deque / Monotonic Queue)
+// Time Complexity: O(N)
+// Each element is inserted into the deque once and removed at most once.
+// Therefore, the total number of deque operations is O(N).
+//
+// Space Complexity: O(K) + O(N - K + 1)
+// O(K)           -> Deque stores at most K indices.
+// O(N - K + 1)   -> Result array stores the maximum for each sliding window.
 
-        // base case
+public static int[] slidingWindowMaximum(int[] arr, int k) {
+
+    int n = arr.length;                       // Total number of elements
+    int[] result = new int[n - k + 1];        // Stores the maximum of each window
+    int resultIndex = 0;                      // Current index in the result array
+
+    // Deque stores indices of array elements.
+    // Elements are maintained in decreasing order of their values.
+    Deque<Integer> deque = new ArrayDeque<>();
+        // Base case
         if (n == 0) {
             return arr;
         }
-
+    
         // Traverse the array
-        for (int i = 0; i < arr.length; i++) {
-            // Remove elements that are out of the current window (i - k)
-            if (!q.isEmpty() && q.peek() == i - k) {
-                q.poll();  // Remove the oldest element in the deque
+        for (int i = 0; i < n; i++) {
+    
+            // Step 1: Remove indices that are outside the current window.
+            // Current window = [i - k + 1, i]
+            if (!deque.isEmpty() && deque.peekFirst() == i - k) {
+                deque.pollFirst();
             }
-
-            // Remove smaller elements in the current window (they are useless)
-            while (!q.isEmpty() && arr[q.peekLast()] < arr[i]) {
-                q.pollLast();  // Remove smaller elements
+    
+            // Step 2: Remove all smaller elements from the back.
+            // They can never become the maximum while the current element exists.
+            while (!deque.isEmpty() && arr[deque.peekLast()] < arr[i]) {
+                deque.pollLast();
             }
-
-            // Add the current element index to the deque
-            q.offer(i);
-
-            // Once we have processed at least 'k' elements, record the max in result array
+    
+            // Step 3: Add the current index to the deque.
+            deque.offerLast(i);
+    
+            // Step 4: Once the first window is formed,
+            // the front of the deque always contains the index
+            // of the maximum element for the current window.
             if (i >= k - 1) {
-                result[index++] = arr[q.peek()];  // The front of the deque is the max in the window            }
+                result[resultIndex++] = arr[deque.peekFirst()];
             }
         }
-        return result;  // Return the result array
+
+        // Return the processed result
+        return result;
     }
 
     // Main Function
@@ -150,5 +165,54 @@ Step-by-step with push and pop:
 
 Final Output : [3, 3, 5, 5, 7, 7, 7]
  */
+
+// Visualization
+/*
+═══════════════════════ HORIZONTAL VIEW ═══════════════════════
+
+                    REAR (Last)
+                         ▲
+        offerLast()   peekLast()   pollLast()
+                         │
+                         │
+FRONT (First) ◀────────────────────────────────────────▶ REAR
+        
+        +-------+-------+-------+-------+-------+
+        |  10   |  20   |  30   |  40   |  50   |
+        +-------+-------+-------+-------+-------+
+
+        offerFirst()  peekFirst()  pollFirst()
+                         │
+                         ▼
+                    FRONT (First)
+
+
+
+════════════════════════ VERTICAL VIEW ════════════════════════
+
+                    REAR (Last)
+                         ▲
+                     peekLast()
+                     pollLast()
+                    offerLast()
+                         │
+                  +-------------+
+                  |     50      |
+                  +-------------+
+                  |     40      |
+                  +-------------+
+                  |     30      |
+                  +-------------+
+                  |     20      |
+                  +-------------+
+                  |     10      |
+                  +-------------+
+                         │
+                    offerFirst()
+                    pollFirst()
+                    peekFirst()
+                         ▼
+                   FRONT (First)
+*/
 
 // Striver's (Video Explanation) : https://www.youtube.com/watch?v=NwBvene4Imo
