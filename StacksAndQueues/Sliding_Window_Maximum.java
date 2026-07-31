@@ -36,54 +36,54 @@ public class Sliding_Window_Maximum {
     }
 
     // Method 2: Optimal Solution (Deque / Monotonic Queue)
-// Time Complexity: O(N)
-// Each element is inserted into the deque once and removed at most once.
-// Therefore, the total number of deque operations is O(N).
-//
-// Space Complexity: O(K) + O(N - K + 1)
-// O(K)           -> Deque stores at most K indices.
-// O(N - K + 1)   -> Result array stores the maximum for each sliding window.
-
-public static int[] slidingWindowMaximum(int[] arr, int k) {
-
-    int n = arr.length;                       // Total number of elements
-    int[] result = new int[n - k + 1];        // Stores the maximum of each window
-    int resultIndex = 0;                      // Current index in the result array
-
-    // Deque stores indices of array elements.
-    // Elements are maintained in decreasing order of their values.
-    Deque<Integer> deque = new ArrayDeque<>();
-        // Base case
-        if (n == 0) {
-            return arr;
-        }
+    // Time Complexity: O(N)
+    // Each element is inserted into the deque once and removed at most once.
+    // Therefore, the total number of deque operations is O(N).
+    //
+    // Space Complexity: O(K) + O(N - K + 1)
+    // O(K)           -> Deque stores at most K indices.
+    // O(N - K + 1)   -> Result array stores the maximum for each sliding window.
     
-        // Traverse the array
-        for (int i = 0; i < n; i++) {
+    public static int[] slidingWindowMaximum(int[] arr, int k) {
     
-            // Step 1: Remove indices that are outside the current window.
-            // Current window = [i - k + 1, i]
-            if (!deque.isEmpty() && deque.peekFirst() == i - k) {
-                deque.pollFirst();
+        int n = arr.length;                       // Total number of elements
+        int[] result = new int[n - k + 1];        // Stores the maximum of each window
+        int resultIndex = 0;                      // Current index in the result array
+    
+        // Deque stores indices of array elements.
+        // Elements are maintained in decreasing order of their values.
+        Deque<Integer> deque = new ArrayDeque<>();
+            // Base case
+            if (n == 0) {
+                return arr;
+            }
+        
+            // Traverse the array
+            for (int i = 0; i < n; i++) {
+        
+                // Step 1: Remove indices that are outside the current window.
+                // Current window = [i - k + 1, i]
+                if (!deque.isEmpty() && deque.peekFirst() == i - k) {
+                    deque.pollFirst();
+                }
+        
+                // Step 2: Remove all smaller elements from the back.
+                // They can never become the maximum while the current element exists.
+                while (!deque.isEmpty() && arr[deque.peekLast()] < arr[i]) {
+                    deque.pollLast();
+                }
+        
+                // Step 3: Add the current index to the deque.
+                deque.offerLast(i);
+        
+                // Step 4: Once the first window is formed,
+                // the front of the deque always contains the index
+                // of the maximum element for the current window.
+                if (i >= k - 1) {
+                    result[resultIndex++] = arr[deque.peekFirst()];
+                }
             }
     
-            // Step 2: Remove all smaller elements from the back.
-            // They can never become the maximum while the current element exists.
-            while (!deque.isEmpty() && arr[deque.peekLast()] < arr[i]) {
-                deque.pollLast();
-            }
-    
-            // Step 3: Add the current index to the deque.
-            deque.offerLast(i);
-    
-            // Step 4: Once the first window is formed,
-            // the front of the deque always contains the index
-            // of the maximum element for the current window.
-            if (i >= k - 1) {
-                result[resultIndex++] = arr[deque.peekFirst()];
-            }
-        }
-
         // Return the processed result
         return result;
     }
