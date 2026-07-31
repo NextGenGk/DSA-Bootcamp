@@ -4,11 +4,16 @@ import java.util.Stack;
 
 public class Maximal_Rectangle {
 
-    // Method 1 : Optimal Solution
-    // Time - O(N x M) + O(2M), Where N is no. of rows and M is no. of columns.
-    // Reason : O(N x M) for traversing the matrix, and O(2M) for find the largestRectangleInHistogram function.
-    // Space - O(N x M) + O(N)
-    // Reason : O(N x M), for find the prefixSum for each column and O(N) for using Stack Data Structure.
+    // Method 1 : Optimal Solution (Using 1D Histogram)
+    // Time - O(N x M) + O(N x M), Where N is no. of rows and M is no. of columns.
+    // Reason : O(N x M) for updating the histogram (prefixSum array) for every row,
+    //          and O(N x M) for calling largestRectangleArea() on each of the N rows.
+    // Overall Time Complexity : O(N x M)
+    //
+    // Space - O(M) + O(M)
+    // Reason : O(M) for the histogram (prefixSum) array and O(M) for the stack
+    //          used in largestRectangleArea().
+    // Overall Space Complexity : O(M)
     public static int maximalRectangle(char[][] matrix) {
         if (matrix.length == 0) return 0;
 
@@ -30,6 +35,55 @@ public class Maximal_Rectangle {
             }
             // Calculate the largest rectangle area for the current histogram
             maxArea = Math.max(maxArea, largestRectangleArea(prefixSum));
+        }
+
+        return maxArea;
+    }
+
+    // Method 2 : Optimal Solution (Using 2D Prefix Sum Matrix)
+    // Time - O(N x M) + O(N x M), Where N is no. of rows and M is no. of columns.
+    // Reason : O(N x M) for building the 2D prefixSum (histogram heights),
+    //          and O(N x M) for calling largestRectangleArea() on each row.
+    // Overall Time Complexity : O(N x M)
+    //
+    // Space - O(N x M) + O(M)
+    // Reason : O(N x M) for storing the 2D prefixSum matrix and O(M) for the stack
+    //          used in largestRectangleArea().
+    // Overall Space Complexity : O(N x M)
+    public int maximalRectangle(char[][] matrix) {
+
+        // Edge case: empty matrix
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return 0;
+        }
+
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        // prefixSum[r][c] stores the height of consecutive 1's
+        // ending at row r in column c.
+        int[][] prefixSum = new int[n][m];
+
+        // Build the histogram heights for each column.
+        for (int i = 0; i < m; i++) {
+            int sum = 0;
+            for (int j = 0; j < n; j++) {
+                if (matrix[j][i] == '1') {
+                    sum++;
+                } else {
+                    // Reset height when a 0 is encountered.
+                    sum = 0;
+                }
+                prefixSum[j][i] = sum;
+            }
+        }
+
+        int maxArea = 0;
+
+        // Treat each row of prefixSum as a histogram and
+        // compute the largest rectangle in that histogram.
+        for (int i = 0; i < n; i++) {
+            maxArea = Math.max(maxArea, largestRectangleArea(prefixSum[i]));
         }
 
         return maxArea;
