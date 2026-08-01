@@ -58,6 +58,11 @@ public class The_Celebrity_Problem {
 
         // At this point, top is the potential celebrity
         // Need to verify whether the person at 'top' is truly a celebrity
+        // Notye : Rule of Thumb
+        /*
+        1. At most one celebrity (0 or 1 exists) → ✅ Verification required
+        2. Exactly one celebrity exists → ❌ Verification can be skipped
+        */
         for (int i = 0; i < n; i++) {
             if (i == top) continue;  // Skip the comparison with the person themselves
 
