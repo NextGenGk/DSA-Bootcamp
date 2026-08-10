@@ -1,7 +1,5 @@
 package Arrays;
 
-import jdk.jfr.consumer.RecordedThread;
-
 import java.util.Arrays;
 
 public class Missing_Number {
